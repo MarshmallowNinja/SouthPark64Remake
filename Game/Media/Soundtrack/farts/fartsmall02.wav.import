@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fartsmall02.wav-28c247a28096072c907850d7d41b32dd.sample"
+
+[deps]
+
+source_file="res://Game/Media/Soundtrack/farts/fartsmall02.wav"
+dest_files=[ "res://.import/fartsmall02.wav-28c247a28096072c907850d7d41b32dd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

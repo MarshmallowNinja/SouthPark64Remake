@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/cartman_h_merged.obj-4c784c6a5fc34f183fe1967f30e2c492.mesh"
+
+[deps]
+
+files=[ "res://.import/cartman_h_merged.obj-4c784c6a5fc34f183fe1967f30e2c492.mesh" ]
+
+source_file="res://Game/Models/cartman_h_merged.obj"
+dest_files=[ "res://.import/cartman_h_merged.obj-4c784c6a5fc34f183fe1967f30e2c492.mesh", "res://.import/cartman_h_merged.obj-4c784c6a5fc34f183fe1967f30e2c492.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

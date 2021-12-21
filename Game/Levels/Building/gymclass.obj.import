@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/gymclass.obj-3f390b3232857e837a295974140a5ddc.mesh"
+
+[deps]
+
+files=[ "res://.import/gymclass.obj-3f390b3232857e837a295974140a5ddc.mesh" ]
+
+source_file="res://Game/Levels/Building/gymclass.obj"
+dest_files=[ "res://.import/gymclass.obj-3f390b3232857e837a295974140a5ddc.mesh", "res://.import/gymclass.obj-3f390b3232857e837a295974140a5ddc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

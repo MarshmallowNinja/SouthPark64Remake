@@ -1,0 +1,271 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Game/Widgets/south park.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Game/Widgets/Main Menu/2021 icon crop.png" type="Texture" id=2]
+[ext_resource path="res://Game/Widgets/Main Menu/MainMenuScriptsYo.gd" type="Script" id=3]
+[ext_resource path="res://Game/Media/Soundtrack/PC/The Theme.ogg" type="AudioStream" id=4]
+[ext_resource path="res://misc/slate.png" type="Texture" id=5]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 2
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 654.979, 301.124 )
+scale = Vector2( 3.75335, 2.26789 )
+texture = ExtResource( 5 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+mix_target = 1
+
+[node name="background" type="Sprite" parent="."]
+material = SubResource( 1 )
+position = Vector2( -12.1726, -13.7401 )
+scale = Vector2( 1089.93, 624.857 )
+
+[node name="2021 icon crop" type="Sprite" parent="."]
+position = Vector2( 640, 104.969 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchor_left = 0.327
+anchor_right = 0.67
+anchor_bottom = 0.977
+margin_left = 0.440002
+margin_top = 390.037
+margin_right = -0.600037
+margin_bottom = -1.40344
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Menu"]
+margin_right = 438.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 2 )
+text = "Test Level fuck you"
+flat = true
+
+[node name="Button" type="Button" parent="Menu"]
+margin_top = 26.0
+margin_right = 438.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 2 )
+text = "Story Mode"
+flat = true
+
+[node name="Multiplayer" type="Button" parent="Menu"]
+margin_top = 52.0
+margin_right = 438.0
+margin_bottom = 74.0
+custom_fonts/font = SubResource( 2 )
+disabled = true
+action_mode = 0
+text = "Multiplayer"
+flat = true
+
+[node name="Online" type="Button" parent="Menu"]
+margin_top = 78.0
+margin_right = 438.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 2 )
+disabled = true
+action_mode = 0
+text = "Online"
+flat = true
+
+[node name="Store" type="Button" parent="Menu"]
+margin_top = 104.0
+margin_right = 438.0
+margin_bottom = 126.0
+custom_fonts/font = SubResource( 2 )
+disabled = true
+action_mode = 0
+text = "Store"
+flat = true
+
+[node name="settings" type="Button" parent="Menu"]
+margin_top = 130.0
+margin_right = 438.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 2 )
+action_mode = 0
+text = "Settings"
+flat = true
+
+[node name="custom" type="Button" parent="Menu"]
+margin_top = 156.0
+margin_right = 438.0
+margin_bottom = 178.0
+custom_fonts/font = SubResource( 2 )
+disabled = true
+action_mode = 0
+text = "Custom Content/Mods"
+flat = true
+
+[node name="Exit" type="Button" parent="Menu"]
+margin_top = 182.0
+margin_right = 438.0
+margin_bottom = 204.0
+custom_fonts/font = SubResource( 2 )
+action_mode = 0
+text = "Quit"
+flat = true
+
+[node name="Story" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.327
+anchor_right = 0.67
+anchor_bottom = 0.977
+margin_left = -358.56
+margin_top = 390.0
+margin_right = 358.4
+margin_bottom = -1.44
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="New" type="Button" parent="Story"]
+margin_right = 1156.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 2 )
+text = "Start a New Game"
+flat = true
+
+[node name="Load" type="Button" parent="Story"]
+margin_top = 26.0
+margin_right = 1156.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 2 )
+disabled = true
+action_mode = 0
+text = "Load a Previously Saved Game"
+flat = true
+
+[node name="backtomain" type="Button" parent="Story"]
+margin_top = 52.0
+margin_right = 1156.0
+margin_bottom = 74.0
+custom_fonts/font = SubResource( 2 )
+action_mode = 0
+text = "Back"
+flat = true
+
+[node name="Settings" type="VBoxContainer" parent="."]
+visible = false
+anchor_left = 0.327
+anchor_right = 0.67
+anchor_bottom = 0.977
+margin_left = -411.789
+margin_top = 157.65
+margin_right = -398.829
+margin_bottom = -6.78961
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="game_settings" type="Button" parent="Settings"]
+margin_right = 452.0
+margin_bottom = 22.0
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "Game Settings"
+flat = true
+
+[node name="aud_settings" type="Button" parent="Settings"]
+margin_top = 26.0
+margin_right = 452.0
+margin_bottom = 48.0
+custom_fonts/font = SubResource( 2 )
+disabled = true
+text = "Audio Settings"
+flat = true
+
+[node name="vid_settings" type="Button" parent="Settings"]
+margin_top = 52.0
+margin_right = 452.0
+margin_bottom = 74.0
+custom_fonts/font = SubResource( 2 )
+disabled = true
+action_mode = 0
+text = "Video Settings"
+flat = true
+
+[node name="onl_settings" type="Button" parent="Settings"]
+margin_top = 78.0
+margin_right = 452.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 2 )
+disabled = true
+action_mode = 0
+text = "Network/Online settings"
+flat = true
+
+[node name="save_settings" type="Button" parent="Settings"]
+margin_top = 104.0
+margin_right = 452.0
+margin_bottom = 126.0
+custom_fonts/font = SubResource( 2 )
+disabled = true
+action_mode = 0
+text = "Save Game Settings"
+flat = true
+
+[node name="cust_settings" type="Button" parent="Settings"]
+margin_top = 130.0
+margin_right = 452.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 2 )
+disabled = true
+action_mode = 0
+text = "Custom Settings"
+flat = true
+
+[node name="hidden" type="Button" parent="Settings"]
+margin_top = 156.0
+margin_right = 452.0
+margin_bottom = 172.0
+custom_fonts/font = SubResource( 3 )
+disabled = true
+action_mode = 0
+text = "Complete Improved story on [You Must Die]"
+flat = true
+
+[node name="settomain" type="Button" parent="Settings"]
+margin_top = 176.0
+margin_right = 452.0
+margin_bottom = 198.0
+custom_fonts/font = SubResource( 2 )
+action_mode = 0
+text = "Back to Main Menu"
+flat = true
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="Menu/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="Menu/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Menu/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Menu/Exit" to="." method="_on_Exit_pressed"]
+[connection signal="pressed" from="Story/New" to="." method="_on_New_pressed"]
+[connection signal="pressed" from="Story/backtomain" to="." method="_on_backtomain_pressed"]
+[connection signal="pressed" from="Settings/settomain" to="." method="_on_settomain_pressed"]

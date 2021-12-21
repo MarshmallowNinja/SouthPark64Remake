@@ -4,6 +4,7 @@
 .import
 export.cfg
 export_presets.cfg
+addons/godot-git-plugin
 
 # Mono-specific ignores
 .mono/

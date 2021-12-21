@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ufo.ogg-ab0fb9c5b4367134098c30bf47ecb647.oggstr"
+
+[deps]
+
+source_file="res://Game/Media/ufo.ogg"
+dest_files=[ "res://.import/ufo.ogg-ab0fb9c5b4367134098c30bf47ecb647.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

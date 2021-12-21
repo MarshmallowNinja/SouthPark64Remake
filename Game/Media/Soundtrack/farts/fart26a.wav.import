@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fart26a.wav-aa5522933f6fca92ad53d3504bcb2361.sample"
+
+[deps]
+
+source_file="res://Game/Media/Soundtrack/farts/fart26a.wav"
+dest_files=[ "res://.import/fart26a.wav-aa5522933f6fca92ad53d3504bcb2361.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
