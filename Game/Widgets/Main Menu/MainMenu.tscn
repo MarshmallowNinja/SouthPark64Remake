@@ -260,8 +260,6 @@ action_mode = 0
 text = "Back to Main Menu"
 flat = true
 
-[node name="HTTPRequest" type="HTTPRequest" parent="."]
-
 [connection signal="pressed" from="Menu/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="Menu/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Menu/settings" to="." method="_on_settings_pressed"]
