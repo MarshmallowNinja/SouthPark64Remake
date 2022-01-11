@@ -3,6 +3,8 @@ extends Node
 
 # variables and shit
 var Name : String = "New Kid"
+enum OST {PC, N64, PSX, PCREMAKE, N64REMAKE, PSXREMAKE}
+var OSTType = OST.PC
 
 
 # Called when the node enters the scene tree for the first time.
