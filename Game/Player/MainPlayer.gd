@@ -53,10 +53,6 @@ func _physics_process(delta): #inputs
 	if Input.is_action_just_pressed("taunt"):
 		$Farter.play()
 	
-	#input = input.normalized()
-	#velocity = velocity.linear_interpolate(input * moveSpeed, Acceleration * delta)
-	
-	
 	var forward = global_transform.basis.z
 	var right = global_transform.basis.x
 	
@@ -67,7 +63,7 @@ func _physics_process(delta): #inputs
 	
 	velocity.y -= gravity * delta 
 	
-	velocity = move_and_slide(velocity, Vector3.UP)
+	velocity = move_and_slide(velocity, Vector3.UP, true)
 	
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = jumpForce
