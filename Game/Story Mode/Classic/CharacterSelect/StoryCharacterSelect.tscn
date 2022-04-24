@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Game/Texture/Nature/snow.png" type="Texture" id=1]
 [ext_resource path="res://Game/Widgets/south park.ttf" type="DynamicFontData" id=2]
@@ -23,6 +23,8 @@ glow_intensity = 8.0
 
 [sub_resource type="SpatialMaterial" id=4]
 albedo_texture = ExtResource( 1 )
+
+[sub_resource type="Theme" id=6]
 
 [sub_resource type="DynamicFont" id=5]
 size = 32
@@ -60,45 +62,50 @@ margin_left = -449.5
 margin_top = 140.0
 margin_right = 449.5
 margin_bottom = 180.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+theme = SubResource( 6 )
+custom_constants/separation = 107
+alignment = 1
 
 [node name="cartman" type="Button" parent="Camera/CanvasLayer/HBoxContainer"]
-margin_right = 166.0
+margin_left = 48.0
+margin_right = 214.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0.219608, 0.243137, 0.717647, 1 )
+custom_colors/font_color_focus = Color( 1, 0.811765, 0, 1 )
+custom_colors/font_color = Color( 0, 0.0313726, 0.670588, 1 )
 custom_colors/font_color_hover = Color( 1, 0.811765, 0, 1 )
+custom_fonts/font = SubResource( 5 )
 text = "Cartman"
 flat = true
 
 [node name="kyle" type="Button" parent="Camera/CanvasLayer/HBoxContainer"]
-margin_left = 170.0
-margin_right = 269.0
+margin_left = 321.0
+margin_right = 420.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0.219608, 0.243137, 0.717647, 1 )
+custom_colors/font_color_focus = Color( 1, 0.811765, 0, 1 )
+custom_colors/font_color = Color( 0, 0.0313726, 0.670588, 1 )
 custom_colors/font_color_hover = Color( 1, 0.811765, 0, 1 )
+custom_fonts/font = SubResource( 5 )
 text = "Kyle"
 flat = true
 
 [node name="stan" type="Button" parent="Camera/CanvasLayer/HBoxContainer"]
-margin_left = 273.0
-margin_right = 369.0
+margin_left = 527.0
+margin_right = 623.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0.219608, 0.243137, 0.717647, 1 )
+custom_colors/font_color_focus = Color( 1, 0.811765, 0, 1 )
+custom_colors/font_color = Color( 0, 0.0313726, 0.670588, 1 )
 custom_colors/font_color_hover = Color( 1, 0.811765, 0, 1 )
+custom_fonts/font = SubResource( 5 )
 text = "stan"
 flat = true
 
 [node name="kenny" type="Button" parent="Camera/CanvasLayer/HBoxContainer"]
-margin_left = 373.0
-margin_right = 493.0
+margin_left = 730.0
+margin_right = 850.0
 margin_bottom = 40.0
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0.219608, 0.243137, 0.717647, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 0, 0.0313726, 0.670588, 1 )
 custom_colors/font_color_hover = Color( 1, 0.811765, 0, 1 )
+custom_fonts/font = SubResource( 5 )
 text = "Kenny"
 flat = true
