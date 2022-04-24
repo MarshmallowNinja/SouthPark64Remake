@@ -1,8 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Game/Player/MainPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Game/Media/Soundtrack/farts/FartScript.gd" type="Script" id=2]
 [ext_resource path="res://Game/Media/Soundtrack/farts/fart26a.wav" type="AudioStream" id=3]
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.589298, 0.587101, 0.0447978 )
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.592347
@@ -13,7 +16,11 @@ height = 1.31468
 [node name="MainPlayer" type="KinematicBody"]
 script = ExtResource( 1 )
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
+[node name="foot" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0.00506139, 0.00252792, -0.00378633 )
+shape = SubResource( 3 )
+
+[node name="body" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0.00506139, 1.25, -0.00378633 )
 shape = SubResource( 1 )
 
