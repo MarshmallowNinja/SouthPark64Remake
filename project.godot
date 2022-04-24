@@ -35,6 +35,10 @@ default_bus_layout=""
 
 Sp64MainScript="*res://Game/IMPORTANT/SP64_MainScript.gd"
 
+[debug]
+
+settings/fps/force_fps=60
+
 [display]
 
 window/size/width=1280

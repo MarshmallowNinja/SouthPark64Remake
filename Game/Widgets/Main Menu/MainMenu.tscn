@@ -55,9 +55,6 @@ margin_left = 0.440002
 margin_top = 390.037
 margin_right = -0.600037
 margin_bottom = -1.40344
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Button2" type="Button" parent="Menu"]
 margin_right = 438.0
