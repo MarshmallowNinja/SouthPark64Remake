@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Game/Widgets/south park.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Game/Widgets/Main Menu/MainMenuScriptsYo.gd" type="Script" id=2]
 [ext_resource path="res://Game/Widgets/Main Menu/2021 icon crop.png" type="Texture" id=3]
 [ext_resource path="res://Game/Media/Soundtrack/PC/The Theme.ogg" type="AudioStream" id=4]
-[ext_resource path="res://misc/slate.png" type="Texture" id=5]
 
 [sub_resource type="Theme" id=4]
 
@@ -29,7 +28,6 @@ modulate = Color( 0, 0, 0, 1 )
 self_modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 654.979, 301.124 )
 scale = Vector2( 3.75335, 2.26789 )
-texture = ExtResource( 5 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
