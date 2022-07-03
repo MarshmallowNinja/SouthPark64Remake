@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Banjo Lick.ogg-e8e9ec16e65cc3ad0b4f39d08f82fe3b.oggstr"
+
+[deps]
+
+source_file="res://Game/Media/Soundtrack/PC/Banjo Lick.ogg"
+dest_files=[ "res://.import/Banjo Lick.ogg-e8e9ec16e65cc3ad0b4f39d08f82fe3b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

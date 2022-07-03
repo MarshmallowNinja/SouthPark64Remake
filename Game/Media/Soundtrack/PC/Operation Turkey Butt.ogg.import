@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Operation Turkey Butt.ogg-e5319c69ab817a691f3c3e52e9d69034.oggstr"
+
+[deps]
+
+source_file="res://Game/Media/Soundtrack/PC/Operation Turkey Butt.ogg"
+dest_files=[ "res://.import/Operation Turkey Butt.ogg-e5319c69ab817a691f3c3e52e9d69034.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Caves Of South Park (64).ogg-888a20c6b0df4414fd8dce271bffafbc.oggstr"
+
+[deps]
+
+source_file="res://Game/Media/Soundtrack/64/Caves Of South Park (64).ogg"
+dest_files=[ "res://.import/Caves Of South Park (64).ogg-888a20c6b0df4414fd8dce271bffafbc.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

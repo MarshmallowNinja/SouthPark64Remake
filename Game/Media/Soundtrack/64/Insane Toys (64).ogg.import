@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Insane Toys (64).ogg-12db55eee39778b4f53c6e28b83a0183.oggstr"
+
+[deps]
+
+source_file="res://Game/Media/Soundtrack/64/Insane Toys (64).ogg"
+dest_files=[ "res://.import/Insane Toys (64).ogg-12db55eee39778b4f53c6e28b83a0183.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Dronwed Asian (64).ogg-d804081bd9e46f31be06316f2ebf42e9.oggstr"
+
+[deps]
+
+source_file="res://Game/Media/Soundtrack/64/Dronwed Asian (64).ogg"
+dest_files=[ "res://.import/Dronwed Asian (64).ogg-d804081bd9e46f31be06316f2ebf42e9.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Mad Robots.ogg-6ac9c9c3d0e37f1d821a5e7f82ffaf53.oggstr"
+
+[deps]
+
+source_file="res://Game/Media/Soundtrack/PC/Mad Robots.ogg"
+dest_files=[ "res://.import/Mad Robots.ogg-6ac9c9c3d0e37f1d821a5e7f82ffaf53.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

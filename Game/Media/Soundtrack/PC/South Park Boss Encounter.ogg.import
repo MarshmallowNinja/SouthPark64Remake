@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/South Park Boss Encounter.ogg-8f8d3e6f703b58eb6dbe882a090f491b.oggstr"
+
+[deps]
+
+source_file="res://Game/Media/Soundtrack/PC/South Park Boss Encounter.ogg"
+dest_files=[ "res://.import/South Park Boss Encounter.ogg-8f8d3e6f703b58eb6dbe882a090f491b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

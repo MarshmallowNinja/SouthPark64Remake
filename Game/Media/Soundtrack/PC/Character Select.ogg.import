@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Character Select.ogg-f76f5f3bb2e6bdf75b0ce40add8dcde2.oggstr"
+
+[deps]
+
+source_file="res://Game/Media/Soundtrack/PC/Character Select.ogg"
+dest_files=[ "res://.import/Character Select.ogg-f76f5f3bb2e6bdf75b0ce40add8dcde2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Warehouse in South Park (64).ogg-651154697967e332c81ccf16a44b8a20.oggstr"
+
+[deps]
+
+source_file="res://Game/Media/Soundtrack/64/Warehouse in South Park (64).ogg"
+dest_files=[ "res://.import/Warehouse in South Park (64).ogg-651154697967e332c81ccf16a44b8a20.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

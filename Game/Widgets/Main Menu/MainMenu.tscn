@@ -1,10 +1,12 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Game/Widgets/south park.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Game/Widgets/Main Menu/2021 icon crop.png" type="Texture" id=2]
-[ext_resource path="res://Game/Widgets/Main Menu/MainMenuScriptsYo.gd" type="Script" id=3]
+[ext_resource path="res://Game/Widgets/Main Menu/MainMenuScriptsYo.gd" type="Script" id=2]
+[ext_resource path="res://Game/Widgets/Main Menu/2021 icon crop.png" type="Texture" id=3]
 [ext_resource path="res://Game/Media/Soundtrack/PC/The Theme.ogg" type="AudioStream" id=4]
 [ext_resource path="res://misc/slate.png" type="Texture" id=5]
+
+[sub_resource type="Theme" id=4]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 2
@@ -13,15 +15,11 @@ blend_mode = 2
 size = 30
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=3]
-size = 18
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 1 )
-
 [node name="menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 3 )
+theme = SubResource( 4 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -45,7 +43,7 @@ scale = Vector2( 1089.93, 624.857 )
 [node name="2021 icon crop" type="Sprite" parent="."]
 position = Vector2( 640, 104.969 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="Menu" type="VBoxContainer" parent="."]
 anchor_left = 0.327
@@ -60,7 +58,7 @@ margin_bottom = -1.40344
 margin_right = 438.0
 margin_bottom = 22.0
 custom_fonts/font = SubResource( 2 )
-text = "Test Level fuck you"
+text = "Test Level"
 flat = true
 
 [node name="Button" type="Button" parent="Menu"]
@@ -68,6 +66,7 @@ margin_top = 26.0
 margin_right = 438.0
 margin_bottom = 48.0
 custom_fonts/font = SubResource( 2 )
+disabled = true
 text = "Story Mode"
 flat = true
 
@@ -238,20 +237,10 @@ action_mode = 0
 text = "Custom Settings"
 flat = true
 
-[node name="hidden" type="Button" parent="Settings"]
+[node name="settomain" type="Button" parent="Settings"]
 margin_top = 156.0
 margin_right = 452.0
-margin_bottom = 172.0
-custom_fonts/font = SubResource( 3 )
-disabled = true
-action_mode = 0
-text = "Complete Improved story on [You Must Die]"
-flat = true
-
-[node name="settomain" type="Button" parent="Settings"]
-margin_top = 176.0
-margin_right = 452.0
-margin_bottom = 198.0
+margin_bottom = 178.0
 custom_fonts/font = SubResource( 2 )
 action_mode = 0
 text = "Back to Main Menu"

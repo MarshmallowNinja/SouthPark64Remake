@@ -8,6 +8,11 @@ var ammo : int = 50
 var score : int = 0
 var Name : String = "idk"
 
+# enums
+enum PlayerState {Live, Dead, Frozen, Transformed, Dancing, ForceStill}
+enum PauseState {Unpause, Paused, HostPause, ClientPause}
+enum ControlType {Keyboard, Controller}
+
 # physics and shit
 var moveSpeed : float = 7.0
 var jumpForce : float = 10.0
@@ -28,8 +33,12 @@ var Acceleration = Vector3()
 #cum
 onready var camera : Camera = get_node("Camera")
 onready var muzzle : Spatial = get_node("Camera/Muzzle")
-onready var farter : AudioStreamPlayer = get_node("Farter")
+#onready var farter : AudioStreamPlayer = get_node("Farter")
 
+#network
+enum NetState {Offline, OnlineServer, OnlineLAN, OnlineP2P, Dummy}
+enum NetRank {Host, Client, Server, Peer}
+#var 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -49,9 +58,15 @@ func _physics_process(delta): #inputs
 	if Input.is_action_just_pressed("num_test1"):
 		RemoveHealth(currentHealth, 10)
 	if Input.is_action_just_pressed("esc"):
-		get_tree().change_scene("res://Game/Widgets/Main Menu/MainMenu.tscn")
-	if Input.is_action_just_pressed("taunt"):
-		$Farter.play()
+		pass
+	if Input.is_action_pressed("run"):
+		moveSpeed = 12
+		jumpForce = 12
+	if Input.is_action_just_released("run"):
+		moveSpeed = 7
+		jumpForce = 10
+	#if Input.is_action_just_pressed("taunt"):
+	#	$Farter.playsong()
 	
 	var forward = global_transform.basis.z
 	var right = global_transform.basis.x
@@ -93,3 +108,7 @@ func RemoveHealth(a, b):
 
 func KillPlayer():
 	print("You are dead, retard")
+
+
+func _on_quit_pressed():
+	get_tree().change_scene("res://Game/Widgets/Main Menu/MainMenu.tscn")

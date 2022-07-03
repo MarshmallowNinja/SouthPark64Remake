@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Insane Toys.wav-b99e16253716f6580e91ede08d3ed3a8.sample"
+
+[deps]
+
+source_file="res://Game/Media/Soundtrack/PS/Insane Toys.wav"
+dest_files=[ "res://.import/Insane Toys.wav-b99e16253716f6580e91ede08d3ed3a8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

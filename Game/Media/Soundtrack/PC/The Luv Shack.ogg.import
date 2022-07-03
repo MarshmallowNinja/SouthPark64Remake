@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/The Luv Shack.ogg-d761da195a7ec291e7250614d96504c3.oggstr"
+
+[deps]
+
+source_file="res://Game/Media/Soundtrack/PC/The Luv Shack.ogg"
+dest_files=[ "res://.import/The Luv Shack.ogg-d761da195a7ec291e7250614d96504c3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

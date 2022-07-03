@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Game/Media/soundrand/musicsystem.gd" type="Script" id=1]
+
+[node name="Sound System" type="AudioStreamPlayer"]
+bus = "Music"
+script = ExtResource( 1 )
+
+[node name="TimeBetweenTracks" type="Timer" parent="."]
+
+[connection signal="finished" from="." to="." method="_on_Music_System_finished"]
+[connection signal="timeout" from="TimeBetweenTracks" to="." method="_on_TimeBetweenTracks_timeout"]
