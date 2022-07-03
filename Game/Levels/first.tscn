@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Game/Player/MainPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Texture/emptex.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Game/Levels/Building/gymclass.obj" type="ArrayMesh" id=5]
 [ext_resource path="res://Game/Models/char/cartman_h_merged.obj" type="ArrayMesh" id=6]
 [ext_resource path="res://Game/Models/buildings/housing/houseprop.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/Models/gman/gman.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ProceduralSky" id=1]
 
@@ -154,3 +155,5 @@ material/4 = null
 
 [node name="House" parent="." instance=ExtResource( 7 )]
 transform = Transform( -0.587479, 0, -1.32566, 0, 1.45, 0, 1.32566, 0, -0.587479, 13.551, 0, 11.684 )
+
+[node name="MeshInstance" parent="." instance=ExtResource( 8 )]
