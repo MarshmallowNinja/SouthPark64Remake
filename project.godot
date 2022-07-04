@@ -26,6 +26,7 @@ boot_splash/image="res://Game/Widgets/Main Menu/2021 thumbnail.png"
 boot_splash/use_filter=false
 config/icon="res://misc/game icon.png"
 config/windows_native_icon="res://misc/game icon.ico"
+run/main_scene.prototype="res://Game/Widgets/Main Menu/MainMenu.tscn"
 
 [audio]
 
@@ -48,6 +49,10 @@ window/stretch/mode="2d"
 [gdnative]
 
 singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
+
+[global]
+
+Test=false
 
 [input]
 
