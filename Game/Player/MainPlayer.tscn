@@ -120,7 +120,6 @@ __meta__ = {
 }
 
 [node name="farter" parent="." instance=ExtResource( 12 )]
-bus = "Master"
 SoundList = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 10 ) ]
 ImmediatelyPlay = false
 KeepPlaying = false

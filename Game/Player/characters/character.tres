@@ -4,3 +4,8 @@
 
 [resource]
 script = ExtResource( 1 )
+CharacterName = "Name"
+StartingHealth = 100
+MaxHealth = 100
+StartingArmor = 0
+MaxArmor = 100

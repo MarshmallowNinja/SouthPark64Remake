@@ -1,10 +1,5 @@
-var things = {
-	"charactername" : "Name",
-	"health" : 100,
-	"maxhealth" : 100,
-	"startinghealth" : 100,
-	"startingarmor" : 0,
-	"maxarmor" : 100,
-	"model" : "",
-	"textures" : [0]
-}
+export var CharacterName : String = "Name"
+export(int, 1000) var StartingHealth : int = 100
+export(int, 1000) var MaxHealth : int = 100
+export(int, 1000) var StartingArmor : int = 0
+export(int, 1000) var MaxArmor : int = 100
