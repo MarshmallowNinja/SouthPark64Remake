@@ -174,9 +174,6 @@ margin_left = -411.789
 margin_top = 157.65
 margin_right = -398.829
 margin_bottom = -6.78961
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="game_settings" type="Button" parent="Settings"]
 margin_right = 452.0

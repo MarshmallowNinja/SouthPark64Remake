@@ -9,12 +9,24 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "GameJoltAPIPromise",
+"language": "GDScript",
+"path": "res://addons/gamejolt_api/gamejolt_api_promise/GameJoltAPIPromise.gd"
+}, {
+"base": "HTTPRequest",
+"class": "GameJoltAPIRequest",
+"language": "GDScript",
+"path": "res://addons/gamejolt_api/gamejolt_api_request/GameJoltAPIRequest.gd"
+}, {
 "base": "",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
 } ]
 _global_script_class_icons={
+"GameJoltAPIPromise": "",
+"GameJoltAPIRequest": "",
 "GitAPI": ""
 }
 
@@ -35,6 +47,7 @@ default_bus_layout=""
 [autoload]
 
 Sp64MainScript="*res://Game/IMPORTANT/SP64_MainScript.gd"
+GameJoltAPI="*res://addons/gamejolt_api/GameJoltAPI.tscn"
 
 [debug]
 
@@ -46,6 +59,10 @@ window/size/width=1280
 window/size/height=720
 window/stretch/mode="2d"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/gamejolt_api/plugin.cfg" )
+
 [gdnative]
 
 singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
@@ -53,6 +70,30 @@ singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
 [global]
 
 Test=false
+
+[importer_defaults]
+
+texture={
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 2,
+"compress/normal_map": 0,
+"detect_3d": false,
+"flags/anisotropic": false,
+"flags/filter": false,
+"flags/mipmaps": true,
+"flags/repeat": true,
+"flags/srgb": 1,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/normal_map_invert_y": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
 
 [input]
 
@@ -123,6 +164,10 @@ run={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[network]
+
+ssl/certificates="res://addons/gamejolt_api/ssl/ca-certificates.crt"
 
 [physics]
 

@@ -96,8 +96,6 @@ func _input(event): #more camera controls
 	if event is InputEventMouseMotion:
 		mouseDelta = event.relative
 
-# custom functions
-
 func RemoveHealth(a, b):
 	var result = a + b 
 	

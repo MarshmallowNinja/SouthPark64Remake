@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Window hd.png-b51e6a53605a1ea673afe8b2449f0f99.s3tc.stex"
-path.etc2="res://.import/Window hd.png-b51e6a53605a1ea673afe8b2449f0f99.etc2.stex"
+path.s3tc="res://.import/icon.png-e01cf1b4c46f7d45c0c64e9e1ddda28d.s3tc.stex"
+path.etc2="res://.import/icon.png-e01cf1b4c46f7d45c0c64e9e1ddda28d.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Game/Models/buildings/housing/Window hd.png"
-dest_files=[ "res://.import/Window hd.png-b51e6a53605a1ea673afe8b2449f0f99.s3tc.stex", "res://.import/Window hd.png-b51e6a53605a1ea673afe8b2449f0f99.etc2.stex" ]
+source_file="res://addons/gamejolt_api/icon.png"
+dest_files=[ "res://.import/icon.png-e01cf1b4c46f7d45c0c64e9e1ddda28d.s3tc.stex", "res://.import/icon.png-e01cf1b4c46f7d45c0c64e9e1ddda28d.etc2.stex" ]
 
 [params]
 
