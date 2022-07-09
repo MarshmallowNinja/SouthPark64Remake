@@ -1,11 +1,45 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Game/Widgets/south park.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Game/Widgets/Main Menu/MainMenuScriptsYo.gd" type="Script" id=2]
 [ext_resource path="res://Game/Widgets/Main Menu/2021 icon crop.png" type="Texture" id=3]
 [ext_resource path="res://Game/Media/Soundtrack/PC/The Theme.ogg" type="AudioStream" id=4]
 
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+expand_margin_top = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_top = 3.0
+content_margin_bottom = 3.0
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 30
+font_data = ExtResource( 1 )
+
 [sub_resource type="Theme" id=4]
+default_font = SubResource( 7 )
+Button/colors/font_color = Color( 0, 0.0313726, 0.670588, 1 )
+Button/colors/font_color_disabled = Color( 0.2, 0.2, 0.2, 0.623529 )
+Button/colors/font_color_focus = Color( 1, 0.811765, 0, 1 )
+Button/colors/font_color_hover = Color( 1, 0.811765, 0, 1 )
+Button/colors/font_color_pressed = Color( 1, 0.882353, 0.372549, 1 )
+Button/styles/disabled = SubResource( 10 )
+Button/styles/focus = SubResource( 8 )
+Button/styles/hover = SubResource( 9 )
+Button/styles/normal = SubResource( 5 )
+Button/styles/pressed = SubResource( 6 )
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 2
@@ -55,7 +89,6 @@ margin_bottom = -1.40344
 [node name="Button2" type="Button" parent="Menu"]
 margin_right = 438.0
 margin_bottom = 22.0
-custom_fonts/font = SubResource( 2 )
 text = "Test Level"
 flat = true
 

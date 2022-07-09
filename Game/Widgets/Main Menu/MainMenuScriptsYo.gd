@@ -4,6 +4,7 @@ extends Control
 func _ready():
 	$Music.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	$Menu/Button2.grab_focus()
 
 func switchmenus(a, b):
 	get_node(a).set_visible(true)
