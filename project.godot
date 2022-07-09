@@ -179,5 +179,5 @@ common/enable_pause_aware_picking=true
 quality/filters/use_nearest_mipmap_filter=true
 quality/subsurface_scattering/quality=0
 quality/voxel_cone_tracing/high_quality=true
-environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_clear_color=Color( 0.109804, 0.215686, 0.129412, 1 )
 environment/default_environment="res://misc/default_env.tres"

@@ -1,17 +1,22 @@
 extends KinematicBody
 
-
 # statisticles
-var currentHealth : int = 100
-var maxHealth : int = 100
-var ammo : int = 50
-var score : int = 0
+var Health : int = 100
+var MaxHealth : int = 100
+var Score : int = 0
 var Name : String = "idk"
+export(Resource) var CharacterFile
 
 # enums
-enum PlayerState {Live, Dead, Frozen, Transformed, Dancing, ForceStill}
-enum PauseState {Unpause, Paused, HostPause, ClientPause}
-enum ControlType {Keyboard, Controller}
+# simple player states
+enum playerstate {Live, Dead, Frozen, Transformed, Dancing, ForceStill}
+var PlayerState = playerstate.Live
+# Pause states for different modes
+enum pausestate {Unpaused, Paused, HostPause, ClientPause}
+var PauseState = pausestate.Unpaused
+# to be used for future use
+enum controltype {Keyboard, Controller}
+var ControlType = controltype.Keyboard
 
 # physics and shit
 var moveSpeed : float = 7.0
@@ -36,8 +41,11 @@ onready var muzzle : Spatial = get_node("Camera/Muzzle")
 #onready var farter : AudioStreamPlayer = get_node("Farter")
 
 #network
-enum NetState {Offline, OnlineServer, OnlineLAN, OnlineP2P, Dummy}
-enum NetRank {Host, Client, Server, Peer}
+enum netstate {Offline, OnlineNotConn, OnlineServer, OnlineLAN, OnlineP2P, Dummy}
+enum netrank {Host, Client, Server, Peer}
+var NetState = netstate.Offline
+var NetRank = netrank.Host
+
 #var 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -56,9 +64,20 @@ func _physics_process(delta): #inputs
 	if Input.is_action_pressed("moveright"):
 		input.x += 1
 	if Input.is_action_just_pressed("num_test1"):
-		RemoveHealth(currentHealth, 10)
+		RemoveHealth(Health, 10)
+	
 	if Input.is_action_just_pressed("esc"):
-		pass
+		if $Camera/CanvasLayer/Control/pausemenu.visible == false:
+			$Camera/CanvasLayer/Control/pausemenu.set_visible(true)
+			get_tree().paused = true
+			PauseState = pausestate.Paused
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			$Camera/CanvasLayer/Control/pausemenu.set_visible(false)
+			get_tree().paused = false
+			PauseState = pausestate.Unpaused
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 	if Input.is_action_pressed("run"):
 		moveSpeed = 12
 		jumpForce = 12
@@ -91,6 +110,8 @@ func _process(delta): #camera controls
 	rotation_degrees.y -= mouseDelta.x * lookSensitivity * delta
 	
 	mouseDelta = Vector2()
+	
+	$Camera/CanvasLayer/ProgressBar.value = Health
 
 func _input(event): #more camera controls
 	if event is InputEventMouseMotion:
@@ -99,7 +120,7 @@ func _input(event): #more camera controls
 func RemoveHealth(a, b):
 	var result = a + b 
 	
-	if currentHealth <= 0:
+	if Health <= 0:
 		KillPlayer()
 	else:
 		return
@@ -109,4 +130,12 @@ func KillPlayer():
 
 
 func _on_quit_pressed():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene("res://Game/Widgets/Main Menu/MainMenu.tscn")
+
+
+func _on_resume_pressed():
+	$Camera/CanvasLayer/Control/pausemenu.set_visible(false)
+	get_tree().paused = false
+	PauseState = pausestate.Unpaused
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
