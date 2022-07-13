@@ -3,6 +3,7 @@ extends KinematicBody
 # statisticles
 var Health : int = 100
 var MaxHealth : int = 100
+var Armor : int = 100
 var Score : int = 0
 var Name : String = "idk"
 export(Resource) var CharacterFile
@@ -43,6 +44,7 @@ var gravityv = Vector3()
 onready var camera : Camera = get_node("Camera")
 onready var muzzle : Spatial = get_node("Camera/Muzzle")
 onready var floorcheck = $floorcheck
+onready var pausemenu = $Camera/CanvasLayer/Control/pausemenu
 
 #network
 enum netstate {Offline, OnlineNotConn, OnlineServer, OnlineLAN, OnlineP2P, Dummy}
@@ -62,10 +64,7 @@ func _physics_process(delta): #inputs
 		gravityv = -get_floor_normal() * gravity
 		gravityv = -get_floor_normal()
 	
-	if floorcheck.is_colliding():
-		onground = true
-	else:
-		onground = false
+	onground = floorcheck.is_colliding()
 	
 	if Input.is_action_pressed("moveforward"):
 		direction -= transform.basis.z
@@ -86,13 +85,13 @@ func _physics_process(delta): #inputs
 		gravityv = Vector3.UP * jumpForce
 		
 	if Input.is_action_just_pressed("esc"):
-		if $Camera/CanvasLayer/Control/pausemenu.visible == false:
-			$Camera/CanvasLayer/Control/pausemenu.set_visible(true)
+		if pausemenu.visible == false:
+			pausemenu.set_visible(true)
 			get_tree().paused = true
 			PauseState = pausestate.Paused
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
-			$Camera/CanvasLayer/Control/pausemenu.set_visible(false)
+			pausemenu.set_visible(false)
 			get_tree().paused = false
 			PauseState = pausestate.Unpaused
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -110,7 +109,8 @@ func _process(delta): #camera controls
 	rotation_degrees.y -= mouseDelta.x * lookSensitivity * delta
 	mouseDelta = Vector2()
 	# other thingss
-	$Camera/CanvasLayer/ProgressBar.value = Health
+	$Camera/CanvasLayer/HealthBar.value = Health
+	$Camera/CanvasLayer/ArmorBar.value = Armor
 
 func _input(event): #more camera controls
 	if event is InputEventMouseMotion:
