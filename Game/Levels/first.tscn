@@ -62,7 +62,7 @@ vertex_color_use_as_albedo = true
 albedo_color = Color( 0.717647, 0.462745, 0, 1 )
 
 [sub_resource type="SpatialMaterial" id=11]
-albedo_color = Color( 0.0784314, 0, 1, 1 )
+albedo_color = Color( 0, 1, 0, 1 )
 
 [sub_resource type="SpatialMaterial" id=12]
 albedo_texture = ExtResource( 9 )
@@ -72,17 +72,17 @@ albedo_texture = ExtResource( 10 )
 
 [sub_resource type="SpatialMaterial" id=14]
 vertex_color_use_as_albedo = true
-albedo_color = Color( 0.992157, 1, 0, 1 )
+albedo_color = Color( 0.717647, 0.462745, 0, 1 )
 
 [sub_resource type="SpatialMaterial" id=15]
-albedo_color = Color( 0, 0, 0, 1 )
+albedo_color = Color( 0.705882, 0.160784, 0.160784, 1 )
 
 [sub_resource type="SpatialMaterial" id=16]
 vertex_color_use_as_albedo = true
-albedo_color = Color( 0.0784314, 1, 0, 1 )
+albedo_color = Color( 1, 0, 0.74902, 1 )
 
 [sub_resource type="SpatialMaterial" id=17]
-albedo_color = Color( 1, 0, 0.470588, 1 )
+albedo_color = Color( 0, 0.505882, 1, 1 )
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 3 )
@@ -209,7 +209,6 @@ material/0 = SubResource( 10 )
 material/1 = SubResource( 11 )
 material/2 = SubResource( 12 )
 material/3 = SubResource( 13 )
-ExteriorColor = Color( 0.0784314, 0, 1, 1 )
 
 [node name="MeshInstance" parent="." instance=ExtResource( 8 )]
 
@@ -217,12 +216,11 @@ ExteriorColor = Color( 0.0784314, 0, 1, 1 )
 transform = Transform( 0.392344, 0.000888124, -0.919818, 0.00172675, 0.999997, 0.00170209, 0.919817, -0.0022561, 0.392342, 14.6744, 0, -13.5009 )
 material/0 = SubResource( 14 )
 material/1 = SubResource( 15 )
-RoofColor = Color( 0.992157, 1, 0, 1 )
-ExteriorColor = Color( 0, 0, 0, 1 )
+ExteriorColor = Color( 0.705882, 0.160784, 0.160784, 1 )
 
 [node name="House3" parent="." instance=ExtResource( 7 )]
 transform = Transform( -0.393591, 0.404791, -0.825367, 0.174235, 0.914409, 0.365373, 0.902623, 0, -0.430432, 18.8406, 0.412529, -2.10208 )
 material/0 = SubResource( 16 )
 material/1 = SubResource( 17 )
-RoofColor = Color( 0.0784314, 1, 0, 1 )
-ExteriorColor = Color( 1, 0, 0.470588, 1 )
+RoofColor = Color( 1, 0, 0.74902, 1 )
+ExteriorColor = Color( 0, 0.505882, 1, 1 )

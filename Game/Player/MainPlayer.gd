@@ -14,7 +14,7 @@ var PlayerState = playerstate.Live
 # Pause states for different modes
 enum pausestate {Unpaused, Paused, HostPause, ClientPause}
 var PauseState = pausestate.Unpaused
-# to be used for future use
+# to be used for future use or something like that
 enum controltype {Keyboard, Controller}
 var ControlType = controltype.Keyboard
 
@@ -31,14 +31,13 @@ var lookSensitivity : float = 50
 var walkAngle : float = 45.2
 
 #vectorrrsrsrsrsorsooro
-var velocity : Vector3 = Vector3()
+var velocity = Vector3.ZERO
 var mouseDelta : Vector2 = Vector2()
 var Acceleration = Vector3()
 
 #cum
 onready var camera : Camera = get_node("Camera")
 onready var muzzle : Spatial = get_node("Camera/Muzzle")
-#onready var farter : AudioStreamPlayer = get_node("Farter")
 
 #network
 enum netstate {Offline, OnlineNotConn, OnlineServer, OnlineLAN, OnlineP2P, Dummy}
@@ -46,13 +45,11 @@ enum netrank {Host, Client, Server, Peer}
 var NetState = netstate.Offline
 var NetRank = netrank.Host
 
-#var 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta): #inputs
 	velocity.z = 0
-	
 	var input = Vector2()
 	
 	if Input.is_action_pressed("moveforward"):
@@ -63,8 +60,6 @@ func _physics_process(delta): #inputs
 		input.x -= 1
 	if Input.is_action_pressed("moveright"):
 		input.x += 1
-	if Input.is_action_just_pressed("num_test1"):
-		RemoveHealth(Health, 10)
 	
 	if Input.is_action_just_pressed("esc"):
 		if $Camera/CanvasLayer/Control/pausemenu.visible == false:
@@ -84,12 +79,11 @@ func _physics_process(delta): #inputs
 	if Input.is_action_just_released("run"):
 		moveSpeed = 7
 		jumpForce = 10
-	#if Input.is_action_just_pressed("taunt"):
-	#	$Farter.playsong()
+	if Input.is_action_pressed("jump") and is_on_floor():
+		velocity.y = jumpForce
 	
 	var forward = global_transform.basis.z
 	var right = global_transform.basis.x
-	
 	var relativeDir = (forward * input.y + right * input.x)
 	
 	velocity.x = relativeDir.x * moveSpeed
@@ -98,9 +92,6 @@ func _physics_process(delta): #inputs
 	velocity.y -= gravity * delta 
 	
 	velocity = move_and_slide(velocity, Vector3.UP, true)
-	
-	if Input.is_action_pressed("jump") and is_on_floor():
-		velocity.y = jumpForce
 
 func _process(delta): #camera controls
 	camera.rotation_degrees.x -= mouseDelta.y * lookSensitivity * delta
@@ -128,11 +119,9 @@ func RemoveHealth(a, b):
 func KillPlayer():
 	print("You are dead, retard")
 
-
 func _on_quit_pressed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().change_scene("res://Game/Widgets/Main Menu/MainMenu.tscn")
-
 
 func _on_resume_pressed():
 	$Camera/CanvasLayer/Control/pausemenu.set_visible(false)
