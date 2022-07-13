@@ -264,7 +264,9 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="Control/Menu/Button2" to="." method="_on_Button2_pressed"]
-[connection signal="pressed" from="Control/Menu/Button" to="." method="_on_Button_pressed"]
+[connection signal="focus_entered" from="Control/Menu/Button" to="Control/Menu/Button" method="_on_Button_focus_entered"]
+[connection signal="mouse_entered" from="Control/Menu/Button" to="Control/Menu/Button" method="_on_Button_mouse_entered"]
+[connection signal="pressed" from="Control/Menu/Button" to="Control/Menu/Button" method="_on_Button_pressed"]
 [connection signal="pressed" from="Control/Menu/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Control/Menu/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="Control/Story/New" to="." method="_on_New_pressed"]

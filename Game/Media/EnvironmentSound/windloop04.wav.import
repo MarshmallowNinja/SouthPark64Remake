@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/windloop04.wav-ce0c4cc05d4faa42b0e2156b8a435e4b.sample"
+
+[deps]
+
+source_file="res://Game/Media/EnvironmentSound/windloop04.wav"
+dest_files=[ "res://.import/windloop04.wav-ce0c4cc05d4faa42b0e2156b8a435e4b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

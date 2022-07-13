@@ -96,7 +96,7 @@ func _physics_process(delta): #inputs
 			PauseState = pausestate.Unpaused
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-	#direction = direction.normalized() #Straferunning
+	movement = movement.normalized() #Straferunning
 	vel2 = vel2.linear_interpolate(direction * moveSpeed, Acceleration * delta)
 	movement.z = vel2.z + gravityv.z
 	movement.x = vel2.x + gravityv.x
@@ -116,13 +116,12 @@ func _input(event): #more camera controls
 	if event is InputEventMouseMotion:
 		mouseDelta = event.relative
 
-func RemoveHealth(a, b):
-	var result = a + b 
-	
+func Damage(a):
+	Health -= a
 	if Health <= 0:
 		KillPlayer()
 	else:
-		return
+		pass
 
 func KillPlayer():
 	print("You are dead, retard")
