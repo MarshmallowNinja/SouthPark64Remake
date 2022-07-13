@@ -170,5 +170,9 @@ KeepPlaying = false
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23789, 0 )
 shape = SubResource( 4 )
 
+[node name="floorcheck" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.757, 0 )
+enabled = true
+
 [connection signal="pressed" from="Camera/CanvasLayer/Control/pausemenu/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Camera/CanvasLayer/Control/pausemenu/quit" to="." method="_on_quit_pressed"]

@@ -22,7 +22,7 @@ var ControlType = controltype.Keyboard
 var moveSpeed : float = 7.0
 var jumpForce : float = 10.0
 var gravity : float = 30.0
-var moveAccel = 4
+var onground : bool = true
 
 # pppoooppp
 var minlookAngle : float = -90.0
@@ -33,11 +33,16 @@ var walkAngle : float = 45.2
 #vectorrrsrsrsrsorsooro
 var velocity = Vector3.ZERO
 var mouseDelta : Vector2 = Vector2()
-var Acceleration = Vector3()
+var Acceleration = 10
+var vel2 = Vector3()
+var movement = Vector3()
+var direction = Vector3()
+var gravityv = Vector3()
 
 #cum
 onready var camera : Camera = get_node("Camera")
 onready var muzzle : Spatial = get_node("Camera/Muzzle")
+onready var floorcheck = $floorcheck
 
 #network
 enum netstate {Offline, OnlineNotConn, OnlineServer, OnlineLAN, OnlineP2P, Dummy}
@@ -49,18 +54,37 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta): #inputs
-	velocity.z = 0
-	var input = Vector2()
+	direction = Vector3()
+	
+	if not is_on_floor():
+		gravityv += Vector3.DOWN * gravity * delta
+	elif is_on_floor() and floorcheck:
+		gravityv = -get_floor_normal() * gravity
+		gravityv = -get_floor_normal()
+	
+	if floorcheck.is_colliding():
+		onground = true
+	else:
+		onground = false
 	
 	if Input.is_action_pressed("moveforward"):
-		input.y -= 1
+		direction -= transform.basis.z
 	if Input.is_action_pressed("moveback"):
-		input.y += 1
+		direction += transform.basis.z
 	if Input.is_action_pressed("moveleft"):
-		input.x -= 1
+		direction -= transform.basis.x
 	if Input.is_action_pressed("moveright"):
-		input.x += 1
-	
+		direction += transform.basis.x
+
+	if Input.is_action_pressed("run"):
+		moveSpeed = 12
+		jumpForce = 12
+	if Input.is_action_just_released("run"):
+		moveSpeed = 7
+		jumpForce = 10
+	if Input.is_action_pressed("jump") and (is_on_floor() or floorcheck.is_colliding()):
+		gravityv = Vector3.UP * jumpForce
+		
 	if Input.is_action_just_pressed("esc"):
 		if $Camera/CanvasLayer/Control/pausemenu.visible == false:
 			$Camera/CanvasLayer/Control/pausemenu.set_visible(true)
@@ -73,35 +97,19 @@ func _physics_process(delta): #inputs
 			PauseState = pausestate.Unpaused
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
-	if Input.is_action_pressed("run"):
-		moveSpeed = 12
-		jumpForce = 12
-	if Input.is_action_just_released("run"):
-		moveSpeed = 7
-		jumpForce = 10
-	if Input.is_action_pressed("jump") and is_on_floor():
-		velocity.y = jumpForce
-	
-	var forward = global_transform.basis.z
-	var right = global_transform.basis.x
-	var relativeDir = (forward * input.y + right * input.x)
-	
-	velocity.x = relativeDir.x * moveSpeed
-	velocity.z = relativeDir.z * moveSpeed
-	
-	velocity.y -= gravity * delta 
-	
-	velocity = move_and_slide(velocity, Vector3.UP, true)
+	#direction = direction.normalized() #Straferunning
+	vel2 = vel2.linear_interpolate(direction * moveSpeed, Acceleration * delta)
+	movement.z = vel2.z + gravityv.z
+	movement.x = vel2.x + gravityv.x
+	movement.y = gravityv.y
+	move_and_slide(movement, Vector3.UP, true)
 
 func _process(delta): #camera controls
 	camera.rotation_degrees.x -= mouseDelta.y * lookSensitivity * delta
-	
 	camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, minlookAngle, maxLookAngle)
-	
 	rotation_degrees.y -= mouseDelta.x * lookSensitivity * delta
-	
 	mouseDelta = Vector2()
-	
+	# other thingss
 	$Camera/CanvasLayer/ProgressBar.value = Health
 
 func _input(event): #more camera controls
