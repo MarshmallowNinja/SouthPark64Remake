@@ -45,6 +45,7 @@ onready var camera : Camera = get_node("Camera")
 onready var muzzle : Spatial = get_node("Camera/Muzzle")
 onready var floorcheck = $floorcheck
 onready var pausemenu = $Camera/CanvasLayer/Control/pausemenu
+onready var viewcheck = $Camera/viewcheck
 
 #network
 enum netstate {Offline, OnlineNotConn, OnlineServer, OnlineLAN, OnlineP2P, Dummy}
@@ -108,6 +109,10 @@ func _process(delta): #camera controls
 	camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, minlookAngle, maxLookAngle)
 	rotation_degrees.y -= mouseDelta.x * lookSensitivity * delta
 	mouseDelta = Vector2()
+	
+	#if viewcheck.is_colliding():
+		
+	
 	# other thingss
 	$Camera/CanvasLayer/HealthBar.value = Health
 	$Camera/CanvasLayer/ArmorBar.value = Armor
@@ -119,12 +124,20 @@ func _input(event): #more camera controls
 func Damage(a):
 	Health -= a
 	if Health <= 0:
-		KillPlayer()
+		Kill()
 	else:
 		pass
 
-func KillPlayer():
-	print("You are dead, retard")
+func Heal(a):
+	Health += a
+	if Health > MaxHealth:
+		Health = MaxHealth
+	else:
+		pass
+
+func Kill():
+	PlayerState = playerstate.Dead
+	print("Dead.")
 
 func _on_quit_pressed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -135,3 +148,10 @@ func _on_resume_pressed():
 	get_tree().paused = false
 	PauseState = pausestate.Unpaused
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+#
+#func PlayerStateCheck():
+#	match PlayerState:
+#		Live:
+#
+#		Dead:
+#

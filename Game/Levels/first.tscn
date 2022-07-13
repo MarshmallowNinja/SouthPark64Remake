@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Game/Player/MainPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Texture/emptex.png" type="Texture" id=2]
@@ -121,6 +121,8 @@ albedo_color = Color( 0, 0.505882, 1, 1 )
 [sub_resource type="SpatialMaterial" id=26]
 metallic = 0.74
 roughness = 0.18
+
+[sub_resource type="BoxShape" id=27]
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 3 )
@@ -300,3 +302,13 @@ operation = 2
 outer_radius = 4.41
 ring_sides = 11
 smooth_faces = false
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 57 )
+__meta__ = {
+"_editor_description_": "10 Damage Test"
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 27 )
