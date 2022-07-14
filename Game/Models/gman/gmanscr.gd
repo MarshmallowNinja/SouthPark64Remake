@@ -18,6 +18,11 @@ func _on_Area_area_entered(area):
 
 
 func _on_Timer_timeout():
+#	GameJoltAPI.add_achieved({
+#		"username" : GameJoltAPI.username,
+#		"user_token" : GameJoltAPI.user_token,
+#		"trophy_id" : 166504
+#	})
 	queue_free()
 
 

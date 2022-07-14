@@ -3,6 +3,7 @@ extends Spatial
 
 func _ready():
 	$AudioStreamPlayer.play()
+	RichPresence.update_activity()
 
 func _on_Area_area_entered(area):
 	pass
