@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Game/Player/MainPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Game/Media/Soundtrack/farts/fartsmall02.wav" type="AudioStream" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Game/Media/soundrand/musicsystem.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Game/Widgets/southpark.theme" type="Theme" id=13]
 [ext_resource path="res://Game/Widgets/south park.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://Game/Widgets/CDfont.tres" type="DynamicFont" id=15]
 
 [sub_resource type="RayShape" id=5]
 length = 0.13197
@@ -74,8 +75,12 @@ corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 corner_detail = 5
 
-[sub_resource type="CylinderShape" id=4]
-radius = 0.34
+[sub_resource type="RayShape" id=14]
+length = 2.0
+
+[sub_resource type="CapsuleShape" id=13]
+radius = 0.57
+height = 1.32
 
 [node name="MainPlayer" type="KinematicBody" groups=["killable", "living", "player"]]
 script = ExtResource( 1 )
@@ -96,13 +101,24 @@ far = 8192.0
 [node name="MeshInstance" type="MeshInstance" parent="Camera"]
 transform = Transform( 0.091, 0, 0, 0, 0.071, 0, 0, 0, 0.352, 0.232857, -0.574, -0.862 )
 mesh = SubResource( 2 )
-material/0 = null
 
 [node name="Muzzle" type="Spatial" parent="Camera"]
 transform = Transform( 0.091, 0, 0, 0, 0.071, 0, 0, 0, 0.352, 0.232632, -0.574, -1.21425 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera"]
 follow_viewport_enable = true
+
+[node name="FPS" type="RichTextLabel" parent="Camera/CanvasLayer"]
+margin_left = 13.0
+margin_top = 17.0
+margin_right = 192.0
+margin_bottom = 69.0
+rect_clip_content = false
+custom_fonts/normal_font = ExtResource( 15 )
+bbcode_enabled = true
+bbcode_text = "FPS: [wave]Frames[/wave]"
+text = "FPS: Frames"
+scroll_active = false
 
 [node name="Control" type="Control" parent="Camera/CanvasLayer"]
 pause_mode = 2
@@ -112,6 +128,7 @@ margin_top = -1.0
 margin_bottom = -1.0
 theme = ExtResource( 13 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": true
 }
 
@@ -170,11 +187,12 @@ margin_right = 1.0
 margin_bottom = 1.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Camera/CanvasLayer/Crosshair"]
+visible = false
 margin_right = 305.0
 margin_bottom = 90.0
 rect_clip_content = false
 custom_fonts/normal_font = SubResource( 12 )
-text = "Thing"
+scroll_active = false
 
 [node name="HealthBar" type="ProgressBar" parent="Camera/CanvasLayer"]
 pause_mode = 2
@@ -202,21 +220,28 @@ custom_styles/bg = SubResource( 11 )
 value = 50.0
 rounded = true
 
-[node name="viewcheck" type="RayCast" parent="Camera"]
+[node name="viewcheck" type="Area" parent="Camera"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
-enabled = true
-cast_to = Vector3( 0, -15, 0 )
+__meta__ = {
+"_editor_description_": "a"
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="Camera/viewcheck"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.818368, 0 )
+shape = SubResource( 14 )
+
+[node name="talker" type="AudioStreamPlayer3D" parent="Camera"]
 
 [node name="farter" parent="." instance=ExtResource( 12 )]
 SoundList = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 10 ) ]
 ImmediatelyPlay = false
 KeepPlaying = false
 
-[node name="Area" type="Area" parent="." groups=["playersight"]]
+[node name="VisualSense" type="Area" parent="." groups=["killable", "living", "player", "playersight"]]
 
-[node name="CollisionShape" type="CollisionShape" parent="Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23789, 0 )
-shape = SubResource( 4 )
+[node name="CollisionShape" type="CollisionShape" parent="VisualSense"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.23789, 0 )
+shape = SubResource( 13 )
 
 [node name="floorcheck" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.757, 0 )
@@ -224,3 +249,4 @@ enabled = true
 
 [connection signal="pressed" from="Camera/CanvasLayer/Control/pausemenu/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Camera/CanvasLayer/Control/pausemenu/quit" to="." method="_on_quit_pressed"]
+[connection signal="area_entered" from="Camera/viewcheck" to="." method="_on_viewcheck_area_entered"]

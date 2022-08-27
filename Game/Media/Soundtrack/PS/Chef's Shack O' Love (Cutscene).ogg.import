@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Chef's Shack O' Love (Cutscene).ogg-87fa37ad968ea2e3c552f2f8147d8d4b.oggstr"
+
+[deps]
+
+source_file="res://Game/Media/Soundtrack/PS/Chef's Shack O' Love (Cutscene).ogg"
+dest_files=[ "res://.import/Chef's Shack O' Love (Cutscene).ogg-87fa37ad968ea2e3c552f2f8147d8d4b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

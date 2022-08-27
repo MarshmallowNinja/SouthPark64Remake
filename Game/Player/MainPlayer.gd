@@ -3,7 +3,7 @@ extends KinematicBody
 # statisticles
 var Health : int = 100
 var MaxHealth : int = 100
-var Armor : int = 100
+var Armor : int = 0
 var Score : int = 0
 var Name : String = "idk"
 export(Resource) var CharacterFile
@@ -25,13 +25,14 @@ var jumpForce : float = 10.0
 var gravity : float = 30.0
 var onground : bool = true
 
-# pppoooppp
+# Camera variables
 var minlookAngle : float = -90.0
 var maxLookAngle : float = 90.0
-var lookSensitivity : float = 50
+var lookSensitivity : float = 35
 var walkAngle : float = 45.2
+var zoom : bool = false
 
-#vectorrrsrsrsrsorsooro
+# 3D vectors im too lazy to clean these up
 var velocity = Vector3.ZERO
 var mouseDelta : Vector2 = Vector2()
 var Acceleration = 10
@@ -40,7 +41,7 @@ var movement = Vector3()
 var direction = Vector3()
 var gravityv = Vector3()
 
-#cum
+# onready
 onready var camera : Camera = get_node("Camera")
 onready var muzzle : Spatial = get_node("Camera/Muzzle")
 onready var floorcheck = $floorcheck
@@ -55,6 +56,7 @@ var NetRank = netrank.Host
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
 
 func _physics_process(delta): #inputs
 	direction = Vector3()
@@ -97,6 +99,11 @@ func _physics_process(delta): #inputs
 			PauseState = pausestate.Unpaused
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
+	if Input.is_action_just_pressed("tertiaryfire"):
+				$Camera.fov = 25
+	if Input.is_action_just_released("tertiaryfire"):
+				$Camera.fov = 70
+	# MOVEMENT
 	movement = movement.normalized() #Straferunning
 	vel2 = vel2.linear_interpolate(direction * moveSpeed, Acceleration * delta)
 	movement.z = vel2.z + gravityv.z
@@ -109,17 +116,35 @@ func _process(delta): #camera controls
 	camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, minlookAngle, maxLookAngle)
 	rotation_degrees.y -= mouseDelta.x * lookSensitivity * delta
 	mouseDelta = Vector2()
-	
-	#if viewcheck.is_colliding():
-		
-	
+
 	# other thingss
 	$Camera/CanvasLayer/HealthBar.value = Health
 	$Camera/CanvasLayer/ArmorBar.value = Armor
+	#$Camera/CanvasLayer/Crosshair/RichTextLabel.text = var2str(viewcheck.get_collider())
+	$Camera/CanvasLayer/FPS.set_bbcode("FPS: " + var2str(Engine.get_frames_per_second()))
 
 func _input(event): #more camera controls
 	if event is InputEventMouseMotion:
 		mouseDelta = event.relative
+
+func _on_quit_pressed():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_tree().change_scene("res://Game/Widgets/Main Menu/MainMenu.tscn")
+
+func _on_resume_pressed():
+	$Camera/CanvasLayer/Control/pausemenu.set_visible(false)
+	get_tree().paused = false
+	PauseState = pausestate.Unpaused
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+# CUSTOM EVENTS
+
+func PlayerStateCheck():
+	match PlayerState:
+		0:
+			pass
+		1:
+			pass
 
 func Damage(a):
 	Health -= a
@@ -139,19 +164,11 @@ func Kill():
 	PlayerState = playerstate.Dead
 	print("Dead.")
 
-func _on_quit_pressed():
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	get_tree().change_scene("res://Game/Widgets/Main Menu/MainMenu.tscn")
+func Interact():
+	var areas = []
+	
+	areas = $Camera/viewcheck.get_overlapping_areas()
+	pass
 
-func _on_resume_pressed():
-	$Camera/CanvasLayer/Control/pausemenu.set_visible(false)
-	get_tree().paused = false
-	PauseState = pausestate.Unpaused
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-#
-#func PlayerStateCheck():
-#	match PlayerState:
-#		Live:
-#
-#		Dead:
-#
+func _on_viewcheck_area_entered(area: Area) -> void:
+	pass # Replace with function body.
