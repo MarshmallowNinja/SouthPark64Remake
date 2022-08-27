@@ -6,12 +6,10 @@
 [sub_resource type="SpatialMaterial" id=30]
 resource_name = "Roof_Color"
 albedo_color = Color( 0.470588, 0.180392, 0, 1 )
-metallic = 1.0
 
 [sub_resource type="SpatialMaterial" id=31]
 resource_name = "Exterior_Color"
 albedo_color = Color( 0, 1, 0, 1 )
-metallic = 1.0
 
 [sub_resource type="SpatialMaterial" id=32]
 resource_name = "WIndow"
