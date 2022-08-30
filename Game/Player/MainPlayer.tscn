@@ -133,10 +133,13 @@ __meta__ = {
 }
 
 [node name="ColorRect" type="ColorRect" parent="Camera/CanvasLayer/Control"]
+pause_mode = 2
+physics_interpolation_mode = 1
+process_priority = 3
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.176471, 0.176471, 0.176471, 0.403922 )
+color = Color( 0, 0, 0, 0.403922 )
 
 [node name="pausemenu" type="VBoxContainer" parent="Camera/CanvasLayer/Control"]
 visible = false
@@ -237,6 +240,8 @@ ImmediatelyPlay = false
 KeepPlaying = false
 
 [node name="VisualSense" type="Area" parent="." groups=["killable", "living", "player", "playersight"]]
+collision_layer = 8
+collision_mask = 8
 
 [node name="CollisionShape" type="CollisionShape" parent="VisualSense"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.23789, 0 )

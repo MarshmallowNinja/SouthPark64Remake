@@ -34,6 +34,7 @@ func _on_New_pressed():
 	get_tree().change_scene("res://Game/Story Mode/Classic/CharacterSelect/StoryCharacterSelect.tscn")
 
 func _on_Exit_pressed():
+	SaveGame.savegame()
 	get_tree().quit()
 
 func _on_gjlog_pressed():
@@ -111,9 +112,12 @@ func _on_vidtoset_pressed() -> void:
 
 func _on_CheckButton_toggled(button_pressed: bool) -> void:
 	OS.vsync_enabled = button_pressed
+	SaveGame.Settings["vsync"] = button_pressed
 
 func _on_fxaacheck_toggled(button_pressed: bool) -> void:
 	get_viewport().fxaa = button_pressed
+	SaveGame.Settings["fxaa"] = button_pressed
 
 func _on_framecheck_value_changed(value: float) -> void:
 	Engine.target_fps = value
+	SaveGame.Settings["maxfps"] = value

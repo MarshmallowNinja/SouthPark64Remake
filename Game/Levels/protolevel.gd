@@ -20,7 +20,7 @@ func _on_10HPDMGTEST_area_entered(area):
 		pass
 
 func Echeck():
-	if ween >= 3:
+	if ween >= 1:
 		$Misc/Viewport/VideoPlayer.play()
 	else:
 		pass

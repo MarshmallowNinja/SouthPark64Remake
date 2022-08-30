@@ -174,10 +174,6 @@ run={
 
 pointing/emulate_touch_from_mouse=true
 
-[network]
-
-ssl/certificates="res://addons/gamejolt_api/ssl/ca-certificates.crt"
-
 [physics]
 
 common/physics_jitter_fix=1.0

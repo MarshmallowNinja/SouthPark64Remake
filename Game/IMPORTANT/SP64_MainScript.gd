@@ -5,28 +5,19 @@ extends Node
 var Name : String = "New Kid"
 enum OST {PC, N64, PSX, PCREMAKE, N64REMAKE, PSXREMAKE}
 var OSTType = OST.PC
-var Settings = {
-	"blood" : false,
-	"skipcs" : false,
-	"enteredcheat" : false,
-	
-	# AUDIO SETTINGS
-	"mastervolume" : 100,
-	"uncensor" : false,
-	
-	# VIDEO SETTINGS
-	"resolution" : null,
-	"maxfps" : 60,
-}
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SettingsInit()
 	print("Welcome to South Park 64 Remake!")
-	#GameJoltAPI.set_game_credentials(gjcred)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_pressed("game_mainmenu"):
 		get_tree().change_scene("res://Game/Widgets/Main Menu/MainMenu.tscn")
+
+func SettingsInit():
+	SaveGame.loadconf()

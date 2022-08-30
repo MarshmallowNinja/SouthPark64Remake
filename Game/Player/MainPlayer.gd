@@ -93,6 +93,7 @@ func _physics_process(delta): #inputs
 	if Input.is_action_just_pressed("esc"):
 		if pausemenu.visible == false:
 			pausemenu.set_visible(true)
+			$Camera/CanvasLayer/Control/ColorRect.set_visible(true)
 			get_tree().paused = true
 			PauseState = pausestate.Paused
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -135,7 +136,8 @@ func _on_quit_pressed():
 	get_tree().change_scene("res://Game/Widgets/Main Menu/MainMenu.tscn")
 
 func _on_resume_pressed():
-	$Camera/CanvasLayer/Control/pausemenu.set_visible(false)
+	pausemenu.set_visible(false)
+	$Camera/CanvasLayer/Control/ColorRect.set_visible(false)
 	get_tree().paused = false
 	PauseState = pausestate.Unpaused
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -191,7 +193,7 @@ func Interact():
 
 # warning-ignore:unused_argument
 func _on_viewcheck_area_entered(area: Area) -> void:
-	$Camera/CanvasLayer/Crosshair/RichTextLabel.text = var2str($Camera/viewcheck.get_overlapping_areas().front().get_groups())
+	$Camera/CanvasLayer/Crosshair/RichTextLabel.text = var2str($Camera/viewcheck.get_overlapping_areas().front().get_name())
 
 
 # warning-ignore:unused_argument
