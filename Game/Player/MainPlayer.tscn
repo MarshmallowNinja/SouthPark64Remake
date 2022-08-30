@@ -187,7 +187,6 @@ margin_right = 1.0
 margin_bottom = 1.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Camera/CanvasLayer/Crosshair"]
-visible = false
 margin_right = 305.0
 margin_bottom = 90.0
 rect_clip_content = false
@@ -250,3 +249,4 @@ enabled = true
 [connection signal="pressed" from="Camera/CanvasLayer/Control/pausemenu/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Camera/CanvasLayer/Control/pausemenu/quit" to="." method="_on_quit_pressed"]
 [connection signal="area_entered" from="Camera/viewcheck" to="." method="_on_viewcheck_area_entered"]
+[connection signal="area_exited" from="Camera/viewcheck" to="." method="_on_viewcheck_area_exited"]

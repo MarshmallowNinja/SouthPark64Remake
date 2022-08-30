@@ -77,6 +77,9 @@ func _physics_process(delta): #inputs
 		direction -= transform.basis.x
 	if Input.is_action_pressed("moveright"):
 		direction += transform.basis.x
+	
+	if Input.is_action_just_pressed("interact"):
+		Interact()
 
 	if Input.is_action_pressed("run"):
 		moveSpeed = 12
@@ -120,7 +123,7 @@ func _process(delta): #camera controls
 	# other thingss
 	$Camera/CanvasLayer/HealthBar.value = Health
 	$Camera/CanvasLayer/ArmorBar.value = Armor
-	#$Camera/CanvasLayer/Crosshair/RichTextLabel.text = var2str(viewcheck.get_collider())
+	#$Camera/CanvasLayer/Crosshair/RichTextLabel.text = var2str()
 	$Camera/CanvasLayer/FPS.set_bbcode("FPS: " + var2str(Engine.get_frames_per_second()))
 
 func _input(event): #more camera controls
@@ -165,10 +168,32 @@ func Kill():
 	print("Dead.")
 
 func Interact():
+# warning-ignore:unused_variable
 	var areas = []
+	var groups = []
+	var thing
+	var focus 
 	
 	areas = $Camera/viewcheck.get_overlapping_areas()
-	pass
+	
+	if $Camera/viewcheck.overlaps_area(thing):
+		groups = $Camera/viewcheck.get_overlapping_areas().front().get_groups()
+	else:
+		pass
+	
+	if "interact" in groups and groups.size() > 0:
+		print("it had something")
+	else:
+		print("it had nothing")
+		
+	
+	#print(var2str(areas))
 
+# warning-ignore:unused_argument
 func _on_viewcheck_area_entered(area: Area) -> void:
-	pass # Replace with function body.
+	$Camera/CanvasLayer/Crosshair/RichTextLabel.text = var2str($Camera/viewcheck.get_overlapping_areas().front().get_groups())
+
+
+# warning-ignore:unused_argument
+func _on_viewcheck_area_exited(area: Area) -> void:
+	$Camera/CanvasLayer/Crosshair/RichTextLabel.text = ""
