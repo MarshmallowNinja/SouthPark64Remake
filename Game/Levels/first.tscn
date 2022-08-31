@@ -675,7 +675,7 @@ material/0 = SubResource( 59 )
 [node name="Ween" type="Node" parent="Misc"]
 
 [node name="cheese" parent="Misc/Ween" instance=ExtResource( 14 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.211213, 11.5736, 96.9468 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74801, 7.10041, 96.9468 )
 
 [node name="floorplane" type="MeshInstance" parent="."]
 mesh = SubResource( 6 )

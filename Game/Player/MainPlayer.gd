@@ -24,6 +24,7 @@ var moveSpeed : float = 7.0
 var jumpForce : float = 10.0
 var gravity : float = 30.0
 var onground : bool = true
+var viewgroup 
 
 # Camera variables
 var minlookAngle : float = -90.0
@@ -146,9 +147,12 @@ func _on_resume_pressed():
 
 func PlayerStateCheck():
 	match PlayerState:
-		0:
+		0: # Alive
 			pass
-		1:
+		1: # Dead
+			axis_lock_motion_x
+			axis_lock_motion_z
+		2: # Frozen
 			pass
 
 func Damage(a):
@@ -170,32 +174,19 @@ func Kill():
 	print("Dead.")
 
 func Interact():
-# warning-ignore:unused_variable
-	var areas = []
-	var groups = []
-	var thing
-	var focus 
 	
-	areas = $Camera/viewcheck.get_overlapping_areas()
-	
-	if $Camera/viewcheck.overlaps_area(thing):
-		groups = $Camera/viewcheck.get_overlapping_areas().front().get_groups()
-	else:
+	if viewgroup == null:
 		pass
-	
-	if "interact" in groups and groups.size() > 0:
-		print("it had something")
 	else:
-		print("it had nothing")
-		
-	
-	#print(var2str(areas))
+		viewgroup.call("interact")
 
-# warning-ignore:unused_argument
 func _on_viewcheck_area_entered(area: Area) -> void:
 	$Camera/CanvasLayer/Crosshair/RichTextLabel.text = var2str($Camera/viewcheck.get_overlapping_areas().front().get_name())
+	if area.is_in_group("interact"):
+		viewgroup = area
+	else:
+		pass
 
-
-# warning-ignore:unused_argument
 func _on_viewcheck_area_exited(area: Area) -> void:
 	$Camera/CanvasLayer/Crosshair/RichTextLabel.text = ""
+	viewgroup = null
