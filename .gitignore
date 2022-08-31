@@ -4,6 +4,7 @@
 .import
 export.cfg
 export_presets.cfg
+config.cfg
 addons/godot-git-plugin
 addons/gamejolt_api
 addons/discord_game_sdk
