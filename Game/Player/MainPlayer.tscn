@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Game/Player/MainPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Game/Media/Soundtrack/farts/fartsmall02.wav" type="AudioStream" id=2]
@@ -15,6 +15,9 @@
 [ext_resource path="res://Game/Widgets/southpark.theme" type="Theme" id=13]
 [ext_resource path="res://Game/Widgets/south park.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://Game/Widgets/CDfont.tres" type="DynamicFont" id=15]
+[ext_resource path="res://Game/Texture/UI/Player/radar1.png" type="Texture" id=16]
+[ext_resource path="res://Game/Texture/UI/Player/radar2.png" type="Texture" id=17]
+[ext_resource path="res://Game/Texture/UI/Player/radaratlas.png" type="Texture" id=18]
 
 [sub_resource type="RayShape" id=5]
 length = 0.13197
@@ -75,8 +78,15 @@ corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 corner_detail = 5
 
+[sub_resource type="Environment" id=15]
+background_mode = 1
+
 [sub_resource type="RayShape" id=14]
 length = 2.0
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 18 )
+region = Rect2( 1, 1, 14, 13 )
 
 [sub_resource type="CapsuleShape" id=13]
 radius = 0.57
@@ -222,6 +232,43 @@ custom_styles/bg = SubResource( 11 )
 value = 50.0
 rounded = true
 
+[node name="minimap" type="Control" parent="Camera/CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -639.5
+margin_top = -360.5
+margin_right = 639.5
+margin_bottom = 360.5
+
+[node name="Viewport" type="Viewport" parent="Camera/CanvasLayer/minimap"]
+size = Vector2( 128, 128 )
+hdr = false
+usage = 3
+gui_disable_input = true
+shadow_atlas_quad_0 = 0
+shadow_atlas_quad_1 = 0
+shadow_atlas_quad_2 = 0
+shadow_atlas_quad_3 = 0
+
+[node name="minimap" type="Camera" parent="Camera/CanvasLayer/minimap/Viewport"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 12.0265, 0 )
+cull_mask = 512
+environment = SubResource( 15 )
+projection = 1
+
+[node name="Radar2" type="Sprite" parent="Camera/CanvasLayer/minimap"]
+position = Vector2( 1157, 611 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 17 )
+
+[node name="Radar1" type="Sprite" parent="Camera/CanvasLayer/minimap/Radar2"]
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="viewcheck" type="Area" parent="Camera"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 __meta__ = {
@@ -233,6 +280,11 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.8
 shape = SubResource( 14 )
 
 [node name="talker" type="AudioStreamPlayer3D" parent="Camera"]
+
+[node name="Sprite3D" type="Sprite3D" parent="Camera"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+layers = 512
+texture = SubResource( 16 )
 
 [node name="farter" parent="." instance=ExtResource( 12 )]
 SoundList = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 10 ) ]
