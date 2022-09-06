@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Game/Player/MainPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Game/Media/Soundtrack/farts/fartsmall02.wav" type="AudioStream" id=2]
@@ -27,6 +27,12 @@ radius = 0.592347
 height = 1.31468
 
 [sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="DynamicFont" id=17]
+size = 48
+font_data = ExtResource( 14 )
+
+[sub_resource type="StyleBoxEmpty" id=18]
 
 [sub_resource type="DynamicFont" id=12]
 size = 19
@@ -85,6 +91,7 @@ background_mode = 1
 length = 2.0
 
 [sub_resource type="AtlasTexture" id=16]
+flags = 18
 atlas = ExtResource( 18 )
 region = Rect2( 1, 1, 14, 13 )
 
@@ -189,6 +196,43 @@ margin_right = 466.0
 margin_bottom = 258.0
 text = "Quit"
 
+[node name="deadyeah" type="VBoxContainer" parent="Camera/CanvasLayer/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -247.5
+margin_top = -332.0
+margin_right = 247.5
+margin_bottom = 332.0
+
+[node name="Label" type="Label" parent="Camera/CanvasLayer/Control/deadyeah"]
+margin_right = 495.0
+margin_bottom = 25.0
+custom_colors/font_color = Color( 0.870588, 0, 0, 1 )
+custom_fonts/font = SubResource( 17 )
+text = "Back to Menu?"
+align = 1
+
+[node name="HSeparator" type="HSeparator" parent="Camera/CanvasLayer/Control/deadyeah"]
+margin_top = 29.0
+margin_right = 495.0
+margin_bottom = 253.0
+custom_constants/separation = 224
+custom_styles/separator = SubResource( 18 )
+
+[node name="btm" type="Button" parent="Camera/CanvasLayer/Control/deadyeah"]
+margin_top = 257.0
+margin_right = 495.0
+margin_bottom = 291.0
+text = "Yes"
+
+[node name="resp" type="Button" parent="Camera/CanvasLayer/Control/deadyeah"]
+margin_top = 295.0
+margin_right = 495.0
+margin_bottom = 329.0
+text = "No"
+
 [node name="Crosshair" type="Panel" parent="Camera/CanvasLayer"]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -232,17 +276,7 @@ custom_styles/bg = SubResource( 11 )
 value = 50.0
 rounded = true
 
-[node name="minimap" type="Control" parent="Camera/CanvasLayer"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -639.5
-margin_top = -360.5
-margin_right = 639.5
-margin_bottom = 360.5
-
-[node name="Viewport" type="Viewport" parent="Camera/CanvasLayer/minimap"]
+[node name="Viewport" type="Viewport" parent="Camera/CanvasLayer"]
 size = Vector2( 128, 128 )
 hdr = false
 usage = 3
@@ -252,18 +286,18 @@ shadow_atlas_quad_1 = 0
 shadow_atlas_quad_2 = 0
 shadow_atlas_quad_3 = 0
 
-[node name="minimap" type="Camera" parent="Camera/CanvasLayer/minimap/Viewport"]
+[node name="minimap" type="Camera" parent="Camera/CanvasLayer/Viewport"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 12.0265, 0 )
 cull_mask = 512
 environment = SubResource( 15 )
 projection = 1
 
-[node name="Radar2" type="Sprite" parent="Camera/CanvasLayer/minimap"]
-position = Vector2( 1157, 611 )
+[node name="Radar2" type="Sprite" parent="Camera/CanvasLayer"]
+position = Vector2( 1157.5, 610.5 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 17 )
 
-[node name="Radar1" type="Sprite" parent="Camera/CanvasLayer/minimap/Radar2"]
+[node name="Radar1" type="Sprite" parent="Camera/CanvasLayer/Radar2"]
 texture = ExtResource( 16 )
 __meta__ = {
 "_edit_lock_": true

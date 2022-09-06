@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=2]
+[gd_scene load_steps=73 format=2]
 
 [ext_resource path="res://Game/Player/MainPlayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Game/Texture/emptex.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Game/Media/EnvironmentSound/windloop01.wav" type="AudioStream" id=12]
 [ext_resource path="res://Game/Media/videos/Ween - Push th' Little Daisies.webm" type="VideoStream" id=13]
 [ext_resource path="res://Game/Media/videos/boog.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Game/Levels/10HPDMGTEST.gd" type="Script" id=15]
 
 [sub_resource type="ProceduralSky" id=1]
 radiance_size = 3
@@ -625,8 +626,9 @@ transform = Transform( 1.19176, 7.22072e-08, -0.825954, 0, -1.45, -1.26763e-07, 
 
 [node name="DamageTesting" type="Node" parent="."]
 
-[node name="10HPDMGTEST" type="Area" parent="DamageTesting"]
+[node name="10HPDMGTEST" type="Area" parent="DamageTesting" groups=["interact"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 57 )
+script = ExtResource( 15 )
 __meta__ = {
 "_editor_description_": "10 Damage Test"
 }
@@ -773,4 +775,5 @@ mesh = SubResource( 28 )
 material = SubResource( 29 )
 
 [connection signal="area_entered" from="DamageTesting/10HPDMGTEST" to="." method="_on_10HPDMGTEST_area_entered"]
+[connection signal="area_entered" from="DamageTesting/10HPDMGTEST" to="DamageTesting/10HPDMGTEST" method="_on_10HPDMGTEST_area_entered"]
 [connection signal="weentrigger" from="Misc/Ween/cheese" to="." method="_on_cheese_weentrigger"]
