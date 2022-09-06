@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Game/Player/MainPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Game/Media/Soundtrack/farts/fartsmall02.wav" type="AudioStream" id=2]
@@ -33,6 +33,8 @@ size = 48
 font_data = ExtResource( 14 )
 
 [sub_resource type="StyleBoxEmpty" id=18]
+
+[sub_resource type="StyleBoxEmpty" id=19]
 
 [sub_resource type="DynamicFont" id=12]
 size = 19
@@ -196,7 +198,8 @@ margin_right = 466.0
 margin_bottom = 258.0
 text = "Quit"
 
-[node name="deadyeah" type="VBoxContainer" parent="Camera/CanvasLayer/Control"]
+[node name="deadmenu" type="VBoxContainer" parent="Camera/CanvasLayer/Control"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -206,7 +209,7 @@ margin_top = -332.0
 margin_right = 247.5
 margin_bottom = 332.0
 
-[node name="Label" type="Label" parent="Camera/CanvasLayer/Control/deadyeah"]
+[node name="Label" type="Label" parent="Camera/CanvasLayer/Control/deadmenu"]
 margin_right = 495.0
 margin_bottom = 25.0
 custom_colors/font_color = Color( 0.870588, 0, 0, 1 )
@@ -214,23 +217,29 @@ custom_fonts/font = SubResource( 17 )
 text = "Back to Menu?"
 align = 1
 
-[node name="HSeparator" type="HSeparator" parent="Camera/CanvasLayer/Control/deadyeah"]
+[node name="HSeparator" type="HSeparator" parent="Camera/CanvasLayer/Control/deadmenu"]
 margin_top = 29.0
 margin_right = 495.0
 margin_bottom = 253.0
 custom_constants/separation = 224
 custom_styles/separator = SubResource( 18 )
 
-[node name="btm" type="Button" parent="Camera/CanvasLayer/Control/deadyeah"]
+[node name="btm" type="Button" parent="Camera/CanvasLayer/Control/deadmenu"]
 margin_top = 257.0
 margin_right = 495.0
 margin_bottom = 291.0
 text = "Yes"
 
-[node name="resp" type="Button" parent="Camera/CanvasLayer/Control/deadyeah"]
+[node name="HSeparator2" type="HSeparator" parent="Camera/CanvasLayer/Control/deadmenu"]
 margin_top = 295.0
 margin_right = 495.0
-margin_bottom = 329.0
+margin_bottom = 299.0
+custom_styles/separator = SubResource( 19 )
+
+[node name="resp" type="Button" parent="Camera/CanvasLayer/Control/deadmenu"]
+margin_top = 303.0
+margin_right = 495.0
+margin_bottom = 337.0
 text = "No"
 
 [node name="Crosshair" type="Panel" parent="Camera/CanvasLayer"]
