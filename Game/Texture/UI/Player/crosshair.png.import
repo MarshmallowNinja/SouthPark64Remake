@@ -2,28 +2,28 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/radar2.png-cbed3001d7aff4fe53d19282e5382088.stex"
+path="res://.import/crosshair.png-9fba3af73b85817633079cfdd913466c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Texture/UI/Player/radar2.png"
-dest_files=[ "res://.import/radar2.png-cbed3001d7aff4fe53d19282e5382088.stex" ]
+source_file="res://Game/Texture/UI/Player/crosshair.png"
+dest_files=[ "res://.import/crosshair.png-9fba3af73b85817633079cfdd913466c.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=3
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=2
-flags/repeat=0
+flags/repeat=true
 flags/filter=false
-flags/mipmaps=true
+flags/mipmaps=false
 flags/anisotropic=false
-flags/srgb=2
+flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

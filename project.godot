@@ -21,8 +21,8 @@ _global_script_class_icons={
 [application]
 
 config/name="South Park 64 Remake"
-run/main_scene="res://Game/Widgets/Main Menu/MainMenu.tscn"
-boot_splash/image="res://Game/Widgets/Main Menu/2021 thumbnail.png"
+run/main_scene="res://Game/Menu/Main Menu/MainMenu.tscn"
+boot_splash/image="res://Game/Menu/Main Menu/2021 thumbnail.png"
 boot_splash/use_filter=false
 config/icon="res://misc/game icon.png"
 config/windows_native_icon="res://misc/game icon.ico"
@@ -35,6 +35,7 @@ SaveGame="*res://Game/IMPORTANT/savegame.gd"
 
 [debug]
 
+settings/crash_handler/message="Send an Email to marshmallowninja@disroot.org or to marshmallow_ninja on Discord"
 settings/fps/force_fps=60
 settings/stdout/print_fps=true
 
@@ -43,12 +44,11 @@ settings/stdout/print_fps=true
 window/size/width=1280
 window/size/height=720
 mouse_cursor/custom_image="res://misc/mouseclassic.png"
-window/stretch/mode="2d"
+window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
 [editor]
 
-version_control_autoload_on_startup=true
 version_control_plugin_name="GitAPI"
 
 [gdnative]
@@ -63,12 +63,29 @@ EarlyPrototype=false
 [importer_defaults]
 
 texture={
-"compress/mode": 3,
+"compress/bptc_ldr": 0,
+"compress/hdr_mode": 0,
+"compress/lossy_quality": 0.7,
+"compress/mode": 0,
 "compress/normal_map": 2,
 "detect_3d": false,
+"flags/anisotropic": false,
 "flags/filter": false,
-"flags/repeat": true,
-"flags/srgb": 1
+"flags/mipmaps": true,
+"flags/repeat": 0,
+"flags/srgb": 2,
+"process/HDR_as_SRGB": false,
+"process/fix_alpha_border": true,
+"process/invert_color": false,
+"process/normal_map_invert_y": false,
+"process/premult_alpha": false,
+"size_limit": 0,
+"stream": false,
+"svg/scale": 1.0
+}
+ogg_vorbis={
+"loop": false,
+"loop_offset": 0
 }
 
 [input]
@@ -170,7 +187,7 @@ common/enable_pause_aware_picking=true
 [rendering]
 
 quality/filters/anisotropic_filter_level=2
-gles3/shaders/shader_compilation_mode=1
+gles3/shaders/shader_compilation_mode=2
 quality/subsurface_scattering/quality=0
 quality/voxel_cone_tracing/high_quality=true
 environment/default_clear_color=Color( 0.109804, 0.215686, 0.129412, 1 )

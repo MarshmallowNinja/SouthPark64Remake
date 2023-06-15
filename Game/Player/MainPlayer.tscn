@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Game/Player/MainPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Game/Media/Soundtrack/farts/fartsmall02.wav" type="AudioStream" id=2]
@@ -12,12 +12,13 @@
 [ext_resource path="res://Game/Media/Soundtrack/farts/fartsmall06.wav" type="AudioStream" id=10]
 [ext_resource path="res://Game/Media/Soundtrack/farts/fart55a.wav" type="AudioStream" id=11]
 [ext_resource path="res://Game/Media/soundrand/musicsystem.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Game/Widgets/southpark.theme" type="Theme" id=13]
-[ext_resource path="res://Game/Widgets/south park.ttf" type="DynamicFontData" id=14]
-[ext_resource path="res://Game/Widgets/CDfont.tres" type="DynamicFont" id=15]
+[ext_resource path="res://Game/Menu/southpark.theme" type="Theme" id=13]
+[ext_resource path="res://Game/Menu/south park.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://Game/Menu/CDfont.tres" type="DynamicFont" id=15]
 [ext_resource path="res://Game/Texture/UI/Player/radar1.png" type="Texture" id=16]
 [ext_resource path="res://Game/Texture/UI/Player/radar2.png" type="Texture" id=17]
 [ext_resource path="res://Game/Texture/UI/Player/radaratlas.png" type="Texture" id=18]
+[ext_resource path="res://Game/Texture/UI/Player/crosshair.png" type="Texture" id=19]
 
 [sub_resource type="RayShape" id=5]
 length = 0.13197
@@ -35,6 +36,8 @@ font_data = ExtResource( 14 )
 [sub_resource type="StyleBoxEmpty" id=18]
 
 [sub_resource type="StyleBoxEmpty" id=19]
+
+[sub_resource type="StyleBoxEmpty" id=20]
 
 [sub_resource type="DynamicFont" id=12]
 size = 19
@@ -128,16 +131,21 @@ transform = Transform( 0.091, 0, 0, 0, 0.071, 0, 0, 0, 0.352, 0.232632, -0.574, 
 follow_viewport_enable = true
 
 [node name="FPS" type="RichTextLabel" parent="Camera/CanvasLayer"]
-margin_left = 13.0
-margin_top = 17.0
-margin_right = 192.0
-margin_bottom = 69.0
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -192.0
+margin_top = 32.0
+margin_right = -13.0
+margin_bottom = 64.0
 rect_clip_content = false
 custom_fonts/normal_font = ExtResource( 15 )
 bbcode_enabled = true
 bbcode_text = "FPS: [wave]Frames[/wave]"
 text = "FPS: Frames"
 scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Control" type="Control" parent="Camera/CanvasLayer"]
 pause_mode = 2
@@ -251,6 +259,7 @@ margin_left = -1.0
 margin_top = -1.0
 margin_right = 1.0
 margin_bottom = 1.0
+custom_styles/panel = SubResource( 20 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Camera/CanvasLayer/Crosshair"]
 margin_right = 305.0
@@ -259,31 +268,45 @@ rect_clip_content = false
 custom_fonts/normal_font = SubResource( 12 )
 scroll_active = false
 
+[node name="Sprite" type="Sprite" parent="Camera/CanvasLayer/Crosshair"]
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 19 )
+
 [node name="HealthBar" type="ProgressBar" parent="Camera/CanvasLayer"]
 pause_mode = 2
-margin_left = 64.0
-margin_top = 576.0
-margin_right = 376.0
-margin_bottom = 640.0
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 192.0
+margin_top = -144.0
+margin_right = 504.0
+margin_bottom = -80.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 8 )
 custom_styles/fg = SubResource( 6 )
 custom_styles/bg = SubResource( 7 )
 value = 50.0
 rounded = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="ArmorBar" type="ProgressBar" parent="Camera/CanvasLayer"]
 pause_mode = 2
-margin_left = 64.0
-margin_top = 640.0
-margin_right = 376.0
-margin_bottom = 704.0
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 192.0
+margin_top = -80.0
+margin_right = 504.0
+margin_bottom = -16.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 9 )
 custom_styles/fg = SubResource( 10 )
 custom_styles/bg = SubResource( 11 )
 value = 50.0
 rounded = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
 
 [node name="Viewport" type="Viewport" parent="Camera/CanvasLayer"]
 size = Vector2( 128, 128 )
@@ -302,7 +325,7 @@ environment = SubResource( 15 )
 projection = 1
 
 [node name="Radar2" type="Sprite" parent="Camera/CanvasLayer"]
-position = Vector2( 1157.5, 610.5 )
+position = Vector2( 96, 624 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 17 )
 
