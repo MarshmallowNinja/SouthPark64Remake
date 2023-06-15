@@ -1,6 +1,5 @@
-# South Park 64 Remake
- Complete remake of the 1998 game, South Park. Also known as South Park: Deeply Impacted. Also known as *south park snowball game for the 64*.
-
- This remake is being made completely from the ground up, with no sort of monetization at all for the end user.
-
+# South Park 64 Remake - Unstable Branch
+ This branch is solely used for back-up, mod resource and developer partners.
+ DO NOT build an executable from this branch, DO NOT fork this code (mainly because there will be unfinished code).
+ 
  Discord server: https://discord.gg/ePcnXsbm3a
