@@ -4,15 +4,15 @@
 [ext_resource path="res://Game/Texture/building/window1.png" type="Texture" id=2]
 [ext_resource path="res://Game/Models/buildings/housing/houseprop.gd" type="Script" id=3]
 
-[sub_resource type="SpatialMaterial" id=30]
+[sub_resource type="SpatialMaterial" id=38]
 resource_name = "Roof_Color"
 albedo_color = Color( 0.470588, 0.180392, 0, 1 )
 
-[sub_resource type="SpatialMaterial" id=31]
+[sub_resource type="SpatialMaterial" id=39]
 resource_name = "Exterior_Color"
 albedo_color = Color( 0, 1, 0, 1 )
 
-[sub_resource type="SpatialMaterial" id=32]
+[sub_resource type="SpatialMaterial" id=40]
 resource_name = "WIndow"
 albedo_color = Color( 0.8, 0.8, 0.8, 1 )
 metallic = 1.0
@@ -30,7 +30,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 144,
-"material": SubResource( 30 ),
+"material": SubResource( 38 ),
 "name": "Roof_Color",
 "primitive": 4,
 "skeleton_aabb": [  ],
@@ -43,7 +43,7 @@ surfaces/1 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 144,
-"material": SubResource( 31 ),
+"material": SubResource( 39 ),
 "name": "Exterior_Color",
 "primitive": 4,
 "skeleton_aabb": [  ],
@@ -56,7 +56,7 @@ surfaces/2 = {
 "blend_shape_data": [  ],
 "format": 2194711,
 "index_count": 4200,
-"material": SubResource( 32 ),
+"material": SubResource( 40 ),
 "name": "WIndow",
 "primitive": 4,
 "skeleton_aabb": [  ],

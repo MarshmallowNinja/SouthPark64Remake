@@ -1,0 +1,31 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Game/Models/buildings/business/1floorbusiness.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://Game/Models/buildings/business/onefloorbuilding.gd" type="Script" id=2]
+[ext_resource path="res://Game/Texture/building/archwindow2.png" type="Texture" id=3]
+[ext_resource path="res://Game/Texture/building/door3.png" type="Texture" id=4]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.470588, 0.180392, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0, 1, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 4 )
+
+[node name="onefloorbuilding" type="MeshInstance"]
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )
+material/1 = SubResource( 2 )
+material/2 = SubResource( 3 )
+material/3 = SubResource( 4 )
+script = ExtResource( 2 )
+RoofColor = Color( 0.470588, 0.180392, 0, 1 )
+ExteriorColor = Color( 0, 1, 0, 1 )
+WindowTexture = ExtResource( 3 )
+DoorTexture = ExtResource( 4 )
