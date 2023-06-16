@@ -20,7 +20,7 @@ enum pausestate {Unpaused, Paused, HostPause, ClientPause}
 var PauseState = pausestate.Unpaused
 
 # Physic things.
-var moveSpeed : float = 13.0
+var moveSpeed : float = 12.0
 var jumpForce : float = 10.0
 var gravity : float = 30.0
 var onground : bool = true
