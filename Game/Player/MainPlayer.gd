@@ -44,8 +44,8 @@ var gravityv = Vector3()
 # onready
 onready var camera = $Camera
 onready var floorcheck = $floorcheck
-onready var pausemenu = $Camera/CanvasLayer/Control/pausemenu
-onready var deadmenu = $Camera/CanvasLayer/Control/deadmenu
+onready var pausemenu = $Camera/CanvasLayer/menus/pausemenu
+onready var deadmenu = $Camera/CanvasLayer/menus/deadmenu
 onready var viewcheck = $Camera/viewcheck
 onready var character = $Character
 
@@ -90,7 +90,7 @@ func _physics_process(delta): #inputs
 	if Input.is_action_just_pressed("esc"):
 		if pausemenu.visible == false:
 			pausemenu.set_visible(true)
-			$Camera/CanvasLayer/Control/ColorRect.set_visible(true)
+			$Camera/CanvasLayer/menus/menubg.set_visible(true)
 			get_tree().paused = true
 			PauseState = pausestate.Paused
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

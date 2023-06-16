@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Game/Player/MainPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Game/Media/Soundtrack/farts/fartsmall02.wav" type="AudioStream" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Game/Texture/UI/Player/radar2.png" type="Texture" id=17]
 [ext_resource path="res://Game/Texture/UI/Player/radaratlas.png" type="Texture" id=18]
 [ext_resource path="res://Game/Texture/UI/Player/crosshair.png" type="Texture" id=19]
+[ext_resource path="res://Game/Player/CharacterHandler.gd" type="Script" id=20]
 
 [sub_resource type="RayShape" id=5]
 length = 0.13197
@@ -27,8 +28,6 @@ length = 0.13197
 radius = 0.592347
 height = 1.31468
 
-[sub_resource type="CubeMesh" id=2]
-
 [sub_resource type="DynamicFont" id=17]
 size = 48
 font_data = ExtResource( 14 )
@@ -36,8 +35,6 @@ font_data = ExtResource( 14 )
 [sub_resource type="StyleBoxEmpty" id=18]
 
 [sub_resource type="StyleBoxEmpty" id=19]
-
-[sub_resource type="StyleBoxEmpty" id=20]
 
 [sub_resource type="DynamicFont" id=12]
 size = 19
@@ -107,6 +104,9 @@ height = 1.32
 [node name="MainPlayer" type="KinematicBody" groups=["killable", "living", "player"]]
 script = ExtResource( 1 )
 
+[node name="CharacterHandler" type="Node" parent="."]
+script = ExtResource( 20 )
+
 [node name="foot" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
 shape = SubResource( 5 )
@@ -119,13 +119,6 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
 current = true
 far = 8192.0
-
-[node name="MeshInstance" type="MeshInstance" parent="Camera"]
-transform = Transform( 0.091, 0, 0, 0, 0.071, 0, 0, 0, 0.352, 0.232857, -0.574, -0.862 )
-mesh = SubResource( 2 )
-
-[node name="Muzzle" type="Spatial" parent="Camera"]
-transform = Transform( 0.091, 0, 0, 0, 0.071, 0, 0, 0, 0.352, 0.232632, -0.574, -1.21425 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera"]
 follow_viewport_enable = true
@@ -147,7 +140,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Control" type="Control" parent="Camera/CanvasLayer"]
+[node name="menus" type="Control" parent="Camera/CanvasLayer"]
 pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -159,7 +152,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="ColorRect" type="ColorRect" parent="Camera/CanvasLayer/Control"]
+[node name="menubg" type="ColorRect" parent="Camera/CanvasLayer/menus"]
 pause_mode = 2
 physics_interpolation_mode = 1
 process_priority = 3
@@ -168,7 +161,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.403922 )
 
-[node name="pausemenu" type="VBoxContainer" parent="Camera/CanvasLayer/Control"]
+[node name="pausemenu" type="VBoxContainer" parent="Camera/CanvasLayer/menus"]
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -180,33 +173,33 @@ margin_right = 233.0
 margin_bottom = 184.0
 alignment = 1
 
-[node name="resume" type="Button" parent="Camera/CanvasLayer/Control/pausemenu"]
+[node name="resume" type="Button" parent="Camera/CanvasLayer/menus/pausemenu"]
 margin_top = 110.0
 margin_right = 466.0
 margin_bottom = 144.0
 text = "Resume"
 
-[node name="save" type="Button" parent="Camera/CanvasLayer/Control/pausemenu"]
+[node name="save" type="Button" parent="Camera/CanvasLayer/menus/pausemenu"]
 margin_top = 148.0
 margin_right = 466.0
 margin_bottom = 182.0
 disabled = true
 text = "Save / Load"
 
-[node name="options" type="Button" parent="Camera/CanvasLayer/Control/pausemenu"]
+[node name="options" type="Button" parent="Camera/CanvasLayer/menus/pausemenu"]
 margin_top = 186.0
 margin_right = 466.0
 margin_bottom = 220.0
 disabled = true
 text = "Options"
 
-[node name="quit" type="Button" parent="Camera/CanvasLayer/Control/pausemenu"]
+[node name="quit" type="Button" parent="Camera/CanvasLayer/menus/pausemenu"]
 margin_top = 224.0
 margin_right = 466.0
 margin_bottom = 258.0
 text = "Quit"
 
-[node name="deadmenu" type="VBoxContainer" parent="Camera/CanvasLayer/Control"]
+[node name="deadmenu" type="VBoxContainer" parent="Camera/CanvasLayer/menus"]
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -217,7 +210,7 @@ margin_top = -332.0
 margin_right = 247.5
 margin_bottom = 332.0
 
-[node name="Label" type="Label" parent="Camera/CanvasLayer/Control/deadmenu"]
+[node name="Label" type="Label" parent="Camera/CanvasLayer/menus/deadmenu"]
 margin_right = 495.0
 margin_bottom = 25.0
 custom_colors/font_color = Color( 0.870588, 0, 0, 1 )
@@ -225,26 +218,26 @@ custom_fonts/font = SubResource( 17 )
 text = "Back to Menu?"
 align = 1
 
-[node name="HSeparator" type="HSeparator" parent="Camera/CanvasLayer/Control/deadmenu"]
+[node name="HSeparator" type="HSeparator" parent="Camera/CanvasLayer/menus/deadmenu"]
 margin_top = 29.0
 margin_right = 495.0
 margin_bottom = 253.0
 custom_constants/separation = 224
 custom_styles/separator = SubResource( 18 )
 
-[node name="btm" type="Button" parent="Camera/CanvasLayer/Control/deadmenu"]
+[node name="btm" type="Button" parent="Camera/CanvasLayer/menus/deadmenu"]
 margin_top = 257.0
 margin_right = 495.0
 margin_bottom = 291.0
 text = "Yes"
 
-[node name="HSeparator2" type="HSeparator" parent="Camera/CanvasLayer/Control/deadmenu"]
+[node name="HSeparator2" type="HSeparator" parent="Camera/CanvasLayer/menus/deadmenu"]
 margin_top = 295.0
 margin_right = 495.0
 margin_bottom = 299.0
 custom_styles/separator = SubResource( 19 )
 
-[node name="resp" type="Button" parent="Camera/CanvasLayer/Control/deadmenu"]
+[node name="resp" type="Button" parent="Camera/CanvasLayer/menus/deadmenu"]
 margin_top = 303.0
 margin_right = 495.0
 margin_bottom = 337.0
@@ -259,9 +252,9 @@ margin_left = -1.0
 margin_top = -1.0
 margin_right = 1.0
 margin_bottom = 1.0
-custom_styles/panel = SubResource( 20 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Camera/CanvasLayer/Crosshair"]
+visible = false
 margin_right = 305.0
 margin_bottom = 90.0
 rect_clip_content = false
@@ -269,8 +262,10 @@ custom_fonts/normal_font = SubResource( 12 )
 scroll_active = false
 
 [node name="Sprite" type="Sprite" parent="Camera/CanvasLayer/Crosshair"]
+position = Vector2( -33, -33 )
 scale = Vector2( 0.75, 0.75 )
 texture = ExtResource( 19 )
+centered = false
 
 [node name="HealthBar" type="ProgressBar" parent="Camera/CanvasLayer"]
 pause_mode = 2
@@ -308,6 +303,17 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="RadarRim" type="Sprite" parent="Camera/CanvasLayer"]
+position = Vector2( 96, 624 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 17 )
+
+[node name="RadarRim" type="Sprite" parent="Camera/CanvasLayer/RadarRim"]
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Viewport" type="Viewport" parent="Camera/CanvasLayer"]
 size = Vector2( 128, 128 )
 hdr = false
@@ -324,17 +330,6 @@ cull_mask = 512
 environment = SubResource( 15 )
 projection = 1
 
-[node name="Radar2" type="Sprite" parent="Camera/CanvasLayer"]
-position = Vector2( 96, 624 )
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 17 )
-
-[node name="Radar1" type="Sprite" parent="Camera/CanvasLayer/Radar2"]
-texture = ExtResource( 16 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="viewcheck" type="Area" parent="Camera"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 __meta__ = {
@@ -346,8 +341,12 @@ transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -0.8
 shape = SubResource( 14 )
 
 [node name="talker" type="AudioStreamPlayer3D" parent="Camera"]
+attenuation_model = 2
+bus = "Voice"
+emission_angle_enabled = true
+emission_angle_degrees = 70.0
 
-[node name="Sprite3D" type="Sprite3D" parent="Camera"]
+[node name="MapIcon" type="Sprite3D" parent="Camera"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 layers = 512
 texture = SubResource( 16 )
@@ -369,7 +368,7 @@ shape = SubResource( 13 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.757, 0 )
 enabled = true
 
-[connection signal="pressed" from="Camera/CanvasLayer/Control/pausemenu/resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Camera/CanvasLayer/Control/pausemenu/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Camera/CanvasLayer/menus/pausemenu/resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Camera/CanvasLayer/menus/pausemenu/quit" to="." method="_on_quit_pressed"]
 [connection signal="area_entered" from="Camera/viewcheck" to="." method="_on_viewcheck_area_entered"]
 [connection signal="area_exited" from="Camera/viewcheck" to="." method="_on_viewcheck_area_exited"]
