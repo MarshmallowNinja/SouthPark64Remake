@@ -1,9 +1,8 @@
 [gd_resource type="DynamicFont" load_steps=2 format=2]
 
-[sub_resource type="DynamicFontData" id=14]
-font_path = "res://Game/Widgets/south park.ttf"
+[ext_resource path="res://Game/Menu/south park.ttf" type="DynamicFontData" id=1]
 
 [resource]
 size = 45
 extra_spacing_bottom = -8
-font_data = SubResource( 14 )
+font_data = ExtResource( 1 )

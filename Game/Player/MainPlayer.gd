@@ -186,7 +186,7 @@ func Kill():
 	PlayerState = playerstate.Dead
 	PlayerStateCheck()
 	emit_signal("Death")
-	$Camera/CanvasLayer/Control/ColorRect.set_visible(true)
+	$Camera/CanvasLayer/menus/menubg.set_visible(true)
 	deadmenu.set_visible(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 

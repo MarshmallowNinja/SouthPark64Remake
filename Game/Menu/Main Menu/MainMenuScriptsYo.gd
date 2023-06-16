@@ -1,10 +1,7 @@
 extends Spatial
 
-enum OSTtype {PC, N64, PSX, RM}
-
 func _ready():
 	get_tree().paused = false
-	$Control/Music.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	$Control/Menu/Button2.grab_focus()
 
@@ -23,7 +20,6 @@ func _on_settomain_pressed():
 	switchmenus("Control/Menu", "Control/Settings")
 	$Control/Menu/Button2.grab_focus()
 
-
 func _on_Button_pressed():
 	switchmenus("Story", "Menu")
 
@@ -36,23 +32,6 @@ func _on_New_pressed():
 func _on_Exit_pressed():
 	SaveGame.savegame()
 	get_tree().quit()
-
-func _on_gjlog_pressed():
-	$Control/PopupPanel.show()
-
-func _on_hidelogin_pressed():
-#	$Control/PopupPanel.hide()
-#	GameJoltAPI.add_achieved({
-#		"username" : GameJoltAPI.username,
-#		"user_token" : GameJoltAPI.user_token,
-#		"trophy_id" : 166506
-#	})
-#	GameJoltAPI.add_achieved({
-#		"username" : GameJoltAPI.username,
-#		"user_token" : GameJoltAPI.user_token,
-#		"trophy_id" : 166503
-#	})
-	pass
 
 func _on_onl_settings_pressed():
 	switchmenus("Control/OnlineSettings", "Control/Settings")
@@ -72,14 +51,6 @@ func _on_gstog_pressed() -> void:
 	$"Control/2021 icon crop".visible = true
 	switchmenus("Control/Settings", "Control/GameSettings")
 	$Control/Settings/game_settings.grab_focus()
-
-
-func _on_LineEdit_text_changed(_new_text: String) -> void:
-	#GameJoltAPI.username = new_text
-	pass
-func _on_LineEdit2_text_changed(_new_text: String) -> void:
-	#GameJoltAPI.user_token = new_text
-	pass
 
 func _on_aud_settings_pressed() -> void:
 	$"Control/2021 icon crop".visible = false

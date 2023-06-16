@@ -3,5 +3,5 @@
 [ext_resource path="res://Game/Menu/south park.ttf" type="DynamicFontData" id=1]
 
 [resource]
-size = 27
+size = 36
 font_data = ExtResource( 1 )
