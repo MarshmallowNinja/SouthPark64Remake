@@ -1,0 +1,87 @@
+[gd_resource type="Resource" load_steps=51 format=2]
+
+[ext_resource path="res://Game/Player/characters/script/CharacterFileScript.gd" type="Script" id=1]
+[ext_resource path="res://Game/Player/characters/files/cartman/Cartman 64 Icon.png" type="Texture" id=2]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/death (3).wav" type="AudioStream" id=3]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/death (6).wav" type="AudioStream" id=4]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt.wav" type="AudioStream" id=5]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/death (1).wav" type="AudioStream" id=6]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/death.wav" type="AudioStream" id=7]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (31).wav" type="AudioStream" id=8]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/death (2).wav" type="AudioStream" id=9]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (30).wav" type="AudioStream" id=10]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/death (4).wav" type="AudioStream" id=11]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/death (5).wav" type="AudioStream" id=12]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/spawn.wav" type="AudioStream" id=13]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (17).wav" type="AudioStream" id=14]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/picked.wav" type="AudioStream" id=15]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (13).wav" type="AudioStream" id=16]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/picked (3).wav" type="AudioStream" id=17]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (2).wav" type="AudioStream" id=18]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (7).wav" type="AudioStream" id=19]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (8).wav" type="AudioStream" id=20]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (1).wav" type="AudioStream" id=21]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (23).wav" type="AudioStream" id=22]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/picked (2).wav" type="AudioStream" id=23]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (5).wav" type="AudioStream" id=24]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (18).wav" type="AudioStream" id=25]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (20).wav" type="AudioStream" id=26]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (24).wav" type="AudioStream" id=27]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (21).wav" type="AudioStream" id=28]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (15).wav" type="AudioStream" id=29]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (19).wav" type="AudioStream" id=30]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (9).wav" type="AudioStream" id=31]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (6).wav" type="AudioStream" id=32]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (25).wav" type="AudioStream" id=33]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (3).wav" type="AudioStream" id=34]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (11).wav" type="AudioStream" id=35]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/picked (1).wav" type="AudioStream" id=36]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (10).wav" type="AudioStream" id=37]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (14).wav" type="AudioStream" id=38]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (22).wav" type="AudioStream" id=39]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (26).wav" type="AudioStream" id=40]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (27x).wav" type="AudioStream" id=41]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (4).wav" type="AudioStream" id=42]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (12).wav" type="AudioStream" id=43]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (29).wav" type="AudioStream" id=44]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (16).wav" type="AudioStream" id=45]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/hurt (28).wav" type="AudioStream" id=46]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/pickup (1).wav" type="AudioStream" id=47]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/pickup (2).wav" type="AudioStream" id=48]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/pickup (3).wav" type="AudioStream" id=49]
+[ext_resource path="res://Game/Player/characters/files/cartman/sounds/pickup (4).wav" type="AudioStream" id=50]
+
+[resource]
+script = ExtResource( 1 )
+CharacterName = "Cartman"
+CharacterIcon = ExtResource( 2 )
+StartingHealth = 100
+MaxHealth = 100
+StartingArmor = 0
+MaxArmor = 100
+MaxDodgeballAmmo = 80
+MaxPlungerAmmo = 40
+MaxDartAmmo = 200
+MaxWarpoAmmo = 200
+MaxTPAmmo = 20
+MaxChickenAmmo = 20
+MaxGizmoAmmo = 100
+MaxCowAmmo = 40
+SpawnAudio = [ ExtResource( 13 ), ExtResource( 36 ), ExtResource( 23 ), ExtResource( 17 ), ExtResource( 15 ) ]
+PainAudio = [ ExtResource( 21 ), ExtResource( 18 ), ExtResource( 34 ), ExtResource( 42 ), ExtResource( 24 ), ExtResource( 32 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 31 ), ExtResource( 37 ), ExtResource( 35 ), ExtResource( 43 ), ExtResource( 16 ), ExtResource( 38 ), ExtResource( 29 ), ExtResource( 45 ), ExtResource( 14 ), ExtResource( 25 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 28 ), ExtResource( 39 ), ExtResource( 22 ), ExtResource( 27 ), ExtResource( 33 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 46 ), ExtResource( 44 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 5 ) ]
+DeathAudio = [ ExtResource( 6 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 7 ) ]
+HealAudio = [ ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ) ]
+WeaponPickUpAudio = [ ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ) ]
+MedPainAudio = [  ]
+HevPainAudio = [  ]
+ShockDamageAudio = [  ]
+GasDamageAudio = [  ]
+NearTownAudio = [  ]
+EmptyTeamSpawnAudio = [  ]
+TurkeyKillAudio = [  ]
+CloneKillAudio = [  ]
+CowKillAudio = [  ]
+AlienKillAudio = [  ]
+RobotKillAudio = [  ]
+ToyKillAudio = [  ]
+ToughEnemyAudio = [  ]

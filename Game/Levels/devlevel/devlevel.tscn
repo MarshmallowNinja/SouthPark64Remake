@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Game/Levels/baseenvironment.tres" type="Environment" id=1]
 [ext_resource path="res://Game/Player/MainPlayer.tscn" type="PackedScene" id=2]
@@ -9,6 +9,16 @@
 [ext_resource path="res://Game/Models/buildings/business/onefloorbuilding.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Game/Models/buildings/business/twofloorbuilding.tscn" type="PackedScene" id=8]
 
+[sub_resource type="GIProbeData" id=1]
+bounds = AABB( -100, -100, -100, 200, 200, 200 )
+cell_size = 1.5625
+to_cell_xform = Transform( 0.64, 0, 0, 0, 0.64, 0, 0, 0, 0.64, 64, 64, 64 )
+dynamic_data = PoolIntArray( 0, 8, 128, 128, 128, 1, 0, 0, 0, -994246656, 0, 0, 7, 0, 9, 4241, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_range = 4
+bias = 1.5
+normal_bias = 0.0
+propagation = 0.7
+
 [node name="Spatial" type="Spatial"]
 
 [node name="Atmosphere" type="Node" parent="."]
@@ -18,8 +28,16 @@ environment = ExtResource( 1 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="Atmosphere"]
 transform = Transform( -1, -3.55271e-15, -8.74228e-08, -4.71214e-08, 0.842302, 0.539006, 7.36364e-08, 0.539006, -0.842302, -6.98828, 0.0294948, 8.90574 )
+light_bake_mode = 2
 shadow_enabled = true
 directional_shadow_max_distance = 350.0
+
+[node name="GIProbe" type="GIProbe" parent="Atmosphere"]
+extents = Vector3( 100, 100, 100 )
+data = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Buildings" type="Node" parent="."]
 
@@ -62,6 +80,8 @@ use_collision = true
 width = 65.0
 height = 0.001
 depth = 65.0
+
+[node name="testing" type="Node" parent="."]
 
 [node name="MainPlayer" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0290074, 0 )

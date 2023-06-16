@@ -48,15 +48,13 @@ onready var pausemenu = $Camera/CanvasLayer/menus/pausemenu
 onready var deadmenu = $Camera/CanvasLayer/menus/deadmenu
 onready var viewcheck = $Camera/viewcheck
 onready var character = $CharacterHandler
+onready var teambar = $Camera/CanvasLayer/TeamBar
 
 func _ready():
+	Initiate()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	#Health = $Character.Character.StartingHealth
-	#MaxHealth = $Character.Character.MaxHealth
-	#$Camera/CanvasLayer/PlayerIcon/PlayerIcon.texture = $Character.Character.Icon
-	emit_signal("Spawn")
 
-func _physics_process(delta): #inputs
+func _physics_process(delta):
 	direction = Vector3()
 	# is player on floor? if not, make gravity do its job
 	if not is_on_floor():
@@ -155,10 +153,18 @@ func _on_viewcheck_area_exited(area: Area) -> void:
 	$Camera/CanvasLayer/Crosshair/RichTextLabel.text = ""
 	viewgroup = null
 
+func Initiate():
+	Health = $CharacterHandler.Character.StartingHealth
+	MaxHealth = $CharacterHandler.Character.MaxHealth
+	$Camera/CanvasLayer/TeamBar/TM1.texture = $CharacterHandler.Character.CharacterIcon
+	emit_signal("Spawn")
+
 func PlayerStateCheck():
 	match PlayerState:
 		0: # Alive
-			pass
+			axis_lock_motion_x = false
+			axis_lock_motion_z = false
+			axis_lock_motion_y = false
 		1: # Dead
 			axis_lock_motion_x = true
 			axis_lock_motion_z = true
@@ -179,6 +185,13 @@ func Heal(a):
 	emit_signal("Heal")
 	if Health > MaxHealth:
 		Health = MaxHealth
+	else:
+		pass
+
+func AddArmor():
+	Armor += 25
+	if Armor > MaxArmor:
+		Armor = MaxArmor
 	else:
 		pass
 

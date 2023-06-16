@@ -1,9 +1,10 @@
 extends Resource
-class_name CharacterFile
+class_name CharacterFile, "res://Game/Player/characters/files/base/None.png"
 
 # BASE CHARACTER STATS
 export(String) var CharacterName 
 export(Texture) var CharacterIcon 
+#export(Mesh) var CharacterModel
 
 export(int, 1000) var StartingHealth = 100
 export(int, 1000) var MaxHealth  = 100

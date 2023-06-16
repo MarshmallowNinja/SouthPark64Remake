@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pickedup (2).wav-c97cf85271c0be5504a153927bc23683.sample"
+
+[deps]
+
+source_file="res://Game/Player/characters/files/cartman/sounds/pickedup (2).wav"
+dest_files=[ "res://.import/pickedup (2).wav-c97cf85271c0be5504a153927bc23683.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=true
+force/max_rate_hz=48000.0
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hurtgas (7).wav-821f4b958cf13e1b58cd7ab3c714fd31.sample"
+
+[deps]
+
+source_file="res://Game/Player/characters/files/cartman/sounds/hurtgas (7).wav"
+dest_files=[ "res://.import/hurtgas (7).wav-821f4b958cf13e1b58cd7ab3c714fd31.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=true
+force/max_rate_hz=48000.0
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

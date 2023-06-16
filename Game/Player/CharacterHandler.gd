@@ -1,6 +1,7 @@
 extends Node
 
-export(Resource) var CharacterFile
+export(Resource) var Character
+
 var ForceCharacter : bool = false
 var ForcedCharacter # Make sure that this is a Resource file and not fucking anything else
 var random = RandomNumberGenerator.new()
@@ -37,4 +38,10 @@ func SoundProcess(soundarray):
 
 func PlaySoundFromArray(soundarray, priority : bool):
 	var sound = SoundProcess(soundarray)
-	PlaySound(soundarray[sound], priority)
+	if sound == null:
+		pass
+	else:
+		PlaySound(soundarray[sound], priority)
+
+func _on_MainPlayer_Spawn() -> void:
+	PlaySoundFromArray(Character.SpawnAudio, true)

@@ -2,10 +2,8 @@
 
 [sub_resource type="ProceduralSky" id=2]
 sky_top_color = Color( 0.34902, 0.768627, 1, 1 )
-sky_horizon_color = Color( 0.545098, 0.8, 1, 1 )
 ground_bottom_color = Color( 0, 0, 0, 1 )
-ground_horizon_color = Color( 0, 0, 0, 1 )
-ground_energy = 0.0
+ground_horizon_color = Color( 0.278431, 0.278431, 0.278431, 1 )
 
 [resource]
 background_mode = 2
@@ -25,6 +23,6 @@ glow_levels/3 = false
 glow_levels/4 = true
 glow_levels/5 = false
 glow_levels/7 = true
-glow_intensity = 0.3
-glow_bloom = 0.11
+glow_intensity = 0.01
+glow_blend_mode = 1
 glow_bicubic_upscale = true
