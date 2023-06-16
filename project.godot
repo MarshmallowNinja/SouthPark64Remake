@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Resource",
+"class": "CharacterFile",
+"language": "GDScript",
+"path": "res://Game/Player/characters/script/CharacterFileScript.gd"
+}, {
 "base": "EditorVCSInterface",
 "class": "GitAPI",
 "language": "NativeScript",
 "path": "res://addons/godot-git-plugin/git_api.gdns"
 } ]
 _global_script_class_icons={
+"CharacterFile": "",
 "GitAPI": ""
 }
 
@@ -47,10 +53,6 @@ mouse_cursor/custom_image="res://misc/mouseclassic.png"
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
-[editor]
-
-version_control_plugin_name="GitAPI"
-
 [gdnative]
 
 singletons=[  ]
@@ -62,6 +64,10 @@ EarlyPrototype=false
 
 [importer_defaults]
 
+ogg_vorbis={
+"loop": false,
+"loop_offset": 0
+}
 texture={
 "compress/bptc_ldr": 0,
 "compress/hdr_mode": 0,
@@ -82,10 +88,6 @@ texture={
 "size_limit": 0,
 "stream": false,
 "svg/scale": 1.0
-}
-ogg_vorbis={
-"loop": false,
-"loop_offset": 0
 }
 
 [input]
@@ -186,9 +188,8 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-quality/filters/anisotropic_filter_level=2
 gles3/shaders/shader_compilation_mode=2
 quality/subsurface_scattering/quality=0
 quality/voxel_cone_tracing/high_quality=true
 environment/default_clear_color=Color( 0.109804, 0.215686, 0.129412, 1 )
-environment/default_environment="res://misc/default_env.tres"
+environment/default_environment="res://Game/Levels/baseenvironment.tres"

@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Garage.obj-f797364fe4e487c1beb1b90a8ce8bd59.mesh"
+
+[deps]
+
+files=[ "res://.import/Garage.obj-f797364fe4e487c1beb1b90a8ce8bd59.mesh" ]
+
+source_file="res://Game/Models/buildings/housing/Garage.obj"
+dest_files=[ "res://.import/Garage.obj-f797364fe4e487c1beb1b90a8ce8bd59.mesh", "res://.import/Garage.obj-f797364fe4e487c1beb1b90a8ce8bd59.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

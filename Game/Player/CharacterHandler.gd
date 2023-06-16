@@ -26,11 +26,15 @@ func PlaySound(sound : AudioStream, priority : bool):
 func SoundProcess(soundarray):
 	var listofsounds
 	var sound
-	random.randomize()
-	listofsounds = soundarray.size()
-	listofsounds -= 1
-	sound = random.randi_range(0, listofsounds)
-	return(sound)
+	if soundarray.empty() or soundarray.size() == 0 or soundarray == null:
+		pass
+	else:
+		random.randomize()
+		listofsounds = soundarray.size()
+		listofsounds -= 1
+		sound = random.randi_range(0, listofsounds)
+		return(sound)
 
-func PlaySoundFromArray(soundarray):
-	pass
+func PlaySoundFromArray(soundarray, priority : bool):
+	var sound = SoundProcess(soundarray)
+	PlaySound(soundarray[sound], priority)

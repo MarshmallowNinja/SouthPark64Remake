@@ -47,7 +47,7 @@ onready var floorcheck = $floorcheck
 onready var pausemenu = $Camera/CanvasLayer/menus/pausemenu
 onready var deadmenu = $Camera/CanvasLayer/menus/deadmenu
 onready var viewcheck = $Camera/viewcheck
-onready var character = $Character
+onready var character = $CharacterHandler
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -123,14 +123,10 @@ func _process(delta):
 	camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, minlookAngle, maxLookAngle)
 	rotation_degrees.y -= mouseDelta.x * lookSensitivity * delta
 	mouseDelta = Vector2()
-	#$Camera/CanvasLayer/ViewportContainer/Viewport/minimap.translation.z = $".".translation.z
-	#$Camera/CanvasLayer/ViewportContainer/Viewport/minimap.rotation_degrees.z = $".".rotation.z
-	
 	# other things
 	$Camera/CanvasLayer/HealthBar.value = Health
 	$Camera/CanvasLayer/ArmorBar.value = Armor
 	$Camera/CanvasLayer/FPS.set_bbcode("FPS: [wave]" + var2str(Engine.get_frames_per_second()) + "[/wave]")
-	#$Camera/CanvasLayer/ViewportContainer/RadarRim/RadarBG.rotation_degrees = $".".rotation_degrees.y
 
 func _input(event): #more camera controls
 	if event is InputEventMouseMotion:
@@ -138,7 +134,7 @@ func _input(event): #more camera controls
 
 func _on_resume_pressed():
 	pausemenu.set_visible(false)
-	$Camera/CanvasLayer/Control/ColorRect.set_visible(false)
+	$Camera/CanvasLayer/menus/menubg.set_visible(false)
 	get_tree().paused = false
 	PauseState = pausestate.Unpaused
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -158,8 +154,6 @@ func _on_viewcheck_area_entered(area: Area) -> void:
 func _on_viewcheck_area_exited(area: Area) -> void:
 	$Camera/CanvasLayer/Crosshair/RichTextLabel.text = ""
 	viewgroup = null
-
-# CUSTOM EVENTS
 
 func PlayerStateCheck():
 	match PlayerState:
@@ -211,5 +205,6 @@ func Interact():
 		viewgroup.call("interact")
 
 # used for player spawn
+# make sure to add input shit too
 func TakeControl():
 	$Camera.current = true
