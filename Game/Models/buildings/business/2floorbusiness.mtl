@@ -1,0 +1,52 @@
+# Blender 3.5.0 MTL File: '2floorbusiness.blend'
+# www.blender.org
+
+newmtl Door
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Game Development/SPRemake Things/Textures/building/door3.png
+
+newmtl Exterior_Color
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.000000 1.000000 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Roof_Color
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.190178 0.075720 0.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl SideWindow
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Game Development/SPRemake Things/Textures/building/archwindow2.png
+
+newmtl Window
+Ns 200.000000
+Ka 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd D:/Game Development/SPRemake Things/Textures/building/archwindow1.png

@@ -20,15 +20,15 @@ shadow_enabled = true
 [node name="Buildings" type="Node" parent="."]
 
 [node name="garage" parent="Buildings" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.1811, 0, -27.9835 )
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -23.7302, 0, -27.9835 )
 skeleton = NodePath("../..")
 
 [node name="onefloorhouse" parent="Buildings" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.948, 0, -27.9835 )
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -13.948, 0, -27.9835 )
 skeleton = NodePath("../..")
 
 [node name="House" parent="Buildings" instance=ExtResource( 3 )]
-transform = Transform( 1.45, 0, 0, 0, 1.45, 0, 0, 0, 1.45, 0, 0, -27.9835 )
+transform = Transform( 1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, -27.9835 )
 skeleton = NodePath("../..")
 
 [node name="CSG" type="Node" parent="."]
@@ -42,3 +42,4 @@ height = 0.001
 depth = 65.0
 
 [node name="MainPlayer" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0290074, 0 )

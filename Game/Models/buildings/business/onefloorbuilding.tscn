@@ -19,6 +19,7 @@ albedo_texture = ExtResource( 3 )
 albedo_texture = ExtResource( 4 )
 
 [node name="onefloorbuilding" type="MeshInstance"]
+transform = Transform( 1.11, 0, 0, 0, 1.11, 0, 0, 0, 1.11, 0, 0, 0 )
 mesh = ExtResource( 1 )
 material/0 = SubResource( 1 )
 material/1 = SubResource( 2 )
