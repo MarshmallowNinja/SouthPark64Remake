@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/2FloorBuilding.obj-74f3151536c97f4a087a8ac121147f77.mesh"
+
+[deps]
+
+files=[ "res://.import/2FloorBuilding.obj-74f3151536c97f4a087a8ac121147f77.mesh" ]
+
+source_file="res://Game/Models/buildings/business/2FloorBuilding.obj"
+dest_files=[ "res://.import/2FloorBuilding.obj-74f3151536c97f4a087a8ac121147f77.mesh", "res://.import/2FloorBuilding.obj-74f3151536c97f4a087a8ac121147f77.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

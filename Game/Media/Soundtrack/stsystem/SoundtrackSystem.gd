@@ -37,3 +37,6 @@ func PlaySong():
 			#System.stream = RMKSong
 	System.stream_paused = false
 	System.play()
+
+func ChangeOST(ST : int):
+	Soundtrack = ST
