@@ -38,6 +38,7 @@ run/main_scene.prototype="res://Game/Widgets/Main Menu/MainMenu.tscn"
 
 Sp64MainScript="*res://Game/IMPORTANT/SP64_MainScript.gd"
 SaveGame="*res://Game/IMPORTANT/savegame.gd"
+SoundtrackSystem="*res://Game/Media/Soundtrack/stsystem/SoundtrackSystem.tscn"
 
 [debug]
 

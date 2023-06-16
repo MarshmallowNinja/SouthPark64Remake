@@ -4,6 +4,8 @@ func _ready():
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	$Control/Menu/Button2.grab_focus()
+	SoundtrackSystem.SetSongs("res://Game/Media/Soundtrack/PC/The Theme.ogg", "res://Game/Media/Soundtrack/64/Roaming South Park (64).mp3", "res://Game/Media/Soundtrack/PS/Roaming South Park.ogg")
+	SoundtrackSystem.PlaySong()
 
 func switchmenus(a, b):
 	get_node(a).set_visible(true)

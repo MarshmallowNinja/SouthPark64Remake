@@ -21,9 +21,26 @@ export(int) var MaxGizmoAmmo = 100
 export(int) var MaxCowAmmo  = 40
 
 # AUDIO
-# export(Array, AudioStream) var CommSounds = []
-
-export(Array, AudioStream) var SpawnSounds = []
-export(Array, AudioStream) var PainSounds = []
-export(Array, AudioStream) var DeathSounds = []
-export(Array, AudioStream) var HealSounds = []
+# export(Array, AudioStream) var CommAudio = []
+# basic
+export(Array, AudioStream) var SpawnAudio = []
+export(Array, AudioStream) var PainAudio = [] # 1-29 HP
+export(Array, AudioStream) var DeathAudio = []
+export(Array, AudioStream) var HealAudio = []
+export(Array, AudioStream) var WeaponPickUpAudio = []
+# Damage+
+export(Array, AudioStream) var MedPainAudio = [] # 30-49 HP
+export(Array, AudioStream) var HevPainAudio = [] # 50-99 HP
+export(Array, AudioStream) var ShockDamageAudio = []
+export(Array, AudioStream) var GasDamageAudio = []
+# Story
+export(Array, AudioStream) var NearTownAudio = []
+export(Array, AudioStream) var EmptyTeamSpawnAudio = []
+# Enemy
+export(Array, AudioStream) var TurkeyKillAudio = []
+export(Array, AudioStream) var CloneKillAudio = []
+export(Array, AudioStream) var CowKillAudio = []
+export(Array, AudioStream) var AlienKillAudio = []
+export(Array, AudioStream) var RobotKillAudio = []
+export(Array, AudioStream) var ToyKillAudio = []
+export(Array, AudioStream) var ToughEnemyAudio = []
