@@ -109,7 +109,7 @@ func _physics_process(delta): #inputs
 				lookSensitivity = 20
 	
 	# movement and acceleration
-	movement = movement.normalized() #Straferunning
+	movement = movement.normalized()
 	velocity = velocity.linear_interpolate(direction * moveSpeed, Acceleration * delta)
 	movement.z = velocity.z + gravityv.z
 	movement.x = velocity.x + gravityv.x
