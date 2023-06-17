@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hurt (15).wav-14112caa2c4c33abc86d455c18c129ba.sample"
+
+[deps]
+
+source_file="res://Game/Player/characters/files/jimbo/sounds/hurt (15).wav"
+dest_files=[ "res://.import/hurt (15).wav-14112caa2c4c33abc86d455c18c129ba.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=true
+force/max_rate_hz=48000.0
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

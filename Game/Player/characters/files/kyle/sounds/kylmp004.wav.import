@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/kylmp004.wav-d161c8cb74af3f3d8472d7df09b4881b.sample"
+
+[deps]
+
+source_file="res://Game/Player/characters/files/kyle/sounds/kylmp004.wav"
+dest_files=[ "res://.import/kylmp004.wav-d161c8cb74af3f3d8472d7df09b4881b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=true
+force/max_rate_hz=48000.0
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

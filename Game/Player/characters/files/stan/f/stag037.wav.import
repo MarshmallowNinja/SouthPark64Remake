@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/stag037.wav-10c48b056740fe4176ea0d4d6318081b.sample"
+
+[deps]
+
+source_file="res://Game/Player/characters/files/stan/f/stag037.wav"
+dest_files=[ "res://.import/stag037.wav-10c48b056740fe4176ea0d4d6318081b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=true
+force/max_rate_hz=48000.0
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

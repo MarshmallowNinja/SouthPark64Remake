@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ikeg021.wav-194b3fd8f3aca8ef4c74468fa57e9d86.sample"
+
+[deps]
+
+source_file="res://Game/Player/characters/files/ike/sounds/ikeg021.wav"
+dest_files=[ "res://.import/ikeg021.wav-194b3fd8f3aca8ef4c74468fa57e9d86.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=true
+force/max_rate_hz=48000.0
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/win.wav-2e36c3ceda041afd7d51e011f610aa1e.sample"
+
+[deps]
+
+source_file="res://Game/Player/characters/files/mackey/sounds/win.wav"
+dest_files=[ "res://.import/win.wav-2e36c3ceda041afd7d51e011f610aa1e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=true
+force/max_rate_hz=48000.0
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

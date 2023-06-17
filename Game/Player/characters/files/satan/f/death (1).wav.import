@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/death (1).wav-ff8350a08c53f5c15ffaeaa9d663a0ff.sample"
+
+[deps]
+
+source_file="res://Game/Player/characters/files/satan/f/death (1).wav"
+dest_files=[ "res://.import/death (1).wav-ff8350a08c53f5c15ffaeaa9d663a0ff.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=true
+force/max_rate_hz=48000.0
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

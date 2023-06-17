@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/kylg045.wav-4c7f09962c991ed4864545b0b56b4d92.sample"
+
+[deps]
+
+source_file="res://Game/Player/characters/files/kyle/sounds/kylg045.wav"
+dest_files=[ "res://.import/kylg045.wav-4c7f09962c991ed4864545b0b56b4d92.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=true
+force/max_rate_hz=48000.0
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=1
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

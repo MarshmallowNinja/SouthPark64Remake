@@ -52,6 +52,7 @@ onready var teambar = $Camera/CanvasLayer/TeamBar
 
 func _ready():
 	Initiate()
+	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
@@ -194,6 +195,7 @@ func Damage(a):
 func Heal(a):
 	Health += a
 	$AnimationPlayer.play("heal")
+	$PickupHandler.Pickup(1)
 	emit_signal("Heal")
 	if Health > MaxHealth:
 		Health = MaxHealth
@@ -214,13 +216,11 @@ func Kill():
 	$Camera/CanvasLayer/menus/menubg.set_visible(true)
 	deadmenu.set_visible(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
-func _on_btm_pressed():
-# warning-ignore:return_value_discarded
+func _on_cy_pressed() -> void:
 	get_tree().reload_current_scene()
-func _on_resp_pressed():
-# warning-ignore:return_value_discarded
+func _on_cn_pressed() -> void:
 	get_tree().change_scene("res://Game/Menu/Main Menu/MainMenu.tscn")
+
 
 # self explanatory
 func Interact():

@@ -34,6 +34,7 @@ func SoundProcess(soundarray):
 		listofsounds = soundarray.size()
 		listofsounds -= 1
 		sound = random.randi_range(0, listofsounds)
+		print(var2str(sound))
 		return(sound)
 
 func PlaySoundFromArray(soundarray, priority : bool):
