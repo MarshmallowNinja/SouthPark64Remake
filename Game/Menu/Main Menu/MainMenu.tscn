@@ -1,11 +1,12 @@
-[gd_scene load_steps=71 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://Game/Texture/building/window1.png" type="Texture" id=1]
 [ext_resource path="res://Game/Menu/Main Menu/MainMenuScriptsYo.gd" type="Script" id=2]
 [ext_resource path="res://Game/Menu/Main Menu/2021 icon crop.png" type="Texture" id=3]
-[ext_resource path="res://Game/Menu/southpark.theme" type="Theme" id=5]
+[ext_resource path="res://Game/Menu/CDfont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Game/Menu/PlayerUI.theme" type="Theme" id=5]
 [ext_resource path="res://Game/Menu/sp_dynamicfont.tres" type="DynamicFont" id=6]
-[ext_resource path="res://Game/Menu/south park.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Game/Menu/SettingsTheme.tres" type="Theme" id=8]
 [ext_resource path="res://Game/Models/buildings/housing/garage.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Game/Models/buildings/housing/onefloorhouse.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Game/Texture/building/door1.png" type="Texture" id=11]
@@ -499,132 +500,6 @@ func _process(_delta):
 		$\".\".get_surface_material(3).albedo_texture = DoorTexture
 "
 
-[sub_resource type="DynamicFont" id=62]
-size = 41
-font_data = ExtResource( 7 )
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-expand_margin_top = 3.0
-expand_margin_bottom = 3.0
-
-[sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="StyleBoxFlat" id=7]
-bg_color = Color( 0, 0, 0, 0 )
-
-[sub_resource type="StyleBoxFlat" id=53]
-bg_color = Color( 0, 0, 0, 0 )
-border_width_top = 6
-border_width_bottom = 6
-border_color = Color( 0.8, 0.8, 0.8, 0 )
-
-[sub_resource type="StyleBoxFlat" id=8]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-expand_margin_top = 3.0
-expand_margin_bottom = 3.0
-
-[sub_resource type="DynamicFont" id=5]
-size = 20
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=9]
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=13]
-size = 19
-font_data = ExtResource( 7 )
-
-[sub_resource type="Theme" id=16]
-default_font = SubResource( 13 )
-Button/colors/font_color = Color( 0, 0.0313726, 0.670588, 1 )
-Button/colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
-Button/colors/font_color_focus = Color( 1, 0.811765, 0, 1 )
-Button/colors/font_color_hover = Color( 1, 0.811765, 0, 1 )
-Button/colors/font_color_pressed = Color( 0, 0.0313726, 0.670588, 1 )
-Button/fonts/font = SubResource( 62 )
-Button/styles/disabled = SubResource( 3 )
-Button/styles/focus = SubResource( 6 )
-Button/styles/hover = SubResource( 7 )
-Button/styles/normal = SubResource( 53 )
-Button/styles/pressed = SubResource( 8 )
-CheckButton/styles/disabled = null
-Fonts/fonts/normal = SubResource( 5 )
-Label/colors/font_color = Color( 1, 1, 1, 1 )
-RichTextLabel/fonts/normal_font = SubResource( 9 )
-
-[sub_resource type="DynamicFont" id=17]
-size = 41
-font_data = ExtResource( 7 )
-
-[sub_resource type="StyleBoxFlat" id=18]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-expand_margin_top = 3.0
-expand_margin_bottom = 3.0
-
-[sub_resource type="StyleBoxFlat" id=19]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-
-[sub_resource type="StyleBoxFlat" id=20]
-bg_color = Color( 0, 0, 0, 0 )
-
-[sub_resource type="StyleBoxFlat" id=21]
-bg_color = Color( 0, 0, 0, 0 )
-border_width_top = 6
-border_width_bottom = 6
-border_color = Color( 0.8, 0.8, 0.8, 0 )
-
-[sub_resource type="StyleBoxFlat" id=22]
-bg_color = Color( 0.6, 0.6, 0.6, 0 )
-expand_margin_top = 3.0
-expand_margin_bottom = 3.0
-
-[sub_resource type="DynamicFont" id=23]
-size = 20
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=24]
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=25]
-size = 19
-font_data = ExtResource( 7 )
-
-[sub_resource type="Theme" id=14]
-default_font = SubResource( 25 )
-Button/colors/font_color = Color( 0, 0.0313726, 0.670588, 1 )
-Button/colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
-Button/colors/font_color_focus = Color( 1, 0.811765, 0, 1 )
-Button/colors/font_color_hover = Color( 1, 0.811765, 0, 1 )
-Button/colors/font_color_pressed = Color( 0, 0.0313726, 0.670588, 1 )
-Button/fonts/font = SubResource( 17 )
-Button/styles/disabled = SubResource( 18 )
-Button/styles/focus = SubResource( 19 )
-Button/styles/hover = SubResource( 20 )
-Button/styles/normal = SubResource( 21 )
-Button/styles/pressed = SubResource( 22 )
-Fonts/fonts/normal = SubResource( 23 )
-Label/colors/font_color = Color( 1, 1, 1, 1 )
-RichTextLabel/fonts/normal_font = SubResource( 24 )
-
-[sub_resource type="Theme" id=15]
-default_font = SubResource( 25 )
-Button/colors/font_color = Color( 0, 0.0313726, 0.670588, 1 )
-Button/colors/font_color_disabled = Color( 1, 1, 1, 0.2 )
-Button/colors/font_color_focus = Color( 1, 0.811765, 0, 1 )
-Button/colors/font_color_hover = Color( 1, 0.811765, 0, 1 )
-Button/colors/font_color_pressed = Color( 0, 0.0313726, 0.670588, 1 )
-Button/fonts/font = SubResource( 17 )
-Button/styles/disabled = SubResource( 18 )
-Button/styles/focus = SubResource( 19 )
-Button/styles/hover = SubResource( 20 )
-Button/styles/normal = SubResource( 21 )
-Button/styles/pressed = SubResource( 22 )
-Fonts/fonts/normal = SubResource( 23 )
-Label/colors/font_color = Color( 1, 1, 1, 1 )
-RichTextLabel/fonts/normal_font = SubResource( 24 )
-
 [node name="menu" type="Spatial"]
 pause_mode = 2
 script = ExtResource( 2 )
@@ -736,22 +611,17 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 theme = ExtResource( 5 )
-theme_type_variation = "mainmenu"
 
 [node name="bg" type="ColorRect" parent="Control"]
-margin_left = -656.0
-margin_top = -384.0
-margin_right = 696.0
-margin_bottom = 392.0
+margin_left = -984.0
+margin_top = -572.0
+margin_right = 992.0
+margin_bottom = 572.0
 mouse_filter = 2
 color = Color( 0, 0, 0, 0.65098 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="2021 icon crop" type="Sprite" parent="Control"]
 position = Vector2( 0, -255 )
-scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 3 )
 
 [node name="Menu" type="VBoxContainer" parent="Control"]
@@ -761,11 +631,11 @@ margin_left = -248.0
 margin_top = 56.0
 margin_right = 249.0
 margin_bottom = 344.0
-custom_constants/separation = 12
+custom_constants/separation = 24
 
 [node name="Button2" type="Button" parent="Control/Menu"]
-margin_right = 497.0
-margin_bottom = 29.0
+margin_right = 534.0
+margin_bottom = 43.0
 text = "Developer Menu"
 flat = true
 __meta__ = {
@@ -773,9 +643,9 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="Control/Menu"]
-margin_top = 41.0
-margin_right = 497.0
-margin_bottom = 70.0
+margin_top = 67.0
+margin_right = 534.0
+margin_bottom = 110.0
 disabled = true
 text = "Story Mode"
 flat = true
@@ -784,9 +654,9 @@ __meta__ = {
 }
 
 [node name="Multiplayer" type="Button" parent="Control/Menu"]
-margin_top = 82.0
-margin_right = 497.0
-margin_bottom = 111.0
+margin_top = 134.0
+margin_right = 534.0
+margin_bottom = 177.0
 disabled = true
 action_mode = 0
 text = "Multiplayer"
@@ -796,9 +666,9 @@ __meta__ = {
 }
 
 [node name="Online" type="Button" parent="Control/Menu"]
-margin_top = 123.0
-margin_right = 497.0
-margin_bottom = 152.0
+margin_top = 201.0
+margin_right = 534.0
+margin_bottom = 244.0
 disabled = true
 action_mode = 0
 text = "Online"
@@ -808,9 +678,9 @@ __meta__ = {
 }
 
 [node name="settings" type="Button" parent="Control/Menu"]
-margin_top = 164.0
-margin_right = 497.0
-margin_bottom = 193.0
+margin_top = 268.0
+margin_right = 534.0
+margin_bottom = 311.0
 action_mode = 0
 text = "Settings"
 flat = true
@@ -832,9 +702,9 @@ __meta__ = {
 }
 
 [node name="Exit" type="Button" parent="Control/Menu"]
-margin_top = 205.0
-margin_right = 497.0
-margin_bottom = 234.0
+margin_top = 335.0
+margin_right = 534.0
+margin_bottom = 378.0
 action_mode = 0
 text = "Quit"
 flat = true
@@ -896,8 +766,8 @@ margin_bottom = 360.0
 custom_constants/separation = 12
 
 [node name="game_settings" type="Button" parent="Control/Settings"]
-margin_right = 578.0
-margin_bottom = 29.0
+margin_right = 619.0
+margin_bottom = 43.0
 text = "Game Settings"
 flat = true
 __meta__ = {
@@ -905,9 +775,9 @@ __meta__ = {
 }
 
 [node name="aud_settings" type="Button" parent="Control/Settings"]
-margin_top = 41.0
-margin_right = 578.0
-margin_bottom = 70.0
+margin_top = 55.0
+margin_right = 619.0
+margin_bottom = 98.0
 text = "Audio Settings"
 flat = true
 __meta__ = {
@@ -915,9 +785,9 @@ __meta__ = {
 }
 
 [node name="vid_settings" type="Button" parent="Control/Settings"]
-margin_top = 82.0
-margin_right = 578.0
-margin_bottom = 111.0
+margin_top = 110.0
+margin_right = 619.0
+margin_bottom = 153.0
 action_mode = 0
 text = "Video Settings"
 flat = true
@@ -926,9 +796,9 @@ __meta__ = {
 }
 
 [node name="inp_settings" type="Button" parent="Control/Settings"]
-margin_top = 123.0
-margin_right = 578.0
-margin_bottom = 152.0
+margin_top = 165.0
+margin_right = 619.0
+margin_bottom = 208.0
 disabled = true
 action_mode = 0
 text = "Input Settings"
@@ -938,9 +808,9 @@ __meta__ = {
 }
 
 [node name="onl_settings" type="Button" parent="Control/Settings"]
-margin_top = 164.0
-margin_right = 578.0
-margin_bottom = 193.0
+margin_top = 220.0
+margin_right = 619.0
+margin_bottom = 263.0
 disabled = true
 action_mode = 0
 text = "Network settings"
@@ -950,9 +820,9 @@ __meta__ = {
 }
 
 [node name="settomain" type="Button" parent="Control/Settings"]
-margin_top = 205.0
-margin_right = 578.0
-margin_bottom = 234.0
+margin_top = 275.0
+margin_right = 619.0
+margin_bottom = 318.0
 action_mode = 0
 text = "Back to Main Menu"
 flat = true
@@ -1011,7 +881,7 @@ margin_left = -597.5
 margin_top = -316.0
 margin_right = 597.5
 margin_bottom = 316.0
-theme = SubResource( 16 )
+theme = ExtResource( 8 )
 
 [node name="title" type="Label" parent="Control/GameSettings"]
 margin_right = 1195.0
@@ -1033,38 +903,41 @@ custom_constants/separation = 62
 [node name="cheat" type="HBoxContainer" parent="Control/GameSettings"]
 margin_top = 105.0
 margin_right = 1195.0
-margin_bottom = 125.0
+margin_bottom = 141.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/GameSettings/cheat"]
-margin_left = 379.0
+margin_left = 34.0
 margin_top = 5.0
-margin_right = 567.0
-margin_bottom = 15.0
+margin_right = 522.0
+margin_bottom = 31.0
+custom_fonts/font = ExtResource( 4 )
 text = "Enter Cheat Code"
 
-[node name="CheckButton" type="LineEdit" parent="Control/GameSettings/cheat"]
-margin_left = 571.0
-margin_right = 815.0
-margin_bottom = 20.0
+[node name="codeentry" type="LineEdit" parent="Control/GameSettings/cheat"]
+margin_left = 526.0
+margin_right = 1160.0
+margin_bottom = 36.0
 custom_constants/minimum_spaces = 39
+custom_fonts/font = ExtResource( 4 )
+align = 1
 max_length = 12
-editable = false
 virtual_keyboard_enabled = false
 placeholder_text = "Enter Code here"
 placeholder_alpha = 0.141
+caret_blink = true
 
 [node name="HSeparator2" type="HSeparator" parent="Control/GameSettings"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 129.0
+margin_top = 145.0
 margin_right = 1195.0
-margin_bottom = 191.0
+margin_bottom = 207.0
 custom_constants/separation = 62
 
 [node name="gstog" type="Button" parent="Control/GameSettings"]
-margin_top = 195.0
+margin_top = 211.0
 margin_right = 1195.0
-margin_bottom = 229.0
+margin_bottom = 245.0
 text = "Back to Main Menu"
 
 [node name="AudioSettings" type="VBoxContainer" parent="Control"]
@@ -1077,7 +950,7 @@ margin_left = -597.5
 margin_top = -316.0
 margin_right = 597.5
 margin_bottom = 316.0
-theme = SubResource( 14 )
+theme = ExtResource( 8 )
 
 [node name="title" type="Label" parent="Control/AudioSettings"]
 margin_right = 1195.0
@@ -1099,107 +972,107 @@ custom_constants/separation = 62
 [node name="masvol" type="HBoxContainer" parent="Control/AudioSettings"]
 margin_top = 105.0
 margin_right = 1195.0
-margin_bottom = 125.0
+margin_bottom = 136.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/AudioSettings/masvol"]
-margin_left = 466.0
+margin_left = 334.0
 margin_top = 5.0
-margin_right = 627.0
-margin_bottom = 15.0
+margin_right = 674.0
+margin_bottom = 26.0
 text = "Master Volume"
 
 [node name="OptionButton" type="SpinBox" parent="Control/AudioSettings/masvol"]
-margin_left = 631.0
-margin_right = 729.0
-margin_bottom = 20.0
+margin_left = 678.0
+margin_right = 860.0
+margin_bottom = 31.0
 max_value = 1.0
 value = 1.0
 align = 1
 
 [node name="sfxvol" type="HBoxContainer" parent="Control/AudioSettings"]
-margin_top = 129.0
+margin_top = 140.0
 margin_right = 1195.0
-margin_bottom = 149.0
+margin_bottom = 171.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/AudioSettings/sfxvol"]
-margin_left = 486.0
+margin_left = 377.0
 margin_top = 5.0
-margin_right = 607.0
-margin_bottom = 15.0
+margin_right = 631.0
+margin_bottom = 26.0
 text = "SFX Volume"
 
 [node name="OptionButton" type="SpinBox" parent="Control/AudioSettings/sfxvol"]
-margin_left = 611.0
-margin_right = 709.0
-margin_bottom = 20.0
+margin_left = 635.0
+margin_right = 817.0
+margin_bottom = 31.0
 max_value = 1.0
 value = 1.0
 align = 1
 editable = false
 
 [node name="musvol" type="HBoxContainer" parent="Control/AudioSettings"]
-margin_top = 153.0
+margin_top = 175.0
 margin_right = 1195.0
-margin_bottom = 173.0
+margin_bottom = 206.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/AudioSettings/musvol"]
-margin_left = 475.0
+margin_left = 354.0
 margin_top = 5.0
-margin_right = 617.0
-margin_bottom = 15.0
+margin_right = 654.0
+margin_bottom = 26.0
 text = "Music Volume"
 
 [node name="OptionButton" type="SpinBox" parent="Control/AudioSettings/musvol"]
-margin_left = 621.0
-margin_right = 719.0
-margin_bottom = 20.0
+margin_left = 658.0
+margin_right = 840.0
+margin_bottom = 31.0
 max_value = 1.0
 value = 1.0
 align = 1
 editable = false
 
 [node name="vocvol" type="HBoxContainer" parent="Control/AudioSettings"]
-margin_top = 177.0
+margin_top = 210.0
 margin_right = 1195.0
-margin_bottom = 197.0
+margin_bottom = 241.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/AudioSettings/vocvol"]
-margin_left = 477.0
+margin_left = 357.0
 margin_top = 5.0
-margin_right = 616.0
-margin_bottom = 15.0
+margin_right = 651.0
+margin_bottom = 26.0
 text = "Voice Volume"
 
 [node name="OptionButton" type="SpinBox" parent="Control/AudioSettings/vocvol"]
-margin_left = 620.0
-margin_right = 718.0
-margin_bottom = 20.0
+margin_left = 655.0
+margin_right = 837.0
+margin_bottom = 31.0
 max_value = 1.0
 value = 1.0
 align = 1
 editable = false
 
 [node name="envvol" type="HBoxContainer" parent="Control/AudioSettings"]
-margin_top = 201.0
+margin_top = 245.0
 margin_right = 1195.0
-margin_bottom = 221.0
+margin_bottom = 276.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/AudioSettings/envvol"]
-margin_left = 437.0
+margin_left = 274.0
 margin_top = 5.0
-margin_right = 656.0
-margin_bottom = 15.0
+margin_right = 734.0
+margin_bottom = 26.0
 text = "Environment Volume"
 
 [node name="OptionButton" type="SpinBox" parent="Control/AudioSettings/envvol"]
-margin_left = 660.0
-margin_right = 758.0
-margin_bottom = 20.0
+margin_left = 738.0
+margin_right = 920.0
+margin_bottom = 31.0
 max_value = 1.0
 value = 1.0
 align = 1
@@ -1230,29 +1103,29 @@ editable = false
 
 [node name="HSeparator2" type="HSeparator" parent="Control/AudioSettings"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 225.0
+margin_top = 280.0
 margin_right = 1195.0
-margin_bottom = 287.0
+margin_bottom = 342.0
 custom_constants/separation = 62
 
 [node name="osttype" type="HBoxContainer" parent="Control/AudioSettings"]
-margin_top = 291.0
+margin_top = 346.0
 margin_right = 1195.0
-margin_bottom = 315.0
+margin_bottom = 379.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/AudioSettings/osttype"]
-margin_left = 446.0
-margin_top = 7.0
-margin_right = 629.0
-margin_bottom = 17.0
+margin_left = 313.0
+margin_top = 6.0
+margin_right = 702.0
+margin_bottom = 27.0
 text = "Soundtrack Type"
 
 [node name="OptionButton" type="OptionButton" parent="Control/AudioSettings/osttype"]
-margin_left = 633.0
-margin_right = 749.0
-margin_bottom = 24.0
-custom_constants/hseparation = 27
+margin_left = 706.0
+margin_right = 881.0
+margin_bottom = 33.0
+custom_constants/hseparation = 0
 text = "PC 1999"
 align = 1
 items = [ "PC 1999", null, false, 0, null, "Nintendo 64", null, false, 1, null, "Playstation", null, false, 2, null, "2022 Remake", null, false, 3, null ]
@@ -1260,15 +1133,15 @@ selected = 0
 
 [node name="HSeparator3" type="HSeparator" parent="Control/AudioSettings"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 319.0
+margin_top = 383.0
 margin_right = 1195.0
-margin_bottom = 381.0
+margin_bottom = 445.0
 custom_constants/separation = 62
 
 [node name="astos" type="Button" parent="Control/AudioSettings"]
-margin_top = 385.0
+margin_top = 449.0
 margin_right = 1195.0
-margin_bottom = 419.0
+margin_bottom = 483.0
 text = "Back to Main Menu"
 
 [node name="VideoSettings" type="VBoxContainer" parent="Control"]
@@ -1281,7 +1154,7 @@ margin_left = -597.5
 margin_top = -316.0
 margin_right = 597.5
 margin_bottom = 316.0
-theme = SubResource( 15 )
+theme = ExtResource( 8 )
 
 [node name="title" type="Label" parent="Control/VideoSettings"]
 margin_right = 1195.0
@@ -1295,179 +1168,179 @@ valign = 1
 
 [node name="HSeparator" type="HSeparator" parent="Control/VideoSettings"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 39.0
+margin_top = 43.0
 margin_right = 1195.0
-margin_bottom = 101.0
+margin_bottom = 105.0
 custom_constants/separation = 62
 
 [node name="screenres" type="HBoxContainer" parent="Control/VideoSettings"]
-margin_top = 105.0
+margin_top = 113.0
 margin_right = 1195.0
-margin_bottom = 129.0
+margin_bottom = 146.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/VideoSettings/screenres"]
-margin_left = 464.0
-margin_top = 7.0
-margin_right = 665.0
-margin_bottom = 17.0
+margin_left = 318.0
+margin_top = 6.0
+margin_right = 745.0
+margin_bottom = 27.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Screen Resolution"
 
 [node name="CheckButton" type="OptionButton" parent="Control/VideoSettings/screenres"]
-margin_left = 669.0
-margin_right = 730.0
-margin_bottom = 24.0
+margin_left = 763.0
+margin_right = 877.0
+margin_bottom = 33.0
 disabled = true
 text = "1440"
 items = [ "720", null, false, 1, null, "1080", null, false, 2, null, "1440", null, false, 3, null, "2160", null, false, 4, null ]
 selected = 2
 
 [node name="frame" type="HBoxContainer" parent="Control/VideoSettings"]
-margin_top = 133.0
+margin_top = 154.0
 margin_right = 1195.0
-margin_bottom = 153.0
+margin_bottom = 185.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/VideoSettings/frame"]
-margin_left = 464.0
+margin_left = 325.0
 margin_top = 5.0
-margin_right = 628.0
-margin_bottom = 15.0
+margin_right = 670.0
+margin_bottom = 26.0
 text = "Max Framerate"
 
 [node name="framecheck" type="SpinBox" parent="Control/VideoSettings/frame"]
-margin_left = 632.0
-margin_right = 730.0
-margin_bottom = 20.0
+margin_left = 688.0
+margin_right = 870.0
+margin_bottom = 31.0
 min_value = 16.0
 max_value = 360.0
 value = 60.0
 
 [node name="vsync" type="HBoxContainer" parent="Control/VideoSettings"]
-margin_top = 157.0
+margin_top = 193.0
 margin_right = 1195.0
-margin_bottom = 185.0
+margin_bottom = 226.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/VideoSettings/vsync"]
-margin_left = 556.0
-margin_top = 9.0
-margin_right = 619.0
-margin_bottom = 19.0
+margin_left = 514.0
+margin_top = 6.0
+margin_right = 647.0
+margin_bottom = 27.0
 text = "VSync"
 
 [node name="CheckButton" type="CheckBox" parent="Control/VideoSettings/vsync"]
-margin_left = 623.0
-margin_right = 639.0
-margin_bottom = 28.0
+margin_left = 665.0
+margin_right = 681.0
+margin_bottom = 33.0
 
 [node name="fullscreen" type="HBoxContainer" parent="Control/VideoSettings"]
-margin_top = 189.0
+margin_top = 234.0
 margin_right = 1195.0
-margin_bottom = 217.0
+margin_bottom = 267.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/VideoSettings/fullscreen"]
-margin_left = 526.0
-margin_top = 9.0
-margin_right = 649.0
-margin_bottom = 19.0
+margin_left = 450.0
+margin_top = 6.0
+margin_right = 710.0
+margin_bottom = 27.0
 text = "Fullscreen"
 
 [node name="CheckButton" type="CheckBox" parent="Control/VideoSettings/fullscreen"]
-margin_left = 653.0
-margin_right = 669.0
-margin_bottom = 28.0
+margin_left = 728.0
+margin_right = 744.0
+margin_bottom = 33.0
 disabled = true
 
 [node name="fxaa" type="HBoxContainer" parent="Control/VideoSettings"]
-margin_top = 221.0
+margin_top = 275.0
 margin_right = 1195.0
-margin_bottom = 249.0
+margin_bottom = 308.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/VideoSettings/fxaa"]
-margin_left = 561.0
-margin_top = 9.0
-margin_right = 613.0
-margin_bottom = 19.0
+margin_left = 526.0
+margin_top = 6.0
+margin_right = 635.0
+margin_bottom = 27.0
 text = "FXAA"
 
 [node name="fxaacheck" type="CheckBox" parent="Control/VideoSettings/fxaa"]
-margin_left = 617.0
-margin_right = 633.0
-margin_bottom = 28.0
+margin_left = 653.0
+margin_right = 669.0
+margin_bottom = 33.0
 
 [node name="HSeparator3" type="HSeparator" parent="Control/VideoSettings"]
-margin_top = 253.0
+margin_top = 316.0
 margin_right = 1195.0
-margin_bottom = 257.0
+margin_bottom = 320.0
 
 [node name="texres" type="HBoxContainer" parent="Control/VideoSettings"]
-margin_top = 261.0
+margin_top = 328.0
 margin_right = 1195.0
-margin_bottom = 285.0
+margin_bottom = 361.0
 hint_tooltip = "Adjusts Texture resolution and filtering."
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/VideoSettings/texres"]
-margin_left = 474.0
-margin_top = 7.0
-margin_right = 655.0
-margin_bottom = 17.0
+margin_left = 340.0
+margin_top = 6.0
+margin_right = 721.0
+margin_bottom = 27.0
 text = "Texture Quality"
 
 [node name="CheckButton" type="OptionButton" parent="Control/VideoSettings/texres"]
-margin_left = 659.0
-margin_right = 721.0
-margin_bottom = 24.0
+margin_left = 739.0
+margin_right = 854.0
+margin_bottom = 33.0
 disabled = true
 text = "High"
 items = [ "High", null, false, 0, null, "Medium", null, false, 1, null, "Low", null, false, 2, null ]
 selected = 0
 
 [node name="shares" type="HBoxContainer" parent="Control/VideoSettings"]
-margin_top = 289.0
+margin_top = 369.0
 margin_right = 1195.0
-margin_bottom = 313.0
+margin_bottom = 402.0
 hint_tooltip = "Adjusts Shadow Quality, Opacity and filtering."
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/VideoSettings/shares"]
-margin_left = 451.0
-margin_top = 7.0
-margin_right = 621.0
-margin_bottom = 17.0
+margin_left = 290.0
+margin_top = 6.0
+margin_right = 651.0
+margin_bottom = 27.0
 text = "Shadow Quality"
 
 [node name="CheckButton" type="OptionButton" parent="Control/VideoSettings/shares"]
-margin_left = 625.0
-margin_right = 744.0
-margin_bottom = 24.0
+margin_left = 669.0
+margin_right = 904.0
+margin_bottom = 33.0
 disabled = true
 text = "Very High"
 items = [ "Very High", null, false, 0, null, "High", null, false, 1, null, "Medium", null, false, 2, null, "Low", null, false, 3, null, "Very Low", null, false, 4, null, "None", null, false, 5, null ]
 selected = 0
 
 [node name="refres" type="HBoxContainer" parent="Control/VideoSettings"]
-margin_top = 317.0
+margin_top = 410.0
 margin_right = 1195.0
-margin_bottom = 341.0
+margin_bottom = 443.0
 hint_tooltip = "Adjusts Reflection resolution, quality and accuracy."
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/VideoSettings/refres"]
-margin_left = 431.0
-margin_top = 7.0
-margin_right = 641.0
-margin_bottom = 17.0
+margin_left = 249.0
+margin_top = 6.0
+margin_right = 693.0
+margin_bottom = 27.0
 text = "REflection Quality"
 
 [node name="CheckButton" type="OptionButton" parent="Control/VideoSettings/refres"]
-margin_left = 645.0
-margin_right = 764.0
-margin_bottom = 24.0
+margin_left = 711.0
+margin_right = 946.0
+margin_bottom = 33.0
 disabled = true
 text = "Very High"
 items = [ "Very High", null, false, 0, null, "High", null, false, 1, null, "Medium", null, false, 2, null, "Low", null, false, 3, null, "Very Low", null, false, 4, null, "None", null, false, 5, null ]
@@ -1475,15 +1348,15 @@ selected = 0
 
 [node name="HSeparator2" type="HSeparator" parent="Control/VideoSettings"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 345.0
+margin_top = 451.0
 margin_right = 1195.0
-margin_bottom = 407.0
+margin_bottom = 513.0
 custom_constants/separation = 62
 
 [node name="vidtoset" type="Button" parent="Control/VideoSettings"]
-margin_top = 411.0
+margin_top = 521.0
 margin_right = 1195.0
-margin_bottom = 445.0
+margin_bottom = 555.0
 text = "Back to Main Menu"
 
 [connection signal="pressed" from="Control/Menu/Button2" to="." method="_on_Button2_pressed"]

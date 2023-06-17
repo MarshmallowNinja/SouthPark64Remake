@@ -4,13 +4,10 @@ var configexists : bool = false
 var modexists : bool = false
 
 var Settings = {
-	"blood" : false,
-	"skipcs" : false,
 	"enteredcheat" : false,
 	
 	# AUDIO SETTINGS
 	"mastervolume" : 100,
-	"uncensor" : false,
 	
 	# VIDEO SETTINGS
 	"resolution" : null,

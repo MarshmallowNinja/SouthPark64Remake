@@ -7,6 +7,9 @@ func _ready():
 	SoundtrackSystem.SetSongs("res://Game/Media/Soundtrack/PC/The Theme.ogg", "res://Game/Media/Soundtrack/64/Roaming South Park (64).mp3", "res://Game/Media/Soundtrack/PS/Roaming South Park.ogg")
 	SoundtrackSystem.PlaySong()
 
+func InitiateSaveShit():
+	pass
+
 func switchmenus(a, b):
 	get_node(a).set_visible(true)
 	get_node(b).set_visible(false)
