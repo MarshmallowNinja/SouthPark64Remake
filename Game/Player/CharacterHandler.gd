@@ -43,5 +43,21 @@ func PlaySoundFromArray(soundarray, priority : bool):
 	else:
 		PlaySound(soundarray[sound], priority)
 
+#func RandomlyPlaySoundFromArray(soundarray, priority : bool):
+#	var sound = SoundProcess(soundarray)
+#	if sound == null:
+#		pass
+#	else:
+#		PlaySound(soundarray[sound], priority)
+
 func _on_MainPlayer_Spawn() -> void:
 	PlaySoundFromArray(Character.SpawnAudio, true)
+
+func _on_MainPlayer_Hurt() -> void:
+	PlaySoundFromArray(Character.HurtAudio, false)
+
+func _on_MainPlayer_Heal() -> void:
+	PlaySoundFromArray(Character.HealAudio, false)
+
+func _on_MainPlayer_Death() -> void:
+	PlaySoundFromArray(Character.DeathAudio, true)

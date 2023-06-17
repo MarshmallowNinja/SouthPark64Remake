@@ -174,11 +174,21 @@ func PlayerStateCheck():
 			axis_lock_motion_z = true
 
 func Damage(a):
-	Health -= a
+# overly complicated damage system
+	if a >= Armor:
+		var leftoverdmg
+		leftoverdmg = a % Armor
+		a -= Armor
+		leftoverdmg -= Health
+		emit_signal("Hurt")
+	if Armor > 0:
+		Armor -= a
+		emit_signal("Hurt")
+	else:
+		Health -= a
+		emit_signal("Hurt")
 	if Health <= 0:
 		Kill()
-	else:
-		emit_signal("Hurt")
 
 func Heal(a):
 	Health += a

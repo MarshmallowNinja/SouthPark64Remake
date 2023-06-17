@@ -469,6 +469,9 @@ anims/RESET = SubResource( 21 )
 anims/damage1 = SubResource( 22 )
 anims/heal = SubResource( 23 )
 
+[connection signal="Death" from="." to="CharacterHandler" method="_on_MainPlayer_Death"]
+[connection signal="Heal" from="." to="CharacterHandler" method="_on_MainPlayer_Heal"]
+[connection signal="Hurt" from="." to="CharacterHandler" method="_on_MainPlayer_Hurt"]
 [connection signal="Spawn" from="." to="CharacterHandler" method="_on_MainPlayer_Spawn"]
 [connection signal="pressed" from="Camera/CanvasLayer/menus/pausemenu/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="Camera/CanvasLayer/menus/pausemenu/quit" to="." method="_on_quit_pressed"]
