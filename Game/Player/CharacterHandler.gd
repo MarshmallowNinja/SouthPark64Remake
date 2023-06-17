@@ -54,7 +54,7 @@ func _on_MainPlayer_Spawn() -> void:
 	PlaySoundFromArray(Character.SpawnAudio, true)
 
 func _on_MainPlayer_Hurt() -> void:
-	PlaySoundFromArray(Character.HurtAudio, false)
+	PlaySoundFromArray(Character.PainAudio, false)
 
 func _on_MainPlayer_Heal() -> void:
 	PlaySoundFromArray(Character.HealAudio, false)

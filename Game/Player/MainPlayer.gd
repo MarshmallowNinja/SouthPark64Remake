@@ -142,7 +142,7 @@ func _on_quit_pressed():
 	get_tree().change_scene("res://Game/Menu/Main Menu/MainMenu.tscn")
 
 func _on_viewcheck_area_entered(area: Area) -> void:
-	$Camera/CanvasLayer/Crosshair/RichTextLabel.text = var2str($Camera/viewcheck.get_overlapping_areas().front().get_name())
+	#$Camera/CanvasLayer/Crosshair/RichTextLabel.text = var2str($Camera/viewcheck.get_overlapping_areas().front().get_name())
 	if area.is_in_group("interact"):
 		viewgroup = area
 	else:
@@ -150,7 +150,7 @@ func _on_viewcheck_area_entered(area: Area) -> void:
 
 # warning-ignore:unused_argument
 func _on_viewcheck_area_exited(area: Area) -> void:
-	$Camera/CanvasLayer/Crosshair/RichTextLabel.text = ""
+	#$Camera/CanvasLayer/Crosshair/RichTextLabel.text = ""
 	viewgroup = null
 
 func Initiate():
@@ -175,7 +175,7 @@ func PlayerStateCheck():
 
 func Damage(a):
 # overly complicated damage system
-	if a >= Armor:
+	if a <= Armor:
 		var leftoverdmg
 		leftoverdmg = a % Armor
 		a -= Armor
@@ -186,19 +186,21 @@ func Damage(a):
 		emit_signal("Hurt")
 	else:
 		Health -= a
+		$AnimationPlayer.play("damage1")
 		emit_signal("Hurt")
 	if Health <= 0:
 		Kill()
 
 func Heal(a):
 	Health += a
+	$AnimationPlayer.play("heal")
 	emit_signal("Heal")
 	if Health > MaxHealth:
 		Health = MaxHealth
 	else:
 		pass
 
-func AddArmor():
+func Armor():
 	Armor += 25
 	if Armor > MaxArmor:
 		Armor = MaxArmor
