@@ -45,7 +45,6 @@ PlayerController="*res://Game/IMPORTANT/playercontroller.gd"
 
 settings/crash_handler/message="Send an Email to marshmallowninja@disroot.org or to marshmallow_ninja on Discord"
 settings/fps/force_fps=60
-settings/stdout/print_fps=true
 
 [display]
 
@@ -67,8 +66,7 @@ EarlyPrototype=false
 [importer_defaults]
 
 ogg_vorbis={
-"loop": false,
-"loop_offset": 0
+"loop": false
 }
 texture={
 "compress/bptc_ldr": 0,
@@ -93,7 +91,6 @@ texture={
 }
 wav={
 "edit/loop_mode": 1,
-"force/max_rate": true,
 "force/max_rate_hz": 48000.0
 }
 mp3={

@@ -94,3 +94,9 @@ func _on_fxaacheck_toggled(button_pressed: bool) -> void:
 func _on_framecheck_value_changed(value: float) -> void:
 	Engine.target_fps = value
 	SaveGame.Settings["maxfps"] = value
+
+# Audio Settings
+
+func _on_OptionButton_item_selected(index: int) -> void:
+	SoundtrackSystem.ChangeOST(index)
+	SoundtrackSystem.PlaySong()

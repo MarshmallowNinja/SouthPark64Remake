@@ -746,11 +746,13 @@ __meta__ = {
 }
 
 [node name="2021 icon crop" type="Sprite" parent="Control"]
+visible = false
 position = Vector2( 0, -255 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 3 )
 
 [node name="Menu" type="VBoxContainer" parent="Control"]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -248.0
@@ -761,7 +763,7 @@ custom_constants/separation = 12
 
 [node name="Button2" type="Button" parent="Control/Menu"]
 margin_right = 497.0
-margin_bottom = 31.0
+margin_bottom = 29.0
 text = "Developer Menu"
 flat = true
 __meta__ = {
@@ -769,9 +771,9 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="Control/Menu"]
-margin_top = 43.0
+margin_top = 41.0
 margin_right = 497.0
-margin_bottom = 74.0
+margin_bottom = 70.0
 disabled = true
 text = "Story Mode"
 flat = true
@@ -780,9 +782,9 @@ __meta__ = {
 }
 
 [node name="Multiplayer" type="Button" parent="Control/Menu"]
-margin_top = 86.0
+margin_top = 82.0
 margin_right = 497.0
-margin_bottom = 117.0
+margin_bottom = 111.0
 disabled = true
 action_mode = 0
 text = "Multiplayer"
@@ -792,9 +794,9 @@ __meta__ = {
 }
 
 [node name="Online" type="Button" parent="Control/Menu"]
-margin_top = 129.0
+margin_top = 123.0
 margin_right = 497.0
-margin_bottom = 160.0
+margin_bottom = 152.0
 disabled = true
 action_mode = 0
 text = "Online"
@@ -804,9 +806,9 @@ __meta__ = {
 }
 
 [node name="settings" type="Button" parent="Control/Menu"]
-margin_top = 172.0
+margin_top = 164.0
 margin_right = 497.0
-margin_bottom = 203.0
+margin_bottom = 193.0
 action_mode = 0
 text = "Settings"
 flat = true
@@ -828,9 +830,9 @@ __meta__ = {
 }
 
 [node name="Exit" type="Button" parent="Control/Menu"]
-margin_top = 215.0
+margin_top = 205.0
 margin_right = 497.0
-margin_bottom = 246.0
+margin_bottom = 234.0
 action_mode = 0
 text = "Quit"
 flat = true
@@ -1063,49 +1065,10 @@ margin_right = 1195.0
 margin_bottom = 101.0
 custom_constants/separation = 62
 
-[node name="removebg" type="HBoxContainer" parent="Control/GameSettings"]
+[node name="cheat" type="HBoxContainer" parent="Control/GameSettings"]
 margin_top = 105.0
 margin_right = 1195.0
-margin_bottom = 149.0
-alignment = 1
-
-[node name="Label" type="Label" parent="Control/GameSettings/removebg"]
-margin_left = 381.0
-margin_top = 17.0
-margin_right = 746.0
-margin_bottom = 27.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Remove all possible blood & gore"
-
-[node name="CheckButton" type="CheckButton" parent="Control/GameSettings/removebg"]
-margin_left = 750.0
-margin_right = 814.0
-margin_bottom = 44.0
-disabled = true
-
-[node name="skipcs" type="HBoxContainer" parent="Control/GameSettings"]
-margin_top = 153.0
-margin_right = 1195.0
-margin_bottom = 197.0
-alignment = 1
-
-[node name="Label" type="Label" parent="Control/GameSettings/skipcs"]
-margin_left = 273.0
-margin_top = 17.0
-margin_right = 853.0
-margin_bottom = 27.0
-text = "Skip all cutscenes and scripted events in Story Mode"
-
-[node name="CheckButton" type="CheckButton" parent="Control/GameSettings/skipcs"]
-margin_left = 857.0
-margin_right = 921.0
-margin_bottom = 44.0
-disabled = true
-
-[node name="cheat" type="HBoxContainer" parent="Control/GameSettings"]
-margin_top = 201.0
-margin_right = 1195.0
-margin_bottom = 221.0
+margin_bottom = 125.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/GameSettings/cheat"]
@@ -1128,19 +1091,18 @@ placeholder_alpha = 0.141
 
 [node name="HSeparator2" type="HSeparator" parent="Control/GameSettings"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 225.0
+margin_top = 129.0
 margin_right = 1195.0
-margin_bottom = 287.0
+margin_bottom = 191.0
 custom_constants/separation = 62
 
 [node name="gstog" type="Button" parent="Control/GameSettings"]
-margin_top = 291.0
+margin_top = 195.0
 margin_right = 1195.0
-margin_bottom = 325.0
+margin_bottom = 229.0
 text = "Back to Main Menu"
 
 [node name="AudioSettings" type="VBoxContainer" parent="Control"]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -1185,8 +1147,8 @@ text = "Master Volume"
 margin_left = 631.0
 margin_right = 729.0
 margin_bottom = 20.0
-value = 100.0
-rounded = true
+max_value = 1.0
+value = 1.0
 align = 1
 
 [node name="sfxvol" type="HBoxContainer" parent="Control/AudioSettings"]
@@ -1206,8 +1168,10 @@ text = "SFX Volume"
 margin_left = 611.0
 margin_right = 709.0
 margin_bottom = 20.0
-value = 100.0
+max_value = 1.0
+value = 1.0
 align = 1
+editable = false
 
 [node name="musvol" type="HBoxContainer" parent="Control/AudioSettings"]
 margin_top = 153.0
@@ -1226,8 +1190,10 @@ text = "Music Volume"
 margin_left = 621.0
 margin_right = 719.0
 margin_bottom = 20.0
-value = 100.0
+max_value = 1.0
+value = 1.0
 align = 1
+editable = false
 
 [node name="vocvol" type="HBoxContainer" parent="Control/AudioSettings"]
 margin_top = 177.0
@@ -1246,8 +1212,10 @@ text = "Voice Volume"
 margin_left = 620.0
 margin_right = 718.0
 margin_bottom = 20.0
-value = 100.0
+max_value = 1.0
+value = 1.0
 align = 1
+editable = false
 
 [node name="envvol" type="HBoxContainer" parent="Control/AudioSettings"]
 margin_top = 201.0
@@ -1266,8 +1234,10 @@ text = "Environmental Volume"
 margin_left = 672.0
 margin_right = 770.0
 margin_bottom = 20.0
-value = 100.0
+max_value = 1.0
+value = 1.0
 align = 1
+editable = false
 
 [node name="UIvol" type="HBoxContainer" parent="Control/AudioSettings"]
 margin_top = 225.0
@@ -1286,8 +1256,10 @@ text = "UI Volume"
 margin_left = 602.0
 margin_right = 700.0
 margin_bottom = 20.0
-value = 100.0
+max_value = 1.0
+value = 1.0
 align = 1
+editable = false
 
 [node name="HSeparator2" type="HSeparator" parent="Control/AudioSettings"]
 modulate = Color( 1, 1, 1, 0 )
@@ -1342,19 +1314,20 @@ margin_bottom = 435.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/AudioSettings/osttype"]
-margin_left = 458.0
+margin_left = 446.0
 margin_top = 7.0
-margin_right = 641.0
+margin_right = 629.0
 margin_bottom = 17.0
 text = "Soundtrack Type"
 
 [node name="OptionButton" type="OptionButton" parent="Control/AudioSettings/osttype"]
-margin_left = 645.0
-margin_right = 736.0
+margin_left = 633.0
+margin_right = 749.0
 margin_bottom = 24.0
+custom_constants/hseparation = 27
 text = "PC 1999"
 align = 1
-items = [ "PC 1999", null, false, 0, null, "Nintendo 64", null, false, 1, null, "Playstation", null, false, 2, null, "2022 Remade", null, false, 3, null ]
+items = [ "PC 1999", null, false, 0, null, "Nintendo 64", null, false, 1, null, "Playstation", null, false, 2, null, "2022 Remake", null, false, 3, null ]
 selected = 0
 
 [node name="HSeparator3" type="HSeparator" parent="Control/AudioSettings"]
@@ -1618,6 +1591,7 @@ text = "Back to Main Menu"
 [connection signal="pressed" from="Control/Settings/settomain" to="." method="_on_settomain_pressed"]
 [connection signal="pressed" from="Control/OnlineSettings/onltoset" to="." method="_on_onltoset_pressed"]
 [connection signal="pressed" from="Control/GameSettings/gstog" to="." method="_on_gstog_pressed"]
+[connection signal="item_selected" from="Control/AudioSettings/osttype/OptionButton" to="." method="_on_OptionButton_item_selected"]
 [connection signal="pressed" from="Control/AudioSettings/astos" to="." method="_on_astos_pressed"]
 [connection signal="value_changed" from="Control/VideoSettings/frame/framecheck" to="." method="_on_framecheck_value_changed"]
 [connection signal="toggled" from="Control/VideoSettings/vsync/CheckButton" to="." method="_on_CheckButton_toggled"]

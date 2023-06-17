@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/10. Banjo Lick.ogg-c97185148e460691435d5864421532b2.oggstr"
+
+[deps]
+
+source_file="res://Game/Media/Soundtrack/Remake/10. Banjo Lick.ogg"
+dest_files=[ "res://.import/10. Banjo Lick.ogg-c97185148e460691435d5864421532b2.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

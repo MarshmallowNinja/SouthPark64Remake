@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/13. Drowned Asian.ogg-30f6eb70a6554edae8f061f6c0e72ca1.oggstr"
+
+[deps]
+
+source_file="res://Game/Media/Soundtrack/Remake/13. Drowned Asian.ogg"
+dest_files=[ "res://.import/13. Drowned Asian.ogg-30f6eb70a6554edae8f061f6c0e72ca1.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

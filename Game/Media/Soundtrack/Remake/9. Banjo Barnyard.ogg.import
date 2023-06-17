@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/9. Banjo Barnyard.ogg-e1caa06728757d2442f71f2fb73170b1.oggstr"
+
+[deps]
+
+source_file="res://Game/Media/Soundtrack/Remake/9. Banjo Barnyard.ogg"
+dest_files=[ "res://.import/9. Banjo Barnyard.ogg-e1caa06728757d2442f71f2fb73170b1.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

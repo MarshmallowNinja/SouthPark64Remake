@@ -39,4 +39,19 @@ func PlaySong():
 	System.play()
 
 func ChangeOST(ST : int):
+	var PC : AudioStream = load(PCSong)
+	var N64 : AudioStream = load(N64Song)
+	var PSX : AudioStream = load(PSXSong)
+	#var RMK : AudioStream = load(RMKSong)
 	Soundtrack = ST
+	System.stream_paused = true
+	match Soundtrack:
+		0:
+			System.stream = PC
+		1:
+			System.stream = N64
+		2:
+			System.stream = PSX
+		#3:
+			#System.stream = RMKSong
+	System.stream_paused = false

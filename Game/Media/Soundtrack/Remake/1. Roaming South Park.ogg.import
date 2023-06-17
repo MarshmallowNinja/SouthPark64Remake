@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/1. Roaming South Park.ogg-eea11dc9ffabd7d1e384e3d620b3b6ec.oggstr"
+
+[deps]
+
+source_file="res://Game/Media/Soundtrack/Remake/1. Roaming South Park.ogg"
+dest_files=[ "res://.import/1. Roaming South Park.ogg-eea11dc9ffabd7d1e384e3d620b3b6ec.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

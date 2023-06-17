@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/3. Boss.ogg-7c871f32b7a345fd881e401330000e0a.oggstr"
+
+[deps]
+
+source_file="res://Game/Media/Soundtrack/Remake/3. Boss.ogg"
+dest_files=[ "res://.import/3. Boss.ogg-7c871f32b7a345fd881e401330000e0a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

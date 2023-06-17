@@ -227,7 +227,7 @@ func Interact():
 	if viewgroup == null:
 		pass
 	else:
-		viewgroup.call("interact")
+		viewgroup.call("Interact")
 
 # used for player spawn
 # make sure to add input shit too
