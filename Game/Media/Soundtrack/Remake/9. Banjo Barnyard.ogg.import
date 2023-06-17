@@ -11,5 +11,5 @@ dest_files=[ "res://.import/9. Banjo Barnyard.ogg-e1caa06728757d2442f71f2fb73170
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

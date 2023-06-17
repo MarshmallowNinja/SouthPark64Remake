@@ -11,5 +11,5 @@ dest_files=[ "res://.import/15. Warehouse in South Park.ogg-48923e45b51d305f7db8
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

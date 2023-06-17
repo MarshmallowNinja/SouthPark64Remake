@@ -22,7 +22,7 @@ var Settings = {
 func _ready() -> void:
 	pass
 
-func savegame():
+func saveconf():
 	var savefile = File.new()
 	savefile.open("./config.cfg", File.WRITE)
 	savefile.store_line(to_json(Settings))

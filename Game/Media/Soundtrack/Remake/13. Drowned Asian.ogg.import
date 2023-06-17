@@ -11,5 +11,5 @@ dest_files=[ "res://.import/13. Drowned Asian.ogg-30f6eb70a6554edae8f061f6c0e72c
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

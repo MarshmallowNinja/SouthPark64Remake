@@ -11,5 +11,5 @@ dest_files=[ "res://.import/10. Banjo Lick.ogg-c97185148e460691435d5864421532b2.
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/11. Mad Robots.ogg-8afd3ea1713018816ff26dbe2c64c2ce.
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

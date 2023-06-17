@@ -11,5 +11,5 @@ dest_files=[ "res://.import/14. Insane Toys.ogg-9ec5b50f8a8fec9d22a5a21eecf29cd2
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

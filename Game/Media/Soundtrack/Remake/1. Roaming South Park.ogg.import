@@ -11,5 +11,5 @@ dest_files=[ "res://.import/1. Roaming South Park.ogg-eea11dc9ffabd7d1e384e3d620
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

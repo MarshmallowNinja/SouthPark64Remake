@@ -14,16 +14,19 @@
 [ext_resource path="res://Game/Models/buildings/housing/twofloorhouse.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ProceduralSky" id=2]
-sky_top_color = Color( 0.34902, 0.768627, 1, 1 )
-sky_horizon_color = Color( 0.545098, 0.8, 1, 1 )
+sky_top_color = Color( 0, 0, 0, 1 )
+sky_horizon_color = Color( 0.298039, 0.168627, 0, 1 )
 ground_bottom_color = Color( 0, 0, 0, 1 )
 ground_horizon_color = Color( 0, 0, 0, 1 )
 ground_energy = 0.0
+sun_latitude = -33.03
+sun_energy = 0.0
 
 [sub_resource type="Environment" id=63]
 background_mode = 2
 background_sky = SubResource( 2 )
 background_color = Color( 0.403922, 0.858824, 1, 1 )
+ambient_light_sky_contribution = 0.44
 fog_color = Color( 0.0528603, 0.218262, 0.0528603, 1 )
 fog_sun_color = Color( 0, 1, 0, 1 )
 fog_sun_amount = 0.82
@@ -33,11 +36,12 @@ fog_height_enabled = true
 fog_height_min = 25.2
 fog_height_max = -30.5
 glow_enabled = true
+glow_levels/1 = true
 glow_levels/3 = false
 glow_levels/4 = true
 glow_levels/5 = false
-glow_intensity = 0.3
-glow_bloom = 0.11
+glow_levels/7 = true
+glow_bloom = 0.02
 glow_blend_mode = 1
 glow_bicubic_upscale = true
 
@@ -746,13 +750,11 @@ __meta__ = {
 }
 
 [node name="2021 icon crop" type="Sprite" parent="Control"]
-visible = false
 position = Vector2( 0, -255 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 3 )
 
 [node name="Menu" type="VBoxContainer" parent="Control"]
-visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -248.0
@@ -818,12 +820,12 @@ __meta__ = {
 
 [node name="custom" type="Button" parent="Control/Menu"]
 visible = false
-margin_top = 215.0
+margin_top = 205.0
 margin_right = 497.0
-margin_bottom = 246.0
+margin_bottom = 234.0
 disabled = true
 action_mode = 0
-text = "Custom Content/Mods"
+text = "Mods"
 flat = true
 __meta__ = {
 "_edit_lock_": true
@@ -854,7 +856,7 @@ custom_constants/separation = 12
 
 [node name="New" type="Button" parent="Control/Story"]
 margin_right = 716.0
-margin_bottom = 34.0
+margin_bottom = 29.0
 text = "Start a New Game"
 flat = true
 __meta__ = {
@@ -862,9 +864,9 @@ __meta__ = {
 }
 
 [node name="Load" type="Button" parent="Control/Story"]
-margin_top = 46.0
+margin_top = 41.0
 margin_right = 716.0
-margin_bottom = 80.0
+margin_bottom = 70.0
 disabled = true
 action_mode = 0
 text = "Load a Previously Saved Game"
@@ -874,9 +876,9 @@ __meta__ = {
 }
 
 [node name="backtomain" type="Button" parent="Control/Story"]
-margin_top = 92.0
+margin_top = 82.0
 margin_right = 716.0
-margin_bottom = 126.0
+margin_bottom = 111.0
 action_mode = 0
 text = "Back"
 flat = true
@@ -889,14 +891,13 @@ visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -289.0
-margin_top = -40.0
 margin_right = 289.0
 margin_bottom = 360.0
 custom_constants/separation = 12
 
 [node name="game_settings" type="Button" parent="Control/Settings"]
 margin_right = 578.0
-margin_bottom = 34.0
+margin_bottom = 29.0
 text = "Game Settings"
 flat = true
 __meta__ = {
@@ -904,9 +905,9 @@ __meta__ = {
 }
 
 [node name="aud_settings" type="Button" parent="Control/Settings"]
-margin_top = 46.0
+margin_top = 41.0
 margin_right = 578.0
-margin_bottom = 80.0
+margin_bottom = 70.0
 text = "Audio Settings"
 flat = true
 __meta__ = {
@@ -914,9 +915,9 @@ __meta__ = {
 }
 
 [node name="vid_settings" type="Button" parent="Control/Settings"]
-margin_top = 92.0
+margin_top = 82.0
 margin_right = 578.0
-margin_bottom = 126.0
+margin_bottom = 111.0
 action_mode = 0
 text = "Video Settings"
 flat = true
@@ -925,9 +926,9 @@ __meta__ = {
 }
 
 [node name="inp_settings" type="Button" parent="Control/Settings"]
-margin_top = 138.0
+margin_top = 123.0
 margin_right = 578.0
-margin_bottom = 172.0
+margin_bottom = 152.0
 disabled = true
 action_mode = 0
 text = "Input Settings"
@@ -937,45 +938,21 @@ __meta__ = {
 }
 
 [node name="onl_settings" type="Button" parent="Control/Settings"]
-margin_top = 184.0
+margin_top = 164.0
 margin_right = 578.0
-margin_bottom = 218.0
+margin_bottom = 193.0
 disabled = true
 action_mode = 0
-text = "Network/Online settings"
-flat = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="save_settings" type="Button" parent="Control/Settings"]
-margin_top = 230.0
-margin_right = 578.0
-margin_bottom = 264.0
-disabled = true
-action_mode = 0
-text = "Save Game Settings"
-flat = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="cust_settings" type="Button" parent="Control/Settings"]
-margin_top = 276.0
-margin_right = 578.0
-margin_bottom = 310.0
-disabled = true
-action_mode = 0
-text = "Custom Settings"
+text = "Network settings"
 flat = true
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="settomain" type="Button" parent="Control/Settings"]
-margin_top = 322.0
+margin_top = 205.0
 margin_right = 578.0
-margin_bottom = 356.0
+margin_bottom = 234.0
 action_mode = 0
 text = "Back to Main Menu"
 flat = true
@@ -994,7 +971,7 @@ custom_constants/separation = 12
 
 [node name="netspeed" type="Button" parent="Control/OnlineSettings"]
 margin_right = 1167.0
-margin_bottom = 34.0
+margin_bottom = 29.0
 disabled = true
 text = "Average Network speed"
 flat = true
@@ -1003,9 +980,9 @@ __meta__ = {
 }
 
 [node name="onpref" type="Button" parent="Control/OnlineSettings"]
-margin_top = 46.0
+margin_top = 41.0
 margin_right = 1167.0
-margin_bottom = 80.0
+margin_bottom = 70.0
 disabled = true
 text = "Connection preference"
 flat = true
@@ -1013,22 +990,10 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="onlmod2" type="Button" parent="Control/OnlineSettings"]
-margin_top = 92.0
-margin_right = 1167.0
-margin_bottom = 120.0
-custom_fonts/font = ExtResource( 6 )
-disabled = true
-text = "Download mods if required by Host or Server"
-flat = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="onltoset" type="Button" parent="Control/OnlineSettings"]
-margin_top = 178.0
+margin_top = 82.0
 margin_right = 1167.0
-margin_bottom = 212.0
+margin_bottom = 111.0
 action_mode = 0
 text = "Back to Settings"
 flat = true
@@ -1103,6 +1068,7 @@ margin_bottom = 229.0
 text = "Back to Main Menu"
 
 [node name="AudioSettings" type="VBoxContainer" parent="Control"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -1224,15 +1190,15 @@ margin_bottom = 221.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/AudioSettings/envvol"]
-margin_left = 424.0
+margin_left = 437.0
 margin_top = 5.0
-margin_right = 668.0
+margin_right = 656.0
 margin_bottom = 15.0
-text = "Environmental Volume"
+text = "Environment Volume"
 
 [node name="OptionButton" type="SpinBox" parent="Control/AudioSettings/envvol"]
-margin_left = 672.0
-margin_right = 770.0
+margin_left = 660.0
+margin_right = 758.0
 margin_bottom = 20.0
 max_value = 1.0
 value = 1.0
@@ -1240,6 +1206,7 @@ align = 1
 editable = false
 
 [node name="UIvol" type="HBoxContainer" parent="Control/AudioSettings"]
+visible = false
 margin_top = 225.0
 margin_right = 1195.0
 margin_bottom = 245.0
@@ -1263,54 +1230,15 @@ editable = false
 
 [node name="HSeparator2" type="HSeparator" parent="Control/AudioSettings"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 249.0
+margin_top = 225.0
 margin_right = 1195.0
-margin_bottom = 311.0
+margin_bottom = 287.0
 custom_constants/separation = 62
 
-[node name="uncensor" type="HBoxContainer" parent="Control/AudioSettings"]
-margin_top = 315.0
-margin_right = 1195.0
-margin_bottom = 359.0
-alignment = 1
-
-[node name="Label" type="Label" parent="Control/AudioSettings/uncensor"]
-margin_left = 381.0
-margin_top = 17.0
-margin_right = 746.0
-margin_bottom = 27.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Uncensor all possible Voice Lines"
-
-[node name="CheckButton" type="CheckButton" parent="Control/AudioSettings/uncensor"]
-margin_left = 750.0
-margin_right = 814.0
-margin_bottom = 44.0
-disabled = true
-
-[node name="silenceplayer" type="HBoxContainer" parent="Control/AudioSettings"]
-margin_top = 363.0
-margin_right = 1195.0
-margin_bottom = 407.0
-alignment = 1
-
-[node name="Label" type="Label" parent="Control/AudioSettings/silenceplayer"]
-margin_left = 399.0
-margin_top = 17.0
-margin_right = 727.0
-margin_bottom = 27.0
-text = "Silence all player voice lines"
-
-[node name="CheckButton" type="CheckButton" parent="Control/AudioSettings/silenceplayer"]
-margin_left = 731.0
-margin_right = 795.0
-margin_bottom = 44.0
-disabled = true
-
 [node name="osttype" type="HBoxContainer" parent="Control/AudioSettings"]
-margin_top = 411.0
+margin_top = 291.0
 margin_right = 1195.0
-margin_bottom = 435.0
+margin_bottom = 315.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/AudioSettings/osttype"]
@@ -1332,15 +1260,15 @@ selected = 0
 
 [node name="HSeparator3" type="HSeparator" parent="Control/AudioSettings"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 439.0
+margin_top = 319.0
 margin_right = 1195.0
-margin_bottom = 501.0
+margin_bottom = 381.0
 custom_constants/separation = 62
 
 [node name="astos" type="Button" parent="Control/AudioSettings"]
-margin_top = 505.0
+margin_top = 385.0
 margin_right = 1195.0
-margin_bottom = 539.0
+margin_bottom = 419.0
 text = "Back to Main Menu"
 
 [node name="VideoSettings" type="VBoxContainer" parent="Control"]
@@ -1391,8 +1319,8 @@ margin_left = 669.0
 margin_right = 730.0
 margin_bottom = 24.0
 disabled = true
-text = "1080"
-items = [ "480", null, false, 0, null, "720", null, false, 1, null, "1080", null, false, 2, null, "1440", null, false, 3, null, "2160", null, false, 4, null ]
+text = "1440"
+items = [ "720", null, false, 1, null, "1080", null, false, 2, null, "1440", null, false, 3, null, "2160", null, false, 4, null ]
 selected = 2
 
 [node name="frame" type="HBoxContainer" parent="Control/VideoSettings"]
@@ -1545,37 +1473,17 @@ text = "Very High"
 items = [ "Very High", null, false, 0, null, "High", null, false, 1, null, "Medium", null, false, 2, null, "Low", null, false, 3, null, "Very Low", null, false, 4, null, "None", null, false, 5, null ]
 selected = 0
 
-[node name="stink" type="HBoxContainer" parent="Control/VideoSettings"]
-margin_top = 345.0
-margin_right = 1195.0
-margin_bottom = 373.0
-hint_tooltip = "Reduces shading by a major amount. May break the game if used."
-alignment = 1
-
-[node name="Label" type="Label" parent="Control/VideoSettings/stink"]
-margin_left = 470.0
-margin_top = 9.0
-margin_right = 704.0
-margin_bottom = 19.0
-text = "Force Vertex Shading"
-
-[node name="CheckButton" type="CheckBox" parent="Control/VideoSettings/stink"]
-margin_left = 708.0
-margin_right = 724.0
-margin_bottom = 28.0
-disabled = true
-
 [node name="HSeparator2" type="HSeparator" parent="Control/VideoSettings"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 377.0
+margin_top = 345.0
 margin_right = 1195.0
-margin_bottom = 439.0
+margin_bottom = 407.0
 custom_constants/separation = 62
 
 [node name="vidtoset" type="Button" parent="Control/VideoSettings"]
-margin_top = 443.0
+margin_top = 411.0
 margin_right = 1195.0
-margin_bottom = 477.0
+margin_bottom = 445.0
 text = "Back to Main Menu"
 
 [connection signal="pressed" from="Control/Menu/Button2" to="." method="_on_Button2_pressed"]

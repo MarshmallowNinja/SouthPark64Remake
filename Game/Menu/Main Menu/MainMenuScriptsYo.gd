@@ -32,7 +32,7 @@ func _on_New_pressed():
 	get_tree().change_scene("res://Game/Story Mode/Classic/CharacterSelect/StoryCharacterSelect.tscn")
 
 func _on_Exit_pressed():
-	SaveGame.savegame()
+	SaveGame.saveconf()
 	get_tree().quit()
 
 func _on_onl_settings_pressed():

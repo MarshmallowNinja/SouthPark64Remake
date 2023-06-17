@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Game/Player/MainPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Game/Media/Soundtrack/farts/fartsmall02.wav" type="AudioStream" id=2]
@@ -73,13 +73,6 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 1, 0.607843 ), Color( 0, 1, 0, 0.215686 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="RayShape" id=5]
-length = 0.13197
-
-[sub_resource type="CapsuleShape" id=1]
-radius = 0.592347
-height = 1.31468
-
 [sub_resource type="DynamicFont" id=17]
 size = 48
 font_data = ExtResource( 14 )
@@ -153,9 +146,12 @@ flags = 18
 atlas = ExtResource( 18 )
 region = Rect2( 1, 1, 14, 13 )
 
-[sub_resource type="CapsuleShape" id=13]
-radius = 0.57
-height = 1.32
+[sub_resource type="RayShape" id=5]
+length = 0.13197
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.592347
+height = 1.31468
 
 [node name="MainPlayer" type="KinematicBody" groups=["killable", "living", "player"]]
 script = ExtResource( 1 )
@@ -171,14 +167,6 @@ script = ExtResource( 23 )
 anims/RESET = SubResource( 21 )
 anims/damage1 = SubResource( 22 )
 anims/heal = SubResource( 23 )
-
-[node name="foot" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-shape = SubResource( 5 )
-
-[node name="body" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1.25, 0 )
-shape = SubResource( 1 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0 )
@@ -451,7 +439,20 @@ emission_angle_degrees = 70.0
 [node name="MapIcon" type="Sprite3D" parent="Camera"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 layers = 512
+billboard = 1
 texture = SubResource( 16 )
+
+[node name="Listener" type="Listener" parent="Camera"]
+current = true
+
+[node name="foot" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+visible = false
+shape = SubResource( 5 )
+
+[node name="body" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 1.25, 0 )
+shape = SubResource( 1 )
 
 [node name="farter" parent="." instance=ExtResource( 12 )]
 SoundList = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 8 ), ExtResource( 10 ) ]
@@ -459,16 +460,9 @@ ImmediatelyPlay = false
 KeepPlaying = false
 
 [node name="Pickup" type="AudioStreamPlayer3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6743, 0 )
 attenuation_model = 2
 bus = "SFX"
-
-[node name="VisualSense" type="Area" parent="." groups=["killable", "living", "player", "playersight"]]
-collision_layer = 8
-collision_mask = 8
-
-[node name="CollisionShape" type="CollisionShape" parent="VisualSense"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.23789, 0 )
-shape = SubResource( 13 )
 
 [node name="floorcheck" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.757, 0 )
