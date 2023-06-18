@@ -29,7 +29,7 @@ var viewgroup
 # Camera Variables
 var minlookAngle : float = -90.0
 var maxLookAngle : float = 90.0
-var lookSensitivity : float = 20
+var lookSensitivity : float = 10
 var walkAngle : float = 45.2
 var zoom : bool = false
 
@@ -105,7 +105,7 @@ func _physics_process(delta):
 				lookSensitivity = 5
 	if Input.is_action_just_released("secondfire"):
 				$Camera.fov = 70
-				lookSensitivity = 20
+				lookSensitivity = 10
 	
 	# movement and acceleration
 	movement = movement.normalized()
