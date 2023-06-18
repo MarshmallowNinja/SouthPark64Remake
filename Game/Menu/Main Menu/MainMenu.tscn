@@ -47,10 +47,10 @@ glow_blend_mode = 1
 glow_bicubic_upscale = true
 
 [sub_resource type="GIProbeData" id=60]
-bounds = AABB( -38.1271, -13.6228, -30.3213, 76.2543, 27.2457, 60.6426 )
-cell_size = 0.595737
-to_cell_xform = Transform( 1.67859, 0, 0, 0, 1.67859, 0, 0, 0, 1.67859, 64, 22.8672, 50.8971 )
-dynamic_data = PoolIntArray( 0, 8, 128, 64, 128, 1, 0, 0, 0, 1094713344, 0, 0, 0, 0, 0, 4551, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+bounds = AABB( -38.1271, -13.6228, -30.3213, 76.2542, 27.2456, 60.6426 )
+cell_size = 0.595736
+to_cell_xform = Transform( 1.6786, 0, 0, 0, 1.6786, 0, 0, 0, 1.6786, 64, 22.8672, 50.8972 )
+dynamic_data = PoolIntArray( 0, 8, 128, 64, 128, 1, 0, 0, 0, 0, -1952335104, 0, 72, 0, 600010517, -2147200512, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 4
 bias = 1.5
 normal_bias = 0.0
@@ -613,6 +613,7 @@ anchor_bottom = 0.5
 theme = ExtResource( 5 )
 
 [node name="bg" type="ColorRect" parent="Control"]
+visible = false
 margin_left = -984.0
 margin_top = -572.0
 margin_right = 992.0
@@ -830,47 +831,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="OnlineSettings" type="VBoxContainer" parent="Control"]
-visible = false
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -583.5
-margin_right = 583.5
-margin_bottom = 368.0
-custom_constants/separation = 12
-
-[node name="netspeed" type="Button" parent="Control/OnlineSettings"]
-margin_right = 1167.0
-margin_bottom = 29.0
-disabled = true
-text = "Average Network speed"
-flat = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="onpref" type="Button" parent="Control/OnlineSettings"]
-margin_top = 41.0
-margin_right = 1167.0
-margin_bottom = 70.0
-disabled = true
-text = "Connection preference"
-flat = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="onltoset" type="Button" parent="Control/OnlineSettings"]
-margin_top = 82.0
-margin_right = 1167.0
-margin_bottom = 111.0
-action_mode = 0
-text = "Back to Settings"
-flat = true
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="GameSettings" type="VBoxContainer" parent="Control"]
 visible = false
 anchor_left = 0.5
@@ -954,7 +914,7 @@ theme = ExtResource( 8 )
 
 [node name="title" type="Label" parent="Control/AudioSettings"]
 margin_right = 1195.0
-margin_bottom = 35.0
+margin_bottom = 69.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_fonts/font = ExtResource( 6 )
 text = "Audio Settings
@@ -964,48 +924,48 @@ valign = 1
 
 [node name="HSeparator" type="HSeparator" parent="Control/AudioSettings"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 39.0
+margin_top = 77.0
 margin_right = 1195.0
-margin_bottom = 101.0
+margin_bottom = 139.0
 custom_constants/separation = 62
 
 [node name="masvol" type="HBoxContainer" parent="Control/AudioSettings"]
-margin_top = 105.0
+margin_top = 147.0
 margin_right = 1195.0
-margin_bottom = 136.0
+margin_bottom = 178.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/AudioSettings/masvol"]
-margin_left = 334.0
+margin_left = 327.0
 margin_top = 5.0
-margin_right = 674.0
+margin_right = 667.0
 margin_bottom = 26.0
 text = "Master Volume"
 
 [node name="OptionButton" type="SpinBox" parent="Control/AudioSettings/masvol"]
-margin_left = 678.0
-margin_right = 860.0
+margin_left = 685.0
+margin_right = 867.0
 margin_bottom = 31.0
 max_value = 1.0
 value = 1.0
 align = 1
 
 [node name="sfxvol" type="HBoxContainer" parent="Control/AudioSettings"]
-margin_top = 140.0
+margin_top = 186.0
 margin_right = 1195.0
-margin_bottom = 171.0
+margin_bottom = 217.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/AudioSettings/sfxvol"]
-margin_left = 377.0
+margin_left = 370.0
 margin_top = 5.0
-margin_right = 631.0
+margin_right = 624.0
 margin_bottom = 26.0
 text = "SFX Volume"
 
 [node name="OptionButton" type="SpinBox" parent="Control/AudioSettings/sfxvol"]
-margin_left = 635.0
-margin_right = 817.0
+margin_left = 642.0
+margin_right = 824.0
 margin_bottom = 31.0
 max_value = 1.0
 value = 1.0
@@ -1013,21 +973,21 @@ align = 1
 editable = false
 
 [node name="musvol" type="HBoxContainer" parent="Control/AudioSettings"]
-margin_top = 175.0
+margin_top = 225.0
 margin_right = 1195.0
-margin_bottom = 206.0
+margin_bottom = 256.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/AudioSettings/musvol"]
-margin_left = 354.0
+margin_left = 347.0
 margin_top = 5.0
-margin_right = 654.0
+margin_right = 647.0
 margin_bottom = 26.0
 text = "Music Volume"
 
 [node name="OptionButton" type="SpinBox" parent="Control/AudioSettings/musvol"]
-margin_left = 658.0
-margin_right = 840.0
+margin_left = 665.0
+margin_right = 847.0
 margin_bottom = 31.0
 max_value = 1.0
 value = 1.0
@@ -1035,21 +995,21 @@ align = 1
 editable = false
 
 [node name="vocvol" type="HBoxContainer" parent="Control/AudioSettings"]
-margin_top = 210.0
+margin_top = 264.0
 margin_right = 1195.0
-margin_bottom = 241.0
+margin_bottom = 295.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/AudioSettings/vocvol"]
-margin_left = 357.0
+margin_left = 350.0
 margin_top = 5.0
-margin_right = 651.0
+margin_right = 644.0
 margin_bottom = 26.0
 text = "Voice Volume"
 
 [node name="OptionButton" type="SpinBox" parent="Control/AudioSettings/vocvol"]
-margin_left = 655.0
-margin_right = 837.0
+margin_left = 662.0
+margin_right = 844.0
 margin_bottom = 31.0
 max_value = 1.0
 value = 1.0
@@ -1057,21 +1017,21 @@ align = 1
 editable = false
 
 [node name="envvol" type="HBoxContainer" parent="Control/AudioSettings"]
-margin_top = 245.0
+margin_top = 303.0
 margin_right = 1195.0
-margin_bottom = 276.0
+margin_bottom = 334.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/AudioSettings/envvol"]
-margin_left = 274.0
+margin_left = 267.0
 margin_top = 5.0
-margin_right = 734.0
+margin_right = 727.0
 margin_bottom = 26.0
 text = "Environment Volume"
 
 [node name="OptionButton" type="SpinBox" parent="Control/AudioSettings/envvol"]
-margin_left = 738.0
-margin_right = 920.0
+margin_left = 745.0
+margin_right = 927.0
 margin_bottom = 31.0
 max_value = 1.0
 value = 1.0
@@ -1103,27 +1063,27 @@ editable = false
 
 [node name="HSeparator2" type="HSeparator" parent="Control/AudioSettings"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 280.0
+margin_top = 342.0
 margin_right = 1195.0
-margin_bottom = 342.0
+margin_bottom = 404.0
 custom_constants/separation = 62
 
 [node name="osttype" type="HBoxContainer" parent="Control/AudioSettings"]
-margin_top = 346.0
+margin_top = 412.0
 margin_right = 1195.0
-margin_bottom = 379.0
+margin_bottom = 445.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/AudioSettings/osttype"]
-margin_left = 313.0
+margin_left = 306.0
 margin_top = 6.0
-margin_right = 702.0
+margin_right = 695.0
 margin_bottom = 27.0
 text = "Soundtrack Type"
 
 [node name="OptionButton" type="OptionButton" parent="Control/AudioSettings/osttype"]
-margin_left = 706.0
-margin_right = 881.0
+margin_left = 713.0
+margin_right = 888.0
 margin_bottom = 33.0
 custom_constants/hseparation = 0
 text = "PC 1999"
@@ -1133,15 +1093,15 @@ selected = 0
 
 [node name="HSeparator3" type="HSeparator" parent="Control/AudioSettings"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 383.0
+margin_top = 453.0
 margin_right = 1195.0
-margin_bottom = 445.0
+margin_bottom = 515.0
 custom_constants/separation = 62
 
 [node name="astos" type="Button" parent="Control/AudioSettings"]
-margin_top = 449.0
+margin_top = 523.0
 margin_right = 1195.0
-margin_bottom = 483.0
+margin_bottom = 557.0
 text = "Back to Main Menu"
 
 [node name="VideoSettings" type="VBoxContainer" parent="Control"]
@@ -1359,6 +1319,47 @@ margin_right = 1195.0
 margin_bottom = 555.0
 text = "Back to Main Menu"
 
+[node name="OnlineSettings" type="VBoxContainer" parent="Control"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -583.5
+margin_right = 583.5
+margin_bottom = 368.0
+custom_constants/separation = 12
+
+[node name="netspeed" type="Button" parent="Control/OnlineSettings"]
+margin_right = 1167.0
+margin_bottom = 29.0
+disabled = true
+text = "Average Network speed"
+flat = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="onpref" type="Button" parent="Control/OnlineSettings"]
+margin_top = 41.0
+margin_right = 1167.0
+margin_bottom = 70.0
+disabled = true
+text = "Connection preference"
+flat = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="onltoset" type="Button" parent="Control/OnlineSettings"]
+margin_top = 82.0
+margin_right = 1167.0
+margin_bottom = 111.0
+action_mode = 0
+text = "Back to Settings"
+flat = true
+__meta__ = {
+"_edit_lock_": true
+}
+
 [connection signal="pressed" from="Control/Menu/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="Control/Menu/Button" to="Control/Menu/Button" method="_on_Button_pressed"]
 [connection signal="pressed" from="Control/Menu/settings" to="." method="_on_settings_pressed"]
@@ -1370,7 +1371,6 @@ text = "Back to Main Menu"
 [connection signal="pressed" from="Control/Settings/vid_settings" to="." method="_on_vid_settings_pressed"]
 [connection signal="pressed" from="Control/Settings/onl_settings" to="." method="_on_onl_settings_pressed"]
 [connection signal="pressed" from="Control/Settings/settomain" to="." method="_on_settomain_pressed"]
-[connection signal="pressed" from="Control/OnlineSettings/onltoset" to="." method="_on_onltoset_pressed"]
 [connection signal="pressed" from="Control/GameSettings/gstog" to="." method="_on_gstog_pressed"]
 [connection signal="item_selected" from="Control/AudioSettings/osttype/OptionButton" to="." method="_on_OptionButton_item_selected"]
 [connection signal="pressed" from="Control/AudioSettings/astos" to="." method="_on_astos_pressed"]
@@ -1378,3 +1378,4 @@ text = "Back to Main Menu"
 [connection signal="toggled" from="Control/VideoSettings/vsync/CheckButton" to="." method="_on_CheckButton_toggled"]
 [connection signal="toggled" from="Control/VideoSettings/fxaa/fxaacheck" to="." method="_on_fxaacheck_toggled"]
 [connection signal="pressed" from="Control/VideoSettings/vidtoset" to="." method="_on_vidtoset_pressed"]
+[connection signal="pressed" from="Control/OnlineSettings/onltoset" to="." method="_on_onltoset_pressed"]

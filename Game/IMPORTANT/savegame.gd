@@ -7,7 +7,8 @@ var Settings = {
 	"enteredcheat" : false,
 	
 	# AUDIO SETTINGS
-	"mastervolume" : 100,
+	"soundtrack" : 0,
+	"mastervolume" : 1.0,
 	
 	# VIDEO SETTINGS
 	"resolution" : null,
@@ -17,7 +18,7 @@ var Settings = {
 }
 
 func _ready() -> void:
-	pass
+	SoundtrackSystem.Soundtrack = Settings["soundtrack"]
 
 func saveconf():
 	var savefile = File.new()

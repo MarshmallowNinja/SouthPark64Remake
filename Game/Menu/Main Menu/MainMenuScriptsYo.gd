@@ -2,19 +2,37 @@ extends Spatial
 
 func _ready():
 	get_tree().paused = false
+	InitiateSaveShit()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	$Control/Menu/Button2.grab_focus()
-	SoundtrackSystem.SetSongs("res://Game/Media/Soundtrack/PC/The Theme.ogg", "res://Game/Media/Soundtrack/64/Roaming South Park (64).mp3", "res://Game/Media/Soundtrack/PS/Roaming South Park.ogg")
+	SoundtrackSystem.SetSongs("res://Game/Media/Soundtrack/PC/The Theme.ogg", 
+	"res://Game/Media/Soundtrack/64/Roaming South Park (64).mp3", 
+	"res://Game/Media/Soundtrack/PS/Roaming South Park.ogg",
+	"res://Game/Media/Soundtrack/Remake/1. Roaming South Park.ogg")
 	SoundtrackSystem.PlaySong()
 
 func InitiateSaveShit():
-	pass
+# Set/Toggle stuff in the settings menus
+# Game Settings
+# Input Settings
+# Audio Settings
+	$Control/AudioSettings/masvol/OptionButton.value = SaveGame.Settings["mastervolume"]
+	$Control/AudioSettings/osttype/OptionButton.selected = SaveGame.Settings["soundtrack"]
+# Video Settings
+	# Resolution code not active yet
+	$Control/VideoSettings/frame/framecheck.value = SaveGame.Settings["maxfps"]
+	$Control/VideoSettings/vsync/CheckButton.toggle_mode = SaveGame.Settings["vsync"]
+	# too lazy to make Fullscreen code
+	$Control/VideoSettings/fxaa/fxaacheck.toggle_mode = SaveGame.Settings["fxaa"]
+	# might add an MSAA mode
+	# update: maybe not
 
 func switchmenus(a, b):
 	get_node(a).set_visible(true)
 	get_node(b).set_visible(false)
 
 func _on_Button2_pressed():
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Game/Levels/first.tscn")
 
 func _on_settings_pressed():
@@ -32,7 +50,7 @@ func _on_backtomain_pressed():
 	switchmenus("Menu", "Story")
 
 func _on_New_pressed():
-	get_tree().change_scene("res://Game/Story Mode/Classic/CharacterSelect/StoryCharacterSelect.tscn")
+	pass
 
 func _on_Exit_pressed():
 	SaveGame.saveconf()
@@ -95,6 +113,7 @@ func _on_fxaacheck_toggled(button_pressed: bool) -> void:
 	SaveGame.Settings["fxaa"] = button_pressed
 
 func _on_framecheck_value_changed(value: float) -> void:
+# warning-ignore:narrowing_conversion
 	Engine.target_fps = value
 	SaveGame.Settings["maxfps"] = value
 
@@ -102,4 +121,5 @@ func _on_framecheck_value_changed(value: float) -> void:
 
 func _on_OptionButton_item_selected(index: int) -> void:
 	SoundtrackSystem.ChangeOST(index)
-	SoundtrackSystem.PlaySong()
+	#SoundtrackSystem.PlaySong()
+	SaveGame.Settings["soundtrack"] = index

@@ -1,6 +1,6 @@
 extends AudioStreamPlayer
 
-var Soundtrack : int = 0
+var Soundtrack : int
 #				0 = PC
 #				1 = 64 
 #				2 = PSX
@@ -8,50 +8,52 @@ var Soundtrack : int = 0
 var PCSong 
 var N64Song
 var PSXSong
-#var RMKSong
+var RMKSong
 onready var System = $"."
 
 func _ready():
 	pass
 
-func SetSongs(PC, N64, PSX):
+func SetSongs(PC, N64, PSX, RMK):
 	PCSong = PC
 	N64Song = N64
 	PSXSong = PSX
-	#RMKSong = RMK
+	RMKSong = RMK
 
 func PlaySong():
-	var PC : AudioStream = load(PCSong)
-	var N64 : AudioStream = load(N64Song)
-	var PSX : AudioStream = load(PSXSong)
-	#var RMK : AudioStream = load(RMKSong)
 	System.stream_paused = true
 	match Soundtrack:
 		0:
+			var PC : AudioStream = load(PCSong)
 			System.stream = PC
 		1:
+			var N64 : AudioStream = load(N64Song)
 			System.stream = N64
 		2:
+			var PSX : AudioStream = load(PSXSong)
 			System.stream = PSX
-		#3:
-			#System.stream = RMKSong
+		3:
+			var RMK : AudioStream = load(RMKSong)
+			System.stream = RMK
 	System.stream_paused = false
 	System.play()
 
 func ChangeOST(ST : int):
-	var PC : AudioStream = load(PCSong)
-	var N64 : AudioStream = load(N64Song)
-	var PSX : AudioStream = load(PSXSong)
-	#var RMK : AudioStream = load(RMKSong)
 	Soundtrack = ST
+	SaveGame.Settings["soundtrack"] = Soundtrack
 	System.stream_paused = true
 	match Soundtrack:
 		0:
+			var PC : AudioStream = load(PCSong)
 			System.stream = PC
 		1:
+			var N64 : AudioStream = load(N64Song)
 			System.stream = N64
 		2:
+			var PSX : AudioStream = load(PSXSong)
 			System.stream = PSX
-		#3:
-			#System.stream = RMKSong
+		3:
+			var RMK : AudioStream = load(RMKSong)
+			System.stream = RMK
 	System.stream_paused = false
+	System.play()
