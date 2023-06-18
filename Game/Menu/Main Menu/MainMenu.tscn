@@ -635,9 +635,9 @@ margin_bottom = 344.0
 custom_constants/separation = 24
 
 [node name="Button2" type="Button" parent="Control/Menu"]
-margin_right = 534.0
+margin_right = 559.0
 margin_bottom = 43.0
-text = "Developer Menu"
+text = "Developer Level"
 flat = true
 __meta__ = {
 "_edit_lock_": true
@@ -645,7 +645,7 @@ __meta__ = {
 
 [node name="Button" type="Button" parent="Control/Menu"]
 margin_top = 67.0
-margin_right = 534.0
+margin_right = 559.0
 margin_bottom = 110.0
 disabled = true
 text = "Story Mode"
@@ -656,7 +656,7 @@ __meta__ = {
 
 [node name="Multiplayer" type="Button" parent="Control/Menu"]
 margin_top = 134.0
-margin_right = 534.0
+margin_right = 559.0
 margin_bottom = 177.0
 disabled = true
 action_mode = 0
@@ -668,7 +668,7 @@ __meta__ = {
 
 [node name="Online" type="Button" parent="Control/Menu"]
 margin_top = 201.0
-margin_right = 534.0
+margin_right = 559.0
 margin_bottom = 244.0
 disabled = true
 action_mode = 0
@@ -680,7 +680,7 @@ __meta__ = {
 
 [node name="settings" type="Button" parent="Control/Menu"]
 margin_top = 268.0
-margin_right = 534.0
+margin_right = 559.0
 margin_bottom = 311.0
 action_mode = 0
 text = "Settings"
@@ -704,7 +704,7 @@ __meta__ = {
 
 [node name="Exit" type="Button" parent="Control/Menu"]
 margin_top = 335.0
-margin_right = 534.0
+margin_right = 559.0
 margin_bottom = 378.0
 action_mode = 0
 text = "Quit"
@@ -947,6 +947,7 @@ margin_left = 685.0
 margin_right = 867.0
 margin_bottom = 31.0
 max_value = 1.0
+step = 0.01
 value = 1.0
 align = 1
 
@@ -1118,7 +1119,7 @@ theme = ExtResource( 8 )
 
 [node name="title" type="Label" parent="Control/VideoSettings"]
 margin_right = 1195.0
-margin_bottom = 35.0
+margin_bottom = 69.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_fonts/font = ExtResource( 6 )
 text = "Video Settings
@@ -1128,15 +1129,15 @@ valign = 1
 
 [node name="HSeparator" type="HSeparator" parent="Control/VideoSettings"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 43.0
+margin_top = 77.0
 margin_right = 1195.0
-margin_bottom = 105.0
+margin_bottom = 139.0
 custom_constants/separation = 62
 
 [node name="screenres" type="HBoxContainer" parent="Control/VideoSettings"]
-margin_top = 113.0
+margin_top = 147.0
 margin_right = 1195.0
-margin_bottom = 146.0
+margin_bottom = 180.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/VideoSettings/screenres"]
@@ -1157,9 +1158,9 @@ items = [ "720", null, false, 1, null, "1080", null, false, 2, null, "1440", nul
 selected = 2
 
 [node name="frame" type="HBoxContainer" parent="Control/VideoSettings"]
-margin_top = 154.0
+margin_top = 188.0
 margin_right = 1195.0
-margin_bottom = 185.0
+margin_bottom = 219.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/VideoSettings/frame"]
@@ -1173,14 +1174,14 @@ text = "Max Framerate"
 margin_left = 688.0
 margin_right = 870.0
 margin_bottom = 31.0
-min_value = 16.0
+min_value = 20.0
 max_value = 360.0
 value = 60.0
 
 [node name="vsync" type="HBoxContainer" parent="Control/VideoSettings"]
-margin_top = 193.0
+margin_top = 227.0
 margin_right = 1195.0
-margin_bottom = 226.0
+margin_bottom = 260.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/VideoSettings/vsync"]
@@ -1196,9 +1197,9 @@ margin_right = 681.0
 margin_bottom = 33.0
 
 [node name="fullscreen" type="HBoxContainer" parent="Control/VideoSettings"]
-margin_top = 234.0
+margin_top = 268.0
 margin_right = 1195.0
-margin_bottom = 267.0
+margin_bottom = 301.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/VideoSettings/fullscreen"]
@@ -1215,9 +1216,9 @@ margin_bottom = 33.0
 disabled = true
 
 [node name="fxaa" type="HBoxContainer" parent="Control/VideoSettings"]
-margin_top = 275.0
+margin_top = 309.0
 margin_right = 1195.0
-margin_bottom = 308.0
+margin_bottom = 342.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/VideoSettings/fxaa"]
@@ -1233,14 +1234,14 @@ margin_right = 669.0
 margin_bottom = 33.0
 
 [node name="HSeparator3" type="HSeparator" parent="Control/VideoSettings"]
-margin_top = 316.0
+margin_top = 350.0
 margin_right = 1195.0
-margin_bottom = 320.0
+margin_bottom = 354.0
 
 [node name="texres" type="HBoxContainer" parent="Control/VideoSettings"]
-margin_top = 328.0
+margin_top = 362.0
 margin_right = 1195.0
-margin_bottom = 361.0
+margin_bottom = 395.0
 hint_tooltip = "Adjusts Texture resolution and filtering."
 alignment = 1
 
@@ -1261,9 +1262,9 @@ items = [ "High", null, false, 0, null, "Medium", null, false, 1, null, "Low", n
 selected = 0
 
 [node name="shares" type="HBoxContainer" parent="Control/VideoSettings"]
-margin_top = 369.0
+margin_top = 403.0
 margin_right = 1195.0
-margin_bottom = 402.0
+margin_bottom = 436.0
 hint_tooltip = "Adjusts Shadow Quality, Opacity and filtering."
 alignment = 1
 
@@ -1284,9 +1285,9 @@ items = [ "Very High", null, false, 0, null, "High", null, false, 1, null, "Medi
 selected = 0
 
 [node name="refres" type="HBoxContainer" parent="Control/VideoSettings"]
-margin_top = 410.0
+margin_top = 444.0
 margin_right = 1195.0
-margin_bottom = 443.0
+margin_bottom = 477.0
 hint_tooltip = "Adjusts Reflection resolution, quality and accuracy."
 alignment = 1
 
@@ -1308,15 +1309,15 @@ selected = 0
 
 [node name="HSeparator2" type="HSeparator" parent="Control/VideoSettings"]
 modulate = Color( 1, 1, 1, 0 )
-margin_top = 451.0
+margin_top = 485.0
 margin_right = 1195.0
-margin_bottom = 513.0
+margin_bottom = 547.0
 custom_constants/separation = 62
 
 [node name="vidtoset" type="Button" parent="Control/VideoSettings"]
-margin_top = 521.0
+margin_top = 555.0
 margin_right = 1195.0
-margin_bottom = 555.0
+margin_bottom = 589.0
 text = "Back to Main Menu"
 
 [node name="OnlineSettings" type="VBoxContainer" parent="Control"]
@@ -1372,6 +1373,7 @@ __meta__ = {
 [connection signal="pressed" from="Control/Settings/onl_settings" to="." method="_on_onl_settings_pressed"]
 [connection signal="pressed" from="Control/Settings/settomain" to="." method="_on_settomain_pressed"]
 [connection signal="pressed" from="Control/GameSettings/gstog" to="." method="_on_gstog_pressed"]
+[connection signal="value_changed" from="Control/AudioSettings/masvol/OptionButton" to="." method="_on_OptionButton_value_changed"]
 [connection signal="item_selected" from="Control/AudioSettings/osttype/OptionButton" to="." method="_on_OptionButton_item_selected"]
 [connection signal="pressed" from="Control/AudioSettings/astos" to="." method="_on_astos_pressed"]
 [connection signal="value_changed" from="Control/VideoSettings/frame/framecheck" to="." method="_on_framecheck_value_changed"]

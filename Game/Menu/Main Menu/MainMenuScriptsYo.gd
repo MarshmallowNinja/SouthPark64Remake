@@ -21,9 +21,9 @@ func InitiateSaveShit():
 # Video Settings
 	# Resolution code not active yet
 	$Control/VideoSettings/frame/framecheck.value = SaveGame.Settings["maxfps"]
-	$Control/VideoSettings/vsync/CheckButton.toggle_mode = SaveGame.Settings["vsync"]
+	$Control/VideoSettings/vsync/CheckButton.pressed = SaveGame.Settings["vsync"]
 	# too lazy to make Fullscreen code
-	$Control/VideoSettings/fxaa/fxaacheck.toggle_mode = SaveGame.Settings["fxaa"]
+	$Control/VideoSettings/fxaa/fxaacheck.pressed = SaveGame.Settings["fxaa"]
 	# might add an MSAA mode
 	# update: maybe not
 
@@ -33,7 +33,7 @@ func switchmenus(a, b):
 
 func _on_Button2_pressed():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Game/Levels/first.tscn")
+	get_tree().change_scene("res://Game/Levels/devlevel/devlevel.tscn")
 
 func _on_settings_pressed():
 	switchmenus("Control/Settings", "Control/Menu")
@@ -102,24 +102,27 @@ func _on_vidtoset_pressed() -> void:
 	switchmenus("Control/Settings", "Control/VideoSettings")
 	$Control/Settings/vid_settings.grab_focus()
 
-# Video Settings
-
-func _on_CheckButton_toggled(button_pressed: bool) -> void:
-	OS.vsync_enabled = button_pressed
-	SaveGame.Settings["vsync"] = button_pressed
-
-func _on_fxaacheck_toggled(button_pressed: bool) -> void:
-	get_viewport().fxaa = button_pressed
-	SaveGame.Settings["fxaa"] = button_pressed
-
-func _on_framecheck_value_changed(value: float) -> void:
-# warning-ignore:narrowing_conversion
-	Engine.target_fps = value
-	SaveGame.Settings["maxfps"] = value
-
 # Audio Settings
 
 func _on_OptionButton_item_selected(index: int) -> void:
 	SoundtrackSystem.ChangeOST(index)
-	#SoundtrackSystem.PlaySong()
 	SaveGame.Settings["soundtrack"] = index
+
+func _on_OptionButton_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(0, linear2db(value))
+	SaveGame.Settings["mastervolume"] = value
+
+# Video Settings
+
+func _on_CheckButton_toggled(button_pressed: bool):
+	OS.vsync_enabled = button_pressed
+	SaveGame.Settings["vsync"] = button_pressed
+
+func _on_fxaacheck_toggled(button_pressed: bool):
+	get_viewport().fxaa = button_pressed
+	SaveGame.Settings["fxaa"] = button_pressed
+
+func _on_framecheck_value_changed(value: float):
+# warning-ignore:narrowing_conversion
+	Engine.target_fps = value
+	SaveGame.Settings["maxfps"] = value
