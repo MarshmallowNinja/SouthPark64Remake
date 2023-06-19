@@ -49,6 +49,9 @@ onready var deadmenu = $Camera/CanvasLayer/menus/deadmenu
 onready var viewcheck = $Camera/viewcheck
 onready var character = $CharacterHandler
 onready var teambar = $Camera/CanvasLayer/TeamBar
+onready var weapon = $WeaponHandler
+
+
 
 func _ready():
 	Initiate()
@@ -84,6 +87,9 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("taunt"):
 		$farter.playsong()
+	
+	if Input.is_action_just_pressed("fire"):
+		weapon.TestFire()
 	
 	# pause menu functionality
 	if Input.is_action_just_pressed("esc"):

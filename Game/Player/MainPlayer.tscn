@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Game/Player/MainPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Game/Media/Soundtrack/farts/fartsmall02.wav" type="AudioStream" id=2]
@@ -20,10 +20,11 @@
 [ext_resource path="res://Game/Texture/UI/Player/radaratlas.png" type="Texture" id=18]
 [ext_resource path="res://Game/Texture/UI/Player/crosshair.png" type="Texture" id=19]
 [ext_resource path="res://Game/Player/CharacterHandler.gd" type="Script" id=20]
-[ext_resource path="res://Game/Player/characters/files/cartman/cartmanfile.tres" type="Resource" id=21]
+[ext_resource path="res://Game/Player/characters/files/base/basecharacter.tres" type="Resource" id=21]
 [ext_resource path="res://Game/Player/characters/files/base/64 Border.png" type="Texture" id=22]
 [ext_resource path="res://Game/Player/PickupHandler.gd" type="Script" id=23]
 [ext_resource path="res://Game/Menu/sp_dynamicfont.tres" type="DynamicFont" id=24]
+[ext_resource path="res://Game/Player/WeaponHandler.gd" type="Script" id=25]
 
 [sub_resource type="Animation" id=21]
 length = 0.001
@@ -159,6 +160,9 @@ Character = ExtResource( 21 )
 
 [node name="PickupHandler" type="Node" parent="."]
 script = ExtResource( 23 )
+
+[node name="WeaponHandler" type="Node" parent="."]
+script = ExtResource( 25 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 21 )
@@ -410,6 +414,8 @@ centered = false
 
 [node name="viewcheck" type="Area" parent="Camera"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+collision_layer = 2
+collision_mask = 2
 __meta__ = {
 "_editor_description_": "a"
 }
@@ -431,6 +437,14 @@ texture = SubResource( 16 )
 
 [node name="Listener" type="Listener" parent="Camera"]
 current = true
+
+[node name="weapontest" type="RayCast" parent="Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.757171 )
+enabled = true
+cast_to = Vector3( 0, 0, -50 )
+collide_with_areas = true
+
+[node name="ImmediateGeometry" type="ImmediateGeometry" parent="Camera/weapontest"]
 
 [node name="foot" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
