@@ -466,6 +466,9 @@ texture = SubResource( 16 )
 [node name="Listener" type="Listener" parent="Camera"]
 current = true
 
+[node name="ProjSpawn" type="Position3D" parent="Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.49495 )
+
 [node name="weapontest" type="RayCast" parent="Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.757171 )
 enabled = true

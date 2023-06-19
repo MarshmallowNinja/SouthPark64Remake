@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/extrahealth01e.wav-d07d2ea81c0b85a620fb287757d771da.sample"
+path="res://.import/doubledamage01.wav-6dbd21968034f8f029418777b8b9b77c.sample"
 
 [deps]
 
-source_file="res://Game/PickUps/health/extrahealth01e.wav"
-dest_files=[ "res://.import/extrahealth01e.wav-d07d2ea81c0b85a620fb287757d771da.sample" ]
+source_file="res://Game/PickUps/powerup/doubledamage/doubledamage01.wav"
+dest_files=[ "res://.import/doubledamage01.wav-6dbd21968034f8f029418777b8b9b77c.sample" ]
 
 [params]
 

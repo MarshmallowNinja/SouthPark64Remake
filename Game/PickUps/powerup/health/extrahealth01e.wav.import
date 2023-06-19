@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/doublefirerate01.wav-163749135c6e51d54bf6f1d967d7b89d.sample"
+path="res://.import/extrahealth01e.wav-89463d4f38c05a8bdfe0742bc6be4df6.sample"
 
 [deps]
 
-source_file="res://Game/PickUps/doublefire/doublefirerate01.wav"
-dest_files=[ "res://.import/doublefirerate01.wav-163749135c6e51d54bf6f1d967d7b89d.sample" ]
+source_file="res://Game/PickUps/powerup/health/extrahealth01e.wav"
+dest_files=[ "res://.import/extrahealth01e.wav-89463d4f38c05a8bdfe0742bc6be4df6.sample" ]
 
 [params]
 

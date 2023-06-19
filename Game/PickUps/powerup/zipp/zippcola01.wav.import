@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/extrahealth01d.wav-6cdc321963c3c0f41e01dddc5a1b4ff1.sample"
+path="res://.import/zippcola01.wav-a9e00fa4d0198b84d5f48c13b76a00a7.sample"
 
 [deps]
 
-source_file="res://Game/PickUps/health/extrahealth01d.wav"
-dest_files=[ "res://.import/extrahealth01d.wav-6cdc321963c3c0f41e01dddc5a1b4ff1.sample" ]
+source_file="res://Game/PickUps/powerup/zipp/zippcola01.wav"
+dest_files=[ "res://.import/zippcola01.wav-a9e00fa4d0198b84d5f48c13b76a00a7.sample" ]
 
 [params]
 

@@ -2,28 +2,28 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PC Computer - Blood - Caleb.png-2191f2fa975631799c7bf4e8ca792358.stex"
+path="res://.import/12e24c8_16x16_158.png-062cde1a81b290489fdcddd5a03302f0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Texture/blood2/PC Computer - Blood - Caleb.png"
-dest_files=[ "res://.import/PC Computer - Blood - Caleb.png-2191f2fa975631799c7bf4e8ca792358.stex" ]
+source_file="res://Game/Texture/UI/Player/12e24c8_16x16_158.png"
+dest_files=[ "res://.import/12e24c8_16x16_158.png-062cde1a81b290489fdcddd5a03302f0.stex" ]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
-compress/normal_map=0
-flags/repeat=true
+compress/normal_map=2
+flags/repeat=0
 flags/filter=false
-flags/mipmaps=false
+flags/mipmaps=true
 flags/anisotropic=false
-flags/srgb=1
+flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

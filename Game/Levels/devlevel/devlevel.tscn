@@ -18,7 +18,7 @@
 [ext_resource path="res://Game/Texture/building/repairedwindow.png" type="Texture" id=16]
 [ext_resource path="res://Game/Menu/CDfont.tres" type="DynamicFont" id=17]
 [ext_resource path="res://Game/Levels/devlevel/spiketest.gd" type="Script" id=18]
-[ext_resource path="res://Game/PickUps/pickupbase.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Game/PickUps/powerup/pickupbase.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Game/Texture/building/garagebuildingwindow.png" type="Texture" id=20]
 [ext_resource path="res://Game/Texture/building/garagebuildingdoor.png" type="Texture" id=21]
 [ext_resource path="res://Game/Texture/building/garagebuildingdoor2.png" type="Texture" id=22]
@@ -2750,7 +2750,7 @@ ExteriorColor = Color( 0.960784, 0.423529, 0.85098, 1 )
 transform = Transform( 0.909327, 0, 0.525, 0, 1.05, 0, -0.525, 0, 0.909327, -27.612, 0, -9.49406 )
 RoofColor = Color( 0.254902, 0.109804, 0.0196078, 1 )
 ExteriorColor = Color( 1, 0.678431, 0, 1 )
-WarningColor = Color( 1, 0, 0, 1 )
+WarningColor = Color( 1, 0.811765, 0, 1 )
 ConcreteColor = Color( 0.333333, 0.333333, 0.333333, 1 )
 
 [node name="onefloorbuilding" parent="Buildings" instance=ExtResource( 7 )]
@@ -3212,7 +3212,7 @@ shape = SubResource( 141 )
 [node name="Label3D" type="Label3D" parent="testing/spike2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 billboard = 1
-text = "10 Damage"
+text = "10 Heal"
 font = ExtResource( 17 )
 
 [node name="pickup" parent="testing" instance=ExtResource( 19 )]

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/zippcola02.wav-9ed328030f6ae72dd51a90e606eadf14.sample"
+path="res://.import/beefcake02.wav-b58e568600499b44781efbe384c2d063.sample"
 
 [deps]
 
-source_file="res://Game/PickUps/zipp/zippcola02.wav"
-dest_files=[ "res://.import/zippcola02.wav-9ed328030f6ae72dd51a90e606eadf14.sample" ]
+source_file="res://Game/PickUps/powerup/invincibility/beefcake02.wav"
+dest_files=[ "res://.import/beefcake02.wav-b58e568600499b44781efbe384c2d063.sample" ]
 
 [params]
 

@@ -50,10 +50,12 @@ onready var viewcheck = $Camera/viewcheck
 onready var character = $CharacterHandler
 onready var teambar = $Camera/CanvasLayer/TeamBar
 onready var weapon = $WeaponHandler
+onready var snowball = preload("res://Game/PickUps/weapon/snowball/Snowball.tscn")
 
 
 
 func _ready():
+	get_tree().get_root().set_disable_input(true)
 	Initiate()
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -92,7 +94,8 @@ func _physics_process(delta):
 		$farter.playsong()
 	
 	if Input.is_action_just_pressed("fire"):
-		pass
+		var p = snowball.instance()
+		$Camera/ProjSpawn.add_child(p)
 	
 	# pause menu functionality
 	if Input.is_action_just_pressed("esc"):
@@ -152,7 +155,7 @@ func _on_quit_pressed():
 	get_tree().change_scene("res://Game/Menu/Main Menu/MainMenu.tscn")
 
 func _on_viewcheck_area_entered(area: Area) -> void:
-	#$Camera/CanvasLayer/Crosshair/RichTextLabel.text = var2str($Camera/viewcheck.get_overlapping_areas().front().get_name())
+
 	if area.is_in_group("interact"):
 		viewgroup = area
 	else:
@@ -168,6 +171,7 @@ func Initiate():
 	MaxHealth = $CharacterHandler.Character.MaxHealth
 	$Camera/CanvasLayer/TeamBar/TM1.texture = $CharacterHandler.Character.CharacterIcon
 	emit_signal("Spawn")
+	TakeControl()
 
 func PlayerStateCheck():
 	match PlayerState:
@@ -211,7 +215,7 @@ func Heal(a):
 	else:
 		pass
 
-func Armor():
+func AddArmor():
 	Armor += 25
 	if Armor > MaxArmor:
 		Armor = MaxArmor
@@ -228,8 +232,10 @@ func Kill():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_cy_pressed() -> void:
+# warning-ignore:return_value_discarded
 	get_tree().reload_current_scene()
 func _on_cn_pressed() -> void:
+# warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Game/Menu/Main Menu/MainMenu.tscn")
 
 # self explanatory
@@ -243,3 +249,4 @@ func Interact():
 # make sure to add input shit too
 func TakeControl():
 	$Camera.current = true
+	get_tree().get_root().set_disable_input(false)

@@ -622,7 +622,7 @@ mouse_filter = 2
 color = Color( 0, 0, 0, 0.65098 )
 
 [node name="2021 icon crop" type="Sprite" parent="Control"]
-position = Vector2( 0, -255 )
+position = Vector2( 5, -247 )
 texture = ExtResource( 3 )
 
 [node name="Menu" type="VBoxContainer" parent="Control"]

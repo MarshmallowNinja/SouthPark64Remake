@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/ammopickup01.wav-9f1937d03ad835acd60e82ac06c71a51.sample"
+path="res://.import/doublefirerate01.wav-bb5d9b298dd2b8f796bd8877fd9896dc.sample"
 
 [deps]
 
-source_file="res://Game/PickUps/other/ammopickup01.wav"
-dest_files=[ "res://.import/ammopickup01.wav-9f1937d03ad835acd60e82ac06c71a51.sample" ]
+source_file="res://Game/PickUps/powerup/doublefire/doublefirerate01.wav"
+dest_files=[ "res://.import/doublefirerate01.wav-bb5d9b298dd2b8f796bd8877fd9896dc.sample" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/zippcola01.wav-ed86d7e021510a1624b8b856b7fbc618.sample"
+path="res://.import/weaponspickup01.wav-3bf5119439111061b5f90f0f9922a611.sample"
 
 [deps]
 
-source_file="res://Game/PickUps/zipp/zippcola01.wav"
-dest_files=[ "res://.import/zippcola01.wav-ed86d7e021510a1624b8b856b7fbc618.sample" ]
+source_file="res://Game/PickUps/powerup/other/weaponspickup01.wav"
+dest_files=[ "res://.import/weaponspickup01.wav-3bf5119439111061b5f90f0f9922a611.sample" ]
 
 [params]
 

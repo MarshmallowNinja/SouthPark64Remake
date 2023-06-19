@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/armor01.wav-530b58b561b30df07da7001e58548f2b.sample"
+path="res://.import/zippcola02.wav-dffdf3c362839e85a7289819f42c688f.sample"
 
 [deps]
 
-source_file="res://Game/PickUps/armor/armor01.wav"
-dest_files=[ "res://.import/armor01.wav-530b58b561b30df07da7001e58548f2b.sample" ]
+source_file="res://Game/PickUps/powerup/zipp/zippcola02.wav"
+dest_files=[ "res://.import/zippcola02.wav-dffdf3c362839e85a7289819f42c688f.sample" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/beefcake02.wav-41f2d5a35ff08eabc62191b79284720d.sample"
+path="res://.import/fullhealth01.wav-d51117d9adc67bdd1eaf1bd8e0db2de0.sample"
 
 [deps]
 
-source_file="res://Game/PickUps/invincibility/beefcake02.wav"
-dest_files=[ "res://.import/beefcake02.wav-41f2d5a35ff08eabc62191b79284720d.sample" ]
+source_file="res://Game/PickUps/powerup/health/fullhealth01.wav"
+dest_files=[ "res://.import/fullhealth01.wav-d51117d9adc67bdd1eaf1bd8e0db2de0.sample" ]
 
 [params]
 

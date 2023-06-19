@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/weaponspickup01.wav-f2a698c7f424e96763e246086f84fbb7.sample"
+path="res://.import/ammopickup01.wav-8ad6e4f9910b81f2b458def6dc4b8303.sample"
 
 [deps]
 
-source_file="res://Game/PickUps/other/weaponspickup01.wav"
-dest_files=[ "res://.import/weaponspickup01.wav-f2a698c7f424e96763e246086f84fbb7.sample" ]
+source_file="res://Game/PickUps/powerup/other/ammopickup01.wav"
+dest_files=[ "res://.import/ammopickup01.wav-8ad6e4f9910b81f2b458def6dc4b8303.sample" ]
 
 [params]
 
