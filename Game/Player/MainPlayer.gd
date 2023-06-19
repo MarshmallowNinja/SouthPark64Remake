@@ -85,11 +85,14 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("interact"):
 		Interact()
 	
+	if Input.is_action_just_pressed("suicide"):
+		Kill()
+	
 	if Input.is_action_just_pressed("taunt"):
 		$farter.playsong()
 	
 	if Input.is_action_just_pressed("fire"):
-		weapon.TestFire()
+		pass
 	
 	# pause menu functionality
 	if Input.is_action_just_pressed("esc"):
@@ -219,14 +222,15 @@ func Kill():
 	PlayerState = playerstate.Dead
 	PlayerStateCheck()
 	emit_signal("Death")
+	$AnimationPlayer.play("kill")
 	$Camera/CanvasLayer/menus/menubg.set_visible(true)
 	deadmenu.set_visible(true)
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 func _on_cy_pressed() -> void:
 	get_tree().reload_current_scene()
 func _on_cn_pressed() -> void:
 	get_tree().change_scene("res://Game/Menu/Main Menu/MainMenu.tscn")
-
 
 # self explanatory
 func Interact():

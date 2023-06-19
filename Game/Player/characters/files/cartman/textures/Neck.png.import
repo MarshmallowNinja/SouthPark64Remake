@@ -2,19 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/emptex2.jpg-09c75f6ec49fe1abdd93ae3a0878d325.stex"
+path="res://.import/Neck.png-62832f760ed43504c967d6b7d9e9f078.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Texture/emptex2.jpg"
-dest_files=[ "res://.import/emptex2.jpg-09c75f6ec49fe1abdd93ae3a0878d325.stex" ]
+source_file="res://Game/Player/characters/files/cartman/textures/Neck.png"
+dest_files=[ "res://.import/Neck.png-62832f760ed43504c967d6b7d9e9f078.stex" ]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

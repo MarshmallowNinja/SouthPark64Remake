@@ -2,19 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/emptex2.jpg-09c75f6ec49fe1abdd93ae3a0878d325.stex"
+path="res://.import/TeamMutation.png-4297d0494f050020414abc8b3406b5d8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Texture/emptex2.jpg"
-dest_files=[ "res://.import/emptex2.jpg-09c75f6ec49fe1abdd93ae3a0878d325.stex" ]
+source_file="res://Game/IMPORTANT/open/TeamMutation.png"
+dest_files=[ "res://.import/TeamMutation.png-4297d0494f050020414abc8b3406b5d8.stex" ]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
@@ -23,7 +23,7 @@ flags/repeat=0
 flags/filter=false
 flags/mipmaps=true
 flags/anisotropic=false
-flags/srgb=1
+flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

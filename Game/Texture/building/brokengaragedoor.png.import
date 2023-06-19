@@ -2,19 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/emptex2.jpg-09c75f6ec49fe1abdd93ae3a0878d325.stex"
+path="res://.import/brokengaragedoor.png-7ab7f9742bee2d24bb416e95a9138ca9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Texture/emptex2.jpg"
-dest_files=[ "res://.import/emptex2.jpg-09c75f6ec49fe1abdd93ae3a0878d325.stex" ]
+source_file="res://Game/Texture/building/brokengaragedoor.png"
+dest_files=[ "res://.import/brokengaragedoor.png-7ab7f9742bee2d24bb416e95a9138ca9.stex" ]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

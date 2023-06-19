@@ -1,0 +1,42 @@
+# Blender 3.5.0 MTL File: 'Improved Cartman.blend'
+# www.blender.org
+
+newmtl Material.001_Eyes.png_Eyes.png
+Ns 102.396523
+Ka 1.000000 1.000000 1.000000
+Ks 0.250000 0.250000 0.250000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:/Eyes.png
+
+newmtl Material.002_Mouth.pn_Mouth.png
+Ns 102.396523
+Ka 1.000000 1.000000 1.000000
+Ks 0.250000 0.250000 0.250000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:/Mouth.png
+
+newmtl Material.003_Neck.png_Neck.png
+Ns 102.396523
+Ka 1.000000 1.000000 1.000000
+Ks 0.250000 0.250000 0.250000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:/Neck.png
+
+newmtl Material_Body.png_Body.png
+Ns 102.396523
+Ka 1.000000 1.000000 1.000000
+Ks 0.250000 0.250000 0.250000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd C:/Body.png

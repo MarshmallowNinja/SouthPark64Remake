@@ -2,8 +2,7 @@ extends Node
 
 # variables and shit
 var Name : String = "New Kid"
-enum OST {PC, N64, PSX, PCREMAKE, N64REMAKE, PSXREMAKE}
-var OSTType = OST.PC
+
 
 func _ready():
 	SettingsInit()

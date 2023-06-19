@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="South Park 64 Remake"
-run/main_scene="res://Game/Menu/Main Menu/MainMenu.tscn"
+run/main_scene="res://Game/IMPORTANT/open/open.tscn"
 boot_splash/image="res://Game/Menu/Main Menu/2021 thumbnail.png"
 boot_splash/use_filter=false
 config/icon="res://misc/game icon.png"
@@ -181,6 +181,11 @@ weapondown={
 "deadzone": 0.5,
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":5,"pressed":false,"doubleclick":false,"script":null)
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":5,"pressure":0.0,"pressed":false,"script":null)
+ ]
+}
+suicide={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":75,"unicode":0,"echo":false,"script":null)
  ]
 }
 
