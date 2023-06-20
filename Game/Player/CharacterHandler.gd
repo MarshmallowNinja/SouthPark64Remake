@@ -2,16 +2,15 @@ extends Node
 
 export(Resource) var Character
 
-var ForceCharacter : bool = false
-var ForcedCharacter # Make sure that this is a Resource file and not fucking anything else
 var random = RandomNumberGenerator.new()
 onready var talker = $"../Camera/talker"
 
 func _ready():
-	pass
+	InitiateCharacter()
 
 func InitiateCharacter():
-	pass
+	var file = load(PlayerController.Players[0][0])
+	Character = file
 
 func PlaySound(sound : AudioStream, priority : bool):
 	if talker.playing and priority == true: # stop playing sound if priority is true

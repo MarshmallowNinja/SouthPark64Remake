@@ -17,13 +17,13 @@
 [ext_resource path="res://Game/Texture/building/door1.png" type="Texture" id=15]
 [ext_resource path="res://Game/Texture/building/repairedwindow.png" type="Texture" id=16]
 [ext_resource path="res://Game/Menu/CDfont.tres" type="DynamicFont" id=17]
-[ext_resource path="res://Game/Levels/devlevel/spiketest.gd" type="Script" id=18]
+[ext_resource path="res://Game/Levels/devlevel/devlevel.gd" type="Script" id=18]
 [ext_resource path="res://Game/PickUps/powerup/pickupbase.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Game/Texture/building/garagebuildingwindow.png" type="Texture" id=20]
 [ext_resource path="res://Game/Texture/building/garagebuildingdoor.png" type="Texture" id=21]
 [ext_resource path="res://Game/Texture/building/garagebuildingdoor2.png" type="Texture" id=22]
-[ext_resource path="res://Game/Levels/devlevel/devlevel.gd" type="Script" id=23]
-[ext_resource path="res://Game/Levels/devlevel/testinteract.gd" type="Script" id=24]
+[ext_resource path="res://Game/Levels/devlevel/testinteract.gd" type="Script" id=23]
+[ext_resource path="res://Game/Levels/devlevel/spiketest.gd" type="Script" id=24]
 [ext_resource path="res://Game/Texture/building/brokengaragedoor.png" type="Texture" id=25]
 [ext_resource path="res://Game/Texture/emptex2.jpg" type="Texture" id=26]
 [ext_resource path="res://Game/Texture/Nature/snow.png" type="Texture" id=27]
@@ -2710,7 +2710,7 @@ func _on_Area_body_entered(body: Node):
 "
 
 [node name="Spatial" type="Spatial"]
-script = ExtResource( 23 )
+script = ExtResource( 18 )
 
 [node name="Atmosphere" type="Node" parent="."]
 
@@ -2939,7 +2939,7 @@ ExteriorColor = Color( 0.313726, 0.447059, 0.486275, 1 )
 
 [node name="Area" type="Area" parent="Buildings" groups=["interact"]]
 transform = Transform( 1.11, 0, -7.05661e-08, 0, 1.11, 0, 7.05661e-08, 0, 1.11, 7, 0, 34.0192 )
-script = ExtResource( 24 )
+script = ExtResource( 23 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Buildings/Area"]
 transform = Transform( 1, 0, 3.55271e-14, 0, 1, 0, -3.55271e-14, 0, 1, 0, 1.66465, -3.19313 )
@@ -3180,7 +3180,7 @@ material = SubResource( 243 )
 [node name="spike" type="MeshInstance" parent="testing"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 71, 1, 35 )
 mesh = SubResource( 140 )
-script = ExtResource( 18 )
+script = ExtResource( 24 )
 Amount = 10
 Text = "10 Damage"
 

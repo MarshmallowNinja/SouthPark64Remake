@@ -16,7 +16,7 @@ func Pickup(type : int):
 			var sound = load("res://Game/PickUps/other/ammopickup01.wav")
 			PlaySound(sound)
 		1:
-			var sound = load("res://Game/PickUps/health/extrahealth01e.wav")
+			var sound = load("res://Game/PickUps/powerup/health/extrahealth01d.wav")
 			PlaySound(sound)
 		2:
 			pass

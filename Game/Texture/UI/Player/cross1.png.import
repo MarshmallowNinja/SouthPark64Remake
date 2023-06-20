@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/12e24c8_16x16_158.png-062cde1a81b290489fdcddd5a03302f0.stex"
+path="res://.import/cross1.png-630d30435ecf6c9698c418fb0c0c8209.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Game/Texture/UI/Player/12e24c8_16x16_158.png"
-dest_files=[ "res://.import/12e24c8_16x16_158.png-062cde1a81b290489fdcddd5a03302f0.stex" ]
+source_file="res://Game/Texture/UI/Player/cross1.png"
+dest_files=[ "res://.import/cross1.png-630d30435ecf6c9698c418fb0c0c8209.stex" ]
 
 [params]
 

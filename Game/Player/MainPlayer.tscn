@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Game/Player/MainPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Game/Media/Soundtrack/farts/fartsmall02.wav" type="AudioStream" id=2]
@@ -18,9 +18,8 @@
 [ext_resource path="res://Game/Texture/UI/Player/radar1.png" type="Texture" id=16]
 [ext_resource path="res://Game/Texture/UI/Player/radar2.png" type="Texture" id=17]
 [ext_resource path="res://Game/Texture/UI/Player/radaratlas.png" type="Texture" id=18]
-[ext_resource path="res://Game/Texture/UI/Player/crosshair.png" type="Texture" id=19]
+[ext_resource path="res://Game/Texture/UI/Player/cross1.png" type="Texture" id=19]
 [ext_resource path="res://Game/Player/CharacterHandler.gd" type="Script" id=20]
-[ext_resource path="res://Game/Player/characters/files/base/basecharacter.tres" type="Resource" id=21]
 [ext_resource path="res://Game/Player/characters/files/base/64 Border.png" type="Texture" id=22]
 [ext_resource path="res://Game/Player/PickupHandler.gd" type="Script" id=23]
 [ext_resource path="res://Game/Menu/sp_dynamicfont.tres" type="DynamicFont" id=24]
@@ -175,7 +174,6 @@ script = ExtResource( 1 )
 
 [node name="CharacterHandler" type="Node" parent="."]
 script = ExtResource( 20 )
-Character = ExtResource( 21 )
 
 [node name="PickupHandler" type="Node" parent="."]
 script = ExtResource( 23 )
@@ -351,11 +349,9 @@ margin_right = 1.0
 margin_bottom = 1.0
 
 [node name="Sprite" type="Sprite" parent="Camera/CanvasLayer/Crosshair"]
-visible = false
-position = Vector2( -33, -33 )
-scale = Vector2( 0.75, 0.75 )
+position = Vector2( 1, 1 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 19 )
-centered = false
 
 [node name="HealthBar" type="ProgressBar" parent="Camera/CanvasLayer"]
 pause_mode = 2
