@@ -1,0 +1,55 @@
+[gd_resource type="Resource" load_steps=20 format=2]
+
+[ext_resource path="res://Game/Player/characters/files/alien/sounds/lose (1).wav" type="AudioStream" id=1]
+[ext_resource path="res://Game/Player/characters/files/alien/sounds/hurt (4).wav" type="AudioStream" id=2]
+[ext_resource path="res://Game/Player/characters/files/alien/sounds/picked (3).wav" type="AudioStream" id=3]
+[ext_resource path="res://Game/Player/characters/files/alien/sounds/hurt (10).wav" type="AudioStream" id=4]
+[ext_resource path="res://Game/Player/characters/files/alien/sounds/win (1).wav" type="AudioStream" id=5]
+[ext_resource path="res://Game/Player/characters/files/alien/sounds/picked (2).wav" type="AudioStream" id=6]
+[ext_resource path="res://Game/Player/characters/files/alien/sounds/hurt (2).wav" type="AudioStream" id=7]
+[ext_resource path="res://Game/Player/characters/files/alien/sounds/hurt (3).wav" type="AudioStream" id=8]
+[ext_resource path="res://Game/Player/characters/files/alien/sounds/lose (2).wav" type="AudioStream" id=9]
+[ext_resource path="res://Game/Player/characters/files/alien/sounds/hurt (5).wav" type="AudioStream" id=10]
+[ext_resource path="res://Game/Player/characters/files/alien/sounds/hurt (9).wav" type="AudioStream" id=11]
+[ext_resource path="res://Game/Player/characters/files/alien/sounds/hurt (8).wav" type="AudioStream" id=12]
+[ext_resource path="res://Game/Player/characters/files/alien/sounds/hurt (6).wav" type="AudioStream" id=13]
+[ext_resource path="res://Game/Player/characters/files/alien/sounds/picked (1).wav" type="AudioStream" id=14]
+[ext_resource path="res://Game/Player/characters/files/alien/sounds/win (2).wav" type="AudioStream" id=15]
+[ext_resource path="res://Game/Player/characters/files/alien/sounds/lose (3).wav" type="AudioStream" id=16]
+[ext_resource path="res://Game/Player/characters/files/alien/sounds/hurt (1).wav" type="AudioStream" id=17]
+[ext_resource path="res://Game/Player/characters/files/alien/sounds/hurt (7).wav" type="AudioStream" id=18]
+[ext_resource path="res://Game/Player/characters/script/CharacterFileScript.gd" type="Script" id=19]
+
+[resource]
+script = ExtResource( 19 )
+CharacterName = "Alien"
+StartingHealth = 100
+MaxHealth = 100
+StartingArmor = 0
+MaxArmor = 100
+MaxDodgeballAmmo = 80
+MaxPlungerAmmo = 40
+MaxDartAmmo = 200
+MaxWarpoAmmo = 200
+MaxTPAmmo = 20
+MaxChickenAmmo = 20
+MaxGizmoAmmo = 100
+MaxCowAmmo = 40
+SpawnAudio = [ ExtResource( 11 ), ExtResource( 4 ), ExtResource( 14 ), ExtResource( 6 ), ExtResource( 3 ) ]
+PainAudio = [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 18 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 4 ) ]
+DeathAudio = [ ExtResource( 1 ), ExtResource( 9 ), ExtResource( 16 ) ]
+HealAudio = [ ExtResource( 5 ), ExtResource( 15 ) ]
+WeaponPickUpAudio = [  ]
+MedPainAudio = [  ]
+HevPainAudio = [  ]
+ShockDamageAudio = [  ]
+GasDamageAudio = [  ]
+NearTownAudio = [  ]
+EmptyTeamSpawnAudio = [  ]
+TurkeyKillAudio = [  ]
+CloneKillAudio = [  ]
+CowKillAudio = [  ]
+AlienKillAudio = [  ]
+RobotKillAudio = [  ]
+ToyKillAudio = [  ]
+ToughEnemyAudio = [  ]

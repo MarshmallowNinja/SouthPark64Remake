@@ -2750,7 +2750,6 @@ ExteriorColor = Color( 0.960784, 0.423529, 0.85098, 1 )
 transform = Transform( 0.909327, 0, 0.525, 0, 1.05, 0, -0.525, 0, 0.909327, -27.612, 0, -9.49406 )
 RoofColor = Color( 0.254902, 0.109804, 0.0196078, 1 )
 ExteriorColor = Color( 1, 0.678431, 0, 1 )
-WarningColor = Color( 1, 0.811765, 0, 1 )
 ConcreteColor = Color( 0.333333, 0.333333, 0.333333, 1 )
 
 [node name="onefloorbuilding" parent="Buildings" instance=ExtResource( 7 )]
