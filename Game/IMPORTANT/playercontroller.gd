@@ -14,6 +14,9 @@ func AddPlayer():
 	]
 	Players.append(ToAdd)
 
+func ChangeCharacter(player : int, characterindex : int):
+	Players[player][0] = CharacterFileList[characterindex][2]
+
 func SearchCharacters():
 	var file = File.new()
 	file.open("res://Game/Player/characters/script/characterlist.tres", file.READ)
@@ -21,4 +24,3 @@ func SearchCharacters():
 		var csv = file.get_csv_line()
 		CharacterFileList.append(csv)
 	file.close()
-	print(CharacterFileList)
