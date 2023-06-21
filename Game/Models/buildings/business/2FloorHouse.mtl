@@ -1,25 +1,25 @@
-# Blender 3.5.0 MTL File: '1FloorHouse.blend'
+# Blender 3.5.0 MTL File: '2FloorHouse.blend'
 # www.blender.org
 
 newmtl Door
-Ns 200.000000
+Ns 180.000000
 Ka 1.000000 1.000000 1.000000
 Ks 1.000000 1.000000 1.000000
 Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
-illum 2
-map_Kd D:/Game Development/SPRemake Things/SPTD/Models/House/Door HD.png
+illum 3
+map_Kd D:/Game Development/SPRemake Things/Textures/building/door2.png
 
 newmtl Exterior_Color
-Ns 200.000000
+Ns 180.000000
 Ka 1.000000 1.000000 1.000000
 Kd 0.000000 1.000000 0.000000
 Ks 1.000000 1.000000 1.000000
 Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
-illum 2
+illum 3
 
 newmtl Porch_Door
 Ns 250.000000
@@ -32,21 +32,21 @@ illum 2
 map_Kd D:/Game Development/SPRemake Things/Textures/building/slidingdoor1.png
 
 newmtl Roof_Color
-Ns 200.000000
+Ns 180.000000
 Ka 1.000000 1.000000 1.000000
-Kd 0.190178 0.075720 0.000000
+Kd 0.470900 0.180000 0.000000
 Ks 1.000000 1.000000 1.000000
 Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
-illum 2
+illum 3
 
 newmtl Window
-Ns 200.000000
+Ns 180.000000
 Ka 1.000000 1.000000 1.000000
 Ks 1.000000 1.000000 1.000000
 Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
-illum 2
-map_Kd D:/Game Development/SPRemake Things/SPTD/Models/House/Window hd.png
+illum 3
+map_Kd D:/Game Development/SPRemake Things/Textures/building/window1.png

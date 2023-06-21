@@ -50,9 +50,6 @@ onready var viewcheck = $Camera/viewcheck
 onready var character = $CharacterHandler
 onready var teambar = $Camera/CanvasLayer/TeamBar
 onready var weapon = $WeaponHandler
-onready var snowball = preload("res://Game/PickUps/weapon/snowball/Snowball.tscn")
-
-
 
 func _ready():
 	get_tree().get_root().set_disable_input(true)
@@ -94,8 +91,7 @@ func _physics_process(delta):
 		$farter.playsong()
 	
 	if Input.is_action_just_pressed("fire"):
-		var p = snowball.instance()
-		$Camera/ProjSpawn.add_child(p)
+		$farter.playsong()
 	
 	# pause menu functionality
 	if Input.is_action_just_pressed("esc"):

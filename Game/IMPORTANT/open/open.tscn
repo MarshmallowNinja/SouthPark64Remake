@@ -165,15 +165,15 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Label2:percent_visible")
-tracks/2/interp = 0
+tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 2.45, 2.55, 5.05, 5.15 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 2.45, 2.6, 4, 5.05, 5.15, 5.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.0, 1.0, 1.0, 0.0 ]
+"values": [ 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("ComedyCentral20001687164544219:modulate")
@@ -249,12 +249,12 @@ tracks/8/keys = {
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("Label:percent_visible")
-tracks/9/interp = 0
+tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0, 5.25, 5.4, 7.4, 7.45 ),
+"times": PoolRealArray( 0, 5.25, 6.4, 7.4, 7.55 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, 1.0, 1.0, 0.0 ]

@@ -6,6 +6,10 @@ export.cfg
 export_presets.cfg
 config.cfg
 .addons/
+addons
+addons/
+misc/qudot
 
 # Mono-specific ignores
 .mono/
+*.import
