@@ -240,10 +240,6 @@ mouse_cursor/custom_image="res://misc/mouseclassic.png"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
-[editor_plugins]
-
-enabled=PoolStringArray( "res://addons/qodot/plugin.cfg" )
-
 [gdnative]
 
 singletons=[  ]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=248 format=2]
+[gd_scene load_steps=249 format=2]
 
 [ext_resource path="res://Game/Levels/story/e1/l1/e1s1.png" type="Texture" id=1]
 [ext_resource path="res://Game/Models/buildings/housing/twofloorhouse.tscn" type="PackedScene" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Game/Models/buildings/business/twofloorbuilding.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Game/Texture/building/door2.png" type="Texture" id=20]
 [ext_resource path="res://Game/Player/MainPlayer.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Game/Levels/story/e1/l1/E1L1.gd" type="Script" id=22]
 
 [sub_resource type="GIProbeData" id=126]
 bounds = AABB( -124, -10, -145, 248, 20, 290 )
@@ -3158,6 +3159,7 @@ size = Vector2( 350, 400 )
 data = PoolVector3Array( 175, 0, 200, -175, 0, 200, 175, 0, -200, -175, 0, 200, -175, 0, -200, 175, 0, -200 )
 
 [node name="E1L1" type="Spatial"]
+script = ExtResource( 22 )
 
 [node name="Atmosphere" type="Node" parent="."]
 
@@ -3464,7 +3466,7 @@ script = SubResource( 132 )
 ExteriorColor = Color( 0.490196, 0.376471, 0.227451, 1 )
 
 [node name="onefloorbuilding4" parent="Business" instance=ExtResource( 18 )]
-transform = Transform( 1.11, 0, 0, 0, 1.11, 0, 0, 0, 1.11, -55, 0, -166 )
+transform = Transform( 1.11, 0, 0, 0, 1.11, 0, 0, 0, 1.887, -55, 0, -169 )
 mesh = SubResource( 133 )
 material/0 = SubResource( 134 )
 material/1 = SubResource( 135 )
@@ -3474,7 +3476,7 @@ script = SubResource( 138 )
 ExteriorColor = Color( 0, 0.886275, 0, 1 )
 
 [node name="onefloorbuilding5" parent="Business" instance=ExtResource( 18 )]
-transform = Transform( 1.11, 0, 0, 0, 1.11, 0, 0, 0, 1.11, -35, 0, -166 )
+transform = Transform( 1.11, 0, 0, 0, 1.11, 0, 0, 0, 1.998, -35, 0, -169 )
 mesh = SubResource( 139 )
 material/0 = SubResource( 140 )
 material/1 = SubResource( 141 )
@@ -3558,6 +3560,43 @@ material/3 = SubResource( 295 )
 script = SubResource( 296 )
 ExteriorColor = Color( 0.65098, 0.333333, 0.603922, 1 )
 
+[node name="Mountain" type="Node" parent="."]
+
+[node name="CSGBox" type="CSGBox" parent="Mountain"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 23 )
+use_collision = true
+width = 100.0
+height = 18.0
+depth = 0.002
+
+[node name="CSGBox5" type="CSGBox" parent="Mountain"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -100, 9, -90 )
+use_collision = true
+width = 100.0
+height = 18.0
+depth = 0.002
+
+[node name="CSGBox2" type="CSGBox" parent="Mountain"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 50, 9, -59 )
+use_collision = true
+width = 164.0
+height = 18.0
+depth = 0.002
+
+[node name="CSGBox3" type="CSGBox" parent="Mountain"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -50, 9, -32 )
+use_collision = true
+width = 116.0
+height = 18.0
+depth = 0.002
+
+[node name="CSGBox4" type="CSGBox" parent="Mountain"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 9, -272 )
+use_collision = true
+width = 168.0
+height = 18.0
+depth = 0.002
+
 [node name="Other" type="Node" parent="."]
 
 [node name="MeshInstance" type="MeshInstance" parent="Other"]
@@ -3571,7 +3610,7 @@ skeleton = NodePath("../..")
 shape = SubResource( 35 )
 
 [node name="Sprite3D" type="Sprite3D" parent="Other"]
-transform = Transform( 58.0274, 0, 0, 0, -4.37114e-08, 1, 0, -58.0274, -2.53646e-06, 265.481, 0.039, -108.231 )
+transform = Transform( 58.0274, 0, 0, 0, -4.37114e-08, 1, 0, -58.0274, -2.53646e-06, 265.481, 0.109, -108.231 )
 shaded = true
 texture = ExtResource( 1 )
 
