@@ -19,7 +19,7 @@ func ChangeCharacter(player : int, characterindex : int):
 
 func SearchCharacters():
 	var file = File.new()
-	file.open("res://Game/Player/characters/script/characterlist.tres", file.READ)
+	file.open("res://Game/Player/characters/script/characterlist.txt", file.READ)
 	while !file.eof_reached():
 		var csv = file.get_csv_line()
 		CharacterFileList.append(csv)
