@@ -2,14 +2,14 @@
 
 importer="wavefront_obj"
 type="Mesh"
-path="res://.import/garage.obj-bc113cdb505dbabfd4eeb9beb2752281.mesh"
+path="res://.import/Garage.obj-f797364fe4e487c1beb1b90a8ce8bd59.mesh"
 
 [deps]
 
-files=[ "res://.import/garage.obj-bc113cdb505dbabfd4eeb9beb2752281.mesh" ]
+files=[ "res://.import/Garage.obj-f797364fe4e487c1beb1b90a8ce8bd59.mesh" ]
 
-source_file="res://Game/Models/buildings/housing/garage.obj"
-dest_files=[ "res://.import/garage.obj-bc113cdb505dbabfd4eeb9beb2752281.mesh", "res://.import/garage.obj-bc113cdb505dbabfd4eeb9beb2752281.mesh" ]
+source_file="res://Game/Models/buildings/housing/Garage.obj"
+dest_files=[ "res://.import/Garage.obj-f797364fe4e487c1beb1b90a8ce8bd59.mesh", "res://.import/Garage.obj-f797364fe4e487c1beb1b90a8ce8bd59.mesh" ]
 
 [params]
 
