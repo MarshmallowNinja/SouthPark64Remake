@@ -10,7 +10,7 @@ sun_longitude = 24.84
 [resource]
 background_mode = 2
 background_sky = SubResource( 2 )
-ambient_light_sky_contribution = 0.5
+ambient_light_sky_contribution = 0.15
 glow_enabled = true
 glow_levels/5 = false
 glow_levels/6 = true

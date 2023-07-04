@@ -16,6 +16,7 @@ var Name : String = ""
 enum playerstate {Live, Dead, Frozen, Transformed, Dancing, ForceStill}
 var PlayerState = playerstate.Live
 # Pause states for different modes
+# unused for now, mainly used for multiplayer
 enum pausestate {Unpaused, Paused, HostPause, ClientPause}
 var PauseState = pausestate.Unpaused
 
@@ -116,7 +117,7 @@ func _physics_process(delta):
 				lookSensitivity = 10
 	
 	# movement and acceleration
-	movement = movement.normalized()
+	#movement = movement.normalized()
 	velocity = velocity.linear_interpolate(direction * moveSpeed, Acceleration * delta)
 	movement.z = velocity.z + gravityv.z
 	movement.x = velocity.x + gravityv.x
@@ -150,16 +151,14 @@ func _on_quit_pressed():
 # warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Game/Menu/Main Menu/MainMenu.tscn")
 
+# Interact BS
 func _on_viewcheck_area_entered(area: Area) -> void:
-
 	if area.is_in_group("interact"):
 		viewgroup = area
 	else:
 		pass
-
 # warning-ignore:unused_argument
 func _on_viewcheck_area_exited(area: Area) -> void:
-	#$Camera/CanvasLayer/Crosshair/RichTextLabel.text = ""
 	viewgroup = null
 
 func Initiate():
@@ -178,7 +177,7 @@ func PlayerStateCheck():
 		1: # Dead
 			axis_lock_motion_x = true
 			axis_lock_motion_z = true
-			axis_lock_motion_y = true
+			get_tree().get_root().set_disable_input(true)
 		2: # Frozen
 			axis_lock_motion_x = true
 			axis_lock_motion_z = true
@@ -186,7 +185,7 @@ func PlayerStateCheck():
 func Damage(a):
 # overly complicated damage system
 	if a <= Armor:
-		var leftoverdmg
+		var leftoverdmg : int
 		leftoverdmg = a % Armor
 		a -= Armor
 		leftoverdmg -= Health
