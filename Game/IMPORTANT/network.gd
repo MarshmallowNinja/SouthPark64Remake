@@ -1,10 +1,29 @@
 extends Node
 
-var port : int 
-var max_players : int
+var Port : int 
+var MaxPlayers : int
+var MaxInBandwidth : int
+var MaxOutBandwidth : int
+var IPAddress
+var IPToConnect
 
-var server
-var client
+var Server
+var Client
 
 func _ready() -> void:
-	pass
+	FetchIP()
+
+func FetchIP():
+	match OS.get_name():
+		"Windows":
+			IPAddress = IP.get_local_addresses()[1]
+
+func CreateServer():
+	Server = NetworkedMultiplayerENet.new()
+	Server.create_server(Port, MaxPlayers)
+	get_tree().network_peer = Server
+
+func JoinServer():
+	Client = NetworkedMultiplayerENet.new()
+	Client.create_client(IPAddress, Port)
+	get_tree().network_peer = Client

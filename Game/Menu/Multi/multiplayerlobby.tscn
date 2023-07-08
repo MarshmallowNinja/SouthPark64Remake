@@ -1,16 +1,82 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Game/Menu/southpark.theme" type="Theme" id=1]
+[ext_resource path="res://Game/Menu/Multi/multiplayerlobby.gd" type="Script" id=2]
 
 [node name="MPLobby" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Panel" type="Panel" parent="."]
-modulate = Color( 0.470588, 0.305882, 0, 1 )
+[node name="Panel" type="ColorRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="hotbar" type="HBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -96.0
+alignment = 1
+
+[node name="Button" type="Button" parent="hotbar"]
+margin_left = 675.0
+margin_right = 1245.0
+margin_bottom = 96.0
+toggle_mode = true
+text = "Click to Show IP."
+
+[node name="connect" type="VBoxContainer" parent="."]
+anchor_bottom = 1.0
+margin_right = 640.0
+margin_bottom = -96.0
+custom_constants/separation = 12
+alignment = 1
+
+[node name="create" type="Button" parent="connect"]
+margin_top = 388.0
+margin_right = 640.0
+margin_bottom = 431.0
+text = "Create Server"
+
+[node name="join" type="Button" parent="connect"]
+margin_top = 443.0
+margin_right = 640.0
+margin_bottom = 486.0
+text = "Join Server"
+
+[node name="set" type="Button" parent="connect"]
+margin_top = 498.0
+margin_right = 640.0
+margin_bottom = 541.0
+text = "Settings"
+
+[node name="btm" type="Button" parent="connect"]
+margin_top = 553.0
+margin_right = 640.0
+margin_bottom = 596.0
+text = "Main Menu"
+
+[node name="detail" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -1280.0
+margin_top = 16.0
+margin_bottom = 984.0
+
+[node name="details" type="Label" parent="detail"]
+margin_right = 1280.0
+margin_bottom = 31.0
+text = "Details"
+align = 1
+valign = 2
+
+[connection signal="toggled" from="hotbar/Button" to="." method="_on_Button_toggled"]
