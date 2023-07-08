@@ -658,7 +658,6 @@ __meta__ = {
 margin_top = 134.0
 margin_right = 559.0
 margin_bottom = 177.0
-disabled = true
 action_mode = 0
 text = "Multiplayer"
 flat = true
@@ -666,22 +665,10 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Online" type="Button" parent="Control/Menu"]
+[node name="settings" type="Button" parent="Control/Menu"]
 margin_top = 201.0
 margin_right = 559.0
 margin_bottom = 244.0
-disabled = true
-action_mode = 0
-text = "Online"
-flat = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="settings" type="Button" parent="Control/Menu"]
-margin_top = 268.0
-margin_right = 559.0
-margin_bottom = 311.0
 action_mode = 0
 text = "Settings"
 flat = true
@@ -690,11 +677,9 @@ __meta__ = {
 }
 
 [node name="custom" type="Button" parent="Control/Menu"]
-visible = false
-margin_top = 205.0
-margin_right = 497.0
-margin_bottom = 234.0
-disabled = true
+margin_top = 268.0
+margin_right = 559.0
+margin_bottom = 311.0
 action_mode = 0
 text = "Mods"
 flat = true
@@ -726,8 +711,8 @@ margin_bottom = 63.0
 custom_constants/separation = 12
 
 [node name="New" type="Button" parent="Control/Story"]
-margin_right = 716.0
-margin_bottom = 29.0
+margin_right = 1022.0
+margin_bottom = 43.0
 text = "Start a New Game"
 flat = true
 __meta__ = {
@@ -735,9 +720,9 @@ __meta__ = {
 }
 
 [node name="Load" type="Button" parent="Control/Story"]
-margin_top = 41.0
-margin_right = 716.0
-margin_bottom = 70.0
+margin_top = 55.0
+margin_right = 1022.0
+margin_bottom = 98.0
 disabled = true
 action_mode = 0
 text = "Load a Previously Saved Game"
@@ -747,9 +732,51 @@ __meta__ = {
 }
 
 [node name="backtomain" type="Button" parent="Control/Story"]
-margin_top = 82.0
-margin_right = 716.0
-margin_bottom = 111.0
+margin_top = 110.0
+margin_right = 1022.0
+margin_bottom = 153.0
+action_mode = 0
+text = "Back"
+flat = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Multiplayer" type="VBoxContainer" parent="Control"]
+visible = false
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -504.0
+margin_top = 76.0
+margin_right = 518.0
+margin_bottom = 229.0
+custom_constants/separation = 12
+
+[node name="locmult" type="Button" parent="Control/Multiplayer"]
+margin_right = 1022.0
+margin_bottom = 43.0
+disabled = true
+text = "Local Multiplayer"
+flat = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="intmult" type="Button" parent="Control/Multiplayer"]
+margin_top = 55.0
+margin_right = 1022.0
+margin_bottom = 98.0
+action_mode = 0
+text = "LAN/Internet Multiplayer"
+flat = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="multtomain" type="Button" parent="Control/Multiplayer"]
+margin_top = 110.0
+margin_right = 1022.0
+margin_bottom = 153.0
 action_mode = 0
 text = "Back"
 flat = true
@@ -1363,10 +1390,13 @@ __meta__ = {
 
 [connection signal="pressed" from="Control/Menu/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="pressed" from="Control/Menu/Button" to="Control/Menu/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/Menu/Multiplayer" to="." method="_on_Multiplayer_pressed"]
 [connection signal="pressed" from="Control/Menu/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Control/Menu/custom" to="." method="_on_custom_pressed"]
 [connection signal="pressed" from="Control/Menu/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="Control/Story/New" to="." method="_on_New_pressed"]
 [connection signal="pressed" from="Control/Story/backtomain" to="." method="_on_backtomain_pressed"]
+[connection signal="pressed" from="Control/Multiplayer/multtomain" to="." method="_on_multtomain_pressed"]
 [connection signal="pressed" from="Control/Settings/game_settings" to="." method="_on_game_settings_pressed"]
 [connection signal="pressed" from="Control/Settings/aud_settings" to="." method="_on_aud_settings_pressed"]
 [connection signal="pressed" from="Control/Settings/vid_settings" to="." method="_on_vid_settings_pressed"]

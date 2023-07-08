@@ -35,6 +35,14 @@ func _on_Button2_pressed():
 # warning-ignore:return_value_discarded
 	get_tree().change_scene("res://Game/Levels/devlevel/devlevel.tscn")
 
+func _on_multtomain_pressed() -> void:
+	$Control/Multiplayer.visible = false
+	$Control/Menu.visible = true
+
+func _on_Multiplayer_pressed() -> void:
+	$Control/Multiplayer.visible = true
+	$Control/Menu.visible = false
+
 func _on_settings_pressed():
 	switchmenus("Control/Settings", "Control/Menu")
 	$Control/Settings/game_settings.grab_focus()
@@ -126,3 +134,6 @@ func _on_framecheck_value_changed(value: float):
 # warning-ignore:narrowing_conversion
 	Engine.target_fps = value
 	SaveGame.Settings["maxfps"] = value
+
+func _on_custom_pressed() -> void:
+	get_tree().change_scene("res://Game/Menu/Mod/modmenu.tscn")

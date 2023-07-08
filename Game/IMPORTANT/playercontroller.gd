@@ -10,8 +10,7 @@ func _ready():
 
 func AddPlayer():
 	var ToAdd = [
-		CharacterFileList[0][2], 0
-	]
+		CharacterFileList[0][2], 0]
 	Players.append(ToAdd)
 
 func ChangeCharacter(player : int, characterindex : int):
