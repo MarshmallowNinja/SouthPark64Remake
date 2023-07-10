@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Game/Menu/southpark.theme" type="Theme" id=1]
 [ext_resource path="res://Game/Menu/Multi/multiplayerlobby.gd" type="Script" id=2]
+[ext_resource path="res://Game/Menu/CreatoDisplay-Regular.otf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
 
 [node name="MPLobby" type="Control"]
 anchor_right = 1.0
@@ -20,63 +28,173 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="hotbar" type="HBoxContainer" parent="."]
-anchor_top = 1.0
+[node name="main" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -96.0
+
+[node name="hotbar" type="HBoxContainer" parent="main"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 984.0
 alignment = 1
 
-[node name="Button" type="Button" parent="hotbar"]
+[node name="Button" type="Button" parent="main/hotbar"]
 margin_left = 675.0
 margin_right = 1245.0
 margin_bottom = 96.0
 toggle_mode = true
 text = "Click to Show IP."
 
-[node name="connect" type="VBoxContainer" parent="."]
+[node name="connect" type="VBoxContainer" parent="main"]
 anchor_bottom = 1.0
 margin_right = 640.0
-margin_bottom = -96.0
+margin_bottom = -760.0
 custom_constants/separation = 12
 alignment = 1
 
-[node name="create" type="Button" parent="connect"]
-margin_top = 388.0
+[node name="create" type="Button" parent="main/connect"]
+margin_top = 56.0
 margin_right = 640.0
-margin_bottom = 431.0
+margin_bottom = 99.0
 text = "Create Server"
 
-[node name="join" type="Button" parent="connect"]
-margin_top = 443.0
+[node name="join" type="Button" parent="main/connect"]
+margin_top = 111.0
 margin_right = 640.0
-margin_bottom = 486.0
+margin_bottom = 154.0
 text = "Join Server"
 
-[node name="set" type="Button" parent="connect"]
-margin_top = 498.0
+[node name="set" type="Button" parent="main/connect"]
+margin_top = 166.0
 margin_right = 640.0
-margin_bottom = 541.0
+margin_bottom = 209.0
 text = "Settings"
 
-[node name="btm" type="Button" parent="connect"]
-margin_top = 553.0
+[node name="btm" type="Button" parent="main/connect"]
+margin_top = 221.0
 margin_right = 640.0
-margin_bottom = 596.0
+margin_bottom = 264.0
 text = "Main Menu"
 
-[node name="detail" type="VBoxContainer" parent="."]
+[node name="detail" type="VBoxContainer" parent="main"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -1280.0
-margin_top = 16.0
-margin_bottom = 984.0
+margin_top = 24.0
+margin_bottom = 992.0
+custom_constants/separation = 23
 
-[node name="details" type="Label" parent="detail"]
+[node name="title" type="Label" parent="main/detail"]
 margin_right = 1280.0
 margin_bottom = 31.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "Details"
 align = 1
-valign = 2
 
-[connection signal="toggled" from="hotbar/Button" to="." method="_on_Button_toggled"]
+[node name="name" type="HBoxContainer" parent="main/detail"]
+margin_top = 54.0
+margin_right = 1280.0
+margin_bottom = 85.0
+
+[node name="servername" type="Label" parent="main/detail/name"]
+margin_right = 801.0
+margin_bottom = 31.0
+text = "Server Name: Test name"
+
+[node name="mode" type="HBoxContainer" parent="main/detail"]
+margin_top = 108.0
+margin_right = 1280.0
+margin_bottom = 139.0
+
+[node name="gamemode" type="Label" parent="main/detail/mode"]
+margin_right = 806.0
+margin_bottom = 31.0
+text = "Game Mode: Deathmatch"
+
+[node name="frag" type="HBoxContainer" parent="main/detail"]
+margin_top = 162.0
+margin_right = 1280.0
+margin_bottom = 193.0
+
+[node name="fraglimit" type="Label" parent="main/detail/frag"]
+margin_right = 462.0
+margin_bottom = 31.0
+text = "Frag Limit: ??"
+
+[node name="time" type="HBoxContainer" parent="main/detail"]
+margin_top = 216.0
+margin_right = 1280.0
+margin_bottom = 247.0
+
+[node name="timelimit" type="Label" parent="main/detail/time"]
+margin_right = 537.0
+margin_bottom = 31.0
+text = "Time Limit: ??:??"
+
+[node name="type" type="HBoxContainer" parent="main/detail"]
+margin_top = 270.0
+margin_right = 1280.0
+margin_bottom = 301.0
+
+[node name="contype" type="Label" parent="main/detail/type"]
+margin_right = 720.0
+margin_bottom = 31.0
+text = "Connection Type: LAN"
+
+[node name="player" type="HBoxContainer" parent="main/detail"]
+margin_top = 324.0
+margin_right = 1280.0
+margin_bottom = 355.0
+
+[node name="maxplayer" type="Label" parent="main/detail/player"]
+margin_right = 504.0
+margin_bottom = 31.0
+text = "Max Players: ?"
+
+[node name="anotherbar" type="HBoxContainer" parent="main/detail"]
+margin_top = 378.0
+margin_right = 1280.0
+margin_bottom = 421.0
+custom_constants/separation = 108
+alignment = 1
+
+[node name="joingame" type="Button" parent="main/detail/anotherbar"]
+margin_left = 198.0
+margin_right = 527.0
+margin_bottom = 43.0
+text = "Join Game"
+
+[node name="leavegame" type="Button" parent="main/detail/anotherbar"]
+margin_left = 635.0
+margin_right = 1081.0
+margin_bottom = 43.0
+text = "Leave Server"
+
+[node name="logs" type="VBoxContainer" parent="main"]
+margin_top = 352.0
+margin_right = 616.0
+margin_bottom = 984.0
+theme = SubResource( 2 )
+
+[node name="text" type="LineEdit" parent="main/logs"]
+margin_right = 616.0
+margin_bottom = 49.0
+placeholder_text = "Enter message here."
+caret_blink = true
+
+[node name="fuck" type="VBoxContainer" parent="main/logs"]
+margin_top = 53.0
+margin_right = 616.0
+margin_bottom = 53.0
+
+[node name="log" type="ScrollContainer" parent="main/logs/fuck"]
+margin_right = 616.0
+
+[node name="Label" type="Label" parent="main/logs/fuck/log"]
+margin_right = 136.0
+margin_bottom = 39.0
+text = "Test: Test"
+
+[connection signal="toggled" from="main/hotbar/Button" to="." method="_on_Button_toggled"]
+[connection signal="pressed" from="main/connect/btm" to="." method="_on_btm_pressed"]
+[connection signal="text_entered" from="main/logs/text" to="." method="_on_text_text_entered"]
