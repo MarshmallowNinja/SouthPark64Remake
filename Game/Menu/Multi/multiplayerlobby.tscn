@@ -53,39 +53,46 @@ custom_constants/separation = 12
 alignment = 1
 
 [node name="create" type="Button" parent="main/connect"]
-margin_top = 56.0
+margin_top = 28.0
 margin_right = 640.0
-margin_bottom = 99.0
+margin_bottom = 71.0
 text = "Create Server"
 
 [node name="join" type="Button" parent="main/connect"]
-margin_top = 111.0
+margin_top = 83.0
 margin_right = 640.0
-margin_bottom = 154.0
+margin_bottom = 126.0
 text = "Join Server"
 
-[node name="set" type="Button" parent="main/connect"]
-margin_top = 166.0
+[node name="character" type="Button" parent="main/connect"]
+margin_top = 138.0
 margin_right = 640.0
-margin_bottom = 209.0
+margin_bottom = 181.0
+text = "Change Character"
+
+[node name="set" type="Button" parent="main/connect"]
+margin_top = 193.0
+margin_right = 640.0
+margin_bottom = 236.0
 text = "Settings"
 
 [node name="btm" type="Button" parent="main/connect"]
-margin_top = 221.0
+margin_top = 248.0
 margin_right = 640.0
-margin_bottom = 264.0
+margin_bottom = 291.0
 text = "Main Menu"
 
 [node name="detail" type="VBoxContainer" parent="main"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -1280.0
+margin_left = -1216.0
 margin_top = 24.0
-margin_bottom = 992.0
+margin_right = -64.0
+margin_bottom = 584.0
 custom_constants/separation = 23
 
 [node name="title" type="Label" parent="main/detail"]
-margin_right = 1280.0
+margin_right = 1152.0
 margin_bottom = 31.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "Details"
@@ -93,7 +100,7 @@ align = 1
 
 [node name="name" type="HBoxContainer" parent="main/detail"]
 margin_top = 54.0
-margin_right = 1280.0
+margin_right = 1152.0
 margin_bottom = 85.0
 
 [node name="servername" type="Label" parent="main/detail/name"]
@@ -103,7 +110,7 @@ text = "Server Name: Test name"
 
 [node name="mode" type="HBoxContainer" parent="main/detail"]
 margin_top = 108.0
-margin_right = 1280.0
+margin_right = 1152.0
 margin_bottom = 139.0
 
 [node name="gamemode" type="Label" parent="main/detail/mode"]
@@ -113,7 +120,7 @@ text = "Game Mode: Deathmatch"
 
 [node name="frag" type="HBoxContainer" parent="main/detail"]
 margin_top = 162.0
-margin_right = 1280.0
+margin_right = 1152.0
 margin_bottom = 193.0
 
 [node name="fraglimit" type="Label" parent="main/detail/frag"]
@@ -123,7 +130,7 @@ text = "Frag Limit: ??"
 
 [node name="time" type="HBoxContainer" parent="main/detail"]
 margin_top = 216.0
-margin_right = 1280.0
+margin_right = 1152.0
 margin_bottom = 247.0
 
 [node name="timelimit" type="Label" parent="main/detail/time"]
@@ -133,7 +140,7 @@ text = "Time Limit: ??:??"
 
 [node name="type" type="HBoxContainer" parent="main/detail"]
 margin_top = 270.0
-margin_right = 1280.0
+margin_right = 1152.0
 margin_bottom = 301.0
 
 [node name="contype" type="Label" parent="main/detail/type"]
@@ -143,7 +150,7 @@ text = "Connection Type: LAN"
 
 [node name="player" type="HBoxContainer" parent="main/detail"]
 margin_top = 324.0
-margin_right = 1280.0
+margin_right = 1152.0
 margin_bottom = 355.0
 
 [node name="maxplayer" type="Label" parent="main/detail/player"]
@@ -153,22 +160,34 @@ text = "Max Players: ?"
 
 [node name="anotherbar" type="HBoxContainer" parent="main/detail"]
 margin_top = 378.0
-margin_right = 1280.0
+margin_right = 1152.0
 margin_bottom = 421.0
 custom_constants/separation = 108
 alignment = 1
 
 [node name="joingame" type="Button" parent="main/detail/anotherbar"]
-margin_left = 198.0
-margin_right = 527.0
+margin_left = 134.0
+margin_right = 463.0
 margin_bottom = 43.0
 text = "Join Game"
 
 [node name="leavegame" type="Button" parent="main/detail/anotherbar"]
-margin_left = 635.0
-margin_right = 1081.0
+margin_left = 571.0
+margin_right = 1017.0
 margin_bottom = 43.0
 text = "Leave Server"
+
+[node name="anotheranotherbar" type="HBoxContainer" parent="main/detail"]
+margin_top = 444.0
+margin_right = 1152.0
+margin_bottom = 487.0
+alignment = 1
+
+[node name="joingame" type="Button" parent="main/detail/anotheranotherbar"]
+margin_left = 348.0
+margin_right = 803.0
+margin_bottom = 43.0
+text = "Change Level"
 
 [node name="logs" type="VBoxContainer" parent="main"]
 margin_top = 352.0
@@ -181,19 +200,66 @@ margin_right = 616.0
 margin_bottom = 49.0
 placeholder_text = "Enter message here."
 caret_blink = true
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="fuck" type="VBoxContainer" parent="main/logs"]
+[node name="scroll" type="ScrollContainer" parent="main/logs"]
 margin_top = 53.0
 margin_right = 616.0
-margin_bottom = 53.0
+margin_bottom = 65.0
 
-[node name="log" type="ScrollContainer" parent="main/logs/fuck"]
-margin_right = 616.0
+[node name="log" type="VBoxContainer" parent="main/logs/scroll"]
+margin_right = 853.0
+margin_bottom = 297.0
 
-[node name="Label" type="Label" parent="main/logs/fuck/log"]
-margin_right = 136.0
+[node name="Label" type="Label" parent="main/logs/scroll/log"]
+margin_right = 853.0
 margin_bottom = 39.0
-text = "Test: Test"
+text = "Game: Welcome to South Park 64 Remake Online Multiplayer"
+align = 2
+
+[node name="Label2" type="Label" parent="main/logs/scroll/log"]
+margin_top = 43.0
+margin_right = 853.0
+margin_bottom = 82.0
+text = "Game: Welcome to South Park 64 Remake Online Multiplayer"
+align = 2
+
+[node name="Label3" type="Label" parent="main/logs/scroll/log"]
+margin_top = 86.0
+margin_right = 853.0
+margin_bottom = 125.0
+text = "Game: Welcome to South Park 64 Remake Online Multiplayer"
+align = 2
+
+[node name="Label4" type="Label" parent="main/logs/scroll/log"]
+margin_top = 129.0
+margin_right = 853.0
+margin_bottom = 168.0
+text = "Game: Welcome to South Park 64 Remake Online Multiplayer"
+align = 2
+
+[node name="Label5" type="Label" parent="main/logs/scroll/log"]
+margin_top = 172.0
+margin_right = 853.0
+margin_bottom = 211.0
+text = "Game: Welcome to South Park 64 Remake Online Multiplayer"
+align = 2
+
+[node name="Label6" type="Label" parent="main/logs/scroll/log"]
+margin_top = 215.0
+margin_right = 853.0
+margin_bottom = 254.0
+text = "Game: Welcome to South Park 64 Remake Online Multiplayer"
+align = 2
+
+[node name="Label7" type="Label" parent="main/logs/scroll/log"]
+margin_top = 258.0
+margin_right = 853.0
+margin_bottom = 297.0
+text = "Game: Welcome to South Park 64 Remake Online Multiplayer"
+align = 2
 
 [connection signal="toggled" from="main/hotbar/Button" to="." method="_on_Button_toggled"]
 [connection signal="pressed" from="main/connect/btm" to="." method="_on_btm_pressed"]
