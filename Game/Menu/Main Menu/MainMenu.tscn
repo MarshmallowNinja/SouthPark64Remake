@@ -767,7 +767,7 @@ margin_top = 55.0
 margin_right = 1022.0
 margin_bottom = 98.0
 action_mode = 0
-text = "LAN/Internet Multiplayer"
+text = "Network Multiplayer"
 flat = true
 __meta__ = {
 "_edit_lock_": true

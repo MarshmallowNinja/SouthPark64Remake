@@ -14,19 +14,16 @@ func _on_btm_pressed() -> void:
 	get_tree().change_scene("res://Game/Menu/Main Menu/MainMenu.tscn")
 
 func _on_LoadPCK_file_selected(path: String):
-	var file = ProjectSettings.load_resource_pack(path, true)
+	var file = ProjectSettings.load_resource_pack(path)
 	if file == true:
 		print("Mod Successfully Loaded.")
 	else:
 		OS.alert("Mod was not able to load successfully.", "Unsuccessful mod load.")
-#	ProjectSettings.load_resource_pack(path)
 
 func _on_Loadres_file_selected(path: String):
-#	var level = get_tree().change_scene(path)
-#	if level != OK:
-#		OS.alert("Unsuccessful Mod Load. Error: " + level, "that sucks")
-#	else:
-#		var scene = load(path)
-	#get_tree().change_scene(path)
-# warning-ignore:return_value_discarded
-	load(path)
+	var level = get_tree().change_scene(path)
+	if level != OK:
+		OS.alert("Unsuccessful Mod Load. Error: " + level, "that sucks")
+	else:
+		var scene = load(path)
+		

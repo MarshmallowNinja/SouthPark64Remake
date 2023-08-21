@@ -5,11 +5,13 @@ var modexists : bool = false
 var enteredcheat : bool = false
 
 var Settings = {
-	# AUDIO SETTINGS
+# Game Settings
+	"allowmods" : false,
+# Audio Settings
 	"soundtrack" : 0,
 	"mastervolume" : 1.0,
 	
-	# VIDEO SETTINGS
+# Video Settings
 	"resolution" : null,
 	"maxfps" : 60,
 	"fxaa" : false,
