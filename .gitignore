@@ -9,6 +9,7 @@ config.cfg
 addons
 addons/
 misc/qudot
+*.zip
 
 # Mono-specific ignores
 .mono/
