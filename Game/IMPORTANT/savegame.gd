@@ -2,10 +2,9 @@ extends Node
 
 var configexists : bool = false
 var modexists : bool = false
+var enteredcheat : bool = false
 
 var Settings = {
-	"enteredcheat" : false,
-	
 	# AUDIO SETTINGS
 	"soundtrack" : 0,
 	"mastervolume" : 1.0,
@@ -15,6 +14,38 @@ var Settings = {
 	"maxfps" : 60,
 	"fxaa" : false,
 	"vsync" : false,
+}
+
+var Progress = {
+# Characters - 64
+	"alien" : false,
+	"barbrady" : false,
+	"biggayal" : false,
+	"chef" : false,
+	"garrison" : false,
+	"ike" : false,
+	"jimbo" : false,
+	"liane" : false,
+	"mackey" : false,
+	"mephisto" : false,
+	"ned" : false,
+	"phillip" : false,
+	"pip" : false,
+	"marvin" : false,
+	"terrance" : false,
+	"wendy" : false,
+# Characters - PC
+	"jesus" : false,
+	"santa" : false,
+	"satan" : false,
+	"shelly" : false,
+# Characters - RM
+	"0" : false,
+	"1" : false,
+	"2" : false,
+# other
+	"timescompleted" : 0,
+	"newgameplus" : false,
 }
 
 func _ready() -> void:
@@ -42,6 +73,12 @@ func loadconf():
 			Settings = getthing
 			file.close()
 			configexists = true
+
+func saveprog():
+	pass
+
+func loadprog():
+	pass
 
 func checkmods():
 	var dir = Directory.new()
