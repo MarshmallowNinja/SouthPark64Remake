@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Game/Menu/Mod/modmenu.gd" type="Script" id=1]
 [ext_resource path="res://Game/Menu/southpark.theme" type="Theme" id=2]
 [ext_resource path="res://Game/Menu/CreatoDisplay-Regular.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://Game/Menu/PlayerUI.theme" type="Theme" id=4]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -22,9 +25,9 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="."]
-modulate = Color( 0.054902, 0.682353, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+custom_styles/panel = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": true

@@ -1,7 +1,11 @@
 extends Control
 
 func _ready():
-	pass
+	match SaveGame.Settings["mods"]:
+		true:
+			$modwarning.visible = false
+		false:
+			$modwarning.visible = true
 
 func _on_opendialog_pressed():
 	$LoadPCK.popup_centered()

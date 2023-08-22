@@ -6,11 +6,10 @@ var enteredcheat : bool = false
 
 var Settings = {
 # Game Settings
-	"allowmods" : false,
+	"mods" : false,
 # Audio Settings
 	"soundtrack" : 0,
 	"mastervolume" : 1.0,
-	
 # Video Settings
 	"resolution" : null,
 	"maxfps" : 60,
