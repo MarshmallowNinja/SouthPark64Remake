@@ -7,7 +7,7 @@ func _ready() -> void:
 
 # warning-ignore:unused_argument
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:
-	var something
+	get_tree().change_scene("res://Game/Menu/Main Menu/MainMenu.tscn")
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("esc"):
