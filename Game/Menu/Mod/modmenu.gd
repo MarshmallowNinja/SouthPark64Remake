@@ -2,6 +2,8 @@ extends Control
 
 func _ready():
 	pass
+	# this block of code down here does not want to work
+	# for some reason
 #	match SaveGame.Settings["mods"]:
 #		true:
 #			$modwarning.visible = false

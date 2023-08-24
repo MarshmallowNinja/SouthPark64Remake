@@ -7,6 +7,10 @@ var MaxOutBandwidth : int
 var IPAddress
 var IPToConnect
 
+# Public little var so you could drag peers game to game
+# or something.
+var Peers = []
+
 var Server
 var Client
 

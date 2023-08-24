@@ -13,6 +13,5 @@ func _on_Button_toggled(button_pressed: bool) -> void:
 func _on_btm_pressed() -> void:
 	get_tree().change_scene("res://Game/Menu/Main Menu/MainMenu.tscn")
 
-
 func _on_text_text_entered(new_text: String) -> void:
 	$main/logs/text.text = ""
