@@ -4,6 +4,7 @@ onready var mainmenu = preload("res://Game/Menu/Main Menu/MainMenu.tscn").instan
 
 func _ready() -> void:
 	$AnimationPlayer.play("open")
+	SoundtrackSystem.stop()
 
 # warning-ignore:unused_argument
 func _on_AnimationPlayer_animation_finished(anim_name: String) -> void:

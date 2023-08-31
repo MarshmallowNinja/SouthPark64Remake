@@ -30,7 +30,7 @@ func _on_LoadPCK_file_selected(path: String):
 func _on_Loadres_file_selected(path: String):
 	var level = get_tree().change_scene(path)
 	if level != OK:
-		OS.alert("Unsuccessful Mod Load. Error: " + level, "that sucks")
+		OS.alert("Unsuccessful Mod Load. Error: " + level, "that sucks.")
 	else:
 		var scene = load(path)
 		
