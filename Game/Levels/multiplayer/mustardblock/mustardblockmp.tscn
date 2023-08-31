@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Game/Levels/baseenv.tres" type="Environment" id=1]
 [ext_resource path="res://Game/Player/MainPlayer.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Game/Texture/building/door2.png" type="Texture" id=5]
 [ext_resource path="res://Game/Texture/building/window1.png" type="Texture" id=6]
 [ext_resource path="res://Game/Models/buildings/housing/onefloorhouse.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Game/Texture/Street/road.png" type="Texture" id=8]
 
 [sub_resource type="SpatialMaterial" id=244]
 resource_name = "Roof_Color"
@@ -362,7 +363,28 @@ func _process(_delta):
 "
 
 [sub_resource type="PlaneMesh" id=1]
-size = Vector2( 100, 100 )
+size = Vector2( 110, 100 )
+
+[sub_resource type="CubeMesh" id=277]
+size = Vector3( 10, 0.2, 56 )
+
+[sub_resource type="SpatialMaterial" id=278]
+albedo_texture = ExtResource( 8 )
+uv1_scale = Vector3( 3, 12.478, 1 )
+
+[sub_resource type="CubeMesh" id=279]
+size = Vector3( 10, 0.2, 69.92 )
+
+[sub_resource type="SpatialMaterial" id=280]
+albedo_texture = ExtResource( 8 )
+uv1_scale = Vector3( 3, 12.5, 1 )
+
+[sub_resource type="CubeMesh" id=281]
+size = Vector3( 10, 0.2, 10 )
+
+[sub_resource type="SpatialMaterial" id=282]
+albedo_color = Color( 0.290196, 0.290196, 0.290196, 1 )
+uv1_scale = Vector3( 3, 12.5, 1 )
 
 [node name="Mustard Block" type="Spatial"]
 
@@ -376,7 +398,10 @@ size = Vector2( 100, 100 )
 environment = ExtResource( 1 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="Atmosphere"]
-transform = Transform( -0.939176, 0.0250949, 0.342518, 0.218716, 0.812633, 0.540177, -0.264786, 0.582235, -0.768694, 0, 4.84896, 0 )
+transform = Transform( 0.586963, -0.551794, 0.59245, 0.218716, 0.812633, 0.540177, -0.779511, -0.187485, 0.597672, 0, 4.84896, 0 )
+light_bake_mode = 2
+shadow_enabled = true
+directional_shadow_max_distance = 250.0
 
 [node name="Housing" type="Node" parent="."]
 
@@ -421,3 +446,45 @@ use_collision = true
 
 [node name="CSGMesh" type="CSGMesh" parent="CSGCombiner"]
 mesh = SubResource( 1 )
+
+[node name="Street" type="Node" parent="."]
+
+[node name="roadeast" type="MeshInstance" parent="Street"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.9589, 0, 0 )
+mesh = SubResource( 277 )
+material/0 = SubResource( 278 )
+
+[node name="roadwest" type="MeshInstance" parent="Street"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.959, 0, 0 )
+mesh = SubResource( 277 )
+material/0 = SubResource( 278 )
+
+[node name="roadnorth" type="MeshInstance" parent="Street"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -33 )
+mesh = SubResource( 279 )
+material/0 = SubResource( 280 )
+
+[node name="roadsouth" type="MeshInstance" parent="Street"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 33 )
+mesh = SubResource( 279 )
+material/0 = SubResource( 280 )
+
+[node name="turnsouthwest" type="MeshInstance" parent="Street"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.959, 0, 33 )
+mesh = SubResource( 281 )
+material/0 = SubResource( 282 )
+
+[node name="turnsoutheast" type="MeshInstance" parent="Street"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.959, 0, 33 )
+mesh = SubResource( 281 )
+material/0 = SubResource( 282 )
+
+[node name="turnnortheast" type="MeshInstance" parent="Street"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 39.959, 0, -33 )
+mesh = SubResource( 281 )
+material/0 = SubResource( 282 )
+
+[node name="turnnorthwest" type="MeshInstance" parent="Street"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.959, 0, -33 )
+mesh = SubResource( 281 )
+material/0 = SubResource( 282 )

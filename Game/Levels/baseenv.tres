@@ -5,15 +5,16 @@ sky_top_color = Color( 0.376471, 0.690196, 0.972549, 1 )
 sky_horizon_color = Color( 0.376471, 0.690196, 0.972549, 1 )
 ground_bottom_color = Color( 0.376471, 0.690196, 0.972549, 1 )
 ground_horizon_color = Color( 0.376471, 0.690196, 0.972549, 1 )
-sun_longitude = 24.84
+sun_longitude = 135.47
 
 [resource]
 background_mode = 2
 background_sky = SubResource( 2 )
-ambient_light_sky_contribution = 0.15
+ambient_light_sky_contribution = 0.05
 glow_enabled = true
+glow_levels/1 = true
+glow_levels/3 = false
 glow_levels/5 = false
-glow_levels/6 = true
-glow_bloom = 0.05
-glow_hdr_luminance_cap = 6.0
-glow_bicubic_upscale = true
+glow_intensity = 1.0
+glow_bloom = 0.1
+glow_hdr_luminance_cap = 0.01
