@@ -6,7 +6,7 @@ var enteredcheat : bool = false
 
 var Settings = {
 # Game Settings
-	"mods" : false,
+	"allowmods" : false,
 # Audio Settings
 	"soundtrack" : 0,
 	"mastervolume" : 1.0,
@@ -45,8 +45,8 @@ var Progress = {
 	"1" : false,
 	"2" : false,
 # other
-	"timescompleted" : 0,
-	"newgameplus" : false,
+	"timescompleted" : 0, # how many times story was completed
+	"newgameplus" : false, # allows any character to be selected
 }
 
 func _ready() -> void:

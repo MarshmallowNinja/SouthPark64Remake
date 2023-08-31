@@ -1,7 +1,7 @@
 extends Spatial
 
 func _ready():
-	get_tree().paused = false
+	get_tree().paused = false # Does this if you left game from pause menu
 	InitiateSaveShit()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	$Control/Menu/Button2.grab_focus()
