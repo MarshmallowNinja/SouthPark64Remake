@@ -1,7 +1,5 @@
 extends Spatial
 
-
-
 func _ready() -> void:
 	SoundtrackSystem.SetSongs(
 		"res://Game/Media/Soundtrack/PC/Warehouse In South Park.ogg",
