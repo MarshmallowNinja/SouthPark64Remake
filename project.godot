@@ -74,7 +74,7 @@ texture={
 "flags/filter": false,
 "flags/mipmaps": true,
 "flags/repeat": 1,
-"flags/srgb": 1,
+"flags/srgb": 2,
 "process/HDR_as_SRGB": false,
 "process/fix_alpha_border": true,
 "process/invert_color": false,
@@ -197,7 +197,7 @@ pointing/emulate_touch_from_mouse=true
 [rendering]
 
 threads/thread_model=2
+quality/filters/anisotropic_filter_level=16
 gles3/shaders/shader_compilation_mode=2
-quality/subsurface_scattering/quality=0
 environment/default_clear_color=Color( 0.109804, 0.215686, 0.129412, 1 )
 environment/default_environment="res://misc/default_env.tres"

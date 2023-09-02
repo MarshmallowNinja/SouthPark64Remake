@@ -25,7 +25,6 @@
 [ext_resource path="res://Game/Levels/devlevel/testinteract.gd" type="Script" id=23]
 [ext_resource path="res://Game/Levels/devlevel/spiketest.gd" type="Script" id=24]
 [ext_resource path="res://Game/Texture/building/brokengaragedoor.png" type="Texture" id=25]
-[ext_resource path="res://Game/Texture/Nature/snow.png" type="Texture" id=27]
 [ext_resource path="res://Game/Texture/building/slidingdoor1.png" type="Texture" id=28]
 
 [sub_resource type="GIProbeData" id=1]
@@ -2455,9 +2454,13 @@ albedo_color = Color( 0.74902, 0.811765, 0.741176, 1 )
 [sub_resource type="SpatialMaterial" id=73]
 albedo_color = Color( 0.360784, 0.360784, 0.360784, 1 )
 
+[sub_resource type="StreamTexture" id=314]
+flags = 18
+load_path = "res://.import/snow.png-7ccdb33db2d7e4eaf9171cbec63c4f6a.stex"
+
 [sub_resource type="SpatialMaterial" id=243]
 vertex_color_is_srgb = true
-albedo_texture = ExtResource( 27 )
+albedo_texture = SubResource( 314 )
 emission_enabled = true
 emission = Color( 0, 0, 0, 1 )
 emission_energy = 1.0

@@ -58,6 +58,13 @@ func _ready():
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+func Initiate():
+	Health = $CharacterHandler.Character.StartingHealth
+	MaxHealth = $CharacterHandler.Character.MaxHealth
+	$Camera/CanvasLayer/TeamBar/TM1.texture = $CharacterHandler.Character.CharacterIcon
+	emit_signal("Spawn")
+	TakeControl()
+
 func _physics_process(delta):
 	direction = Vector3()
 	# is player on floor? if not, make gravity do its job
@@ -160,13 +167,6 @@ func _on_viewcheck_area_entered(area: Area) -> void:
 # warning-ignore:unused_argument
 func _on_viewcheck_area_exited(area: Area) -> void:
 	viewgroup = null
-
-func Initiate():
-	Health = $CharacterHandler.Character.StartingHealth
-	MaxHealth = $CharacterHandler.Character.MaxHealth
-	$Camera/CanvasLayer/TeamBar/TM1.texture = $CharacterHandler.Character.CharacterIcon
-	emit_signal("Spawn")
-	TakeControl()
 
 func PlayerStateCheck():
 	match PlayerState:
