@@ -12,7 +12,6 @@
 [ext_resource path="res://Game/Models/buildings/housing/garage.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Game/Texture/building/garagedoor1.png" type="Texture" id=11]
 [ext_resource path="res://Game/Texture/Nature/trees2.png" type="Texture" id=12]
-[ext_resource path="res://Game/Texture/Nature/snow2.png" type="Texture" id=13]
 [ext_resource path="res://Game/Texture/Street/sidewalk1.png" type="Texture" id=14]
 [ext_resource path="res://Game/Texture/Street/sidewalkturn2.png" type="Texture" id=15]
 [ext_resource path="res://Game/Models/props/street/trashcanprop.tscn" type="PackedScene" id=16]
@@ -569,8 +568,12 @@ uv1_scale = Vector3( 1, 39.477, 1 )
 [sub_resource type="PlaneMesh" id=298]
 size = Vector2( 110, 100 )
 
+[sub_resource type="StreamTexture" id=320]
+flags = 19
+load_path = "res://.import/snow2.png-be5a1e6051ea205c1b0d675dab7a8937.stex"
+
 [sub_resource type="SpatialMaterial" id=313]
-albedo_texture = ExtResource( 13 )
+albedo_texture = SubResource( 320 )
 uv1_scale = Vector3( 7, 6, 0 )
 
 [sub_resource type="SpatialMaterial" id=284]
@@ -705,6 +708,18 @@ transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0.943318, 0.0960002, -13
 
 [node name="Trashcan2" parent="Props" instance=ExtResource( 16 )]
 transform = Transform( 0.483314, 0, 0.355539, 0, 0.6, 0, -0.355539, 0, 0.483314, 0.943318, 0.0960002, -11.3914 )
+
+[node name="Trashcan3" parent="Props" instance=ExtResource( 16 )]
+transform = Transform( 0.483314, 0, 0.355539, 0, 0.6, 0, -0.355539, 0, 0.483314, -20.3586, 0.0960007, 21.5981 )
+
+[node name="Trashcan4" parent="Props" instance=ExtResource( 16 )]
+transform = Transform( 0.483314, 0, 0.355539, 0.354277, 0.0505038, -0.481598, -0.0299268, 0.597871, 0.0406819, -46.6618, 0.523046, 42.6413 )
+
+[node name="Trashcan5" parent="Props" instance=ExtResource( 16 )]
+transform = Transform( 0.270626, 0, -0.535501, 0, 0.6, 0, 0.535501, 0, 0.270626, -3.37678, 0.0960002, -14.3853 )
+
+[node name="Trashcan6" parent="Props" instance=ExtResource( 16 )]
+transform = Transform( 0.566856, 0, -0.196659, 0, 0.6, 0, 0.196659, 0, 0.566856, 12.656, 0.0960002, 9.12945 )
 
 [node name="Street" type="Node" parent="."]
 
@@ -854,29 +869,29 @@ mesh = SubResource( 308 )
 material/0 = SubResource( 309 )
 
 [node name="fence7" type="CSGBox" parent="CSGCombiner"]
-transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 1.25127, 39.7384 )
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 1.47221, 39.7384 )
 width = 0.009
 height = 96.0
-depth = 2.536
+depth = 2.9
 material = SubResource( 310 )
 
 [node name="fence8" type="CSGBox" parent="CSGCombiner"]
-transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 1.251, -39.738 )
+transform = Transform( -4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, 0, 1.47194, -39.738 )
 width = 0.009
 height = 96.0
-depth = 2.536
+depth = 2.9
 material = SubResource( 310 )
 
 [node name="fence9" type="CSGBox" parent="CSGCombiner"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -48.001, 1.251, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -48.001, 1.47194, 0 )
 width = 0.009
 height = 79.503
-depth = 2.536
+depth = 2.9
 material = SubResource( 311 )
 
 [node name="fence10" type="CSGBox" parent="CSGCombiner"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 48.001, 1.251, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 48.001, 1.47194, 0 )
 width = 0.009
 height = 79.503
-depth = 2.536
+depth = 2.9
 material = SubResource( 311 )
