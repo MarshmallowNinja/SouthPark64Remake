@@ -1,6 +1,7 @@
-[gd_scene load_steps=60 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://Game/Levels/multiplayer/mustardblock/mustardblockclassic.tres" type="Environment" id=1]
+[ext_resource path="res://Game/Player/MainPlayer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game/Models/buildings/housing/twofloorhouse.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game/Texture/building/slidingdoor1.png" type="Texture" id=4]
 [ext_resource path="res://Game/Texture/building/door2.png" type="Texture" id=5]
@@ -562,8 +563,10 @@ uv1_scale = Vector3( 3.966, 1, 1 )
 
 [node name="Camera" type="Camera" parent="Important"]
 transform = Transform( 0.0640416, 0, 0.997947, 0, 1, 0, -0.997947, 0, 0.0640416, 40.0576, 4.47103, 1.19787 )
-current = true
 fov = 59.1
+
+[node name="MainPlayer" parent="Important" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.9, 9.53674e-07, -4.924 )
 
 [node name="Atmosphere" type="Node" parent="."]
 
@@ -598,7 +601,7 @@ script = SubResource( 269 )
 ExteriorColor = Color( 0.433044, 0.859375, 0.433044, 1 )
 
 [node name="House4" parent="Housing" instance=ExtResource( 3 )]
-transform = Transform( -1.25, 0, -1.09278e-07, 0, 1.25, 0, 1.09278e-07, 0, -1.25, -25.728, 0, -14 )
+transform = Transform( -1.25, 0, -1.09278e-07, 0, 1.25, 0, 1.09278e-07, 0, -1.25, -14.862, 0, -14 )
 mesh = SubResource( 270 )
 material/0 = SubResource( 271 )
 material/1 = SubResource( 272 )
@@ -632,7 +635,7 @@ script = SubResource( 297 )
 ExteriorColor = Color( 0.933333, 0.933333, 0, 1 )
 
 [node name="garage3" parent="Housing" instance=ExtResource( 10 )]
-transform = Transform( -1.2, 0, -1.04907e-07, 0, 1.2, 0, 1.04907e-07, 0, -1.2, -14.862, -0.044, -14 )
+transform = Transform( -1.2, 0, -1.04907e-07, 0, 1.2, 0, 1.04907e-07, 0, -1.2, -25.728, -0.044, -14 )
 mesh = SubResource( 299 )
 material/0 = SubResource( 300 )
 material/1 = SubResource( 301 )
