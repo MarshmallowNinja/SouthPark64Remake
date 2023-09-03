@@ -98,9 +98,6 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("taunt"):
 		$farter.playsong()
 	
-	if Input.is_action_just_pressed("fire"):
-		$farter.playsong()
-	
 	# pause menu functionality
 	if Input.is_action_just_pressed("esc"):
 		if pausemenu.visible == false:
@@ -114,6 +111,9 @@ func _physics_process(delta):
 			get_tree().paused = false
 			PauseState = pausestate.Unpaused
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		
+	if Input.is_action_just_pressed("fire"):
+		$farter.playsong()
 		
 	# zoom function, will not be in final game
 	if Input.is_action_just_pressed("secondfire"):

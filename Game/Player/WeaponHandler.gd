@@ -6,5 +6,5 @@ var Weapon = wep.snowball
 func _ready():
 	pass
 
-func TestFire():
+func Fire():
 	pass

@@ -2455,7 +2455,7 @@ albedo_color = Color( 0.74902, 0.811765, 0.741176, 1 )
 albedo_color = Color( 0.360784, 0.360784, 0.360784, 1 )
 
 [sub_resource type="StreamTexture" id=314]
-flags = 18
+flags = 19
 load_path = "res://.import/snow.png-7ccdb33db2d7e4eaf9171cbec63c4f6a.stex"
 
 [sub_resource type="SpatialMaterial" id=243]
