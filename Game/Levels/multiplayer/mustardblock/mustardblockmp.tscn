@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=2]
+[gd_scene load_steps=80 format=2]
 
 [ext_resource path="res://Game/Levels/multiplayer/mustardblock/mustardblockremakeclearmp.tres" type="Environment" id=1]
 [ext_resource path="res://Game/Player/MainPlayer.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Game/Models/buildings/housing/garage.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Game/Texture/building/garagedoor1.png" type="Texture" id=11]
 [ext_resource path="res://Game/Texture/Nature/trees2.png" type="Texture" id=12]
+[ext_resource path="res://Game/Levels/multiplayer/mustardblock/mustardblocktestscript.gd" type="Script" id=13]
 [ext_resource path="res://Game/Texture/Street/sidewalk1.png" type="Texture" id=14]
 [ext_resource path="res://Game/Texture/Street/sidewalkturn2.png" type="Texture" id=15]
 [ext_resource path="res://Game/Models/props/street/trashcanprop.tscn" type="PackedScene" id=16]
@@ -617,6 +618,7 @@ albedo_texture = ExtResource( 9 )
 uv1_scale = Vector3( 25.958, 1, 1 )
 
 [node name="Mustard Block" type="Spatial"]
+script = ExtResource( 13 )
 
 [node name="Important" type="Node" parent="."]
 
@@ -639,13 +641,12 @@ light_specular = 1.0
 light_bake_mode = 2
 shadow_enabled = true
 shadow_color = Color( 0, 0.262745, 0.403922, 1 )
-shadow_contact = 0.661
-directional_shadow_max_distance = 2112.0
+directional_shadow_max_distance = 250.0
 
 [node name="Housing" type="Node" parent="."]
 
 [node name="onefloorhouse" parent="Housing" instance=ExtResource( 7 )]
-transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -23, -0.331, 14 )
+transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -23, -0.0721896, 14 )
 ExteriorColor = Color( 0.0156863, 0.607843, 0.0156863, 1 )
 
 [node name="House3" parent="Housing" instance=ExtResource( 3 )]
