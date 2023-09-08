@@ -27,6 +27,14 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
+[node name="bg" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
@@ -94,4 +102,12 @@ custom_fonts/font = SubResource( 2 )
 text = "Hamburgevons"
 align = 2
 valign = 1
+autowrap = true
+
+[node name="closer" type="Label" parent="VBoxContainer"]
+margin_top = 715.0
+margin_right = 1864.0
+margin_bottom = 740.0
+custom_fonts/font = SubResource( 2 )
+text = "there still might be issues with horizontal separations."
 autowrap = true
