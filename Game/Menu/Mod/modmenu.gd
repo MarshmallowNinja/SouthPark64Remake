@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	pass
+	SoundtrackSystem.stop()
 	# this block of code down here does not want to work
 	# for some reason
 #	match SaveGame.Settings["mods"]:

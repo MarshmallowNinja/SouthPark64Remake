@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource( 1 )
-CharacterName = "None"
+CharacterName = "Base Character"
 CharacterIcon = ExtResource( 2 )
 StartingHealth = 100
 MaxHealth = 100

@@ -61,6 +61,7 @@ func _ready():
 func Initiate():
 	Health = $CharacterHandler.Character.StartingHealth
 	MaxHealth = $CharacterHandler.Character.MaxHealth
+	$Camera/CanvasLayer/CharacterName.text = $CharacterHandler.Character.CharacterName
 	$Camera/CanvasLayer/TeamBar/TM1.texture = $CharacterHandler.Character.CharacterIcon
 	emit_signal("Spawn")
 	TakeControl()

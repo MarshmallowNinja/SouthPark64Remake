@@ -1,0 +1,311 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Game/Menu/DevMenus/CharSelect/tempbg.png" type="Texture" id=1]
+[ext_resource path="res://Game/Menu/southpark.theme" type="Theme" id=2]
+[ext_resource path="res://Game/Player/characters/files/asset/kylelq.png" type="Texture" id=3]
+[ext_resource path="res://Game/Player/characters/files/asset/kennylq.png" type="Texture" id=4]
+[ext_resource path="res://Game/Player/characters/files/asset/cartmanlq.png" type="Texture" id=5]
+[ext_resource path="res://Game/Player/characters/files/asset/stanlq.png" type="Texture" id=6]
+[ext_resource path="res://Game/Player/characters/files/asset/garrisonlq.png" type="Texture" id=7]
+[ext_resource path="res://Game/Player/characters/files/asset/wendylq.png" type="Texture" id=8]
+[ext_resource path="res://Game/Player/characters/files/asset/mackeylq.png" type="Texture" id=9]
+[ext_resource path="res://Game/Player/characters/files/asset/mephistolq.png" type="Texture" id=10]
+[ext_resource path="res://Game/Player/characters/files/asset/ikelq.png" type="Texture" id=11]
+[ext_resource path="res://Game/Player/characters/files/asset/piplq.png" type="Texture" id=12]
+[ext_resource path="res://Game/Player/characters/files/asset/marvinlq.png" type="Texture" id=13]
+[ext_resource path="res://Game/Player/characters/files/asset/lianelq.png" type="Texture" id=14]
+[ext_resource path="res://Game/Player/characters/files/asset/barbradylq.png" type="Texture" id=15]
+[ext_resource path="res://Game/Player/characters/files/asset/jimbolq.png" type="Texture" id=16]
+[ext_resource path="res://Game/Player/characters/files/asset/nedlq.png" type="Texture" id=17]
+[ext_resource path="res://Game/Player/characters/files/asset/philliplq.png" type="Texture" id=18]
+[ext_resource path="res://Game/Player/characters/files/asset/terrancelq.png" type="Texture" id=19]
+[ext_resource path="res://Game/Player/characters/files/asset/alienlq.png" type="Texture" id=20]
+[ext_resource path="res://Game/Player/characters/files/asset/biggayallq.png" type="Texture" id=21]
+[ext_resource path="res://Game/Player/characters/files/asset/border2.png" type="Texture" id=22]
+[ext_resource path="res://Game/Player/characters/files/asset/border3.png" type="Texture" id=23]
+[ext_resource path="res://Game/Player/characters/files/asset/border4.png" type="Texture" id=24]
+
+[node name="DevCharSelect" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Tempbg" type="Sprite" parent="."]
+modulate = Color( 0.541176, 0.541176, 0.541176, 1 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 1 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -640.0
+margin_top = -508.0
+margin_right = -282.0
+margin_bottom = -249.0
+rect_scale = Vector2( 5, 5 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 8
+
+[node name="Button" type="Button" parent="GridContainer"]
+margin_right = 32.0
+margin_bottom = 44.0
+disabled = true
+icon = ExtResource( 11 )
+
+[node name="Button2" type="Button" parent="GridContainer"]
+margin_left = 32.0
+margin_right = 64.0
+margin_bottom = 44.0
+disabled = true
+icon = ExtResource( 8 )
+
+[node name="Button3" type="Button" parent="GridContainer"]
+margin_left = 64.0
+margin_right = 96.0
+margin_bottom = 44.0
+icon = ExtResource( 5 )
+
+[node name="Button4" type="Button" parent="GridContainer"]
+margin_left = 96.0
+margin_right = 128.0
+margin_bottom = 44.0
+disabled = true
+icon = ExtResource( 6 )
+
+[node name="Button5" type="Button" parent="GridContainer"]
+margin_left = 128.0
+margin_right = 160.0
+margin_bottom = 44.0
+disabled = true
+icon = ExtResource( 3 )
+
+[node name="Button6" type="Button" parent="GridContainer"]
+margin_left = 160.0
+margin_right = 192.0
+margin_bottom = 44.0
+disabled = true
+icon = ExtResource( 4 )
+
+[node name="Button7" type="Button" parent="GridContainer"]
+margin_left = 192.0
+margin_right = 224.0
+margin_bottom = 44.0
+disabled = true
+icon = ExtResource( 12 )
+
+[node name="Button8" type="Button" parent="GridContainer"]
+margin_left = 224.0
+margin_right = 256.0
+margin_bottom = 44.0
+disabled = true
+icon = ExtResource( 13 )
+
+[node name="Button9" type="Button" parent="GridContainer"]
+margin_top = 44.0
+margin_right = 32.0
+margin_bottom = 88.0
+disabled = true
+icon = ExtResource( 9 )
+
+[node name="Button10" type="Button" parent="GridContainer"]
+margin_left = 32.0
+margin_top = 44.0
+margin_right = 64.0
+margin_bottom = 88.0
+disabled = true
+icon = ExtResource( 15 )
+
+[node name="Button11" type="Button" parent="GridContainer"]
+margin_left = 64.0
+margin_top = 44.0
+margin_right = 96.0
+margin_bottom = 88.0
+disabled = true
+icon = ExtResource( 14 )
+
+[node name="Button12" type="Button" parent="GridContainer"]
+margin_left = 96.0
+margin_top = 44.0
+margin_right = 128.0
+margin_bottom = 88.0
+disabled = true
+icon = ExtResource( 16 )
+
+[node name="Button13" type="Button" parent="GridContainer"]
+margin_left = 128.0
+margin_top = 44.0
+margin_right = 160.0
+margin_bottom = 88.0
+disabled = true
+icon = ExtResource( 17 )
+
+[node name="Button14" type="Button" parent="GridContainer"]
+margin_left = 160.0
+margin_top = 44.0
+margin_right = 192.0
+margin_bottom = 88.0
+disabled = true
+icon = ExtResource( 7 )
+
+[node name="Button15" type="Button" parent="GridContainer"]
+margin_left = 192.0
+margin_top = 44.0
+margin_right = 224.0
+margin_bottom = 88.0
+disabled = true
+icon = ExtResource( 10 )
+
+[node name="Button16" type="Button" parent="GridContainer"]
+margin_left = 224.0
+margin_top = 44.0
+margin_right = 256.0
+margin_bottom = 88.0
+disabled = true
+icon = ExtResource( 18 )
+
+[node name="Button17" type="Button" parent="GridContainer"]
+margin_top = 88.0
+margin_right = 32.0
+margin_bottom = 132.0
+disabled = true
+icon = ExtResource( 19 )
+
+[node name="Button18" type="Button" parent="GridContainer"]
+margin_left = 32.0
+margin_top = 88.0
+margin_right = 64.0
+margin_bottom = 132.0
+disabled = true
+icon = ExtResource( 21 )
+
+[node name="Button19" type="Button" parent="GridContainer"]
+margin_left = 64.0
+margin_top = 88.0
+margin_right = 96.0
+margin_bottom = 132.0
+icon = ExtResource( 20 )
+
+[node name="Button20" type="Button" parent="GridContainer"]
+margin_left = 96.0
+margin_top = 88.0
+margin_right = 128.0
+margin_bottom = 132.0
+disabled = true
+icon = ExtResource( 22 )
+
+[node name="Button21" type="Button" parent="GridContainer"]
+margin_left = 128.0
+margin_top = 88.0
+margin_right = 160.0
+margin_bottom = 132.0
+disabled = true
+icon = ExtResource( 22 )
+
+[node name="Button22" type="Button" parent="GridContainer"]
+margin_left = 160.0
+margin_top = 88.0
+margin_right = 192.0
+margin_bottom = 132.0
+disabled = true
+icon = ExtResource( 22 )
+
+[node name="Button23" type="Button" parent="GridContainer"]
+margin_left = 192.0
+margin_top = 88.0
+margin_right = 224.0
+margin_bottom = 132.0
+disabled = true
+icon = ExtResource( 22 )
+
+[node name="Button24" type="Button" parent="GridContainer"]
+margin_left = 224.0
+margin_top = 88.0
+margin_right = 256.0
+margin_bottom = 132.0
+disabled = true
+icon = ExtResource( 23 )
+
+[node name="Button25" type="Button" parent="GridContainer"]
+margin_top = 132.0
+margin_right = 32.0
+margin_bottom = 175.0
+disabled = true
+icon = ExtResource( 23 )
+
+[node name="Button26" type="Button" parent="GridContainer"]
+margin_left = 32.0
+margin_top = 132.0
+margin_right = 64.0
+margin_bottom = 175.0
+disabled = true
+icon = ExtResource( 23 )
+
+[node name="Button27" type="Button" parent="GridContainer"]
+margin_left = 64.0
+margin_top = 132.0
+margin_right = 96.0
+margin_bottom = 175.0
+disabled = true
+icon = ExtResource( 23 )
+
+[node name="Button28" type="Button" parent="GridContainer"]
+margin_left = 96.0
+margin_top = 132.0
+margin_right = 128.0
+margin_bottom = 175.0
+disabled = true
+icon = ExtResource( 23 )
+
+[node name="Button29" type="Button" parent="GridContainer"]
+margin_left = 128.0
+margin_top = 132.0
+margin_right = 160.0
+margin_bottom = 175.0
+disabled = true
+icon = ExtResource( 23 )
+
+[node name="Button30" type="Button" parent="GridContainer"]
+margin_left = 160.0
+margin_top = 132.0
+margin_right = 192.0
+margin_bottom = 175.0
+disabled = true
+icon = ExtResource( 23 )
+
+[node name="Button31" type="Button" parent="GridContainer"]
+margin_left = 192.0
+margin_top = 132.0
+margin_right = 224.0
+margin_bottom = 175.0
+disabled = true
+icon = ExtResource( 23 )
+
+[node name="Button32" type="Button" parent="GridContainer"]
+margin_left = 224.0
+margin_top = 132.0
+margin_right = 256.0
+margin_bottom = 175.0
+disabled = true
+icon = ExtResource( 24 )
+
+[node name="Characters" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -680.0
+margin_top = -464.0
+margin_right = 680.0
+margin_bottom = 464.0
