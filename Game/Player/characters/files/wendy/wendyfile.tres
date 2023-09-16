@@ -1,0 +1,60 @@
+[gd_resource type="Resource" load_steps=23 format=2]
+
+[ext_resource path="res://Game/Player/characters/script/CharacterFileScript.gd" type="Script" id=1]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/hurt (3).wav" type="AudioStream" id=2]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/hurt (6).wav" type="AudioStream" id=3]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/hurt (12).wav" type="AudioStream" id=4]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/hurt (13).wav" type="AudioStream" id=5]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/win (2).wav" type="AudioStream" id=6]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/hurt (1).wav" type="AudioStream" id=7]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/hurt (10).wav" type="AudioStream" id=8]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/win (5).wav" type="AudioStream" id=9]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/hurt (15).wav" type="AudioStream" id=10]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/win (1).wav" type="AudioStream" id=11]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/win (6).wav" type="AudioStream" id=12]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/hurt (5).wav" type="AudioStream" id=13]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/hurt (7).wav" type="AudioStream" id=14]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/hurt (11).wav" type="AudioStream" id=15]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/hurt (14).wav" type="AudioStream" id=16]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/win (3).wav" type="AudioStream" id=17]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/win (4).wav" type="AudioStream" id=18]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/hurt (2).wav" type="AudioStream" id=19]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/hurt (19).wav" type="AudioStream" id=20]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/hurt (20).wav" type="AudioStream" id=21]
+[ext_resource path="res://Game/Player/characters/files/wendy/sounds/hurt (17).wav" type="AudioStream" id=22]
+
+[resource]
+script = ExtResource( 1 )
+CharacterName = "Wendy"
+StartingHealth = 100
+MaxHealth = 100
+StartingArmor = 0
+MaxArmor = 100
+MaxDodgeballAmmo = 80
+MaxPlungerAmmo = 40
+MaxDartAmmo = 200
+MaxWarpoAmmo = 200
+MaxTPAmmo = 20
+MaxChickenAmmo = 20
+MaxGizmoAmmo = 100
+MaxCowAmmo = 40
+SpawnAudio = [ ExtResource( 13 ), ExtResource( 5 ) ]
+PainAudio = [ ExtResource( 7 ), ExtResource( 19 ), ExtResource( 2 ), ExtResource( 13 ), ExtResource( 3 ), ExtResource( 14 ), ExtResource( 8 ), ExtResource( 15 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 16 ), ExtResource( 10 ), ExtResource( 22 ), ExtResource( 20 ), ExtResource( 21 ) ]
+DeathAudio = [ ExtResource( 21 ) ]
+HealAudio = [  ]
+WeaponPickUpAudio = [  ]
+KillAudio = [  ]
+MedPainAudio = [  ]
+HevPainAudio = [  ]
+ShockDamageAudio = [  ]
+GasDamageAudio = [  ]
+NearTownAudio = [  ]
+EmptyTeamSpawnAudio = [  ]
+TurkeyKillAudio = [  ]
+CloneKillAudio = [  ]
+CowKillAudio = [  ]
+AlienKillAudio = [  ]
+RobotKillAudio = [  ]
+ToyKillAudio = [  ]
+ToughEnemyAudio = [  ]
+WinAudio = [ ExtResource( 11 ), ExtResource( 6 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 9 ), ExtResource( 12 ) ]
