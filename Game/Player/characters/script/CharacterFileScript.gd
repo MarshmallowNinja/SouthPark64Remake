@@ -29,6 +29,7 @@ export(Array, AudioStream) var PainAudio = [] # 1-29 HP
 export(Array, AudioStream) var DeathAudio = []
 export(Array, AudioStream) var HealAudio = []
 export(Array, AudioStream) var WeaponPickUpAudio = []
+export(Array, AudioStream) var KillAudio = []
 # Damage+
 export(Array, AudioStream) var MedPainAudio = [] # 30-49 HP
 export(Array, AudioStream) var HevPainAudio = [] # 50-99 HP
@@ -45,3 +46,5 @@ export(Array, AudioStream) var AlienKillAudio = []
 export(Array, AudioStream) var RobotKillAudio = []
 export(Array, AudioStream) var ToyKillAudio = []
 export(Array, AudioStream) var ToughEnemyAudio = []
+# Multplayer
+export(Array, AudioStream) var WinAudio = []

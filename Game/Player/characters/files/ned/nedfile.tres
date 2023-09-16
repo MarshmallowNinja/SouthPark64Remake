@@ -1,0 +1,39 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Game/Player/characters/script/CharacterFileScript.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+CharacterName = "Ned"
+StartingHealth = 100
+MaxHealth = 100
+StartingArmor = 0
+MaxArmor = 100
+MaxDodgeballAmmo = 80
+MaxPlungerAmmo = 40
+MaxDartAmmo = 200
+MaxWarpoAmmo = 200
+MaxTPAmmo = 20
+MaxChickenAmmo = 20
+MaxGizmoAmmo = 100
+MaxCowAmmo = 40
+SpawnAudio = [  ]
+PainAudio = [  ]
+DeathAudio = [  ]
+HealAudio = [  ]
+WeaponPickUpAudio = [  ]
+KillAudio = [  ]
+MedPainAudio = [  ]
+HevPainAudio = [  ]
+ShockDamageAudio = [  ]
+GasDamageAudio = [  ]
+NearTownAudio = [  ]
+EmptyTeamSpawnAudio = [  ]
+TurkeyKillAudio = [  ]
+CloneKillAudio = [  ]
+CowKillAudio = [  ]
+AlienKillAudio = [  ]
+RobotKillAudio = [  ]
+ToyKillAudio = [  ]
+ToughEnemyAudio = [  ]
+WinAudio = [  ]

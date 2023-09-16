@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=20 format=2]
+[gd_resource type="Resource" load_steps=21 format=2]
 
 [ext_resource path="res://Game/Player/characters/files/alien/sounds/lose (1).wav" type="AudioStream" id=1]
 [ext_resource path="res://Game/Player/characters/files/alien/sounds/hurt (4).wav" type="AudioStream" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Game/Player/characters/files/alien/sounds/hurt (1).wav" type="AudioStream" id=17]
 [ext_resource path="res://Game/Player/characters/files/alien/sounds/hurt (7).wav" type="AudioStream" id=18]
 [ext_resource path="res://Game/Player/characters/script/CharacterFileScript.gd" type="Script" id=19]
+[ext_resource path="res://Game/Player/characters/files/alien/sounds/win (3).wav" type="AudioStream" id=20]
 
 [resource]
 script = ExtResource( 19 )
@@ -39,7 +40,8 @@ SpawnAudio = [ ExtResource( 11 ), ExtResource( 4 ), ExtResource( 14 ), ExtResour
 PainAudio = [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 10 ), ExtResource( 13 ), ExtResource( 18 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 4 ) ]
 DeathAudio = [ ExtResource( 1 ), ExtResource( 9 ), ExtResource( 16 ) ]
 HealAudio = [ ExtResource( 5 ), ExtResource( 15 ) ]
-WeaponPickUpAudio = [  ]
+WeaponPickUpAudio = [ ExtResource( 15 ) ]
+KillAudio = [  ]
 MedPainAudio = [  ]
 HevPainAudio = [  ]
 ShockDamageAudio = [  ]
@@ -52,4 +54,5 @@ CowKillAudio = [  ]
 AlienKillAudio = [  ]
 RobotKillAudio = [  ]
 ToyKillAudio = [  ]
-ToughEnemyAudio = [  ]
+ToughEnemyAudio = [ ExtResource( 9 ) ]
+WinAudio = [ ExtResource( 5 ), ExtResource( 15 ), ExtResource( 20 ) ]

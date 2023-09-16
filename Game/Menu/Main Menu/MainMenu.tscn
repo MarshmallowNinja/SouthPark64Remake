@@ -626,7 +626,6 @@ position = Vector2( 5, -247 )
 texture = ExtResource( 3 )
 
 [node name="Menu" type="VBoxContainer" parent="Control"]
-visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -248.0
@@ -699,6 +698,7 @@ __meta__ = {
 }
 
 [node name="SinglePlayer" type="VBoxContainer" parent="Control"]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -511.0
@@ -1396,8 +1396,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[connection signal="pressed" from="Control/Menu/Button2" to="." method="_on_Button2_pressed"]
-[connection signal="pressed" from="Control/Menu/Button" to="Control/Menu/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/Menu/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Control/Menu/Multiplayer" to="." method="_on_Multiplayer_pressed"]
 [connection signal="pressed" from="Control/Menu/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Control/Menu/custom" to="." method="_on_custom_pressed"]

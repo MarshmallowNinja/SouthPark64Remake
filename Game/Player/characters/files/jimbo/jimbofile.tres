@@ -1,0 +1,52 @@
+[gd_resource type="Resource" load_steps=15 format=2]
+
+[ext_resource path="res://Game/Player/characters/script/CharacterFileScript.gd" type="Script" id=1]
+[ext_resource path="res://Game/Player/characters/files/jimbo/sounds/hurt (13).wav" type="AudioStream" id=2]
+[ext_resource path="res://Game/Player/characters/files/jimbo/sounds/hurt (14).wav" type="AudioStream" id=3]
+[ext_resource path="res://Game/Player/characters/files/jimbo/sounds/hurt (11).wav" type="AudioStream" id=4]
+[ext_resource path="res://Game/Player/characters/files/jimbo/sounds/hurt (15).wav" type="AudioStream" id=5]
+[ext_resource path="res://Game/Player/characters/files/jimbo/sounds/hurt (16).wav" type="AudioStream" id=6]
+[ext_resource path="res://Game/Player/characters/files/jimbo/sounds/hurt (10).wav" type="AudioStream" id=7]
+[ext_resource path="res://Game/Player/characters/files/jimbo/sounds/hurt (9).wav" type="AudioStream" id=8]
+[ext_resource path="res://Game/Player/characters/files/jimbo/sounds/hurt (1).wav" type="AudioStream" id=9]
+[ext_resource path="res://Game/Player/characters/files/jimbo/sounds/hurt (12).wav" type="AudioStream" id=10]
+[ext_resource path="res://Game/Player/characters/files/jimbo/sounds/picked (2).wav" type="AudioStream" id=11]
+[ext_resource path="res://Game/Player/characters/files/jimbo/sounds/picked (1).wav" type="AudioStream" id=12]
+[ext_resource path="res://Game/Player/characters/files/jimbo/sounds/win (1).wav" type="AudioStream" id=13]
+[ext_resource path="res://Game/Player/characters/files/jimbo/sounds/win (2).wav" type="AudioStream" id=14]
+
+[resource]
+script = ExtResource( 1 )
+CharacterName = "Jimbo"
+StartingHealth = 100
+MaxHealth = 100
+StartingArmor = 0
+MaxArmor = 100
+MaxDodgeballAmmo = 80
+MaxPlungerAmmo = 40
+MaxDartAmmo = 200
+MaxWarpoAmmo = 200
+MaxTPAmmo = 20
+MaxChickenAmmo = 20
+MaxGizmoAmmo = 100
+MaxCowAmmo = 40
+SpawnAudio = [ ExtResource( 12 ), ExtResource( 11 ) ]
+PainAudio = [ ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 10 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 6 ) ]
+DeathAudio = [ ExtResource( 5 ), ExtResource( 8 ), ExtResource( 6 ) ]
+HealAudio = [  ]
+WeaponPickUpAudio = [  ]
+KillAudio = [  ]
+MedPainAudio = [  ]
+HevPainAudio = [  ]
+ShockDamageAudio = [  ]
+GasDamageAudio = [  ]
+NearTownAudio = [  ]
+EmptyTeamSpawnAudio = [  ]
+TurkeyKillAudio = [  ]
+CloneKillAudio = [  ]
+CowKillAudio = [  ]
+AlienKillAudio = [  ]
+RobotKillAudio = [  ]
+ToyKillAudio = [  ]
+ToughEnemyAudio = [  ]
+WinAudio = [ ExtResource( 13 ), ExtResource( 14 ) ]
