@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Game/Menu/Mod/modmenu.gd" type="Script" id=1]
 [ext_resource path="res://Game/Menu/southpark.theme" type="Theme" id=2]
@@ -7,6 +7,10 @@
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+font_data = ExtResource( 3 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -45,7 +49,7 @@ margin_bottom = 264.0
 custom_colors/files_disabled = Color( 0.388235, 0, 0, 1 )
 window_title = "Open a File"
 dialog_text = "Open a .PCK file that was exported from Godot 3.5.2. 
-You are responsible for your own safety and wellbeing of your device."
+You are responsible for the safety and wellbeing of you, your device, and network peers."
 dialog_autowrap = true
 mode = 0
 access = 2
@@ -62,37 +66,58 @@ margin_top = -264.0
 margin_right = 408.0
 margin_bottom = 264.0
 custom_colors/files_disabled = Color( 0.388235, 0, 0, 1 )
-window_title = "Open a File"
-dialog_text = "Open a .tcsn File from main game file. Mods are supported."
+window_title = "Load a Level/Scene"
+dialog_text = "Open a .tcsn File from main game file.
+Levels and scenes from Mods/external content are available.
+Some levels may not load correctly (Story levels or Multiplayer maps that were not configured in a lobby.).
+"
 dialog_autowrap = true
 mode = 0
 filters = PoolStringArray( "*.tscn ; Godot Scene File" )
 show_hidden_files = true
 
+[node name="Info" type="Label" parent="."]
+margin_left = 712.0
+margin_top = 72.0
+margin_right = 1912.0
+margin_bottom = 293.0
+custom_fonts/font = SubResource( 4 )
+text = "INFORMATION
+_________________________________________________________
+- Pressing the PAUSE|BREAK key will instantly load you into the Main Menu level at anytime.
+- If mod content is not visible in the Level Loader, exit back into the main menu and come back.
+- Loading a .pck file will not permanently overwrite the original game files, quitting the game will remove the modified files in the games memory.
+- Loading a mod file larger than the game may freeze or crash the game.
+- Keep mod files in a handy, easy to access folder.
+- Make sure to back-up your save progression and configuration files."
+align = 1
+autowrap = true
+
 [node name="sidemenu" type="VBoxContainer" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -560.0
-margin_right = 784.0
+margin_right = 832.0
 theme = ExtResource( 2 )
+custom_constants/separation = 10
 alignment = 1
 
 [node name="opendialog" type="Button" parent="sidemenu"]
-margin_top = 211.0
-margin_right = 784.0
-margin_bottom = 254.0
-text = "Open .PCK Dialog"
+margin_top = 205.0
+margin_right = 832.0
+margin_bottom = 248.0
+text = "Load .pck File"
 
 [node name="openother" type="Button" parent="sidemenu"]
 margin_top = 258.0
-margin_right = 784.0
+margin_right = 832.0
 margin_bottom = 301.0
-text = "Open res:// Dialog"
+text = "Level Loader"
 
 [node name="btm" type="Button" parent="sidemenu"]
-margin_top = 305.0
-margin_right = 784.0
-margin_bottom = 348.0
+margin_top = 311.0
+margin_right = 832.0
+margin_bottom = 354.0
 text = "Back To Menu"
 
 [node name="modwarning" type="PanelContainer" parent="."]
@@ -129,25 +154,27 @@ align = 1
 [node name="VBoxContainer2" type="VBoxContainer" parent="modwarning/VBoxContainer3"]
 margin_top = 102.0
 margin_right = 1800.0
-margin_bottom = 576.0
+margin_bottom = 788.0
 alignment = 1
 
 [node name="Label" type="Label" parent="modwarning/VBoxContainer3/VBoxContainer2"]
 margin_right = 1800.0
-margin_bottom = 474.0
+margin_bottom = 686.0
 custom_fonts/font = SubResource( 2 )
 text = "Mods can be a fun way to enhance your experience with this game by allowing you to load user generated content with a click of a button.
 
 But you must be cautious when downloading and installing mods from unknown, untrusted sources and users, as they can potentially contain malicious changes and content that could harm you or your device.
+
+This game has allows nearly limitless access to almost all game assets, scripts, and scenes and allows mod developers to edit and build upon every bit of them. This unfortunately allows for malicious code to be written and processed by the engine.
 
 By clicking \"Allow,\" you acknowledge the risks associated with mod installation and loading, and are responsible for the safety of yourself, your device, and network peers."
 align = 1
 autowrap = true
 
 [node name="decision" type="HBoxContainer" parent="modwarning/VBoxContainer3"]
-margin_top = 613.0
+margin_top = 825.0
 margin_right = 1800.0
-margin_bottom = 656.0
+margin_bottom = 868.0
 alignment = 1
 
 [node name="ALLOW" type="Button" parent="modwarning/VBoxContainer3/decision"]
