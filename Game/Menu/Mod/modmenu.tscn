@@ -66,7 +66,7 @@ margin_top = -264.0
 margin_right = 408.0
 margin_bottom = 264.0
 custom_colors/files_disabled = Color( 0.388235, 0, 0, 1 )
-window_title = "Load a Level/Scene"
+window_title = "Open a File"
 dialog_text = "Open a .tcsn File from main game file.
 Levels and scenes from Mods/external content are available.
 Some levels may not load correctly (Story levels or Multiplayer maps that were not configured in a lobby.).
@@ -77,9 +77,11 @@ filters = PoolStringArray( "*.tscn ; Godot Scene File" )
 show_hidden_files = true
 
 [node name="Info" type="Label" parent="."]
-margin_left = 712.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -248.0
 margin_top = 72.0
-margin_right = 1912.0
+margin_right = 952.0
 margin_bottom = 293.0
 custom_fonts/font = SubResource( 4 )
 text = "INFORMATION

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Game/Menu/DevMenus/CharSelect/tempbg.png" type="Texture" id=1]
 [ext_resource path="res://Game/Menu/southpark.theme" type="Theme" id=2]
@@ -24,17 +24,22 @@
 [ext_resource path="res://Game/Player/characters/files/asset/border2.png" type="Texture" id=22]
 [ext_resource path="res://Game/Player/characters/files/asset/border3.png" type="Texture" id=23]
 [ext_resource path="res://Game/Player/characters/files/asset/border4.png" type="Texture" id=24]
+[ext_resource path="res://Game/Menu/DevMenus/CharSelect/DevCharSelect.gd" type="Script" id=25]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0, 0, 0.498039 )
 
 [node name="DevCharSelect" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 2 )
+script = ExtResource( 25 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Tempbg" type="Sprite" parent="."]
-modulate = Color( 0.541176, 0.541176, 0.541176, 1 )
+modulate = Color( 0.454902, 0.454902, 0.454902, 1 )
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
 centered = false
@@ -42,7 +47,51 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Characters" type="ScrollContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -304.0
+margin_top = -320.0
+margin_right = 304.0
+margin_bottom = 320.0
+follow_focus = true
+
+[node name="PopupMenu" type="PopupMenu" parent="Characters"]
+margin_right = 601.0
+margin_bottom = 1643.0
+custom_constants/vseparation = 22
+custom_constants/hseparation = 0
+custom_styles/panel = SubResource( 1 )
+items = [ "Base Character", null, 0, false, false, 0, 0, null, "", false, "Cartman", null, 0, false, false, 1, 0, null, "", false, "Kyle", null, 0, false, true, 2, 0, null, "", false, "Stan", null, 0, false, true, 3, 0, null, "", false, "Kenny", null, 0, false, true, 4, 0, null, "", false, "Alien", null, 0, false, false, 5, 0, null, "", false, "Officer Barbrady", null, 0, false, false, 6, 0, null, "", false, "Big Gay Al", null, 0, false, false, 7, 0, null, "", false, "Chef", null, 0, false, false, 8, 0, null, "", false, "Mr. Garrison", null, 0, false, false, 9, 0, null, "", false, "Ike", null, 0, false, true, 10, 0, null, "", false, "Jimbo", null, 0, false, false, 11, 0, null, "", false, "Liane", null, 0, false, false, 12, 0, null, "", false, "Mr. Mackey", null, 0, false, false, 13, 0, null, "", false, "Mephisto", null, 0, false, false, 14, 0, null, "", false, "Ned", null, 0, false, false, 15, 0, null, "", false, "Phillip", null, 0, false, false, 16, 0, null, "", false, "Pip", null, 0, false, false, 17, 0, null, "", false, "Starvin' Marvin", null, 0, false, true, 18, 0, null, "", false, "Terrance", null, 0, false, false, 19, 0, null, "", false, "Wendy", null, 0, false, false, 20, 0, null, "", false, "Jesus", null, 0, false, false, 21, 0, null, "", false, "Santa", null, 0, false, false, 22, 0, null, "", false, "Satan", null, 0, false, false, 23, 0, null, "", false, "Shelly", null, 0, false, false, 24, 0, null, "", false, "TBA 1", null, 0, false, true, 25, 0, null, "", false, "TBA 2", null, 0, false, true, 26, 0, null, "", false, "TBA 3", null, 0, false, true, 27, 0, null, "", false, "TBA 4", null, 0, false, true, 28, 0, null, "", false, "TBA 5", null, 0, false, true, 29, 0, null, "", false, "TBA 6", null, 0, false, true, 30, 0, null, "", false ]
+allow_search = true
+
+[node name="Menu" type="VBoxContainer" parent="."]
+margin_top = 640.0
+margin_right = 648.0
+margin_bottom = 1080.0
+custom_constants/separation = 8
+
+[node name="respawn" type="Button" parent="Menu"]
+margin_right = 648.0
+margin_bottom = 43.0
+text = "Respawn selector"
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="mainmenu" type="Button" parent="Menu"]
+margin_top = 51.0
+margin_right = 648.0
+margin_bottom = 94.0
+text = "To Main Menu"
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="GridContainer" type="GridContainer" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -52,6 +101,8 @@ margin_top = -508.0
 margin_right = -282.0
 margin_bottom = -249.0
 rect_scale = Vector2( 5, 5 )
+mouse_filter = 2
+mouse_default_cursor_shape = 8
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_constants/vseparation = 0
@@ -300,12 +351,4 @@ margin_bottom = 175.0
 disabled = true
 icon = ExtResource( 24 )
 
-[node name="Characters" type="VBoxContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -680.0
-margin_top = -464.0
-margin_right = 680.0
-margin_bottom = 464.0
+[connection signal="id_pressed" from="Characters/PopupMenu" to="." method="_on_PopupMenu_id_pressed"]

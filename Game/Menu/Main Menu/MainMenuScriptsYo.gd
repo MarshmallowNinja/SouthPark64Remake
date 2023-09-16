@@ -52,13 +52,10 @@ func _on_settomain_pressed():
 	$Control/Menu/Button2.grab_focus()
 
 func _on_Button_pressed():
-	switchmenus("Story", "Menu")
+	switchmenus("Single Player", "Menu")
 
 func _on_backtomain_pressed():
-	switchmenus("Menu", "Story")
-
-func _on_New_pressed():
-	pass
+	switchmenus("Menu", "Single Player")
 
 func _on_Exit_pressed():
 	SaveGame.saveconf()
