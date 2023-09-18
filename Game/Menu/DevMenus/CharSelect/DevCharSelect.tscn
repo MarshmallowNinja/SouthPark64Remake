@@ -56,6 +56,7 @@ margin_left = -304.0
 margin_top = -320.0
 margin_right = 304.0
 margin_bottom = 320.0
+rect_clip_content = false
 follow_focus = true
 
 [node name="PopupMenu" type="PopupMenu" parent="Characters"]
@@ -352,3 +353,4 @@ disabled = true
 icon = ExtResource( 24 )
 
 [connection signal="id_pressed" from="Characters/PopupMenu" to="." method="_on_PopupMenu_id_pressed"]
+[connection signal="pressed" from="Menu/respawn" to="." method="_on_respawn_pressed"]
