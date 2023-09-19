@@ -1,5 +1,11 @@
 extends Node
 
+var GlobalVar = {
+# 0 = Freeroam/None, 1 = Story Mode - Solo, 2 = Solo PvE, 3 = Multiplayer,
+# 4 = Story Mode - MP
+	"IntendedMode" : 0
+}
+
 func _ready():
 	SettingsInit()
 	print("Welcome to South Park 64 Remake!")

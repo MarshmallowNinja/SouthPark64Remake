@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Game/Menu/southpark.theme" type="Theme" id=1]
+[ext_resource path="res://Game/Menu/PlayerUI.theme" type="Theme" id=1]
 [ext_resource path="res://Game/Menu/Multi/multiplayerlobby.gd" type="Script" id=2]
 [ext_resource path="res://Game/Menu/CreatoDisplay-Regular.otf" type="DynamicFontData" id=3]
 
@@ -39,8 +39,8 @@ margin_top = 984.0
 alignment = 1
 
 [node name="Button" type="Button" parent="main/hotbar"]
-margin_left = 675.0
-margin_right = 1245.0
+margin_left = 703.0
+margin_right = 1216.0
 margin_bottom = 96.0
 toggle_mode = true
 text = "Click to Show IP."
@@ -53,13 +53,13 @@ custom_constants/separation = 12
 alignment = 1
 
 [node name="create" type="Button" parent="main/connect"]
-margin_top = 28.0
+margin_top = 26.0
 margin_right = 640.0
-margin_bottom = 71.0
+margin_bottom = 70.0
 text = "Create Server"
 
 [node name="join" type="Button" parent="main/connect"]
-margin_top = 83.0
+margin_top = 82.0
 margin_right = 640.0
 margin_bottom = 126.0
 text = "Join Server"
@@ -67,22 +67,22 @@ text = "Join Server"
 [node name="character" type="Button" parent="main/connect"]
 margin_top = 138.0
 margin_right = 640.0
-margin_bottom = 181.0
-text = "Change Character"
+margin_bottom = 182.0
+text = "Identity"
 
 [node name="set" type="Button" parent="main/connect"]
-margin_top = 193.0
+margin_top = 194.0
 margin_right = 640.0
-margin_bottom = 236.0
+margin_bottom = 238.0
 text = "Settings"
 
 [node name="btm" type="Button" parent="main/connect"]
-margin_top = 248.0
+margin_top = 250.0
 margin_right = 640.0
-margin_bottom = 291.0
+margin_bottom = 294.0
 text = "Main Menu"
 
-[node name="detail" type="VBoxContainer" parent="main"]
+[node name="hostdetail" type="VBoxContainer" parent="main"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -1216.0
@@ -91,102 +91,150 @@ margin_right = -64.0
 margin_bottom = 584.0
 custom_constants/separation = 23
 
-[node name="title" type="Label" parent="main/detail"]
+[node name="title" type="Label" parent="main/hostdetail"]
 margin_right = 1152.0
-margin_bottom = 31.0
+margin_bottom = 32.0
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "Details"
 align = 1
 
-[node name="name" type="HBoxContainer" parent="main/detail"]
-margin_top = 54.0
+[node name="name" type="HBoxContainer" parent="main/hostdetail"]
+margin_top = 55.0
 margin_right = 1152.0
-margin_bottom = 85.0
+margin_bottom = 97.0
 
-[node name="servername" type="Label" parent="main/detail/name"]
-margin_right = 801.0
-margin_bottom = 31.0
-text = "Server Name: Test name"
+[node name="sn" type="Label" parent="main/hostdetail/name"]
+margin_top = 5.0
+margin_right = 414.0
+margin_bottom = 37.0
+text = "Server Name: "
 
-[node name="mode" type="HBoxContainer" parent="main/detail"]
-margin_top = 108.0
+[node name="servername" type="LineEdit" parent="main/hostdetail/name"]
+margin_left = 418.0
+margin_right = 878.0
+margin_bottom = 42.0
+custom_constants/minimum_spaces = 25
+max_length = 12
+placeholder_text = "My Server"
+caret_blink = true
+
+[node name="mode" type="HBoxContainer" parent="main/hostdetail"]
+margin_top = 120.0
 margin_right = 1152.0
-margin_bottom = 139.0
+margin_bottom = 164.0
 
-[node name="gamemode" type="Label" parent="main/detail/mode"]
-margin_right = 806.0
-margin_bottom = 31.0
-text = "Game Mode: Deathmatch"
+[node name="gm" type="Label" parent="main/hostdetail/mode"]
+margin_top = 6.0
+margin_right = 335.0
+margin_bottom = 38.0
+text = "Game Mode:"
 
-[node name="frag" type="HBoxContainer" parent="main/detail"]
-margin_top = 162.0
+[node name="OptionButton" type="OptionButton" parent="main/hostdetail/mode"]
+margin_left = 339.0
+margin_right = 723.0
+margin_bottom = 44.0
+text = "Deathmatch"
+items = [ "Deathmatch", null, false, 0, null, "Team Deathmatch", null, true, 1, null, "Capture The Flag", null, false, 2, null, "Tag", null, true, 3, null, "Ball Tag", null, true, 4, null, "King Of The Hill", null, true, 5, null, "Infection", null, true, 6, null, "Dodgeball Battle", null, true, 7, null ]
+selected = 0
+
+[node name="frag" type="HBoxContainer" parent="main/hostdetail"]
+margin_top = 187.0
 margin_right = 1152.0
-margin_bottom = 193.0
+margin_bottom = 229.0
 
-[node name="fraglimit" type="Label" parent="main/detail/frag"]
-margin_right = 462.0
-margin_bottom = 31.0
-text = "Frag Limit: ??"
+[node name="fl" type="Label" parent="main/hostdetail/frag"]
+margin_top = 5.0
+margin_right = 352.0
+margin_bottom = 37.0
+text = "Frag Limit: "
 
-[node name="time" type="HBoxContainer" parent="main/detail"]
-margin_top = 216.0
+[node name="fraglimit" type="SpinBox" parent="main/hostdetail/frag"]
+margin_left = 356.0
+margin_right = 598.0
+margin_bottom = 42.0
+
+[node name="time" type="HBoxContainer" parent="main/hostdetail"]
+margin_top = 252.0
 margin_right = 1152.0
-margin_bottom = 247.0
+margin_bottom = 294.0
 
-[node name="timelimit" type="Label" parent="main/detail/time"]
+[node name="tl" type="Label" parent="main/hostdetail/time"]
+margin_top = 5.0
+margin_right = 339.0
+margin_bottom = 37.0
+text = "Time Limit: "
+
+[node name="timelimit" type="SpinBox" parent="main/hostdetail/time"]
+margin_left = 343.0
+margin_right = 585.0
+margin_bottom = 42.0
+max_value = 60.0
+suffix = "min"
+
+[node name="type" type="HBoxContainer" parent="main/hostdetail"]
+margin_top = 317.0
+margin_right = 1152.0
+margin_bottom = 361.0
+
+[node name="ct" type="Label" parent="main/hostdetail/type"]
+margin_top = 6.0
 margin_right = 537.0
-margin_bottom = 31.0
-text = "Time Limit: ??:??"
+margin_bottom = 38.0
+text = "Connection Type: "
 
-[node name="type" type="HBoxContainer" parent="main/detail"]
-margin_top = 270.0
+[node name="connecttype" type="OptionButton" parent="main/hostdetail/type"]
+margin_left = 541.0
+margin_right = 663.0
+margin_bottom = 44.0
+text = "LAN"
+items = [ "LAN", null, false, 0, null, "Internet", null, false, 1, null ]
+selected = 0
+
+[node name="player" type="HBoxContainer" parent="main/hostdetail"]
+margin_top = 384.0
 margin_right = 1152.0
-margin_bottom = 301.0
+margin_bottom = 426.0
 
-[node name="contype" type="Label" parent="main/detail/type"]
-margin_right = 720.0
-margin_bottom = 31.0
-text = "Connection Type: LAN"
-
-[node name="player" type="HBoxContainer" parent="main/detail"]
-margin_top = 324.0
-margin_right = 1152.0
-margin_bottom = 355.0
-
-[node name="maxplayer" type="Label" parent="main/detail/player"]
-margin_right = 504.0
-margin_bottom = 31.0
+[node name="maxplayer" type="Label" parent="main/hostdetail/player"]
+margin_top = 5.0
+margin_right = 452.0
+margin_bottom = 37.0
 text = "Max Players: ?"
 
-[node name="anotherbar" type="HBoxContainer" parent="main/detail"]
-margin_top = 378.0
+[node name="SpinBox" type="SpinBox" parent="main/hostdetail/player"]
+margin_left = 456.0
+margin_right = 698.0
+margin_bottom = 42.0
+
+[node name="anotherbar" type="HBoxContainer" parent="main/hostdetail"]
+margin_top = 449.0
 margin_right = 1152.0
-margin_bottom = 421.0
+margin_bottom = 493.0
 custom_constants/separation = 108
 alignment = 1
 
-[node name="joingame" type="Button" parent="main/detail/anotherbar"]
-margin_left = 134.0
-margin_right = 463.0
-margin_bottom = 43.0
+[node name="joingame" type="Button" parent="main/hostdetail/anotherbar"]
+margin_left = 173.0
+margin_right = 467.0
+margin_bottom = 44.0
 text = "Join Game"
 
-[node name="leavegame" type="Button" parent="main/detail/anotherbar"]
-margin_left = 571.0
-margin_right = 1017.0
-margin_bottom = 43.0
+[node name="leavegame" type="Button" parent="main/hostdetail/anotherbar"]
+margin_left = 575.0
+margin_right = 978.0
+margin_bottom = 44.0
 text = "Leave Server"
 
-[node name="anotheranotherbar" type="HBoxContainer" parent="main/detail"]
-margin_top = 444.0
+[node name="anotheranotherbar" type="HBoxContainer" parent="main/hostdetail"]
+margin_top = 516.0
 margin_right = 1152.0
-margin_bottom = 487.0
+margin_bottom = 560.0
 alignment = 1
 
-[node name="joingame" type="Button" parent="main/detail/anotheranotherbar"]
-margin_left = 348.0
-margin_right = 803.0
-margin_bottom = 43.0
+[node name="joingame" type="Button" parent="main/hostdetail/anotheranotherbar"]
+margin_left = 371.0
+margin_right = 780.0
+margin_bottom = 44.0
 text = "Change Level"
 
 [node name="logs" type="VBoxContainer" parent="main"]
@@ -220,44 +268,44 @@ text = "Game: Welcome to South Park 64 Remake Online Multiplayer"
 align = 2
 
 [node name="Label2" type="Label" parent="main/logs/scroll/log"]
-margin_top = 43.0
+margin_top = 57.0
 margin_right = 853.0
-margin_bottom = 82.0
+margin_bottom = 96.0
 text = "Game: Welcome to South Park 64 Remake Online Multiplayer"
 align = 2
 
 [node name="Label3" type="Label" parent="main/logs/scroll/log"]
-margin_top = 86.0
+margin_top = 114.0
 margin_right = 853.0
-margin_bottom = 125.0
+margin_bottom = 153.0
 text = "Game: Welcome to South Park 64 Remake Online Multiplayer"
 align = 2
 
 [node name="Label4" type="Label" parent="main/logs/scroll/log"]
-margin_top = 129.0
+margin_top = 171.0
 margin_right = 853.0
-margin_bottom = 168.0
+margin_bottom = 210.0
 text = "Game: Welcome to South Park 64 Remake Online Multiplayer"
 align = 2
 
 [node name="Label5" type="Label" parent="main/logs/scroll/log"]
-margin_top = 172.0
+margin_top = 228.0
 margin_right = 853.0
-margin_bottom = 211.0
+margin_bottom = 267.0
 text = "Game: Welcome to South Park 64 Remake Online Multiplayer"
 align = 2
 
 [node name="Label6" type="Label" parent="main/logs/scroll/log"]
-margin_top = 215.0
+margin_top = 285.0
 margin_right = 853.0
-margin_bottom = 254.0
+margin_bottom = 324.0
 text = "Game: Welcome to South Park 64 Remake Online Multiplayer"
 align = 2
 
 [node name="Label7" type="Label" parent="main/logs/scroll/log"]
-margin_top = 258.0
+margin_top = 342.0
 margin_right = 853.0
-margin_bottom = 297.0
+margin_bottom = 381.0
 text = "Game: Welcome to South Park 64 Remake Online Multiplayer"
 align = 2
 

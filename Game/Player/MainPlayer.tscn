@@ -474,8 +474,6 @@ enabled = true
 cast_to = Vector3( 0, 0, -50 )
 collide_with_areas = true
 
-[node name="ImmediateGeometry" type="ImmediateGeometry" parent="Camera/weapontest"]
-
 [node name="foot" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
 visible = false

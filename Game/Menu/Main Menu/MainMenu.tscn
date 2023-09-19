@@ -634,19 +634,9 @@ margin_right = 249.0
 margin_bottom = 344.0
 custom_constants/separation = 24
 
-[node name="Button2" type="Button" parent="Control/Menu"]
-visible = false
-margin_right = 559.0
-margin_bottom = 43.0
-text = "Developer Level"
-flat = true
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Button" type="Button" parent="Control/Menu"]
+[node name="singleplayer" type="Button" parent="Control/Menu"]
 margin_right = 497.0
-margin_bottom = 43.0
+margin_bottom = 44.0
 text = "Single Player"
 flat = true
 __meta__ = {
@@ -654,9 +644,9 @@ __meta__ = {
 }
 
 [node name="Multiplayer" type="Button" parent="Control/Menu"]
-margin_top = 67.0
+margin_top = 68.0
 margin_right = 497.0
-margin_bottom = 110.0
+margin_bottom = 112.0
 action_mode = 0
 text = "Multiplayer"
 flat = true
@@ -665,9 +655,9 @@ __meta__ = {
 }
 
 [node name="settings" type="Button" parent="Control/Menu"]
-margin_top = 134.0
+margin_top = 136.0
 margin_right = 497.0
-margin_bottom = 177.0
+margin_bottom = 180.0
 action_mode = 0
 text = "Settings"
 flat = true
@@ -676,9 +666,9 @@ __meta__ = {
 }
 
 [node name="custom" type="Button" parent="Control/Menu"]
-margin_top = 201.0
+margin_top = 204.0
 margin_right = 497.0
-margin_bottom = 244.0
+margin_bottom = 248.0
 action_mode = 0
 text = "Mods"
 flat = true
@@ -686,10 +676,26 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Exit" type="Button" parent="Control/Menu"]
+[node name="Button2" type="Button" parent="Control/Menu"]
+visible = false
 margin_top = 268.0
 margin_right = 497.0
 margin_bottom = 311.0
+custom_colors/font_color_disabled = Color( 0.45098, 0, 0, 0.411765 )
+custom_colors/font_color_focus = Color( 0, 1, 0.6, 1 )
+custom_colors/font_color = Color( 0.670588, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0.615686, 0, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.635294, 0.635294, 0.635294, 1 )
+text = "Devmenu"
+flat = true
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Exit" type="Button" parent="Control/Menu"]
+margin_top = 272.0
+margin_right = 497.0
+margin_bottom = 316.0
 action_mode = 0
 text = "Quit"
 flat = true
@@ -701,14 +707,14 @@ __meta__ = {
 visible = false
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -511.0
-margin_right = 511.0
-margin_bottom = 153.0
+margin_left = -387.5
+margin_right = 387.5
+margin_bottom = 208.0
 custom_constants/separation = 12
 
 [node name="story" type="Button" parent="Control/SinglePlayer"]
-margin_right = 1022.0
-margin_bottom = 43.0
+margin_right = 775.0
+margin_bottom = 44.0
 disabled = true
 text = "Story Mode"
 flat = true
@@ -716,21 +722,21 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="horde" type="Button" parent="Control/SinglePlayer"]
-margin_top = 55.0
-margin_right = 1022.0
-margin_bottom = 98.0
+[node name="pve1" type="Button" parent="Control/SinglePlayer"]
+margin_top = 56.0
+margin_right = 775.0
+margin_bottom = 100.0
 action_mode = 0
-text = "Survival Mode"
+text = "Survival Modes"
 flat = true
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="defend" type="Button" parent="Control/SinglePlayer"]
-margin_top = 110.0
-margin_right = 1022.0
-margin_bottom = 153.0
+margin_top = 112.0
+margin_right = 775.0
+margin_bottom = 156.0
 disabled = true
 action_mode = 0
 text = "Defend The Flag"
@@ -739,10 +745,10 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="backtomain" type="Button" parent="Control/SinglePlayer"]
-margin_top = 165.0
-margin_right = 1022.0
-margin_bottom = 208.0
+[node name="sptomain" type="Button" parent="Control/SinglePlayer"]
+margin_top = 168.0
+margin_right = 775.0
+margin_bottom = 212.0
 action_mode = 0
 text = "Back"
 flat = true
@@ -1111,17 +1117,16 @@ margin_bottom = 445.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/AudioSettings/osttype"]
-margin_left = 306.0
+margin_left = 305.0
 margin_top = 6.0
-margin_right = 695.0
+margin_right = 694.0
 margin_bottom = 27.0
 text = "Soundtrack Type"
 
 [node name="OptionButton" type="OptionButton" parent="Control/AudioSettings/osttype"]
-margin_left = 713.0
-margin_right = 888.0
+margin_left = 712.0
+margin_right = 889.0
 margin_bottom = 33.0
-custom_constants/hseparation = 0
 text = "PC 1999"
 align = 1
 items = [ "PC 1999", null, false, 0, null, "Nintendo 64", null, false, 1, null, "Playstation", null, false, 2, null, "2022 Remake", null, false, 3, null ]
@@ -1396,12 +1401,12 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[connection signal="pressed" from="Control/Menu/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Control/Menu/singleplayer" to="." method="_on_singleplayer_pressed"]
 [connection signal="pressed" from="Control/Menu/Multiplayer" to="." method="_on_Multiplayer_pressed"]
 [connection signal="pressed" from="Control/Menu/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Control/Menu/custom" to="." method="_on_custom_pressed"]
 [connection signal="pressed" from="Control/Menu/Exit" to="." method="_on_Exit_pressed"]
-[connection signal="pressed" from="Control/SinglePlayer/backtomain" to="." method="_on_backtomain_pressed"]
+[connection signal="pressed" from="Control/SinglePlayer/sptomain" to="." method="_on_sptomain_pressed"]
 [connection signal="pressed" from="Control/Multiplayer/multtomain" to="." method="_on_multtomain_pressed"]
 [connection signal="pressed" from="Control/Settings/game_settings" to="." method="_on_game_settings_pressed"]
 [connection signal="pressed" from="Control/Settings/aud_settings" to="." method="_on_aud_settings_pressed"]

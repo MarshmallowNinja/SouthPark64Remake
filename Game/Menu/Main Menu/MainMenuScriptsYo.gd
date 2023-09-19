@@ -2,9 +2,9 @@ extends Spatial
 
 func _ready():
 	get_tree().paused = false # Does this if you left game from pause menu
+	$Control/Menu/singleplayer.grab_focus()
 	InitiateSaveShit()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	$Control/Menu/Button2.grab_focus()
 	SoundtrackSystem.SetSongs("res://Game/Media/Soundtrack/PC/The Theme.ogg", 
 	"res://Game/Media/Soundtrack/64/Roaming South Park (64).mp3", 
 	"res://Game/Media/Soundtrack/PS/Roaming South Park.ogg",
@@ -36,26 +36,35 @@ func _on_Button2_pressed():
 	get_tree().change_scene("res://Game/Levels/devlevel/devlevel.tscn")
 
 func _on_multtomain_pressed() -> void:
+	# Multiplayer to Main Menu
 	$Control/Multiplayer.visible = false
 	$Control/Menu.visible = true
 
 func _on_Multiplayer_pressed() -> void:
+	# Main Menu to Multiplayer
 	$Control/Multiplayer.visible = true
 	$Control/Menu.visible = false
 
 func _on_settings_pressed():
+	# Main Menu to Settings
 	switchmenus("Control/Settings", "Control/Menu")
 	$Control/Settings/game_settings.grab_focus()
 
 func _on_settomain_pressed():
+	# Settings to Main Menu
 	switchmenus("Control/Menu", "Control/Settings")
-	$Control/Menu/Button2.grab_focus()
+	$Control/Menu/settings.grab_focus()
 
-func _on_Button_pressed():
-	switchmenus("SinglePlayer", "Menu")
+func _on_singleplayer_pressed():
+	# Main Menu to Single Player
+	$Control/SinglePlayer.visible = true
+	$Control/Menu.visible = false
 
-func _on_backtomain_pressed():
-	switchmenus("Menu", "SinglePlayer")
+func _on_sptomain_pressed() -> void:
+	# Single Player to Main Menu
+	$Control/SinglePlayer.visible = false
+	$Control/Menu.visible = true
+	$Control/Menu/singleplayer.grab_focus()
 
 func _on_Exit_pressed():
 	SaveGame.saveconf()

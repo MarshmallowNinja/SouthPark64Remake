@@ -114,7 +114,7 @@ func _physics_process(delta):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
 	if Input.is_action_just_pressed("fire"):
-		$farter.playsong()
+		pass
 		
 	# zoom function, will not be in final game
 	if Input.is_action_just_pressed("secondfire"):

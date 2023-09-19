@@ -60,8 +60,8 @@ rect_clip_content = false
 follow_focus = true
 
 [node name="PopupMenu" type="PopupMenu" parent="Characters"]
-margin_right = 601.0
-margin_bottom = 1643.0
+margin_right = 539.0
+margin_bottom = 1674.0
 custom_constants/vseparation = 22
 custom_constants/hseparation = 0
 custom_styles/panel = SubResource( 1 )
@@ -76,16 +76,16 @@ custom_constants/separation = 8
 
 [node name="respawn" type="Button" parent="Menu"]
 margin_right = 648.0
-margin_bottom = 43.0
+margin_bottom = 44.0
 text = "Respawn selector"
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="mainmenu" type="Button" parent="Menu"]
-margin_top = 51.0
+margin_top = 52.0
 margin_right = 648.0
-margin_bottom = 94.0
+margin_bottom = 96.0
 text = "To Main Menu"
 __meta__ = {
 "_edit_lock_": true
@@ -292,7 +292,7 @@ icon = ExtResource( 23 )
 [node name="Button25" type="Button" parent="GridContainer"]
 margin_top = 132.0
 margin_right = 32.0
-margin_bottom = 175.0
+margin_bottom = 176.0
 disabled = true
 icon = ExtResource( 23 )
 
@@ -300,7 +300,7 @@ icon = ExtResource( 23 )
 margin_left = 32.0
 margin_top = 132.0
 margin_right = 64.0
-margin_bottom = 175.0
+margin_bottom = 176.0
 disabled = true
 icon = ExtResource( 23 )
 
@@ -308,7 +308,7 @@ icon = ExtResource( 23 )
 margin_left = 64.0
 margin_top = 132.0
 margin_right = 96.0
-margin_bottom = 175.0
+margin_bottom = 176.0
 disabled = true
 icon = ExtResource( 23 )
 
@@ -316,7 +316,7 @@ icon = ExtResource( 23 )
 margin_left = 96.0
 margin_top = 132.0
 margin_right = 128.0
-margin_bottom = 175.0
+margin_bottom = 176.0
 disabled = true
 icon = ExtResource( 23 )
 
@@ -324,7 +324,7 @@ icon = ExtResource( 23 )
 margin_left = 128.0
 margin_top = 132.0
 margin_right = 160.0
-margin_bottom = 175.0
+margin_bottom = 176.0
 disabled = true
 icon = ExtResource( 23 )
 
@@ -332,7 +332,7 @@ icon = ExtResource( 23 )
 margin_left = 160.0
 margin_top = 132.0
 margin_right = 192.0
-margin_bottom = 175.0
+margin_bottom = 176.0
 disabled = true
 icon = ExtResource( 23 )
 
@@ -340,7 +340,7 @@ icon = ExtResource( 23 )
 margin_left = 192.0
 margin_top = 132.0
 margin_right = 224.0
-margin_bottom = 175.0
+margin_bottom = 176.0
 disabled = true
 icon = ExtResource( 23 )
 
@@ -348,7 +348,7 @@ icon = ExtResource( 23 )
 margin_left = 224.0
 margin_top = 132.0
 margin_right = 256.0
-margin_bottom = 175.0
+margin_bottom = 176.0
 disabled = true
 icon = ExtResource( 24 )
 
