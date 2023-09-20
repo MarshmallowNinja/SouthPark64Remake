@@ -178,7 +178,6 @@ func PlayerStateCheck():
 		1: # Dead
 			axis_lock_motion_x = true
 			axis_lock_motion_z = true
-			get_tree().get_root().set_disable_input(true)
 		2: # Frozen
 			axis_lock_motion_x = true
 			axis_lock_motion_z = true

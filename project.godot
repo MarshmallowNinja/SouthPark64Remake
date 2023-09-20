@@ -203,4 +203,5 @@ quality/directional_shadow/size=8192
 quality/filters/anisotropic_filter_level=16
 gles3/shaders/shader_compilation_mode=2
 environment/default_clear_color=Color( 0.109804, 0.215686, 0.129412, 1 )
+quality/filters/msaa=2
 environment/default_environment="res://misc/default_env.tres"
