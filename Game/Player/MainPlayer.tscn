@@ -90,10 +90,6 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 0 ) ]
 }
 
-[sub_resource type="StyleBoxEmpty" id=18]
-
-[sub_resource type="StyleBoxEmpty" id=19]
-
 [sub_resource type="StyleBoxEmpty" id=26]
 
 [sub_resource type="DynamicFont" id=8]
@@ -154,6 +150,10 @@ background_mode = 1
 flags = 1
 load_path = "res://.import/64 Border.png-3f4baf3b809a81324d79e744de2a6115.stex"
 
+[sub_resource type="StyleBoxEmpty" id=18]
+
+[sub_resource type="StyleBoxEmpty" id=19]
+
 [sub_resource type="RayShape" id=14]
 length = 2.0
 
@@ -195,7 +195,14 @@ far = 8192.0
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera"]
 follow_viewport_enable = true
 
-[node name="FPS" type="RichTextLabel" parent="Camera/CanvasLayer"]
+[node name="HUD" type="Control" parent="Camera/CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FPS" type="RichTextLabel" parent="Camera/CanvasLayer/HUD"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -360.0
@@ -208,6 +215,114 @@ bbcode_enabled = true
 bbcode_text = "FPS: [wave]00.0[/wave]"
 text = "FPS: 00.0"
 scroll_active = false
+
+[node name="Crosshair" type="Panel" parent="Camera/CanvasLayer/HUD"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 1.0
+margin_bottom = 1.0
+custom_styles/panel = SubResource( 26 )
+
+[node name="Sprite" type="Sprite" parent="Camera/CanvasLayer/HUD/Crosshair"]
+position = Vector2( 1, 1 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 19 )
+
+[node name="HealthBar" type="ProgressBar" parent="Camera/CanvasLayer/HUD"]
+pause_mode = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 384.0
+margin_top = -224.0
+margin_right = 832.0
+margin_bottom = -160.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 8 )
+custom_styles/fg = SubResource( 6 )
+custom_styles/bg = SubResource( 7 )
+value = 50.0
+rounded = true
+
+[node name="ArmorBar" type="ProgressBar" parent="Camera/CanvasLayer/HUD"]
+pause_mode = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 384.0
+margin_top = -144.0
+margin_right = 832.0
+margin_bottom = -80.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 9 )
+custom_styles/fg = SubResource( 10 )
+custom_styles/bg = SubResource( 11 )
+value = 50.0
+rounded = true
+
+[node name="CharacterName" type="Label" parent="Camera/CanvasLayer/HUD"]
+margin_left = 384.0
+margin_top = 1024.0
+margin_right = 768.0
+margin_bottom = 1059.0
+custom_fonts/font = SubResource( 27 )
+text = "Character Name"
+
+[node name="RadarRim" type="Sprite" parent="Camera/CanvasLayer/HUD"]
+position = Vector2( 192, 888 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 17 )
+
+[node name="RadarRim" type="Sprite" parent="Camera/CanvasLayer/HUD/RadarRim"]
+texture = ExtResource( 16 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Viewport" type="Viewport" parent="Camera/CanvasLayer/HUD"]
+size = Vector2( 128, 128 )
+hdr = false
+usage = 3
+gui_disable_input = true
+shadow_atlas_quad_0 = 0
+shadow_atlas_quad_1 = 0
+shadow_atlas_quad_2 = 0
+shadow_atlas_quad_3 = 0
+
+[node name="minimap" type="Camera" parent="Camera/CanvasLayer/HUD/Viewport"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 12, 0 )
+cull_mask = 512
+environment = SubResource( 15 )
+projection = 1
+size = 2.504
+
+[node name="TeamBar" type="HBoxContainer" parent="Camera/CanvasLayer/HUD"]
+
+[node name="TM1" type="Sprite" parent="Camera/CanvasLayer/HUD/TeamBar"]
+position = Vector2( 40, 32 )
+scale = Vector2( 0.145, 0.145 )
+texture = ExtResource( 22 )
+centered = false
+
+[node name="TM2" type="Sprite" parent="Camera/CanvasLayer/HUD/TeamBar"]
+position = Vector2( 112, 32 )
+scale = Vector2( 0.145, 0.145 )
+texture = SubResource( 20 )
+centered = false
+
+[node name="TM3" type="Sprite" parent="Camera/CanvasLayer/HUD/TeamBar"]
+position = Vector2( 184, 32 )
+scale = Vector2( 0.145, 0.145 )
+texture = SubResource( 20 )
+centered = false
+
+[node name="TM4" type="Sprite" parent="Camera/CanvasLayer/HUD/TeamBar"]
+position = Vector2( 256, 32 )
+scale = Vector2( 0.145, 0.145 )
+texture = SubResource( 20 )
+centered = false
 
 [node name="menus" type="Control" parent="Camera/CanvasLayer"]
 pause_mode = 2
@@ -329,114 +444,6 @@ margin_top = 377.0
 margin_right = 696.0
 margin_bottom = 421.0
 text = "No"
-
-[node name="Crosshair" type="Panel" parent="Camera/CanvasLayer"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -1.0
-margin_top = -1.0
-margin_right = 1.0
-margin_bottom = 1.0
-custom_styles/panel = SubResource( 26 )
-
-[node name="Sprite" type="Sprite" parent="Camera/CanvasLayer/Crosshair"]
-position = Vector2( 1, 1 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 19 )
-
-[node name="HealthBar" type="ProgressBar" parent="Camera/CanvasLayer"]
-pause_mode = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 384.0
-margin_top = -224.0
-margin_right = 832.0
-margin_bottom = -160.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 8 )
-custom_styles/fg = SubResource( 6 )
-custom_styles/bg = SubResource( 7 )
-value = 50.0
-rounded = true
-
-[node name="ArmorBar" type="ProgressBar" parent="Camera/CanvasLayer"]
-pause_mode = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-margin_left = 384.0
-margin_top = -144.0
-margin_right = 832.0
-margin_bottom = -80.0
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-custom_fonts/font = SubResource( 9 )
-custom_styles/fg = SubResource( 10 )
-custom_styles/bg = SubResource( 11 )
-value = 50.0
-rounded = true
-
-[node name="CharacterName" type="Label" parent="Camera/CanvasLayer"]
-margin_left = 384.0
-margin_top = 1024.0
-margin_right = 768.0
-margin_bottom = 1059.0
-custom_fonts/font = SubResource( 27 )
-text = "Character Name"
-
-[node name="RadarRim" type="Sprite" parent="Camera/CanvasLayer"]
-position = Vector2( 192, 888 )
-scale = Vector2( 3, 3 )
-texture = ExtResource( 17 )
-
-[node name="RadarRim" type="Sprite" parent="Camera/CanvasLayer/RadarRim"]
-texture = ExtResource( 16 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Viewport" type="Viewport" parent="Camera/CanvasLayer"]
-size = Vector2( 128, 128 )
-hdr = false
-usage = 3
-gui_disable_input = true
-shadow_atlas_quad_0 = 0
-shadow_atlas_quad_1 = 0
-shadow_atlas_quad_2 = 0
-shadow_atlas_quad_3 = 0
-
-[node name="minimap" type="Camera" parent="Camera/CanvasLayer/Viewport"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 12, 0 )
-cull_mask = 512
-environment = SubResource( 15 )
-projection = 1
-size = 2.504
-
-[node name="TeamBar" type="HBoxContainer" parent="Camera/CanvasLayer"]
-
-[node name="TM1" type="Sprite" parent="Camera/CanvasLayer/TeamBar"]
-position = Vector2( 40, 32 )
-scale = Vector2( 0.145, 0.145 )
-texture = ExtResource( 22 )
-centered = false
-
-[node name="TM2" type="Sprite" parent="Camera/CanvasLayer/TeamBar"]
-position = Vector2( 112, 32 )
-scale = Vector2( 0.145, 0.145 )
-texture = SubResource( 20 )
-centered = false
-
-[node name="TM3" type="Sprite" parent="Camera/CanvasLayer/TeamBar"]
-position = Vector2( 184, 32 )
-scale = Vector2( 0.145, 0.145 )
-texture = SubResource( 20 )
-centered = false
-
-[node name="TM4" type="Sprite" parent="Camera/CanvasLayer/TeamBar"]
-position = Vector2( 256, 32 )
-scale = Vector2( 0.145, 0.145 )
-texture = SubResource( 20 )
-centered = false
 
 [node name="viewcheck" type="Area" parent="Camera"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )

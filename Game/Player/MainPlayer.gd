@@ -49,7 +49,7 @@ onready var pausemenu = $Camera/CanvasLayer/menus/pausemenu
 onready var deadmenu = $Camera/CanvasLayer/menus/deadmenu
 onready var viewcheck = $Camera/viewcheck
 onready var character = $CharacterHandler
-onready var teambar = $Camera/CanvasLayer/TeamBar
+onready var teambar = $Camera/CanvasLayer/HUD/TeamBar
 onready var weapon = $WeaponHandler
 
 func _ready():
@@ -61,8 +61,8 @@ func _ready():
 func Initiate():
 	Health = $CharacterHandler.Character.StartingHealth
 	MaxHealth = $CharacterHandler.Character.MaxHealth
-	$Camera/CanvasLayer/CharacterName.text = $CharacterHandler.Character.CharacterName
-	$Camera/CanvasLayer/TeamBar/TM1.texture = $CharacterHandler.Character.CharacterIcon
+	$Camera/CanvasLayer/HUD/CharacterName.text = $CharacterHandler.Character.CharacterName
+	$Camera/CanvasLayer/HUD/TeamBar/TM1.texture = $CharacterHandler.Character.CharacterIcon
 	emit_signal("Spawn")
 	TakeControl()
 
@@ -140,9 +140,9 @@ func _process(delta):
 	rotation_degrees.y -= mouseDelta.x * lookSensitivity * delta
 	mouseDelta = Vector2()
 	# other things
-	$Camera/CanvasLayer/HealthBar.value = Health
-	$Camera/CanvasLayer/ArmorBar.value = Armor
-	$Camera/CanvasLayer/FPS.set_bbcode("FPS: [wave]" + var2str(Engine.get_frames_per_second()) + "[/wave]")
+	$Camera/CanvasLayer/HUD/HealthBar.value = Health
+	$Camera/CanvasLayer/HUD/ArmorBar.value = Armor
+	$Camera/CanvasLayer/HUD/FPS.set_bbcode("FPS: [wave]" + var2str(Engine.get_frames_per_second()) + "[/wave]")
 
 func _input(event): #more camera controls
 	if event is InputEventMouseMotion:
