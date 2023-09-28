@@ -50,7 +50,7 @@ glow_bicubic_upscale = true
 bounds = AABB( -38.1271, -13.6228, -30.3213, 76.2542, 27.2456, 60.6426 )
 cell_size = 0.595736
 to_cell_xform = Transform( 1.6786, 0, 0, 0, 1.6786, 0, 0, 0, 1.6786, 64, 22.8672, 50.8972 )
-dynamic_data = PoolIntArray( 0, 8, 128, 64, 128, 1, 0, 0, 0, 0, -1952335104, 0, 72, 0, 600010517, -2147200512, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
+dynamic_data = PoolIntArray( 0, 8, 128, 64, 128, 1, 0, 0, 0, -1018691584, 0, 0, 7, 0, 9, 38, -1, -1, -1, -1, -1, -1, -1, -1, 0, 0, 8355711, 0 )
 dynamic_range = 4
 bias = 1.5
 normal_bias = 0.0
@@ -613,7 +613,6 @@ anchor_bottom = 0.5
 theme = ExtResource( 5 )
 
 [node name="bg" type="ColorRect" parent="Control"]
-visible = false
 margin_left = -984.0
 margin_top = -572.0
 margin_right = 992.0
@@ -1181,21 +1180,21 @@ margin_bottom = 180.0
 alignment = 1
 
 [node name="Label" type="Label" parent="Control/VideoSettings/screenres"]
-margin_left = 318.0
+margin_left = 306.0
 margin_top = 6.0
-margin_right = 745.0
+margin_right = 733.0
 margin_bottom = 27.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Screen Resolution"
 
 [node name="CheckButton" type="OptionButton" parent="Control/VideoSettings/screenres"]
-margin_left = 763.0
-margin_right = 877.0
+margin_left = 751.0
+margin_right = 888.0
 margin_bottom = 33.0
 disabled = true
-text = "1440"
-items = [ "720", null, false, 1, null, "1080", null, false, 2, null, "1440", null, false, 3, null, "2160", null, false, 4, null ]
-selected = 2
+text = "1080p"
+items = [ "1080p", null, false, 0, null, "720p", null, false, 1, null, "1440p", null, false, 2, null ]
+selected = 0
 
 [node name="frame" type="HBoxContainer" parent="Control/VideoSettings"]
 margin_top = 188.0
@@ -1217,6 +1216,7 @@ margin_bottom = 31.0
 min_value = 20.0
 max_value = 360.0
 value = 60.0
+suffix = "FPS"
 
 [node name="vsync" type="HBoxContainer" parent="Control/VideoSettings"]
 margin_top = 227.0
@@ -1321,7 +1321,7 @@ margin_right = 904.0
 margin_bottom = 33.0
 disabled = true
 text = "Very High"
-items = [ "Very High", null, false, 0, null, "High", null, false, 1, null, "Medium", null, false, 2, null, "Low", null, false, 3, null, "Very Low", null, false, 4, null, "None", null, false, 5, null ]
+items = [ "Very High", null, false, 0, null, "High", null, false, 1, null, "Medium", null, false, 2, null, "Low", null, false, 3, null, "Very Low", null, false, 4, null, "Off", null, false, 5, null ]
 selected = 0
 
 [node name="refres" type="HBoxContainer" parent="Control/VideoSettings"]
@@ -1344,7 +1344,7 @@ margin_right = 946.0
 margin_bottom = 33.0
 disabled = true
 text = "Very High"
-items = [ "Very High", null, false, 0, null, "High", null, false, 1, null, "Medium", null, false, 2, null, "Low", null, false, 3, null, "Very Low", null, false, 4, null, "None", null, false, 5, null ]
+items = [ "Very High", null, false, 0, null, "High", null, false, 1, null, "Medium", null, false, 2, null, "Low", null, false, 3, null, "Very Low", null, false, 4, null, "Off", null, false, 5, null ]
 selected = 0
 
 [node name="HSeparator2" type="HSeparator" parent="Control/VideoSettings"]
@@ -1371,7 +1371,7 @@ custom_constants/separation = 12
 
 [node name="netspeed" type="Button" parent="Control/OnlineSettings"]
 margin_right = 1167.0
-margin_bottom = 29.0
+margin_bottom = 44.0
 disabled = true
 text = "Average Network speed"
 flat = true
@@ -1380,9 +1380,9 @@ __meta__ = {
 }
 
 [node name="onpref" type="Button" parent="Control/OnlineSettings"]
-margin_top = 41.0
+margin_top = 56.0
 margin_right = 1167.0
-margin_bottom = 70.0
+margin_bottom = 100.0
 disabled = true
 text = "Connection preference"
 flat = true
@@ -1391,9 +1391,9 @@ __meta__ = {
 }
 
 [node name="onltoset" type="Button" parent="Control/OnlineSettings"]
-margin_top = 82.0
+margin_top = 112.0
 margin_right = 1167.0
-margin_bottom = 111.0
+margin_bottom = 156.0
 action_mode = 0
 text = "Back to Settings"
 flat = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Game/Player/MainPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Game/Media/Soundtrack/farts/fartsmall02.wav" type="AudioStream" id=2]
@@ -24,9 +24,6 @@
 [ext_resource path="res://Game/Player/PickupHandler.gd" type="Script" id=23]
 [ext_resource path="res://Game/Menu/sp_dynamicfont.tres" type="DynamicFont" id=24]
 [ext_resource path="res://Game/Player/WeaponHandler.gd" type="Script" id=25]
-
-[sub_resource type="Animation" id=24]
-resource_name = "idle"
 
 [sub_resource type="Animation" id=21]
 length = 0.001
@@ -63,7 +60,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=23]
 resource_name = "heal"
 length = 0.3
-step = 0.05
+step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("Camera/CanvasLayer/menus/flash:color")
 tracks/0/interp = 1
@@ -71,7 +68,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1, 0.15 ),
+"times": PoolRealArray( 0, 0.03, 0.07, 0.1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 1, 0.607843 ), Color( 0, 1, 0, 0.215686 ), Color( 0, 0, 0, 0 ) ]
@@ -184,12 +181,6 @@ script = ExtResource( 23 )
 [node name="WeaponHandler" type="Node" parent="."]
 script = ExtResource( 25 )
 
-[node name="ModelAnimation" type="AnimationPlayer" parent="."]
-root_node = NodePath("")
-anims/idle = SubResource( 24 )
-
-[node name="TextureAnimation" type="AnimationPlayer" parent="."]
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 21 )
 anims/damage1 = SubResource( 22 )
@@ -256,36 +247,43 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -233.0
+margin_left = -380.5
 margin_top = -184.0
-margin_right = 233.0
+margin_right = 380.5
 margin_bottom = 184.0
 alignment = 1
 
 [node name="resume" type="Button" parent="Camera/CanvasLayer/menus/pausemenu"]
-margin_top = 71.0
-margin_right = 466.0
-margin_bottom = 114.0
+margin_top = 38.0
+margin_right = 761.0
+margin_bottom = 82.0
 text = "Resume"
 
 [node name="save" type="Button" parent="Camera/CanvasLayer/menus/pausemenu"]
-margin_top = 132.0
-margin_right = 466.0
-margin_bottom = 175.0
+margin_top = 100.0
+margin_right = 761.0
+margin_bottom = 144.0
 disabled = true
 text = "Save / Load"
 
+[node name="net" type="Button" parent="Camera/CanvasLayer/menus/pausemenu"]
+margin_top = 162.0
+margin_right = 761.0
+margin_bottom = 206.0
+disabled = true
+text = "Network Options"
+
 [node name="options" type="Button" parent="Camera/CanvasLayer/menus/pausemenu"]
-margin_top = 193.0
-margin_right = 466.0
-margin_bottom = 236.0
+margin_top = 224.0
+margin_right = 761.0
+margin_bottom = 268.0
 disabled = true
 text = "Options"
 
 [node name="quit" type="Button" parent="Camera/CanvasLayer/menus/pausemenu"]
-margin_top = 254.0
-margin_right = 466.0
-margin_bottom = 297.0
+margin_top = 286.0
+margin_right = 761.0
+margin_bottom = 330.0
 text = "Quit"
 
 [node name="deadmenu" type="VBoxContainer" parent="Camera/CanvasLayer/menus"]
@@ -317,19 +315,19 @@ custom_styles/separator = SubResource( 18 )
 [node name="cy" type="Button" parent="Camera/CanvasLayer/menus/deadmenu"]
 margin_top = 293.0
 margin_right = 696.0
-margin_bottom = 336.0
+margin_bottom = 337.0
 text = "Yes"
 
 [node name="HSeparator2" type="HSeparator" parent="Camera/CanvasLayer/menus/deadmenu"]
-margin_top = 354.0
+margin_top = 355.0
 margin_right = 696.0
-margin_bottom = 358.0
+margin_bottom = 359.0
 custom_styles/separator = SubResource( 19 )
 
 [node name="cn" type="Button" parent="Camera/CanvasLayer/menus/deadmenu"]
-margin_top = 376.0
+margin_top = 377.0
 margin_right = 696.0
-margin_bottom = 419.0
+margin_bottom = 421.0
 text = "No"
 
 [node name="Crosshair" type="Panel" parent="Camera/CanvasLayer"]
@@ -408,10 +406,11 @@ shadow_atlas_quad_2 = 0
 shadow_atlas_quad_3 = 0
 
 [node name="minimap" type="Camera" parent="Camera/CanvasLayer/Viewport"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 12.0265, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 12, 0 )
 cull_mask = 512
 environment = SubResource( 15 )
 projection = 1
+size = 2.504
 
 [node name="TeamBar" type="HBoxContainer" parent="Camera/CanvasLayer"]
 
@@ -468,10 +467,10 @@ current = true
 [node name="ProjSpawn" type="Position3D" parent="Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.49495 )
 
-[node name="weapontest" type="RayCast" parent="Camera"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.757171 )
+[node name="punchcast" type="RayCast" parent="Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.819289 )
 enabled = true
-cast_to = Vector3( 0, 0, -50 )
+cast_to = Vector3( 0, 0, -1.1 )
 collide_with_areas = true
 
 [node name="foot" type="CollisionShape" parent="."]

@@ -14,6 +14,7 @@ func AddPlayer():
 	Players.append(ToAdd)
 
 func ChangeCharacter(player : int, characterindex : int):
+	# get player index, change the character to an indexed something whatever
 	Players[player][0] = CharacterFileList[characterindex][2]
 
 func SearchCharacters():

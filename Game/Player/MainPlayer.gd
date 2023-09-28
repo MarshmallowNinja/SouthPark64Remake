@@ -184,6 +184,7 @@ func PlayerStateCheck():
 
 func Damage(a):
 # overly complicated damage system
+# may not even work
 	if a <= Armor:
 		var leftoverdmg : int
 		leftoverdmg = a % Armor
