@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Game/Player/MainPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Game/Media/Soundtrack/farts/fartsmall02.wav" type="AudioStream" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Game/Texture/UI/Player/radaratlas.png" type="Texture" id=18]
 [ext_resource path="res://Game/Texture/UI/Player/crosshair/cross1.png" type="Texture" id=19]
 [ext_resource path="res://Game/Player/CharacterHandler.gd" type="Script" id=20]
+[ext_resource path="res://Game/Texture/UI/Player/weapon/snow1.png" type="Texture" id=21]
 [ext_resource path="res://Game/Player/characters/files/base/64 Border.png" type="Texture" id=22]
 [ext_resource path="res://Game/Player/PickupHandler.gd" type="Script" id=23]
 [ext_resource path="res://Game/Menu/sp_dynamicfont.tres" type="DynamicFont" id=24]
@@ -263,10 +264,12 @@ value = 50.0
 rounded = true
 
 [node name="CharacterName" type="Label" parent="Camera/CanvasLayer/HUD"]
+anchor_top = 1.0
+anchor_bottom = 1.0
 margin_left = 384.0
-margin_top = 1024.0
+margin_top = -56.0
 margin_right = 768.0
-margin_bottom = 1059.0
+margin_bottom = -21.0
 custom_fonts/font = SubResource( 27 )
 text = "Character Name"
 
@@ -323,6 +326,27 @@ position = Vector2( 256, 32 )
 scale = Vector2( 0.145, 0.145 )
 texture = SubResource( 20 )
 centered = false
+
+[node name="weapon" type="Control" parent="Camera/CanvasLayer/HUD"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -248.0
+
+[node name="weaponicon" type="Sprite" parent="Camera/CanvasLayer/HUD/weapon"]
+position = Vector2( 128, 128 )
+scale = Vector2( 3.3, 3.3 )
+texture = ExtResource( 21 )
+
+[node name="ammo" type="Label" parent="Camera/CanvasLayer/HUD/weapon"]
+margin_left = 192.0
+margin_top = 96.0
+margin_right = 384.0
+margin_bottom = 168.0
+custom_fonts/font = ExtResource( 24 )
+text = "00"
 
 [node name="menus" type="Control" parent="Camera/CanvasLayer"]
 pause_mode = 2
@@ -444,6 +468,13 @@ margin_top = 377.0
 margin_right = 696.0
 margin_bottom = 421.0
 text = "No"
+
+[node name="MP" type="Control" parent="Camera/CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="viewcheck" type="Area" parent="Camera"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
