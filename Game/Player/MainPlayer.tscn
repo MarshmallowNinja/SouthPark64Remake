@@ -348,6 +348,13 @@ margin_bottom = 168.0
 custom_fonts/font = ExtResource( 24 )
 text = "00"
 
+[node name="MP" type="Control" parent="Camera/CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="menus" type="Control" parent="Camera/CanvasLayer"]
 pause_mode = 2
 anchor_right = 1.0
@@ -468,13 +475,6 @@ margin_top = 377.0
 margin_right = 696.0
 margin_bottom = 421.0
 text = "No"
-
-[node name="MP" type="Control" parent="Camera/CanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="viewcheck" type="Area" parent="Camera"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )

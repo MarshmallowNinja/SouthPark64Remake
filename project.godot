@@ -28,6 +28,10 @@ config/icon="res://misc/game icon.png"
 config/windows_native_icon="res://misc/game icon.ico"
 run/main_scene.prototype="res://Game/Widgets/Main Menu/MainMenu.tscn"
 
+[audio]
+
+default_bus_layout="res://misc/default_bus_layout.tres"
+
 [autoload]
 
 Sp64MainScript="*res://Game/IMPORTANT/SP64_MainScript.gd"
