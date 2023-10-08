@@ -1,10 +1,10 @@
-# South Park 64 Remake - Unstable Branch
- This branch is solely used for development, back-up, mod resource and developer partners.
-
- # Warnings, recommendations.
- - You may see incomplete features and code by forking this project.
- - If you build an executable from this branch. The builds that come from this branch will most likely be broken, unstable and unusable.
- - You can fork or download this code for modding, to help us develop, or to help you with your own projects by copying the code. But like stated above, please keep in mind that code will be unstable, broken etc.
- - Mono/C# will not be supported 'officially'.
+# South Park 64 Remake
+ Complete remake of the 1998 game, South Park. Also known as South Park: Deeply Impacted. Also known as *south park snowball game for the 64*.
  
+ This is the main, stable fork of the game that holds major versions.
+ 
+ For a near-constantly updated, unstable fork of this game. Here is the unstable fork: https://github.com/MarshmallowNinja/SouthPark64Remake/tree/unstable
+
+ This remake is being made completely from the ground up, with no sort of monetization at all for the end user.
+
  Discord server: https://discord.gg/ePcnXsbm3a
