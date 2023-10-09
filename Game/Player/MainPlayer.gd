@@ -113,14 +113,16 @@ func _physics_process(delta):
 			PauseState = pausestate.Unpaused
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
-	if Input.is_action_just_pressed("fire"):
-		pass
+	if Input.is_action_pressed("fire"):
+		weapon.Fire()
+	if Input.is_action_just_released("fire"):
+		weapon.StopFire()
 		
 	# zoom function, will not be in final game
-	if Input.is_action_just_pressed("secondfire"):
+	if Input.is_action_just_pressed("tertiaryfire"):
 				$Camera.fov = 25
 				lookSensitivity = 5
-	if Input.is_action_just_released("secondfire"):
+	if Input.is_action_just_released("tertiaryfire"):
 				$Camera.fov = 70
 				lookSensitivity = 10
 	

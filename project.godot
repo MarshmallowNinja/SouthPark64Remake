@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "CharacterFile",
 "language": "GDScript",
 "path": "res://Game/Player/characters/script/CharacterFileScript.gd"
+}, {
+"base": "Node",
+"class": "WeaponFile",
+"language": "GDScript",
+"path": "res://Game/PickUps/weapon/base/BaseWeaponScript.gd"
 } ]
 _global_script_class_icons={
-"CharacterFile": "res://Game/Player/characters/files/base/None.png"
+"CharacterFile": "res://Game/Player/characters/files/base/None.png",
+"WeaponFile": ""
 }
 
 [application]

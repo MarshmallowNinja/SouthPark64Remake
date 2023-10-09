@@ -34,4 +34,7 @@ func SwitchWeapon():
 			icon.texture = "res://Game/Texture/UI/Player/weapon/cow1.png"
 
 func Fire():
-	pass
+	print("firing...")
+
+func StopFire():
+	print("alright, i'm done.")
