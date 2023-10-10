@@ -1,4 +1,4 @@
-extends Node
+extends Resource
 class_name WeaponFile
 
 export(String) var WeaponName = "None"

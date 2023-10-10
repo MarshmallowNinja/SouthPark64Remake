@@ -87,6 +87,7 @@ func _physics_process(delta):
 		direction += transform.basis.x
 	# jump
 	if Input.is_action_pressed("jump") and (is_on_floor() or floorcheck.is_colliding()):
+		# do a little fix on this
 		gravityv = Vector3.UP * jumpForce
 	
 	# interaction
@@ -94,9 +95,11 @@ func _physics_process(delta):
 		Interact()
 	
 	if Input.is_action_just_pressed("suicide"):
+		# mainly created this for a test
 		Kill()
 	
 	if Input.is_action_just_pressed("taunt"):
+		# replace with a thing that something who cares
 		$farter.playsong()
 	
 	# pause menu functionality
@@ -117,6 +120,11 @@ func _physics_process(delta):
 		weapon.Fire()
 	if Input.is_action_just_released("fire"):
 		weapon.StopFire()
+		
+	if Input.is_action_pressed("secondfire"):
+		weapon.SecondFire()
+	if Input.is_action_just_released("secondfire"):
+		weapon.StopSecondFire()
 		
 	# zoom function, will not be in final game
 	if Input.is_action_just_pressed("tertiaryfire"):

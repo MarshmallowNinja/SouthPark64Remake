@@ -38,3 +38,9 @@ func Fire():
 
 func StopFire():
 	print("alright, i'm done.")
+
+func SecondFire():
+	print("firing the secondary function...")
+
+func StopSecondFire():
+	print("alright, whatever you say.")
