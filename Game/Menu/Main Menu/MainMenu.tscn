@@ -636,6 +636,7 @@ custom_constants/separation = 24
 [node name="singleplayer" type="Button" parent="Control/Menu"]
 margin_right = 497.0
 margin_bottom = 44.0
+disabled = true
 text = "Single Player"
 flat = true
 __meta__ = {
@@ -646,6 +647,7 @@ __meta__ = {
 margin_top = 68.0
 margin_right = 497.0
 margin_bottom = 112.0
+disabled = true
 action_mode = 0
 text = "Multiplayer"
 flat = true

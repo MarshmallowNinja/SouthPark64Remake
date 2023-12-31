@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=2]
+[gd_scene load_steps=81 format=2]
 
 [ext_resource path="res://Game/Levels/multiplayer/mustardblock/mustardblocktestscript.gd" type="Script" id=1]
 [ext_resource path="res://Game/Player/MainPlayer.tscn" type="PackedScene" id=2]
@@ -567,6 +567,9 @@ size = Vector2( 2, 52.269 )
 albedo_texture = ExtResource( 14 )
 uv1_scale = Vector3( 1, 39.477, 1 )
 
+[sub_resource type="NavigationMesh" id=320]
+geometry_parsed_geometry_type = 2
+
 [sub_resource type="PlaneMesh" id=298]
 size = Vector2( 110, 100 )
 
@@ -800,6 +803,11 @@ material/0 = SubResource( 319 )
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 34.048, 0.099, 27.197 )
 mesh = SubResource( 316 )
 material/0 = SubResource( 317 )
+
+[node name="AI" type="Node" parent="."]
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="AI"]
+navmesh = SubResource( 320 )
 
 [node name="CSGCombiner" type="CSGCombiner" parent="."]
 use_collision = true

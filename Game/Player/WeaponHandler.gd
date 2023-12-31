@@ -1,7 +1,8 @@
 extends Node
 
 # onready bs
-onready var snowball = "res://Game/PickUps/weapon/snowball/Snowball.tscn"
+onready var snowball = preload("res://Game/PickUps/weapon/snowball/Snowball.tscn")
+onready var projectilespawn = $"../Camera/ProjSpawn"
 onready var icon = $"../Camera/CanvasLayer/HUD/weapon/weaponicon"
 
 enum wep {none, snowball, dodgeball, plunger, dart, tp, warpo, egg, alien, cow}
@@ -34,7 +35,9 @@ func SwitchWeapon():
 			icon.texture = "res://Game/Texture/UI/Player/weapon/cow1.png"
 
 func Fire():
-	print("firing...")
+#	var projectile = snowball.instance()
+#	projectilespawn.add_child(projectile)
+	pass
 
 func StopFire():
 	print("alright, i'm done.")

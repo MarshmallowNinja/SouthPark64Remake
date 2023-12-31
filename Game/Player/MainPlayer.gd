@@ -116,7 +116,7 @@ func _physics_process(delta):
 			PauseState = pausestate.Unpaused
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
-	if Input.is_action_pressed("fire"):
+	if Input.is_action_just_pressed("fire"):
 		weapon.Fire()
 	if Input.is_action_just_released("fire"):
 		weapon.StopFire()
